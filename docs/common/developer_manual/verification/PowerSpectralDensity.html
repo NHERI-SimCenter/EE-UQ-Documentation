@@ -55,7 +55,7 @@
 
           
             
-            <img src="../../../_static/SimCenter_PBE_logo.png" class="logo" alt="Logo"/>
+            <img src="../../../_static/EE-UQ-Logo-grey2.png" class="logo" alt="Logo"/>
           
           </a>
 
@@ -85,13 +85,14 @@
             
               <p class="caption"><span class="caption-text">User Manual</span></p>
 <ul>
-<li class="toctree-l1"><a class="reference internal" href="../../aboutEE.html">1. About</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../license.html">2. Copyright and License</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../user_manual/ack.html">1. Acknowledgments</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../aboutEE.html">2. About</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../user_manual/installation/installation.html">3. Installation</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../user_manual/usage/usage.html">4. Usage</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../user_manual/usage/usage.html">4. User Guide</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../user_manual/troubleshooting/troubleshooting.html">5. Troubleshooting</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../user_manual/examples/examples.html">6. Examples</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../bugs.html">7. Bugs &amp; Feauture Requests</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../license.html">8. Copyright and License</a></li>
 </ul>
 <p class="caption"><span class="caption-text">Technical Manual</span></p>
 <ul>
@@ -180,14 +181,14 @@ power spectral density matrix for the generated time histories is compared to
 an analytical spectral density matrix based on the Kaimal wind spectrum
 model cite{kaimal1972spectral, simiu1996wind} and the Davenport coherence
 function cite{davenport1967dependence}:</p>
-<div class="math notranslate nohighlight">
-\[S_{rs} = \sqrt{S_{rr}(f) \cdot S_{ss}(f)} Coh(f)\]</div>
+<div class="math notranslate nohighlight" id="equation-common-developer-manual-verification-powerspectraldensity-0">
+<span class="eqno">()<a class="headerlink" href="#equation-common-developer-manual-verification-powerspectraldensity-0" title="Permalink to this equation">¶</a></span>\[S_{rs} = \sqrt{S_{rr}(f) \cdot S_{ss}(f)} Coh(f)\]</div>
 <p>where :math`S_{rr}` and <span class="math notranslate nohighlight">\(S_{ss}\)</span> are power spectral densities
 of fluctuating wind at locations <span class="math notranslate nohighlight">\(r\)</span> and <span class="math notranslate nohighlight">\(s\)</span> respectively; <span class="math notranslate nohighlight">\(Coh(f)\)</span> is the
 Davenport coherence function; and <span class="math notranslate nohighlight">\(f\)</span> is the frequency in Hz. This gives
 the two-dimensional, <span class="math notranslate nohighlight">\(n\)</span>-variate power spectral density matrix <span class="math notranslate nohighlight">\(S(f)\)</span>:</p>
-<div class="math notranslate nohighlight">
-\[\begin{split}S(f) =
+<div class="math notranslate nohighlight" id="equation-common-developer-manual-verification-powerspectraldensity-1">
+<span class="eqno">()<a class="headerlink" href="#equation-common-developer-manual-verification-powerspectraldensity-1" title="Permalink to this equation">¶</a></span>\[\begin{split}S(f) =
    \begin{bmatrix}
       S_{11}(f) &amp; S_{12}(f) &amp; \dots &amp; S_{1n}(f) \\
       S_{21}(f) &amp; S_{12}(f) &amp; \dots &amp; S_{2n}(f) \\
@@ -196,21 +197,21 @@ the two-dimensional, <span class="math notranslate nohighlight">\(n\)</span>-var
    \end{bmatrix}\end{split}\]</div>
 <p>The power spectral density based on the Kaimal wind spectrum is
 defined as:</p>
-<div class="math notranslate nohighlight">
-\[S_{rr}(z_{r}, f) = u_{*}^{2} \cdot \frac{200 z_{r}}{\bar{U}(z_{r})} \cdot
+<div class="math notranslate nohighlight" id="equation-common-developer-manual-verification-powerspectraldensity-2">
+<span class="eqno">()<a class="headerlink" href="#equation-common-developer-manual-verification-powerspectraldensity-2" title="Permalink to this equation">¶</a></span>\[S_{rr}(z_{r}, f) = u_{*}^{2} \cdot \frac{200 z_{r}}{\bar{U}(z_{r})} \cdot
            \frac{1}{\left[1 + 50 \frac{f z_{r}}{\bar{U}(z_{r})}\right]^{\frac{5}{3}}}\]</div>
 <p>where <span class="math notranslate nohighlight">\(S_{rr}(f)\)</span> is the power spectral density of the fluctuating
 wind at location <span class="math notranslate nohighlight">\(z_{r}\)</span> and frequency <span class="math notranslate nohighlight">\(f\)</span> in Hz; <span class="math notranslate nohighlight">\(\bar{U}(z_{r})\)</span> is
 the mean wind speed at location <span class="math notranslate nohighlight">\(z_{r}\)</span>; and <span class="math notranslate nohighlight">\(u_{*}\)</span> is the friction
 velocity. The one-sided Davenport coherence function describes the correlation
 between fluctuating winds at locations <span class="math notranslate nohighlight">\(z_{r}\)</span> and <span class="math notranslate nohighlight">\(z_{s}\)</span>:</p>
-<div class="math notranslate nohighlight">
-\[Coh(f) = \text{exp}\left[-\frac{C_{z}f\lvert z_{r} -
+<div class="math notranslate nohighlight" id="equation-common-developer-manual-verification-powerspectraldensity-3">
+<span class="eqno">()<a class="headerlink" href="#equation-common-developer-manual-verification-powerspectraldensity-3" title="Permalink to this equation">¶</a></span>\[Coh(f) = \text{exp}\left[-\frac{C_{z}f\lvert z_{r} -
     z_{s}\rvert}{\frac{1}{2}\left[\bar{U}(z_{r}) + \bar{U}(z_{s})\right]}\right]\]</div>
 <p>The mean wind velocity at location <span class="math notranslate nohighlight">\(z_{r}\)</span> is defined based on exposure conditions
 defined in the ASCE 7 standard as follows:</p>
-<div class="math notranslate nohighlight">
-\[\bar{U}(z) = \bar{b} \left(\frac{z}{33}\right)^{\bar{\alpha}}\left(\frac{88}{60}\right)V\]</div>
+<div class="math notranslate nohighlight" id="equation-common-developer-manual-verification-powerspectraldensity-4">
+<span class="eqno">()<a class="headerlink" href="#equation-common-developer-manual-verification-powerspectraldensity-4" title="Permalink to this equation">¶</a></span>\[\bar{U}(z) = \bar{b} \left(\frac{z}{33}\right)^{\bar{\alpha}}\left(\frac{88}{60}\right)V\]</div>
 <p>where <span class="math notranslate nohighlight">\(\bar{b}\)</span> and <span class="math notranslate nohighlight">\(\bar{\alpha}\)</span> are constants defined in ASCE 7 for
 different exposure conditions; <span class="math notranslate nohighlight">\(V\)</span> is the 3-second gust wind speed in miles
 per hour.</p>
@@ -288,7 +289,13 @@ different types of natural hazards.</p>
     </script>
 
     
-   
+    
+
+  <style>
+         .wy-nav-content { max-width: none; }
+  </style>
+
+
 
 </body>
 </html>
