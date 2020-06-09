@@ -8,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>4.1. Earthquake Response of Portal Frame &mdash; Earthquake Engineering with Uncertainty Quantification  documentation</title>
+  <title>4.1. Earthquake Response of Portal Frame &mdash; Earthquake Engineering with Uncertainty Quantification (EE-UQ)  documentation</title>
   
 
   
@@ -130,7 +130,7 @@
       <nav class="wy-nav-top" aria-label="top navigation">
         
           <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
-          <a href="../../../../../index.html">Earthquake Engineering with Uncertainty Quantification</a>
+          <a href="../../../../../index.html">Earthquake Engineering with Uncertainty Quantification (EE-UQ)</a>
         
       </nav>
 
@@ -187,7 +187,7 @@
 <p>In this example, a simple 2D portal frame model is used to verify the
 results of EE-UQ app. The model is a linear elastic single-bay,
 single-story model of a reinforced concrete portal frame, as shown in
-<a class="reference internal" href="#figportalverification"><span class="std std-numref">Fig. 4.1.10</span></a>. The analysis of this model considers both
+<code class="xref std std-numref docutils literal notranslate"><span class="pre">figPortalVerification</span></code>. The analysis of this model considers both
 gravity loading and lateral earthquake loading due to the El Centro
 earthquake (Borrego Mountain 04/09/68 0230, El Centro ARRAY 9, 270).
 The original model and ground motion used in this example were
@@ -199,7 +199,7 @@ Examples folder in a subfolder called <strong>PortalFrame2D</strong>.</p>
 <blockquote>
 <div><div class="align-center figure" id="id1">
 <span id="figportalverification"></span><img alt="../../../../../_images/portalFrame.png" src="../../../../../_images/portalFrame.png" />
-<p class="caption"><span class="caption-number">Fig. 4.1.10 </span><span class="caption-text">Two-dimensional portal frame model subjected to gravity and earthquake loading</span><a class="headerlink" href="#id1" title="Permalink to this image">¶</a></p>
+<p class="caption"><span class="caption-number">Fig. 4.1.11 </span><span class="caption-text">Two-dimensional portal frame model subjected to gravity and earthquake loading</span><a class="headerlink" href="#id1" title="Permalink to this image">¶</a></p>
 </div>
 </div></blockquote>
 <p>To introduce uncertainty in the model, both mass and young’s modulus
@@ -242,21 +242,21 @@ following steps:
 #. Start EE-UQ app, click on the simulation tab (SIM) in the left bar to open a building simulation model. Click on choose button in the input script row:</p>
 <div class="align-center figure" id="id2">
 <img alt="../../../../../_images/portalFrameTcl.png" src="../../../../../_images/portalFrameTcl.png" />
-<p class="caption"><span class="caption-number">Fig. 4.1.11 </span><span class="caption-text">Choose building model</span><a class="headerlink" href="#id2" title="Permalink to this image">¶</a></p>
+<p class="caption"><span class="caption-number">Fig. 4.1.12 </span><span class="caption-text">Choose building model</span><a class="headerlink" href="#id2" title="Permalink to this image">¶</a></p>
 </div>
 <ol class="arabic simple">
 <li><p>Choose the model file texttt{Portal2D-UQ.tcl} from PortalFrame2D example folder.</p></li>
 </ol>
 <div class="align-center figure" id="id3">
 <img alt="../../../../../_images/tclLocation.png" src="../../../../../_images/tclLocation.png" />
-<p class="caption"><span class="caption-number">Fig. 4.1.12 </span><span class="caption-text">Choose tcl file</span><a class="headerlink" href="#id3" title="Permalink to this image">¶</a></p>
+<p class="caption"><span class="caption-number">Fig. 4.1.13 </span><span class="caption-text">Choose tcl file</span><a class="headerlink" href="#id3" title="Permalink to this image">¶</a></p>
 </div>
 <ol class="arabic simple">
 <li><p>In the list of Clines Nodes edit box, enter “1, 3”. This indicates to EE-UQ app that nodes 1 and 3 are the nodes used to obtain EDP at different floor levels (i.e. base and first floor).</p></li>
 </ol>
 <div class="align-center figure" id="id4">
 <img alt="../../../../../_images/cLineNodes.png" src="../../../../../_images/cLineNodes.png" />
-<p class="caption"><span class="caption-number">Fig. 4.1.13 </span><span class="caption-text">Select Nodes</span><a class="headerlink" href="#id4" title="Permalink to this image">¶</a></p>
+<p class="caption"><span class="caption-number">Fig. 4.1.14 </span><span class="caption-text">Select Nodes</span><a class="headerlink" href="#id4" title="Permalink to this image">¶</a></p>
 </div>
 <p>#. Click on the event tab (EVT) in the left bar to open the earthquake event specification tab, select Multiple Existing for loading Type. Click on the add button to add an earthquake event.
 Then click on the choose button to select the event file.</p>
@@ -268,7 +268,7 @@ Then click on the choose button to select the event file.</p>
 </ol>
 <div class="align-center figure" id="id5">
 <img alt="../../../../../_images/evtFileLocation.png" src="../../../../../_images/evtFileLocation.png" />
-<p class="caption"><span class="caption-number">Fig. 4.1.14 </span><span class="caption-text">Choose event file</span><a class="headerlink" href="#id5" title="Permalink to this image">¶</a></p>
+<p class="caption"><span class="caption-number">Fig. 4.1.15 </span><span class="caption-text">Choose event file</span><a class="headerlink" href="#id5" title="Permalink to this image">¶</a></p>
 </div>
 <p>#. Now select the random variables tab (RVs) from the left bar, change the random variables types to normal and set the mean and standard deviation values of the floor mass and
 Young’s modulus.  Notice that EE-UQ app has automatically
@@ -276,7 +276,7 @@ detected parameters defined in the texttt{OpenSees} tcl file using the pset
 command and defined them as random variables.</p>
 <div class="align-center figure" id="id6">
 <img alt="../../../../../_images/workUqTab.png" src="../../../../../_images/workUqTab.png" />
-<p class="caption"><span class="caption-number">Fig. 4.1.15 </span><span class="caption-text">Work on <strong>UQ</strong> tab</span><a class="headerlink" href="#id6" title="Permalink to this image">¶</a></p>
+<p class="caption"><span class="caption-number">Fig. 4.1.16 </span><span class="caption-text">Work on <strong>UQ</strong> tab</span><a class="headerlink" href="#id6" title="Permalink to this image">¶</a></p>
 </div>
 <p>#.  Now click on run, set the analysis parameters, working directory and applications directory and click submit to run the analysis.
 If the run is successfull the program will automatically open the
@@ -366,11 +366,11 @@ values of EDPs) for both are compared in the table below and, as seen, are in go
 agreement.</p>
 <div class="align-center figure" id="id7">
 <img alt="../../../../../_images/resultsSummaryTab.png" src="../../../../../_images/resultsSummaryTab.png" />
-<p class="caption"><span class="caption-number">Fig. 4.1.16 </span><span class="caption-text">Outputs from EE-UQ</span><a class="headerlink" href="#id7" title="Permalink to this image">¶</a></p>
+<p class="caption"><span class="caption-number">Fig. 4.1.17 </span><span class="caption-text">Outputs from EE-UQ</span><a class="headerlink" href="#id7" title="Permalink to this image">¶</a></p>
 </div>
 <div class="align-center figure" id="id8">
 <img alt="../../../../../_images/pyOutputs.png" src="../../../../../_images/pyOutputs.png" />
-<p class="caption"><span class="caption-number">Fig. 4.1.17 </span><span class="caption-text">Outputs from PortalFrameSamplying.py script</span><a class="headerlink" href="#id8" title="Permalink to this image">¶</a></p>
+<p class="caption"><span class="caption-number">Fig. 4.1.18 </span><span class="caption-text">Outputs from PortalFrameSamplying.py script</span><a class="headerlink" href="#id8" title="Permalink to this image">¶</a></p>
 </div>
 <table class="docutils align-default">
 <colgroup>
