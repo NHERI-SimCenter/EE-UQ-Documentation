@@ -4,7 +4,7 @@
 About
 ******
 
-This is an open-source research application, which is available at |tool github link|, is released under a **BSD Clause 2** license. The |app| can be used to predict the
+This open-source research application, which is available at |tool github link|, is released under a **3-Clause BSD** license (see :ref:`lblLicense`). The |app| can be used to predict the
 response of a building subjected to earthquake events. The application
 is focused on quantifying the uncertainties in the predicted response,
 given the that the properties of the buildings and the earthquake
@@ -37,4 +37,4 @@ the default applications we provide and will be enthused to provide
 their own applications for others to use.
 
 This document covers Version |tool version|  of the tool. Users are encouraged to comment on what additional features and capabilities
-they would like to see in this application. These requests and feedback can be submitted through the |messageBoard| we greatly appreciate any input you have. If there are features you want, chances are many of your colleagues also would benefit from them. Users are encouraged to review |requirements| to see what features are planned for this application.
+they would like to see in this application. These requests and feedback can be submitted through the |messageBoard| we greatly appreciate any input you have. If there are features you want, chances are many of your colleagues also would benefit from them. Users are encouraged to review |app requirements| to see what features are planned for this application.
