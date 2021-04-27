@@ -131,11 +131,7 @@
 <li class="toctree-l4"><a class="reference internal" href="#analyze-button">2.4.5.6. Analyze Button</a></li>
 <li class="toctree-l4"><a class="reference internal" href="#view-results">2.4.5.7. View Results</a></li>
 <li class="toctree-l4"><a class="reference internal" href="#configure">2.4.5.8. Configure</a></li>
-</ul>
-</li>
-<li class="toctree-l3"><a class="reference internal" href="#modeling-spatial-variability-uncertainty-of-soil">2.4.6. Modeling Spatial Variability Uncertainty of Soil</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="#generating-gaussian-random-field">2.4.6.1. Generating Gaussian Random field</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#calibration-of-constitutive-model">2.4.6.2. Calibration of Constitutive Model</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#modeling-spatial-variability-uncertainty-of-soil">2.4.5.9. Modeling Spatial Variability Uncertainty of Soil</a></li>
 </ul>
 </li>
 </ul>
@@ -386,40 +382,39 @@ If you select this file as the input motion, your tab will look like the one sho
 </div>
 <p>For flat ground <span class="math notranslate nohighlight">\(\alpha\)</span> and <span class="math notranslate nohighlight">\(\beta\)</span> should be set as 0.</p>
 </div>
-</div>
 <div class="section" id="modeling-spatial-variability-uncertainty-of-soil">
-<h1><span class="section-number">2.4.6. </span>Modeling Spatial Variability Uncertainty of Soil<a class="headerlink" href="#modeling-spatial-variability-uncertainty-of-soil" title="Permalink to this headline">¶</a></h1>
+<h2><span class="section-number">2.4.5.9. </span>Modeling Spatial Variability Uncertainty of Soil<a class="headerlink" href="#modeling-spatial-variability-uncertainty-of-soil" title="Permalink to this headline">¶</a></h2>
 <p>The most recent version of <em>s</em><sup>3</sup><em>hark</em> allows user to include spatial variability in the definition of soil profile.
 This functionality is achieved using several newly added SimCenter backend python scripts.</p>
 <div class="section" id="generating-gaussian-random-field">
-<h2><span class="section-number">2.4.6.1. </span>Generating Gaussian Random field<a class="headerlink" href="#generating-gaussian-random-field" title="Permalink to this headline">¶</a></h2>
+<h3>Generating Gaussian Random field<a class="headerlink" href="#generating-gaussian-random-field" title="Permalink to this headline">¶</a></h3>
 <p>Physical properties of soils vary from place to place within a soil deposit due to varying geologic formation
 and loading histories such as sedimentation, erosion, transportation, and weathering processes.
 This spatial variability in the soil properties cannot be simply described by a mean and variance since
 the estimation of the two statistic values does not account for the spatial variation of the soil property
 data in the soil profile. Spatial variability is often modeled using two separated components: a known deterministic
-trend and a residual variability about the trend. These components are illustrated in <a class="reference internal" href="#fig-inherentvariability"><span class="std std-numref">Fig. 2.4.6.1.1</span></a>.</p>
+trend and a residual variability about the trend. These components are illustrated in <a class="reference internal" href="#fig-inherentvariability"><span class="std std-numref">Fig. 2.4.5.9.1</span></a>.</p>
 <div class="align-center figure" id="id30">
 <span id="fig-inherentvariability"></span><a class="reference internal image-reference" href="../../../../../_images/InherentVariability3.png"><img alt="../../../../../_images/InherentVariability3.png" src="../../../../../_images/InherentVariability3.png" style="width: 433.8px; height: 409.2px;" /></a>
-<p class="caption"><span class="caption-number">Fig. 2.4.6.1.1 </span><span class="caption-text">Inherent soil variability (after <a class="bibtex reference internal" href="../../../../../index.html#phoon1999" id="id2">[PK99]</a>).</span><a class="headerlink" href="#id30" title="Permalink to this image">¶</a></p>
+<p class="caption"><span class="caption-number">Fig. 2.4.5.9.1 </span><span class="caption-text">Inherent soil variability (after <a class="bibtex reference internal" href="../../../../../index.html#phoon1999" id="id2">[PK99]</a>).</span><a class="headerlink" href="#id30" title="Permalink to this image">¶</a></p>
 </div>
 <p>This simplified spatial variability proposed by <a class="bibtex reference internal" href="../../../../../index.html#phoon1999" id="id3">[PK99]</a> can be expressed as,</p>
 <div class="math notranslate nohighlight" id="equation-common-user-manual-usage-desktop-earthquake-usages3hark-0">
-<span class="eqno">(2.4.6.1.1)<a class="headerlink" href="#equation-common-user-manual-usage-desktop-earthquake-usages3hark-0" title="Permalink to this equation">¶</a></span>\[\xi (z) = t(z) \; + \; w(z)\,,\]</div>
+<span class="eqno">(2.4.5.9.1)<a class="headerlink" href="#equation-common-user-manual-usage-desktop-earthquake-usages3hark-0" title="Permalink to this equation">¶</a></span>\[\xi (z) = t(z) \; + \; w(z)\,,\]</div>
 <p>where <span class="math notranslate nohighlight">\(\xi(z)\)</span> = soil property at location <span class="math notranslate nohighlight">\(z\)</span>, <span class="math notranslate nohighlight">\(t(z)\)</span> = deterministic trend at <span class="math notranslate nohighlight">\(z\)</span>, and <span class="math notranslate nohighlight">\(w(z)\)</span> =
 residual variation. The trend is a smooth deterministic function that can be obtained from a regression analysis of measured data.
 The residuals are characterized statistically as random variables, usually with zero mean and non-zero variance.
 The pattern of the residuals depends on the local spatial variability of a property. The residual about a trend
 does not change erratically in a probabilistically independent way. Rather, similar property values (positive or
 negative residuals around a trend) occur together in adjacent locations characterizing the scale of fluctuation
-(or wave length of a residual along the trend) as shown in <a class="reference internal" href="#fig-inherentvariability"><span class="std std-numref">Fig. 2.4.6.1.1</span></a>.</p>
+(or wave length of a residual along the trend) as shown in <a class="reference internal" href="#fig-inherentvariability"><span class="std std-numref">Fig. 2.4.5.9.1</span></a>.</p>
 <p>Gaussian stochastic random fields are generated for the liquefiable soil layer by randomizing the assigned
 soil strength parameter over the soil layers with a certain spatial probability density.
 <a class="bibtex reference internal" href="../../../../../index.html#shin2007" id="id4">[Shi07]</a> introduced a procedure for generating stochastic random field based on the method outlined in
 <a class="bibtex reference internal" href="../../../../../index.html#yamazaki1988" id="id5">[YS88]</a> considering uncertainties in soil properties. As explained earlier, the stochastic random
 field for a soil property consists of a trend (or mean) field and a residual field,</p>
 <div class="math notranslate nohighlight" id="equation-common-user-manual-usage-desktop-earthquake-usages3hark-1">
-<span class="eqno">(2.4.6.1.2)<a class="headerlink" href="#equation-common-user-manual-usage-desktop-earthquake-usages3hark-1" title="Permalink to this equation">¶</a></span>\[F_{stochastic} = F_{trend} \; + \; F_{residual} \,.\]</div>
+<span class="eqno">(2.4.5.9.2)<a class="headerlink" href="#equation-common-user-manual-usage-desktop-earthquake-usages3hark-1" title="Permalink to this equation">¶</a></span>\[F_{stochastic} = F_{trend} \; + \; F_{residual} \,.\]</div>
 <p>The trend field (<span class="math notranslate nohighlight">\(t(z)\)</span>) represents the deterministic mean field assigned by the user. To obtain the
 residual field (<span class="math notranslate nohighlight">\(w(z)\)</span>), a Gaussian random field can be generated using the algorithm proposed by <a class="bibtex reference internal" href="../../../../../index.html#yamazaki1988" id="id6">[YS88]</a>.
 A normal distribution with coefficient of variation, <em>COV</em>, is required. The scale of fluctuation is defined by corelation
@@ -433,7 +428,7 @@ Enumerated lists:</p>
 <li><p>Combine the mean field and Gaussian field to obtain a stochastic field using the following equation:</p></li>
 </ol>
 <div class="math notranslate nohighlight" id="equation-common-user-manual-usage-desktop-earthquake-usages3hark-2">
-<span class="eqno">(2.4.6.1.3)<a class="headerlink" href="#equation-common-user-manual-usage-desktop-earthquake-usages3hark-2" title="Permalink to this equation">¶</a></span>\[F_{stochastic} = F_{mean} \; + \; F_{residual} \, = F_{mean} \; + \; COV \; F_{mean} \; F_{Gaussian}\,\]</div>
+<span class="eqno">(2.4.5.9.3)<a class="headerlink" href="#equation-common-user-manual-usage-desktop-earthquake-usages3hark-2" title="Permalink to this equation">¶</a></span>\[F_{stochastic} = F_{mean} \; + \; F_{residual} \, = F_{mean} \; + \; COV \; F_{mean} \; F_{Gaussian}\,\]</div>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
 <ul class="simple">
@@ -442,7 +437,7 @@ Enumerated lists:</p>
 </div>
 </div>
 <div class="section" id="calibration-of-constitutive-model">
-<h2><span class="section-number">2.4.6.2. </span>Calibration of Constitutive Model<a class="headerlink" href="#calibration-of-constitutive-model" title="Permalink to this headline">¶</a></h2>
+<h3>Calibration of Constitutive Model<a class="headerlink" href="#calibration-of-constitutive-model" title="Permalink to this headline">¶</a></h3>
 <p>Since soil properties, instead of material input parameters, are randomized, it is imperative to choose representative input parameters for constitutive models based on the random variable chosen by user.
 An independent calibration process of constitutive model should be carried out carefully. Currently, a couple of pre-calibrated correlations are included in <em>s</em><sup>3</sup><em>hark</em>, including PM4Sand and PDMY03 based on relative
 density (<span class="math notranslate nohighlight">\(D_R\)</span>). The detailed corelation can be found in <em>calibration.py</em>. The user is also encouraged to modify the script to include their own calibration of constitutive models.</p>
@@ -456,6 +451,7 @@ the analysis will be carried out using SimCenter workflow. As a result, profile 
 <ul class="simple">
 <li><p>Currently only <strong>2D</strong> plain-strain materials (including PDMY03 and ElasticIsotropic) are supported when using random field. Therefore, 1-component motion is required.</p></li>
 </ul>
+</div>
 </div>
 <div class="section" id="elastic-isotropic">
 <h3>Elastic Isotropic<a class="headerlink" href="#elastic-isotropic" title="Permalink to this headline">¶</a></h3>
@@ -485,17 +481,17 @@ can result in different modulus reduction curves.</p>
 <p>On the other hand, when comprehensive laboratory tests are not available for specific sites, model calibration needs to be based on in-situ test data such as SPT blow count, CPT penetration resistance, or shear wave velocity (Vs).
 For example, <span class="math notranslate nohighlight">\(D_R\)</span> can be estimated by correlations to penetration resistances. <a class="bibtex reference internal" href="../../../../../index.html#idriss2008" id="id10">[IB08]</a> recommended the following correlation to SPT,</p>
 <div class="math notranslate nohighlight" id="equation-common-user-manual-usage-desktop-earthquake-usages3hark-3">
-<span class="eqno">(2.4.6.2.1)<a class="headerlink" href="#equation-common-user-manual-usage-desktop-earthquake-usages3hark-3" title="Permalink to this equation">¶</a></span>\[D_R = \sqrt{\frac{(N_1)_{60}}{C_d}}\,,\]</div>
+<span class="eqno">(2.4.5.9.4)<a class="headerlink" href="#equation-common-user-manual-usage-desktop-earthquake-usages3hark-3" title="Permalink to this equation">¶</a></span>\[D_R = \sqrt{\frac{(N_1)_{60}}{C_d}}\,,\]</div>
 <p>where <span class="math notranslate nohighlight">\(C_d\)</span> is recommended to be 46. For CPT, the following correlation can be used,</p>
 <div class="math notranslate nohighlight" id="equation-common-user-manual-usage-desktop-earthquake-usages3hark-4">
-<span class="eqno">(2.4.6.2.2)<a class="headerlink" href="#equation-common-user-manual-usage-desktop-earthquake-usages3hark-4" title="Permalink to this equation">¶</a></span>\[D_R = 0.465\Big(\frac{q_{c1N}}{C_{dq}}\Big)^{0.264} - 1.063\,,\]</div>
+<span class="eqno">(2.4.5.9.5)<a class="headerlink" href="#equation-common-user-manual-usage-desktop-earthquake-usages3hark-4" title="Permalink to this equation">¶</a></span>\[D_R = 0.465\Big(\frac{q_{c1N}}{C_{dq}}\Big)^{0.264} - 1.063\,,\]</div>
 <p>where <span class="math notranslate nohighlight">\(C_{dq}\)</span> is recommended to be 0.9.
 The second primary input parameter <span class="math notranslate nohighlight">\(G_o\)</span> can also be estimated from in-situ data. <a class="bibtex reference internal" href="../../../../../index.html#boulanger2015pm4sand" id="id11">[BZ15]</a> modified the correlation by <a class="bibtex reference internal" href="../../../../../index.html#andrus2000" id="id12">[AS00]</a> to constraint the extrapolation to very small <span class="math notranslate nohighlight">\((N_1)_{60}\)</span> values, as</p>
 <div class="math notranslate nohighlight" id="equation-common-user-manual-usage-desktop-earthquake-usages3hark-5">
-<span class="eqno">(2.4.6.2.3)<a class="headerlink" href="#equation-common-user-manual-usage-desktop-earthquake-usages3hark-5" title="Permalink to this equation">¶</a></span>\[V_{s1} = 85[(N_1)_{60} + 2.5] ^{0.25}\,.\]</div>
+<span class="eqno">(2.4.5.9.6)<a class="headerlink" href="#equation-common-user-manual-usage-desktop-earthquake-usages3hark-5" title="Permalink to this equation">¶</a></span>\[V_{s1} = 85[(N_1)_{60} + 2.5] ^{0.25}\,.\]</div>
 <p>Alternatively, a simpler expression can be used when combined with a range of typical densities as,</p>
 <div class="math notranslate nohighlight" id="equation-common-user-manual-usage-desktop-earthquake-usages3hark-6">
-<span class="eqno">(2.4.6.2.4)<a class="headerlink" href="#equation-common-user-manual-usage-desktop-earthquake-usages3hark-6" title="Permalink to this equation">¶</a></span>\[G_o = 167\sqrt{(N_1)_{60} + 2.5}\,.\]</div>
+<span class="eqno">(2.4.5.9.7)<a class="headerlink" href="#equation-common-user-manual-usage-desktop-earthquake-usages3hark-6" title="Permalink to this equation">¶</a></span>\[G_o = 167\sqrt{(N_1)_{60} + 2.5}\,.\]</div>
 <p>Subsequently, <span class="math notranslate nohighlight">\(h_{po}\)</span> can be calibrated to reproduce a specific value of <span class="math notranslate nohighlight">\(CRR\)</span> that can be computed using liquefaction triggering models. Numerous liquefaction triggering models incorporating the simplified cyclic stress approach
 have been proposed in the past such as <a class="bibtex reference internal" href="../../../../../index.html#youd2001" id="id13">[YI01]</a>, <a class="bibtex reference internal" href="../../../../../index.html#cetin2004" id="id14">[CTH+04]</a>, and <a class="bibtex reference internal" href="../../../../../index.html#idriss2008" id="id15">[IB08]</a>. Once <span class="math notranslate nohighlight">\(D_R\)</span>, <span class="math notranslate nohighlight">\(G_o\)</span>, and <span class="math notranslate nohighlight">\(CRR\)</span> are chosen, the modeler should iteratively vary the value of <span class="math notranslate nohighlight">\(h_{po}\)</span> until the simulated
 <span class="math notranslate nohighlight">\(CRR\)</span> matches the targeted value. Interpolation and extrapolation are common when the variables are within or close to the range of existing calibrated sets of parameters. Secondary parameters are less common to be modified when only
@@ -515,7 +511,7 @@ interpolated to calculate the Cyclic Resistance Ratio, CRR, which was determined
 <p>The results were processed through a linear regression analysis using <em>Matlab</em> to find the correlation between the input, <span class="math notranslate nohighlight">\(D_R\)</span>, <span class="math notranslate nohighlight">\(h_{po}\)</span> and <span class="math notranslate nohighlight">\(G_o\)</span>, and the output CRR. Different combination of terms were explored and the following
 format produced the largest <span class="math notranslate nohighlight">\(R^2\)</span>,</p>
 <div class="math notranslate nohighlight" id="equation-common-user-manual-usage-desktop-earthquake-usages3hark-7">
-<span class="eqno">(2.4.6.2.5)<a class="headerlink" href="#equation-common-user-manual-usage-desktop-earthquake-usages3hark-7" title="Permalink to this equation">¶</a></span>\[\begin{split}\begin{split}
+<span class="eqno">(2.4.5.9.8)<a class="headerlink" href="#equation-common-user-manual-usage-desktop-earthquake-usages3hark-7" title="Permalink to this equation">¶</a></span>\[\begin{split}\begin{split}
  CRR_{3\%, K_0 = 0.5}  = &amp; 0.1282 - 0.4952D_R - 5.0565\times10^{-5}G_o + 0.0749h_{po} + 1.4665\times10^{-4}D_RG_o \\
 &amp; + 0.1323D_Rh_{po} + 0.7252D_R^2 - 0.0636h_{po}^2 \,,
  \end{split}\end{split}\]</div>
@@ -524,7 +520,7 @@ It should be noted that the magnitude of these coefficients depends directly on 
 of magnitude larger than <span class="math notranslate nohighlight">\(D_R\)</span>, which leads to much smaller coefficients for it.</p>
 <p>Then this equation can be rearranged to isolate <span class="math notranslate nohighlight">\(h_{po}\)</span>,</p>
 <div class="math notranslate nohighlight" id="equation-common-user-manual-usage-desktop-earthquake-usages3hark-8">
-<span class="eqno">(2.4.6.2.6)<a class="headerlink" href="#equation-common-user-manual-usage-desktop-earthquake-usages3hark-8" title="Permalink to this equation">¶</a></span>\[ah_{po}^2 + bh_{po}+c = 0\,,\]</div>
+<span class="eqno">(2.4.5.9.9)<a class="headerlink" href="#equation-common-user-manual-usage-desktop-earthquake-usages3hark-8" title="Permalink to this equation">¶</a></span>\[ah_{po}^2 + bh_{po}+c = 0\,,\]</div>
 <p>where <span class="math notranslate nohighlight">\(a = 0.0636\)</span>, <span class="math notranslate nohighlight">\(b =  -0.0749 - 0.1323D_R\)</span>, and <span class="math notranslate nohighlight">\(c = - 0.1282 + 0.4952D_R + 5.0565\times10^{-5}G_o - 1.4665\times10^{-4}D_RG_o - 0.7252D_R^2 + CRR_{3\%, K_0 = 0.5}\)</span>. This correlation becomes a quadratic equation for
 <span class="math notranslate nohighlight">\(h_{po}\)</span> that can be solved for two real roots for <span class="math notranslate nohighlight">\(h_{po}\)</span> when values of <span class="math notranslate nohighlight">\(D_R\)</span>, <span class="math notranslate nohighlight">\(G_o\)</span>, and <span class="math notranslate nohighlight">\(CRR\)</span> are given. The lesser root is the one that can be paired with <span class="math notranslate nohighlight">\(D_R\)</span> and <span class="math notranslate nohighlight">\(G_o\)</span> to yield the desired
 CRR in a calibration process. The predictive equation can be used to provide good initial <span class="math notranslate nohighlight">\(h_{po}\)</span> values and speed up the calibration process.</p>
@@ -545,7 +541,7 @@ effective overburden stress (<span class="math notranslate nohighlight">\(K\sigm
 model is based on interpolating pre calibrated parameter sets for various of relative densities.</p>
 <div class="align-center figure" id="id31">
 <a class="reference internal image-reference" href="../../../../../_images/Pdmy03_parameters.png"><img alt="../../../../../_images/Pdmy03_parameters.png" src="../../../../../_images/Pdmy03_parameters.png" style="width: 634.0px; height: 484.0px;" /></a>
-<p class="caption"><span class="caption-number">Fig. 2.4.6.2.1 </span><span class="caption-text">Calibrated parameters for PDMY03 (after <a class="bibtex reference internal" href="../../../../../index.html#khosravifar2018" id="id19">[KELL18]</a>).</span><a class="headerlink" href="#id31" title="Permalink to this image">¶</a></p>
+<p class="caption"><span class="caption-number">Fig. 2.4.5.9.2 </span><span class="caption-text">Calibrated parameters for PDMY03 (after <a class="bibtex reference internal" href="../../../../../index.html#khosravifar2018" id="id19">[KELL18]</a>).</span><a class="headerlink" href="#id31" title="Permalink to this image">¶</a></p>
 </div>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
