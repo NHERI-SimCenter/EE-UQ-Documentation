@@ -13,6 +13,11 @@
   
   <link rel="stylesheet" href="../../../../../_static/css/theme.css" type="text/css" />
   <link rel="stylesheet" href="../../../../../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../../../../../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../../../../../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../../../../../_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" type="text/css" />
+  <link rel="stylesheet" href="../../../../../_static/panels-bootstrap.5fd3999ee7762ccc51105388f4a9d115.css" type="text/css" />
+  <link rel="stylesheet" href="../../../../../_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" type="text/css" />
   <link rel="stylesheet" href="../../../../../_static/sphinxcontrib-images/LightBox2/lightbox2/css/lightbox.css" type="text/css" />
   <link rel="stylesheet" href="../../../../../_static/css/custom.css" type="text/css" />
 
@@ -31,13 +36,14 @@
   
     
       <script type="text/javascript" id="documentation_options" data-url_root="../../../../../" src="../../../../../_static/documentation_options.js"></script>
+        <script data-url_root="../../../../../" id="documentation_options" src="../../../../../_static/documentation_options.js"></script>
         <script src="../../../../../_static/jquery.js"></script>
         <script src="../../../../../_static/underscore.js"></script>
         <script src="../../../../../_static/doctools.js"></script>
         <script src="../../../../../_static/sphinxcontrib-images/LightBox2/lightbox2/js/jquery-1.11.0.min.js"></script>
         <script src="../../../../../_static/sphinxcontrib-images/LightBox2/lightbox2/js/lightbox.min.js"></script>
         <script src="../../../../../_static/sphinxcontrib-images/LightBox2/lightbox2-customize/jquery-noconflict.js"></script>
-        <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+        <script async="async" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     
     <script type="text/javascript" src="../../../../../_static/js/theme.js"></script>
 
@@ -226,7 +232,7 @@
 <li><p>Story Stiffness (<code class="docutils literal notranslate"><span class="pre">k</span></code>): mean <span class="math notranslate nohighlight">\(\mu_k =326.32 \mathrm{kip/in}\)</span> and a standard deviation of <span class="math notranslate nohighlight">\(\sigma_P = 3 \mathrm{kN}\)</span>, (COV = 12%).</p></li>
 </ol>
 <p>The goal of the exercise is to estimate the mean and standard deviation of the relative displacement of the fourth node when subjected to an El Centro ground motion record.</p>
-<p>The exercise will use both the MDOF, <a class="reference internal" href="../../../usage/desktop/SIM.html#lblmdofsim"><span class="std std-ref">Multiple Degrees of Freedom (MDOF)</span></a>,  and OpenSees, <a class="reference internal" href="../../../usage/desktop/SIM.html#lblopenseessim"><span class="std std-ref">OpenSees</span></a>, structural generators. For the OpenSees generator the following model script, <a class="reference external" href="https://github.com/NHERI-SimCenter/EE-UQ/blob/master/Examples/ShearBuilding3/ShearBuilding3.tcl">ShearBuilding3.tcl</a> , is used:</p>
+<p>The exercise will use both the MDOF, <a class="reference internal" href="../../../usage/desktop/hydro/SIM.html#lblmdofsim"><span class="std std-ref">Multiple Degrees of Freedom (MDOF)</span></a>,  and OpenSees, <a class="reference internal" href="../../../usage/desktop/hydro/SIM.html#lblopenseessim"><span class="std std-ref">OpenSees</span></a>, structural generators. For the OpenSees generator the following model script, <a class="reference external" href="https://github.com/NHERI-SimCenter/EE-UQ/blob/master/Examples/ShearBuilding3/ShearBuilding3.tcl">ShearBuilding3.tcl</a> , is used:</p>
 <div class="highlight-tcl notranslate"><div class="highlight"><pre><span></span><span class="c">#units kips/in</span>
 
 <span class="c"># some parameters</span>
@@ -289,6 +295,10 @@ fix <span class="mi">1</span> <span class="mi">1</span> <span class="mi">1</span
 </ol>
 <div class="align-center figure">
 <img alt="../../../../../_images/shearUQ.png" src="../../../../../_images/shearUQ.png" />
+</div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>When loading the example from the tool page, the number of samples is set to <code class="docutils literal notranslate"><span class="pre">50</span></code>.</p>
 </div>
 <ol class="arabic simple" start="2">
 <li><p>The <strong>GI</strong> panel will not be used for this run; For the time being leave the default values as is, and they will be automatically updated based on the information entered in the remaining tabs.</p></li>

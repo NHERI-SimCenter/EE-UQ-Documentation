@@ -13,6 +13,11 @@
   
   <link rel="stylesheet" href="../../../../../_static/css/theme.css" type="text/css" />
   <link rel="stylesheet" href="../../../../../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../../../../../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../../../../../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../../../../../_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" type="text/css" />
+  <link rel="stylesheet" href="../../../../../_static/panels-bootstrap.5fd3999ee7762ccc51105388f4a9d115.css" type="text/css" />
+  <link rel="stylesheet" href="../../../../../_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" type="text/css" />
   <link rel="stylesheet" href="../../../../../_static/sphinxcontrib-images/LightBox2/lightbox2/css/lightbox.css" type="text/css" />
   <link rel="stylesheet" href="../../../../../_static/css/custom.css" type="text/css" />
 
@@ -31,13 +36,14 @@
   
     
       <script type="text/javascript" id="documentation_options" data-url_root="../../../../../" src="../../../../../_static/documentation_options.js"></script>
+        <script data-url_root="../../../../../" id="documentation_options" src="../../../../../_static/documentation_options.js"></script>
         <script src="../../../../../_static/jquery.js"></script>
         <script src="../../../../../_static/underscore.js"></script>
         <script src="../../../../../_static/doctools.js"></script>
         <script src="../../../../../_static/sphinxcontrib-images/LightBox2/lightbox2/js/jquery-1.11.0.min.js"></script>
         <script src="../../../../../_static/sphinxcontrib-images/LightBox2/lightbox2/js/lightbox.min.js"></script>
         <script src="../../../../../_static/sphinxcontrib-images/LightBox2/lightbox2-customize/jquery-noconflict.js"></script>
-        <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+        <script async="async" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     
     <script type="text/javascript" src="../../../../../_static/js/theme.js"></script>
 
@@ -123,6 +129,7 @@
 <li class="toctree-l3"><a class="reference internal" href="multiplePEER.html">2.4.3. Multiple PEER</a></li>
 <li class="toctree-l3"><a class="reference internal" href="multipleExisting.html">2.4.4. Multiple Existing</a></li>
 <li class="toctree-l3"><a class="reference internal" href="usageS3hark.html">2.4.5. Site Response Analysis</a></li>
+<li class="toctree-l3"><a class="reference internal" href="userSpecifiedDatabase.html">2.4.6. User Specified Database</a></li>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="../FEM.html">2.5. FEM: Finite Element Method</a></li>
@@ -238,6 +245,14 @@
 <div class="admonition note">
 <p class="admonition-title">Note</p>
 <p>It is important to note that this event requires a PEER NGA West 2 account, users will be asked to provide their credentials (user name and password) to log in to the database. Users who do not have an account will be forwarded to the account sign up web <a class="footnote-reference brackets" href="#id2" id="id1">1</a>.</p>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>The record-to-record uncertainty in assessing the structural responses under earthquakes are taken into account by running
+a set of ground motion records. This can be realized by using the <strong>Forward Propagation</strong> method under the <strong>UQ</strong> tab. Once the
+ground motion records are selected, users have the control of how many records to be run in the time history analyses by seleting
+the Latin Hypercube Sample (<strong>LHS</strong>) and specifying the number of samples (<strong># Sample</strong>). Note that with the LHS algorithm, when
+the number of samples is the total number of selected records, each record will be used once in the time history analyses.</p>
 </div>
 <dl class="footnote brackets">
 <dt class="label" id="id2"><span class="brackets"><a class="fn-backref" href="#id1">1</a></span></dt>
