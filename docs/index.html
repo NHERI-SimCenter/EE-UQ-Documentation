@@ -18,7 +18,7 @@
   <link rel="stylesheet" href="_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" type="text/css" />
   <link rel="stylesheet" href="_static/panels-bootstrap.5fd3999ee7762ccc51105388f4a9d115.css" type="text/css" />
   <link rel="stylesheet" href="_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" type="text/css" />
-  <link rel="stylesheet" href="_static/sphinxcontrib-images/LightBox2/lightbox2/css/lightbox.css" type="text/css" />
+  <link rel="stylesheet" href="_static/sphinxcontrib-images/LightBox2/lightbox2/dist/css/lightbox.css" type="text/css" />
   <link rel="stylesheet" href="_static/css/custom.css" type="text/css" />
 
   
@@ -40,8 +40,7 @@
         <script src="_static/jquery.js"></script>
         <script src="_static/underscore.js"></script>
         <script src="_static/doctools.js"></script>
-        <script src="_static/sphinxcontrib-images/LightBox2/lightbox2/js/jquery-1.11.0.min.js"></script>
-        <script src="_static/sphinxcontrib-images/LightBox2/lightbox2/js/lightbox.min.js"></script>
+        <script src="_static/sphinxcontrib-images/LightBox2/lightbox2/dist/js/lightbox-plus-jquery.min.js"></script>
         <script src="_static/sphinxcontrib-images/LightBox2/lightbox2-customize/jquery-noconflict.js"></script>
     
     <script type="text/javascript" src="_static/js/theme.js"></script>
@@ -106,15 +105,16 @@
               
             
             
-              <p class="caption"><span class="caption-text">About</span></p>
+              <p class="caption" role="heading"><span class="caption-text">About</span></p>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="common/user_manual/about/EEUQ/about.html">1. About</a></li>
 <li class="toctree-l1"><a class="reference internal" href="common/front-matter/ack.html">2. Acknowledgments</a></li>
 <li class="toctree-l1"><a class="reference internal" href="common/front-matter/license.html">3. Copyright and License</a></li>
 <li class="toctree-l1"><a class="reference internal" href="common/front-matter/glossary.html">4. Glossary</a></li>
 <li class="toctree-l1"><a class="reference internal" href="common/front-matter/abbreviations.html">5. Abbreviations</a></li>
+<li class="toctree-l1"><a class="reference internal" href="common/user_manual/usage/desktop/earthquake/releasenotes.html">6. Release Notes</a></li>
 </ul>
-<p class="caption"><span class="caption-text">User Manual</span></p>
+<p class="caption" role="heading"><span class="caption-text">User Manual</span></p>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="common/user_manual/installation/desktop/installation.html">1. Installation</a></li>
 <li class="toctree-l1"><a class="reference internal" href="common/user_manual/usage/desktop/usage.html">2. User Guide</a></li>
@@ -123,11 +123,11 @@
 <li class="toctree-l1"><a class="reference internal" href="common/reqments/EEUQ.html">5. Requirements</a></li>
 <li class="toctree-l1"><a class="reference internal" href="common/user_manual/bugs.html">6. Bugs &amp; Feature Requests</a></li>
 </ul>
-<p class="caption"><span class="caption-text">Technical Manual</span></p>
+<p class="caption" role="heading"><span class="caption-text">Technical Manual</span></p>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="common/technical_manual/desktop/technical_manual.html">1. Technical Manual</a></li>
 </ul>
-<p class="caption"><span class="caption-text">Developer Manual</span></p>
+<p class="caption" role="heading"><span class="caption-text">Developer Manual</span></p>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="common/developer_manual/how_to_build/desktop/how_to_build.html">1. How to Build</a></li>
 <li class="toctree-l1"><a class="reference internal" href="common/developer_manual/architecture/desktop/architecture.html">2. Software Architecture</a></li>
@@ -207,17 +207,18 @@
 <p>The Earthquake Engineering with Uncertainty Quantification Application (EE-UQ) (EE-UQ app) is an open-source research application that can be used to predict the response of a building subjected to earthquake events. The application is focused on quantifying the uncertainties in the predicted response, given the that the uncertainties in models, earthquake loads, and analysis. The computations are performed in a workflow application that will run on either the users local machine or on a high performance computer made available by <a class="reference external" href="https://designsafe-ci.org">DesignSafe</a>.</p>
 <p>This document covers the features and capabilities of Version 2.0 of the tool. Users are encouraged to comment on what additional features and capabilities they would like to see in future versions of the application through the <a class="reference external" href="https://simcenter-messageboard.designsafe-ci.org/smf/index.php?board=6.0">Message Board</a>.</p>
 <div class="toctree-wrapper compound" id="lbl-front-matter">
-<p class="caption"><span class="caption-text">About</span></p>
+<p class="caption" role="heading"><span class="caption-text">About</span></p>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="common/user_manual/about/EEUQ/about.html">1. About</a></li>
 <li class="toctree-l1"><a class="reference internal" href="common/front-matter/ack.html">2. Acknowledgments</a></li>
 <li class="toctree-l1"><a class="reference internal" href="common/front-matter/license.html">3. Copyright and License</a></li>
 <li class="toctree-l1"><a class="reference internal" href="common/front-matter/glossary.html">4. Glossary</a></li>
 <li class="toctree-l1"><a class="reference internal" href="common/front-matter/abbreviations.html">5. Abbreviations</a></li>
+<li class="toctree-l1"><a class="reference internal" href="common/user_manual/usage/desktop/earthquake/releasenotes.html">6. Release Notes</a></li>
 </ul>
 </div>
 <div class="toctree-wrapper compound">
-<p class="caption"><span class="caption-text">User Manual</span></p>
+<p class="caption" role="heading"><span class="caption-text">User Manual</span></p>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="common/user_manual/installation/desktop/installation.html">1. Installation</a></li>
 <li class="toctree-l1"><a class="reference internal" href="common/user_manual/usage/desktop/usage.html">2. User Guide</a></li>
@@ -230,13 +231,13 @@
 <div class="toctree-wrapper compound">
 </div>
 <div class="toctree-wrapper compound" id="lbl-technical-manual">
-<p class="caption"><span class="caption-text">Technical Manual</span></p>
+<p class="caption" role="heading"><span class="caption-text">Technical Manual</span></p>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="common/technical_manual/desktop/technical_manual.html">1. Technical Manual</a></li>
 </ul>
 </div>
 <div class="toctree-wrapper compound">
-<p class="caption"><span class="caption-text">Developer Manual</span></p>
+<p class="caption" role="heading"><span class="caption-text">Developer Manual</span></p>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="common/developer_manual/how_to_build/desktop/how_to_build.html">1. How to Build</a></li>
 <li class="toctree-l1"><a class="reference internal" href="common/developer_manual/architecture/desktop/architecture.html">2. Software Architecture</a></li>

@@ -18,7 +18,7 @@
   <link rel="stylesheet" href="../../../../../_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" type="text/css" />
   <link rel="stylesheet" href="../../../../../_static/panels-bootstrap.5fd3999ee7762ccc51105388f4a9d115.css" type="text/css" />
   <link rel="stylesheet" href="../../../../../_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" type="text/css" />
-  <link rel="stylesheet" href="../../../../../_static/sphinxcontrib-images/LightBox2/lightbox2/css/lightbox.css" type="text/css" />
+  <link rel="stylesheet" href="../../../../../_static/sphinxcontrib-images/LightBox2/lightbox2/dist/css/lightbox.css" type="text/css" />
   <link rel="stylesheet" href="../../../../../_static/css/custom.css" type="text/css" />
 
   
@@ -40,8 +40,7 @@
         <script src="../../../../../_static/jquery.js"></script>
         <script src="../../../../../_static/underscore.js"></script>
         <script src="../../../../../_static/doctools.js"></script>
-        <script src="../../../../../_static/sphinxcontrib-images/LightBox2/lightbox2/js/jquery-1.11.0.min.js"></script>
-        <script src="../../../../../_static/sphinxcontrib-images/LightBox2/lightbox2/js/lightbox.min.js"></script>
+        <script src="../../../../../_static/sphinxcontrib-images/LightBox2/lightbox2/dist/js/lightbox-plus-jquery.min.js"></script>
         <script src="../../../../../_static/sphinxcontrib-images/LightBox2/lightbox2-customize/jquery-noconflict.js"></script>
     
     <script type="text/javascript" src="../../../../../_static/js/theme.js"></script>
@@ -105,15 +104,16 @@
               
             
             
-              <p class="caption"><span class="caption-text">About</span></p>
+              <p class="caption" role="heading"><span class="caption-text">About</span></p>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../../../about/EEUQ/about.html">1. About</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../../../front-matter/ack.html">2. Acknowledgments</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../../../front-matter/license.html">3. Copyright and License</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../../../front-matter/glossary.html">4. Glossary</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../../../front-matter/abbreviations.html">5. Abbreviations</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../earthquake/releasenotes.html">6. Release Notes</a></li>
 </ul>
-<p class="caption"><span class="caption-text">User Manual</span></p>
+<p class="caption" role="heading"><span class="caption-text">User Manual</span></p>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../../../installation/desktop/installation.html">1. Installation</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../usage.html">2. User Guide</a></li>
@@ -122,11 +122,11 @@
 <li class="toctree-l1"><a class="reference internal" href="../../../../reqments/EEUQ.html">5. Requirements</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../../bugs.html">6. Bugs &amp; Feature Requests</a></li>
 </ul>
-<p class="caption"><span class="caption-text">Technical Manual</span></p>
+<p class="caption" role="heading"><span class="caption-text">Technical Manual</span></p>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../../../../technical_manual/desktop/technical_manual.html">1. Technical Manual</a></li>
 </ul>
-<p class="caption"><span class="caption-text">Developer Manual</span></p>
+<p class="caption" role="heading"><span class="caption-text">Developer Manual</span></p>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../../../../developer_manual/how_to_build/desktop/how_to_build.html">1. How to Build</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../../../developer_manual/architecture/desktop/architecture.html">2. Software Architecture</a></li>
@@ -214,7 +214,7 @@ Shallow-water to CFD coupling<div class="summary-down docutils">
 <svg version="1.1" width="24" height="24" class="octicon octicon-chevron-up" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M18.78 15.28a.75.75 0 000-1.06l-6.25-6.25a.75.75 0 00-1.06 0l-6.25 6.25a.75.75 0 101.06 1.06L12 9.56l5.72 5.72a.75.75 0 001.06 0z"></path></svg></div>
 </summary><div class="summary-content card-body docutils">
 <p class="card-text" id="lbl-geom-swcfd">Here the user needs to select the bathymetry files and solution files related to the shallow-water solutions. At present, HydroUQ can directly read the shallow water solutions from the <code class="docutils literal notranslate"><span class="pre">GeoClaw</span></code> solver. The bathymetry can be provided in the GeoClaw format (Type 1) or the SimCenter format. Similarly, the shallow-water solutions can be provided in the GeoClaw format or the SimCenter format.</p>
-<p class="card-text">For more information about the GeoClaw file format, check out <span class="xref std std-ref">lbl-geoclawtopo</span>. Similarly, for the SimCenter formats, check out <span class="xref std std-ref">lbl-simcentertopo</span>.</p>
+<p class="card-text">For more information about the GeoClaw file format, check out <a class="reference internal" href="../../../../technical_manual/desktop/hydro/swsolver/geoclaw-topo.html#lbl-geoclawtopo"><span class="std std-ref">Topography</span></a>. Similarly, for the SimCenter formats, check out <a class="reference internal" href="../../../../technical_manual/desktop/hydro/swsolver/simcenter-topo.html#lbl-simcentertopo"><span class="std std-ref">Topography: SimCenter</span></a>.</p>
 <p class="card-text">The other input is the direction of gravity. For this type of simulation, it is recommended to use <code class="docutils literal notranslate"><span class="pre">-z</span></code> for the gravity direction.</p>
 <div class="align-center figure" id="id1">
 <a class="reference internal image-reference" href="../../../../../_images/SWCFD.png"><img alt="../../../../../_images/SWCFD.png" src="../../../../../_images/SWCFD.png" style="width: 400px;" /></a>
@@ -235,7 +235,7 @@ Bathymetry<div class="summary-down docutils">
 <div class="summary-up docutils">
 <svg version="1.1" width="24" height="24" class="octicon octicon-chevron-up" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M18.78 15.28a.75.75 0 000-1.06l-6.25-6.25a.75.75 0 00-1.06 0l-6.25 6.25a.75.75 0 101.06 1.06L12 9.56l5.72 5.72a.75.75 0 001.06 0z"></path></svg></div>
 </summary><div class="summary-content card-body docutils">
-<p class="card-text" id="lbl-geom-bathy">Here the user needs to select the bathymetry files of the ocean floor. At present, HydroUQ can directly read the bathymetry provided in the GeoClaw format (Type 1) or the SimCenter format. For more information about the GeoClaw file format, check out <span class="xref std std-ref">lbl-geoclawtopo</span>. Similarly, for the SimCenter formats, check out <span class="xref std std-ref">lbl-simcentertopo</span>.</p>
+<p class="card-text" id="lbl-geom-bathy">Here the user needs to select the bathymetry files of the ocean floor. At present, HydroUQ can directly read the bathymetry provided in the GeoClaw format (Type 1) or the SimCenter format. For more information about the GeoClaw file format, check out <a class="reference internal" href="../../../../technical_manual/desktop/hydro/swsolver/geoclaw-topo.html#lbl-geoclawtopo"><span class="std std-ref">Topography</span></a>. Similarly, for the SimCenter formats, check out <a class="reference internal" href="../../../../technical_manual/desktop/hydro/swsolver/simcenter-topo.html#lbl-simcentertopo"><span class="std std-ref">Topography: SimCenter</span></a>.</p>
 <p class="card-text">The other input is the direction of gravity. For this type of simulation, it is recommended to use <code class="docutils literal notranslate"><span class="pre">-z</span></code> for the gravity direction.</p>
 <div class="align-center figure" id="id2">
 <a class="reference internal image-reference" href="../../../../../_images/Bathy.png"><img alt="../../../../../_images/Bathy.png" src="../../../../../_images/Bathy.png" style="width: 400px;" /></a>

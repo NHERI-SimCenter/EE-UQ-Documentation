@@ -18,7 +18,7 @@
   <link rel="stylesheet" href="../../../../_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" type="text/css" />
   <link rel="stylesheet" href="../../../../_static/panels-bootstrap.5fd3999ee7762ccc51105388f4a9d115.css" type="text/css" />
   <link rel="stylesheet" href="../../../../_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" type="text/css" />
-  <link rel="stylesheet" href="../../../../_static/sphinxcontrib-images/LightBox2/lightbox2/css/lightbox.css" type="text/css" />
+  <link rel="stylesheet" href="../../../../_static/sphinxcontrib-images/LightBox2/lightbox2/dist/css/lightbox.css" type="text/css" />
   <link rel="stylesheet" href="../../../../_static/css/custom.css" type="text/css" />
 
   
@@ -40,8 +40,7 @@
         <script src="../../../../_static/jquery.js"></script>
         <script src="../../../../_static/underscore.js"></script>
         <script src="../../../../_static/doctools.js"></script>
-        <script src="../../../../_static/sphinxcontrib-images/LightBox2/lightbox2/js/jquery-1.11.0.min.js"></script>
-        <script src="../../../../_static/sphinxcontrib-images/LightBox2/lightbox2/js/lightbox.min.js"></script>
+        <script src="../../../../_static/sphinxcontrib-images/LightBox2/lightbox2/dist/js/lightbox-plus-jquery.min.js"></script>
         <script src="../../../../_static/sphinxcontrib-images/LightBox2/lightbox2-customize/jquery-noconflict.js"></script>
         <script async="async" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     
@@ -108,15 +107,16 @@
               
             
             
-              <p class="caption"><span class="caption-text">About</span></p>
+              <p class="caption" role="heading"><span class="caption-text">About</span></p>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../../about/EEUQ/about.html">1. About</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../../front-matter/ack.html">2. Acknowledgments</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../../front-matter/license.html">3. Copyright and License</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../../front-matter/glossary.html">4. Glossary</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../../front-matter/abbreviations.html">5. Abbreviations</a></li>
+<li class="toctree-l1"><a class="reference internal" href="earthquake/releasenotes.html">6. Release Notes</a></li>
 </ul>
-<p class="caption"><span class="caption-text">User Manual</span></p>
+<p class="caption" role="heading"><span class="caption-text">User Manual</span></p>
 <ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="../../installation/desktop/installation.html">1. Installation</a></li>
 <li class="toctree-l1 current"><a class="reference internal" href="usage.html">2. User Guide</a><ul class="current">
@@ -131,8 +131,7 @@
 <li class="toctree-l2"><a class="reference internal" href="earthquake/earthquakeEvents.html">2.4. EVT: Earthquake Events</a></li>
 <li class="toctree-l2"><a class="reference internal" href="FEM.html">2.5. FEM: Finite Element Method</a></li>
 <li class="toctree-l2"><a class="reference internal" href="response/EDP.html">2.6. EDP: Demand Parameters</a></li>
-<li class="toctree-l2"><a class="reference internal" href="RV.html">2.7. RV: Random Variables</a></li>
-<li class="toctree-l2"><a class="reference internal" href="response/resEE.html">2.8. RES: Results</a></li>
+<li class="toctree-l2"><a class="reference internal" href="response/resEE.html">2.7. RES: Results</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="../../troubleshooting/desktop/troubleshooting.html">3. Troubleshooting</a></li>
@@ -140,11 +139,11 @@
 <li class="toctree-l1"><a class="reference internal" href="../../../reqments/EEUQ.html">5. Requirements</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../bugs.html">6. Bugs &amp; Feature Requests</a></li>
 </ul>
-<p class="caption"><span class="caption-text">Technical Manual</span></p>
+<p class="caption" role="heading"><span class="caption-text">Technical Manual</span></p>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../../../technical_manual/desktop/technical_manual.html">1. Technical Manual</a></li>
 </ul>
-<p class="caption"><span class="caption-text">Developer Manual</span></p>
+<p class="caption" role="heading"><span class="caption-text">Developer Manual</span></p>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../../../developer_manual/how_to_build/desktop/how_to_build.html">1. How to Build</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../../developer_manual/architecture/desktop/architecture.html">2. Software Architecture</a></li>
@@ -232,7 +231,7 @@
 </div>
 <div class="section" id="multiple-degrees-of-freedom-mdof">
 <span id="lblmdofsim"></span><h2><a class="toc-backref" href="#id6"><span class="section-number">2.3.1. </span>Multiple Degrees of Freedom (MDOF)</a><a class="headerlink" href="#multiple-degrees-of-freedom-mdof" title="Permalink to this headline">¶</a></h2>
-<p>This panel is provided for users to quickly create simple shear models of a building. The panel, as shown in <code class="xref std std-numref docutils literal notranslate"><span class="pre">fig-mdof</span></code> is divided into 3 frames:</p>
+<p>This panel is provided for users to quickly create simple shear models of a building. The panel, as shown in <a class="reference internal" href="#fig-mdof"><span class="std std-numref">Fig. 2.3.1.1</span></a> is divided into 3 frames:</p>
 <ol class="arabic simple">
 <li><p>The top left frame allows the user to specify the number of stories and properties that are constant for every floor and story in the building. The following properties are available: floor weight, story height, torsional stiffness, initial stiffness, yield strength, and hardening ratio for each direction in each story. The user has the option of specifying values for eccentricity of mass in <span class="math notranslate nohighlight">\(x\)</span> and <span class="math notranslate nohighlight">\(y\)</span> directions, and eccentricities for the location of the response quantities. Here, the one and two directions are orthogonal <span class="math notranslate nohighlight">\(x\)</span> and <span class="math notranslate nohighlight">\(y\)</span> axes in plan view.</p></li>
 <li><p>The lower left frame allows the user to override the structural parameters above for individual floors and stories.</p></li>
@@ -250,7 +249,7 @@
 </div>
 <div class="section" id="lblopenseessim">
 <span id="id1"></span><h2><a class="toc-backref" href="#id7"><span class="section-number">2.3.2. </span>OpenSees</a><a class="headerlink" href="#lblopenseessim" title="Permalink to this headline">¶</a></h2>
-<p>This panel is for users who have an existing OpenSees model of a building that performs a gravity analysis and now they wish to subject that building model to one of the <strong>EVT</strong> options provided. The input panel for this option is shown in <code class="xref std std-numref docutils literal notranslate"><span class="pre">fig-figure3</span></code>. Users need to provide three pieces of information:</p>
+<p>This panel is for users who have an existing OpenSees model of a building that performs a gravity analysis and now they wish to subject that building model to one of the <strong>EVT</strong> options provided. The input panel for this option is shown in <a class="reference internal" href="#fig-figure3"><span class="std std-numref">Fig. 2.3.2.1</span></a>. Users need to provide three pieces of information:</p>
 <ol class="arabic simple">
 <li><p>Main OpenSees Script: The main script that contains the building model. This script should build a model and perform any gravity analysis of the building that is required before the event is applied.</p></li>
 <li><p>Response Nodes: A list of node numbers that define a column line of interest for which the responses will be determined. The column nodes should be in order from ground floor to roof. The <a class="reference internal" href="response/EDP.html#lbledp"><span class="std std-ref">EDP</span></a> workflow application uses this information to determine nodes at which displacement, acceleration, and story drifts are calculated.</p></li>
