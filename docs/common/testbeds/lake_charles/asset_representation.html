@@ -209,19 +209,20 @@ the default data schema. Thus the description of assets below is organized accor
 to the HAZUS conventions for classifying buildings and organizing damage and loss data
 according to attributes associated with those building classes.</p>
 <p>The following discussion will reference a number of rulesets initially developed for the
-<a class="reference external" href="https://nheri-simcenter.github.io/R2D-Documentation/common/testbeds/atlantic_city/index.html">Atlantic County, NJ</a> testbed to enable various assignments of these HAZUS building classes
-and corresponding attributes.Details of these rulesets are available to users in one of two forms:</p>
+<a class="reference external" href="https://nheri-simcenter.github.io/R2D-Documentation/common/testbeds/atlantic_city/index.html">Atlantic County, NJ</a>
+testbed to enable various assignments of these HAZUS building classes
+and corresponding attributes. Details of these rulesets are available to users in one of two forms:</p>
 <ol class="arabic simple">
-<li><p>Ruleset definition tables (PDFs) curated in DesignSafe that include additional documentation
-justifying the proposed rule, with provenance information for any sources engaged in that
-rule’s development.</p></li>
-<li><p>Scripts (in Python) curated in GitHub that implement the ruleset’s logic for this testbed.</p></li>
+<li><p>Ruleset definition tables (PDFs) curated in DesignSafe that include additional documentation justifying the proposed rule, with provenance information for any sources engaged in that rule’s development.</p></li>
+<li><p>Scripts (in Python) that implement the ruleset’s logic for this testbed. Users wishing to execute the testbed in its current form are recommended to download the Python rulesets from DesignSafe. Users wishing to adapt the rulesets to potentially change the way attributes are assigned to buildings, are encouraged to access the Python implementation of the rulesets in GitHub.</p></li>
 </ol>
-<p>Each section provides a table linking the relevant PDFs and Scripts. Note that
-all of the rulesets introduced herein are tiered, initiating by assigning all assets
-a default value for its building classification or a given attribute based on the primary
-rule. This ensures that every asset receives a HAZUS building class and related attribute
-assignments, regardless of data sparsity.</p>
+<p>Both of these repositories also include additional documentation (PDFs) justifying the proposed rule,
+with provenance information for any sources engaged in that rule’s development.
+Note that all of the rulesets introduced herein are tiered, initiating by assigning all assets a
+default value for its building classification or a given attribute based on the primary rule.
+This ensures that every asset receives a HAZUS building class and related attribute assignments,
+regardless of data sparsity. The sections below detail the ruleset development,
+closing with a table linking the relevant PDFs from DesignSafe and Python scripts from GitHub.</p>
 <div class="section" id="building-classifications">
 <span id="lbl-testbed-lc-asset-representation-building-classification"></span><h2>Building Classifications<a class="headerlink" href="#building-classifications" title="Permalink to this headline">¶</a></h2>
 <p>HAZUS classifies buildings based on a more nuanced interpretation of Occupancy Class
@@ -257,15 +258,15 @@ later in <code class="xref std std-numref docutils literal notranslate"><span cl
 </tr>
 <tr class="row-even"><td><p>Wood, Multi-Unit/Hotel/Motel 1 story</p></td>
 <td><p>WMUH1</p></td>
-<td><p>RES3*, RES5, RES6, COM</p></td>
+<td><p>RES3, COM1</p></td>
 </tr>
 <tr class="row-odd"><td><p>Wood, Multi-Unit/Hotel/Motel 2 stories</p></td>
 <td><p>WMUH2</p></td>
-<td><p>RES3*, RES5, RES6, COM</p></td>
+<td><p>RES3, COM1</p></td>
 </tr>
 <tr class="row-even"><td><p>Wood, Multi-Unit/Hotel/Motel 3+ stories</p></td>
 <td><p>WMUH3</p></td>
-<td><p>RES3*, RES5, RES6, COM</p></td>
+<td><p>RES3, COM1</p></td>
 </tr>
 </tbody>
 </table>
@@ -284,7 +285,7 @@ later in <code class="xref std std-numref docutils literal notranslate"><span cl
 </thead>
 <tbody>
 <tr class="row-even"><td><p>Building Class Rulesets - Wind</p></td>
-<td><p><a class="reference external" href="https://github.com/NHERI-SimCenter/AssetRepresentationRulesets/blob/main/rulesets/LA/pdf/BuildingClassRulesets/HAZUS%20Building%20Class%20Rulesets%20-%20Wind.pdf">HAZUS Building Class Rulesets - Wind.pdf</a></p></td>
+<td><p><a class="reference external" href="https://www.designsafe-ci.org/data/browser/public/designsafe.storage.published//PRJ-3207v4/03.%20Input:%20DL%20-%20Rulesets%20for%20Asset%20Representation">HAZUS Building Class Rulesets - Wind.pdf</a></p></td>
 <td><p><a class="reference external" href="https://github.com/NHERI-SimCenter/AssetRepresentationRulesets/blob/main/rulesets/LA/scripts/WindClassRulesets.py">WindClassRulesets</a></p></td>
 </tr>
 </tbody>
@@ -327,43 +328,43 @@ as part of the community’s use and adaptation of this workflow in its research
 </tr>
 </thead>
 <tbody>
-<tr class="row-even"><td><p>HazusClass-W</p></td>
+<tr class="row-even"><td><p>HazusClassW</p></td>
 <td><p>Hazus building classes as defined for wind hazards</p></td>
 <td><p>CHOICES: WSF1, WSF2, WMUH1, WMUH2, WMUH3</p></td>
 </tr>
-<tr class="row-odd"><td><p>HPR</p></td>
+<tr class="row-odd"><td><p>HazardProneRegions</p></td>
 <td><p>Defines Hazard Prone Regions (HPR) for the purposes of Hazus wind vulnerability assignments for WSF1-2</p></td>
 <td><p>Choices: yes, no</p></td>
 </tr>
-<tr class="row-even"><td><p>WBD</p></td>
+<tr class="row-even"><td><p>WindBorneDebris</p></td>
 <td><p>Defines Wind Borne Debris (WBD) for the purposes of Hazus wind vulnerability assignments for WSF1-2</p></td>
 <td><p>Choices: yes, no</p></td>
 </tr>
-<tr class="row-odd"><td><p>SWR</p></td>
+<tr class="row-odd"><td><p>SecondaryWaterResistance</p></td>
 <td><p>Defines Secondary Water Resistance (SWR) for the purposes of Hazus wind vulnerability assignments for WSF1-2, WMUH1-3</p></td>
 <td><p>Choices: yes, no</p></td>
 </tr>
-<tr class="row-even"><td><p>RoofCvr</p></td>
+<tr class="row-even"><td><p>RoofCover</p></td>
 <td><p>Defines roof cover for the purposes of Hazus wind vulnerability assignments for WMUH1-3</p></td>
 <td><p>Choices: N/A, BUR, SPM</p></td>
 </tr>
-<tr class="row-odd"><td><p>RoofQual</p></td>
+<tr class="row-odd"><td><p>RoofQuality</p></td>
 <td><p>Defines roof cover quality for the purposes of Hazus wind vulnerability assignments for WMUH1-3</p></td>
 <td><p>Choices: N/A, poor, good</p></td>
 </tr>
-<tr class="row-even"><td><p>RDA-Wood</p></td>
+<tr class="row-even"><td><p>RoofDeckAttachmentW</p></td>
 <td><p>Defines Roof Deck Attachment (RDA) for wood for the purposes of Hazus wind vulnerability assignments for WSF1-2, WMUH1-3</p></td>
 <td><p>Choices: A, B, C, D</p></td>
 </tr>
-<tr class="row-odd"><td><p>R2WC</p></td>
+<tr class="row-odd"><td><p>RoofToWallConnection</p></td>
 <td><p>Defines Roof to Wall Connection (R2WC) for the purposes of Hazus wind vulnerability assignments for WSF1-2, WMUH1-3</p></td>
 <td><p>Choices: strap, toe-nail</p></td>
 </tr>
-<tr class="row-even"><td><p>shutters</p></td>
+<tr class="row-even"><td><p>Shutters</p></td>
 <td><p>Defines use of window opening protection for the purposes of Hazus wind vulnerability assignments for WSF1-2, WMUH1-3</p></td>
 <td><p>Choices: yes, no</p></td>
 </tr>
-<tr class="row-odd"><td><p>Agarage</p></td>
+<tr class="row-odd"><td><p>AugmentedGarage</p></td>
 <td><p>Defines presence of attached garage for the purposes of Hazus wind vulnerability assignments for WSF1-2</p></td>
 <td><p>Choices: none, SFBC 1994, standard, weak</p></td>
 </tr>
@@ -371,7 +372,7 @@ as part of the community’s use and adaptation of this workflow in its research
 </table>
 <p>Note that rulesets for assigning wind loss attributes call upon two meta-variables relevant to wind losses
 for any building: “Hazard Prone Region” and “Wind Borne Debris,” which are assigned based the design wind
-speed at the asset location (Building Inventory field “DSWII”) and the flood zone (building inventory field
+speed at the asset location (Building Inventory field “DWSII”) and the flood zone (building inventory field
 <strong>FloodZone</strong>). These rules used to assign these meta-variables are provided in
 <code class="xref std std-numref docutils literal notranslate"><span class="pre">addinfo_ruleset_metavar</span></code>. Also note that the roof shape (building inventory field <strong>RoofShape</strong>),
 derived from aerial imagery, and terrain roughness (building inventory field <strong>Terrain</strong>), derived from
@@ -392,7 +393,7 @@ assigned in the <a class="reference external" href="https://nheri-simcenter.gith
 </thead>
 <tbody>
 <tr class="row-even"><td><p>Attribute Assignment - Wind (Meta-Variable)</p></td>
-<td><p><a class="reference external" href="https://github.com/NHERI-SimCenter/AssetRepresentationRulesets/blob/main/rulesets/LA/pdf/BuildingAttributeRulesets/Hazus%20Building%20Attribute%20Rulesets%20-%20Wind%20-%20Meta-Variables.pdf">Hazus Building Attribute Rulesets - Wind - Meta-Variables.pdf</a></p></td>
+<td><p><a class="reference external" href="https://www.designsafe-ci.org/data/browser/public/designsafe.storage.published//PRJ-3207v4/03.%20Input:%20DL%20-%20Rulesets%20for%20Asset%20Representation">Hazus Building Attribute Rulesets - Wind - Meta-Variables.pdf</a></p></td>
 <td><p><a class="reference external" href="https://github.com/NHERI-SimCenter/AssetRepresentationRulesets/blob/main/rulesets/LA/scripts/WindMetaVarRulesets.py">WindMetaVarRulesets</a></p></td>
 </tr>
 </tbody>
@@ -505,11 +506,11 @@ cross-referenced in <code class="xref std std-numref docutils literal notranslat
 </thead>
 <tbody>
 <tr class="row-even"><td><p>HAZUS Building Attribute Rulesets - Wind (WSF1-2)</p></td>
-<td><p><a class="reference external" href="https://github.com/NHERI-SimCenter/AssetRepresentationRulesets/blob/main/rulesets/LA/pdf/BuildingAttributeRulesets/Hazus%20Building%20Attribute%20Rulesets%20-%20Wind%20-%20WSF1-2.pdf">Hazus Building Attribute Rulesets - Wind - WSF1-2.pdf</a></p></td>
+<td><p><a class="reference external" href="https://www.designsafe-ci.org/data/browser/public/designsafe.storage.published//PRJ-3207v4/03.%20Input:%20DL%20-%20Rulesets%20for%20Asset%20Representation">Hazus Building Attribute Rulesets - Wind - WSF1-2.pdf</a></p></td>
 <td><p><a class="reference external" href="https://github.com/NHERI-SimCenter/AssetRepresentationRulesets/blob/main/rulesets/LA/scripts/WindWSFRulesets.py">WindWSFRulesets</a></p></td>
 </tr>
 <tr class="row-odd"><td><p>HAZUS Building Attribute Rulesets - Wind (WMUH1-3)</p></td>
-<td><p><a class="reference external" href="https://github.com/NHERI-SimCenter/AssetRepresentationRulesets/blob/main/rulesets/LA/pdf/BuildingAttributeRulesets/Hazus%20Building%20Attribute%20Rulesets%20-%20Wind%20-%20WMUH1-3.pdf">Hazus Building Attribute Rulesets - Wind - WMUH1-3.pdf</a></p></td>
+<td><p><a class="reference external" href="https://www.designsafe-ci.org/data/browser/public/designsafe.storage.published//PRJ-3207v4/03.%20Input:%20DL%20-%20Rulesets%20for%20Asset%20Representation">Hazus Building Attribute Rulesets - Wind - WMUH1-3.pdf</a></p></td>
 <td><p><a class="reference external" href="https://github.com/NHERI-SimCenter/AssetRepresentationRulesets/blob/main/rulesets/LA/scripts/WindWMUHRulesets.py">WindWMUHRulesets</a></p></td>
 </tr>
 </tbody>
@@ -584,7 +585,7 @@ ELSEIF RoofShape=(Gable or Hip) &amp; RoofSlope &gt;= 0.33, SWR=no</p></td>
 
   <div role="contentinfo">
     <p>
-        &#169; Copyright 2021, The Regents of the University of California.
+        &#169; Copyright 2022, The Regents of the University of California.
 
     </p>
   </div>

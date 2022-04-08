@@ -217,15 +217,31 @@ and made available to the community through a relationship with the National Ins
 <p>Validation benefitted from special access to ZTRAX data provided by the University of California at Los Angeles
 (UCLA) and the group of Professor Ertugrul Taciroglu.</p>
 <p><strong>Preface</strong></p>
-<p>This documentation is intended to introduce the implementation of the SimCenter’s hurricane regional loss modeling
-workflow in the context of Lake Charles, Louisiana under Hurricane Laura. While certain aspects of the workflow
-are unchanged in a given application context, this testbed specifically demonstrates how inventory generation
-capacities and existing heuristic rulesets grounded in codes/standards and normative construction practices in coastal
-communities can be engaged to rapidly generate these loss estimations following a major hurricane.
-Since this documentation will continue to evolve when features are added and as software capabilities improve, documentation,
-associated data (building inventory), results, and rulesets will be updated. These updated
-versions are maintained in a dedicated, version-controlled DesignSafe project: <strong>PRJ-3207</strong>. This
-version history is tracked in <code class="xref std std-numref docutils literal notranslate"><span class="pre">doc_version_LC</span></code>.</p>
+<p>This documentation is intended to introduce the implementation of the SimCenter hurricane regional loss
+modeling workflow in the context of Lake Charles, Louisiana under Hurricane Laura. While certain aspects of
+the workflow are unchanged in a given application context, this testbed specifically demonstrates how
+inventory generation capacities and existing heuristic rulesets grounded in codes/standards and normative
+construction practices in coastal communities can be engaged to rapidly generate these loss estimations
+following a major hurricane. Users are encouraged to read the documentation front to back, beginning
+from <a class="reference internal" href="overview.html#lbl-testbed-lc-overview"><span class="std std-ref">Overview</span></a>, to deepen their understanding of the implementation and the underlying
+assumptions/limitations. Those already familiar with the concept of hurricane loss estimation can go immediately to
+<a class="reference internal" href="example_outputs.html#lbl-testbed-lc-getting-started"><span class="std std-ref">Getting Started</span></a> for step-by-step instructions on how to execute the testbed and interact
+with its results.</p>
+<p><strong>Versioning</strong></p>
+<p>Since this documentation will continue to evolve when features are added and as software capabilities improve, documentation,
+associated input files, results, and rulesets will be updated over time. The applications are hosted in NHERI-SimCenter
+DesignSafe and the versioned source codes are archived via Zenodo. Other related files are maintained in two types of repositories:</p>
+<ol class="arabic simple">
+<li><p>The DesignSafe Project PRJ-3207 contains inputs (inventories, rulesets, and hazard data) and outputs (results) along with PDFs that
+provide more details of the inventory data model as well as the basis for the rulesets used to assign various attributes. This will
+enable ongoing refinement and extension of these products by the SimCenter and its users over time.</p></li>
+<li><p>GitHub is used as the home for all software, scripts, and applications engaged by the testbed, including Python implementations
+of the rulesets. A dedicated GitHub repository has been created for the rulesets used in this testbed. See <code class="xref std std-numref docutils literal notranslate"><span class="pre">software_version_LC</span></code>.</p></li>
+</ol>
+<p>Both types of repositories are version-controlled. This version history of the documentation is tracked in <code class="xref std std-numref docutils literal notranslate"><span class="pre">software_version_LC</span></code>
+and the versions of all applications and rulesets of the current version of the testbed are reported in <code class="xref std std-numref docutils literal notranslate"><span class="pre">software_version_LC</span></code>.
+<code class="xref std std-numref docutils literal notranslate"><span class="pre">brails_version_LC</span></code> provides the versions of BRAILS and its various classifiers used in the generation of results herein.
+Note when accessing the project in DesignSafe, please check that the version drop down is set the the latest available version.</p>
 <table class="docutils align-center" id="doc-version-lc">
 <caption><span class="caption-text">Testbed Version History</span><a class="headerlink" href="#doc-version-lc" title="Permalink to this table">¶</a></caption>
 <colgroup>
@@ -241,38 +257,76 @@ version history is tracked in <code class="xref std std-numref docutils literal 
 </thead>
 <tbody>
 <tr class="row-even"><td><p>Initial release</p></td>
-<td><p>v1.0</p></td>
-<td><p>07/2021</p></td>
+<td><p>v1.1</p></td>
+<td><p>11/2021</p></td>
 </tr>
 </tbody>
 </table>
 <p>The software descriptions and results herein were generated by executing the R2D application using the versions
-of this application and associated SimCenter software as listed in <code class="xref std std-numref docutils literal notranslate"><span class="pre">software_version_LC</span></code>.</p>
+of this application and associated SimCenter software as listed in <code class="xref std std-numref docutils literal notranslate"><span class="pre">software_version_LC</span></code> and
+<code class="xref std std-numref docutils literal notranslate"><span class="pre">brails_version_LC</span></code>. With the software versions listed, the testbed is currently estimated
+to execute in 15 minutes using five Skylake (SKX) nodes (96 cores) on <a class="reference external" href="https://www.tacc.utexas.edu/systems/stampede2">Stampede2</a>.</p>
 <table class="docutils align-center" id="software-version-lc">
-<caption><span class="caption-text">Versions of Software Used in the Current Version of Testbed</span><a class="headerlink" href="#software-version-lc" title="Permalink to this table">¶</a></caption>
+<caption><span class="caption-text">Software and Supporting Files</span><a class="headerlink" href="#software-version-lc" title="Permalink to this table">¶</a></caption>
+<colgroup>
+<col style="width: 33%" />
+<col style="width: 33%" />
+<col style="width: 33%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Files</p></th>
+<th class="head"><p>Version</p></th>
+<th class="head"><p>DOI/Release</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>R2D</p></td>
+<td><p><a class="reference external" href="https://www.designsafe-ci.org/data/browser/public/designsafe.storage.community/SimCenter/Software/R2Dt">v1.1.2</a></p></td>
+<td><a class="reference external image-reference" href="https://doi.org/10.5281/zenodo.5033626"><img alt="https://zenodo.org/badge/DOI/10.5281/zenodo.5033626.svg" src="https://zenodo.org/badge/DOI/10.5281/zenodo.5033626.svg" /></a>
+</td>
+</tr>
+<tr class="row-odd"><td><p>AssetRepresentationRulesets</p></td>
+<td><p><a class="reference external" href="https://github.com/NHERI-SimCenter/AssetRepresentationRulesets/releases/tag/v1.0.0">v1.0.0</a></p></td>
+<td><a class="reference external image-reference" href="https://doi.org/10.5281/zenodo.5496056"><img alt="https://zenodo.org/badge/DOI/10.5281/zenodo.5496056.svg" src="https://zenodo.org/badge/DOI/10.5281/zenodo.5496056.svg" /></a>
+</td>
+</tr>
+<tr class="row-even"><td><p>DesignSafe Project PRJ-3207</p></td>
+<td><p>v4</p></td>
+<td><p><a class="reference external" href="https://www.designsafe-ci.org/data/browser/public/designsafe.storage.published/PRJ-3207v4">Data Depot</a></p></td>
+</tr>
+</tbody>
+</table>
+<table class="docutils align-center" id="brails-version-lc">
+<caption><span class="caption-text">Versions of AI application (<a class="reference external" href="https://doi.org/10.5281/zenodo.4570554">BRAILS</a>) and models Used in the Current Version of Testbed</span><a class="headerlink" href="#brails-version-lc" title="Permalink to this table">¶</a></caption>
 <colgroup>
 <col style="width: 50%" />
 <col style="width: 50%" />
 </colgroup>
 <thead>
-<tr class="row-odd"><th class="head"><p>Application</p></th>
+<tr class="row-odd"><th class="head"><p>Model</p></th>
 <th class="head"><p>Version</p></th>
 </tr>
 </thead>
 <tbody>
-<tr class="row-even"><td><p>R2D</p></td>
-<td><p>v1.1.0</p></td>
+<tr class="row-even"><td><p>RoofTypeClassifer</p></td>
+<td><p>0.2</p></td>
 </tr>
-<tr class="row-odd"><td><p>SimCenterBackendApplications</p></td>
-<td><p>v2.3.0</p></td>
+<tr class="row-odd"><td><p>OccupancyClassifer</p></td>
+<td><p>0.2</p></td>
 </tr>
-<tr class="row-even"><td><p>pelicun</p></td>
-<td><p>v2.5</p></td>
+<tr class="row-even"><td><p>NumberOfFloorsDetector</p></td>
+<td><p>1.0</p></td>
+</tr>
+<tr class="row-odd"><td><p>FacadeParser</p></td>
+<td><p>1.1</p></td>
+</tr>
+<tr class="row-even"><td><p>GarageDetector</p></td>
+<td><p>1.0</p></td>
 </tr>
 </tbody>
 </table>
-<p>Given the
-significance of the building inventory generation for this testbed, this documentation was written in response to
+<p><strong>Envisioned Use Cases</strong></p>
+<p>Given the significance of the building inventory generation for this testbed, this documentation was written in response to
 two primary audiences/use cases:</p>
 <p><strong>Case 1</strong>: End users who wish to use the testbed to explore specific research questions such as:</p>
 <ol class="arabic simple">
@@ -281,8 +335,9 @@ two primary audiences/use cases:</p>
 </ol>
 <p>Such individuals may not wish to generate their own inventories, but require some background in order to meaningfully
 interpret results. This documentation will enhance their understanding of the various assumptions made in generating
-these inventories and assigning the attributes required for the adopted loss models.</p>
-<p><strong>Case 2</strong> Users who wish to use this testbed as a validation event can compare the damage/loss estimates from this
+these inventories and assigning the attributes required for the adopted loss models. Please see <a class="reference internal" href="example_outputs.html#lbl-testbed-lc-getting-started"><span class="std std-ref">Getting Started</span></a>
+for a detailed description about how to conduct the run of this testbed.</p>
+<p><strong>Case 2</strong>: Users who wish to use this testbed as a validation event can compare the damage/loss estimates from this
 workflow to direct observations in the field for the purposes of improving/refining the underlying descriptions of
 damage and loss. This can include taking advantage of the data published by the Structural Extreme Event Reconnaissance
 (StEER) Network, as well as FEMA. Those doing so are advised to:</p>
@@ -298,6 +353,8 @@ and extend the inventory down into Cameron Parish and other areas significantly 
 </ol>
 <p>The revised damage and loss models or extensions to the heuristic rulesets can be contributed back to the SimCenter
 to expand the capabilities of this community software.</p>
+<p>If you have any feedback or questions, please check out the <a class="reference external" href="http://simcenter-messageboard.designsafe-ci.org/smf/index.php?board=22.0">SimCenter Regional Testbeds</a>.
+This forum can also be browsed for additional updates, answers to Frequently Asked Questions, and suggestions from the SimCenter team and user community.</p>
 <div class="toctree-wrapper compound" id="lbl-testbeds-manual">
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="overview.html">Overview</a></li>
@@ -307,10 +364,10 @@ to expand the capabilities of this community software.</p>
 <li class="toctree-l1"><a class="reference internal" href="response_simulation.html">Response Simulation</a></li>
 <li class="toctree-l1"><a class="reference internal" href="damage_and_loss.html">Damage and Loss Estimation</a></li>
 <li class="toctree-l1"><a class="reference internal" href="uncertainty_quantification.html">Uncertainty Quantification</a></li>
-<li class="toctree-l1"><a class="reference internal" href="example_outputs.html">Example Outputs</a></li>
+<li class="toctree-l1"><a class="reference internal" href="example_outputs.html">Getting Started</a></li>
 <li class="toctree-l1"><a class="reference internal" href="sample_results.html">Verification Results</a></li>
 <li class="toctree-l1"><a class="reference internal" href="validation_results.html">Validation Results</a></li>
-<li class="toctree-l1"><a class="reference internal" href="future_refinements.html">Opportunity Areas for Future Refinements</a></li>
+<li class="toctree-l1"><a class="reference internal" href="future_refinements.html">Research Opportunities</a></li>
 <li class="toctree-l1"><a class="reference internal" href="best_practices.html">Best Practices</a></li>
 <li class="toctree-l1"><a class="reference internal" href="feedback_request.html">Feedback</a></li>
 </ul>
@@ -327,7 +384,7 @@ to expand the capabilities of this community software.</p>
 
   <div role="contentinfo">
     <p>
-        &#169; Copyright 2021, The Regents of the University of California.
+        &#169; Copyright 2022, The Regents of the University of California.
 
     </p>
   </div>

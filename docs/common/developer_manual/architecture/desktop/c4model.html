@@ -289,12 +289,12 @@
 </ol>
 <div class="align-center figure" id="figsequencelocal">
 <a class="reference internal image-reference" href="../../../../_images/sequenceLocal.png"><img alt="../../../../_images/sequenceLocal.png" src="../../../../_images/sequenceLocal.png" style="width: 800px;" /></a>
-<p class="caption"><span class="caption-number">Fig. 2.3.4.1 </span><span class="caption-text">Sequence diagram showing what happens when a workflow runs locally.</span><a class="headerlink" href="#figsequencelocal" title="Permalink to this image">¶</a></p>
+<p class="caption"><span class="caption-number">Fig. 2.3.4.2 </span><span class="caption-text">Sequence diagram showing what happens when a workflow runs locally.</span><a class="headerlink" href="#figsequencelocal" title="Permalink to this image">¶</a></p>
 </div>
 <p>That is for the case where the computations are performed on the local computer. When the computations are performed remotely the steps are different. The first 8 steps are the same. But now the UQwrapper will not start the UQ engine. Instead, control is returned to the UI. The UI will, as shown in the following: (111) Compress the temporary folder. (12) Send the compressed folder to the remote HPC, shown in the figure DesignSafe. (13) Start an application to perform the computations. All the remote data transfer and application invocation is down through a cloud service, in the figure presented the <a class="reference external" href="https://tapis-project.org/">TACC tapis</a> interface is being used and provides SimCenter users with access to the TACC HPC resources through DesignSafe portal.</p>
 <div class="align-center figure" id="figsequenceremote">
 <a class="reference internal image-reference" href="../../../../_images/sequenceRemote.png"><img alt="../../../../_images/sequenceRemote.png" src="../../../../_images/sequenceRemote.png" style="width: 800px;" /></a>
-<p class="caption"><span class="caption-number">Fig. 2.3.4.2 </span><span class="caption-text">Sequence diagram showing what happens when a workflow runs remotely.</span><a class="headerlink" href="#figsequenceremote" title="Permalink to this image">¶</a></p>
+<p class="caption"><span class="caption-number">Fig. 2.3.4.3 </span><span class="caption-text">Sequence diagram showing what happens when a workflow runs remotely.</span><a class="headerlink" href="#figsequenceremote" title="Permalink to this image">¶</a></p>
 </div>
 </div>
 </div>
@@ -309,7 +309,7 @@
 
   <div role="contentinfo">
     <p>
-        &#169; Copyright 2021, The Regents of the University of California.
+        &#169; Copyright 2022, The Regents of the University of California.
 
     </p>
   </div>
