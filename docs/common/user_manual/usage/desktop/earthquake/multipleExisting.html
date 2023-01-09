@@ -7,7 +7,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   
-  <title>2.4.4. Multiple Existing &mdash; Earthquake Engineering with Uncertainty Quantification  documentation</title>
+  <title>2.4.4. Multiple SimCenter &mdash; Earthquake Engineering with Uncertainty Quantification  documentation</title>
   
 
   
@@ -15,6 +15,7 @@
   <link rel="stylesheet" href="../../../../../_static/pygments.css" type="text/css" />
   <link rel="stylesheet" href="../../../../../_static/pygments.css" type="text/css" />
   <link rel="stylesheet" href="../../../../../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../../../../../_static/tabs.css" type="text/css" />
   <link rel="stylesheet" href="../../../../../_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" type="text/css" />
   <link rel="stylesheet" href="../../../../../_static/panels-bootstrap.5fd3999ee7762ccc51105388f4a9d115.css" type="text/css" />
   <link rel="stylesheet" href="../../../../../_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" type="text/css" />
@@ -109,12 +110,13 @@
               <p class="caption" role="heading"><span class="caption-text">About</span></p>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../../../about/EEUQ/about.html">1. About</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../../../front-matter/ack.html">2. Acknowledgments</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../front-matter/desktop/ack.html">2. Acknowledgments</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../../../front-matter/license.html">3. Copyright and License</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../../../front-matter/cite.html">4. How To Cite</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../../../front-matter/glossary.html">5. Glossary</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../../../front-matter/abbreviations.html">6. Abbreviations</a></li>
-<li class="toctree-l1"><a class="reference internal" href="releasenotes.html">7. Release Notes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="releasenotes.html">5. Release Notes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../releases/eePlans.html">6. Release Plans</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../front-matter/glossary.html">7. Glossary</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../front-matter/abbreviations.html">8. Abbreviations</a></li>
 </ul>
 <p class="caption" role="heading"><span class="caption-text">User Manual</span></p>
 <ul class="current">
@@ -127,7 +129,7 @@
 <li class="toctree-l3"><a class="reference internal" href="stochasticGroundMotion.html">2.4.1. Stochastic Ground Motions</a></li>
 <li class="toctree-l3"><a class="reference internal" href="peerNGA.html">2.4.2. PEER NGA Records</a></li>
 <li class="toctree-l3"><a class="reference internal" href="multiplePEER.html">2.4.3. Multiple PEER</a></li>
-<li class="toctree-l3 current"><a class="current reference internal" href="#">2.4.4. Multiple Existing</a></li>
+<li class="toctree-l3 current"><a class="current reference internal" href="#">2.4.4. Multiple SimCenter</a></li>
 <li class="toctree-l3"><a class="reference internal" href="usageS3hark.html">2.4.5. Site Response Analysis</a></li>
 <li class="toctree-l3"><a class="reference internal" href="userSpecifiedDatabase.html">2.4.6. User Specified Database</a></li>
 </ul>
@@ -206,7 +208,7 @@
         
           <li><a href="earthquakeEvents.html"><span class="section-number">2.4. </span>EVT: Earthquake Events</a> &raquo;</li>
         
-      <li><span class="section-number">2.4.4. </span>Multiple Existing</li>
+      <li><span class="section-number">2.4.4. </span>Multiple SimCenter</li>
     
     
       <li class="wy-breadcrumbs-aside">
@@ -225,19 +227,19 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
             
-  <div class="section" id="multiple-existing">
-<h1><span class="section-number">2.4.4. </span>Multiple Existing<a class="headerlink" href="#multiple-existing" title="Permalink to this headline">¶</a></h1>
+  <div class="section" id="multiple-simcenter">
+<h1><span class="section-number">2.4.4. </span>Multiple SimCenter<a class="headerlink" href="#multiple-simcenter" title="Permalink to this headline">¶</a></h1>
 <p>The panel, as shown in <a class="reference internal" href="#fig-sc-event"><span class="std std-numref">Fig. 2.4.4.1</span></a>, is provided for the user to specify multiple existing SimCenter
-event files. A number of buttons at the top <strong>Add</strong>, <strong>Remove</strong>, and <strong>Load Directory</strong> allow the user to add and remove events.</p>
+event json files (in SimCenter-format, e.g., <a class="reference download internal" download="" href="../../../../../_downloads/357e21a7086ac2afc99153a30cc572b9/PEER-Record-9.json"><code class="xref download docutils literal notranslate"><span class="pre">PEER-Record-9.json</span></code></a> and <a class="reference download internal" download="" href="../../../../../_downloads/8f890a535b0d1761e5c8f1ed0e226ec2/PEER-Record-28.json"><code class="xref download docutils literal notranslate"><span class="pre">PEER-Record-28.json</span></code></a>).
+A number of buttons at the top <strong>Add</strong>, <strong>Remove</strong>, and <strong>Load Directory</strong> allow the user to add and remove events.</p>
 <div class="align-center figure" id="id1">
-<span id="fig-sc-event"></span><img alt="../../../../../_images/multipleExisting.png" src="../../../../../_images/multipleExisting.png" />
-<p class="caption"><span class="caption-number">Fig. 2.4.4.1 </span><span class="caption-text">Multiple existing (SimCenter)) events.</span><a class="headerlink" href="#id1" title="Permalink to this image">¶</a></p>
+<span id="fig-sc-event"></span><img alt="../../../../../_images/multipleSimCenter.png" src="../../../../../_images/multipleSimCenter.png" />
+<p class="caption"><span class="caption-number">Fig. 2.4.4.1 </span><span class="caption-text">Multiple SimCenter events.</span><a class="headerlink" href="#id1" title="Permalink to this image">¶</a></p>
 </div>
 <p>This <strong>Add</strong> button adds an empty event to the panel. Pressing the button multiple times will keep
 adding events to the panel. <a class="reference internal" href="#fig-sc-event"><span class="std std-numref">Fig. 2.4.4.1</span></a> shows the state after
-the button has been pressed twice, and data entered to load the El Centro
-and Rinaldi Events.</p>
-<p>The path to the event file can be entered manually in the line edit, or using the <strong>Choose</strong> button for convenience. Pushing the button brings up a typical file search screen. By default, a scale factor of 1.0 is assigned to the event.  The user can change this to another floating point value (DO NOT USE INTEGER), and they can define the scale factor as a random variable by entering a variable name, e.g. the <em>factorRinaldi</em> for the second event in <a class="reference internal" href="#fig-sc-event"><span class="std std-numref">Fig. 2.4.4.1</span></a></p>
+the button has been pressed twice, and data entered to load the two example SimCenter-format event files.</p>
+<p>The path to the event file can be entered manually in the line edit, or using the <strong>Choose</strong> button for convenience. Pushing the button brings up a typical file search screen. By default, a scale factor of 1.0 is assigned to the event.  The user can change this to another floating point value (DO NOT USE INTEGER), and they can define the scale factor as a random variable by entering a variable name, e.g. the <em>scaling_factor</em> for the second event in <a class="reference internal" href="#fig-sc-event"><span class="std std-numref">Fig. 2.4.4.1</span></a></p>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
 <p>The name of the random variable must not start with a number, or contain any spaces or special characters, such as -, +, %, etc.</p>
@@ -250,9 +252,9 @@ first be placed into the same folder. We recommend to put the files in a folder 
 files besides the earthquake events in it. After pressing the <strong>Load Directory</strong> button, the user will be
 able to choose the directory that contains the files, and the application will load all event files (i.e.,
 every file with a <strong>.json</strong> extension) into the widget automatically.</p>
-<p>Initially, every event will be given a load factor of 1.0. Load factors can be assigned automatically by preparing a <em>Records.txt</em> file in the directory with the events. Each line in the <em>Records.txt</em> shall represent one event file, and contain two comma separated values: the event file name and the desired scale factor. The application will open that file automatically and assign the prescribed load factors to the events. Using a <em>Records.txt</em> file also allows users to load only a subset of the events from a folder by listing only those in the file. An example <em>Records.txt</em> is shown below:</p>
-<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>ElCentro.json,1.5
-Rinaldi.json,2.0
+<p>Initially, every event will be given a load factor of 1.0. Load factors can be assigned automatically by preparing a <a class="reference download internal" download="" href="../../../../../_downloads/d719dd5f94fc378fd674aba5f381d63b/Records.txt"><code class="xref download docutils literal notranslate"><span class="pre">Records.txt</span></code></a> file in the directory with the events. Each line in the <em>Records.txt</em> shall represent one event file, and contain two comma separated values: the event file name and the desired scale factor. The application will open that file automatically and assign the prescribed load factors to the events. Using a <em>Records.txt</em> file also allows users to load only a subset of the events from a folder by listing only those in the file. An example <em>Records.txt</em> is shown below:</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>PEER-Record-9.json,1.5
+PEER-Record-28.json,2.0
 </pre></div>
 </div>
 <div class="admonition note">
@@ -271,7 +273,7 @@ Rinaldi.json,2.0
 
   <div role="contentinfo">
     <p>
-        &#169; Copyright 2022, The Regents of the University of California.
+        &#169; Copyright 2023, The Regents of the University of California.
 
     </p>
   </div>

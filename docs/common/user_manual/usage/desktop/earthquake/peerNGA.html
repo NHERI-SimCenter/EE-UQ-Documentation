@@ -15,6 +15,7 @@
   <link rel="stylesheet" href="../../../../../_static/pygments.css" type="text/css" />
   <link rel="stylesheet" href="../../../../../_static/pygments.css" type="text/css" />
   <link rel="stylesheet" href="../../../../../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../../../../../_static/tabs.css" type="text/css" />
   <link rel="stylesheet" href="../../../../../_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" type="text/css" />
   <link rel="stylesheet" href="../../../../../_static/panels-bootstrap.5fd3999ee7762ccc51105388f4a9d115.css" type="text/css" />
   <link rel="stylesheet" href="../../../../../_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" type="text/css" />
@@ -110,12 +111,13 @@
               <p class="caption" role="heading"><span class="caption-text">About</span></p>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../../../about/EEUQ/about.html">1. About</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../../../front-matter/ack.html">2. Acknowledgments</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../front-matter/desktop/ack.html">2. Acknowledgments</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../../../front-matter/license.html">3. Copyright and License</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../../../front-matter/cite.html">4. How To Cite</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../../../front-matter/glossary.html">5. Glossary</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../../../front-matter/abbreviations.html">6. Abbreviations</a></li>
-<li class="toctree-l1"><a class="reference internal" href="releasenotes.html">7. Release Notes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="releasenotes.html">5. Release Notes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../releases/eePlans.html">6. Release Plans</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../front-matter/glossary.html">7. Glossary</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../front-matter/abbreviations.html">8. Abbreviations</a></li>
 </ul>
 <p class="caption" role="heading"><span class="caption-text">User Manual</span></p>
 <ul class="current">
@@ -135,7 +137,7 @@
 </ul>
 </li>
 <li class="toctree-l3"><a class="reference internal" href="multiplePEER.html">2.4.3. Multiple PEER</a></li>
-<li class="toctree-l3"><a class="reference internal" href="multipleExisting.html">2.4.4. Multiple Existing</a></li>
+<li class="toctree-l3"><a class="reference internal" href="multipleExisting.html">2.4.4. Multiple SimCenter</a></li>
 <li class="toctree-l3"><a class="reference internal" href="usageS3hark.html">2.4.5. Site Response Analysis</a></li>
 <li class="toctree-l3"><a class="reference internal" href="userSpecifiedDatabase.html">2.4.6. User Specified Database</a></li>
 </ul>
@@ -297,6 +299,20 @@ select a ground motion model (GM Model), and a CMS will be computed using the de
 <a class="reference internal image-reference" href="../../../../../_images/cms-usgs-disagg.png"><img alt="../../../../../_images/cms-usgs-disagg.png" src="../../../../../_images/cms-usgs-disagg.png" style="width: 400px;" /></a>
 </div>
 </div></blockquote>
+<ol class="arabic simple" start="6">
+<li><p><strong>Spectrum from Hazard Surrogate</strong>: Target spectrum is evaluated via a user-provided Gaussian Process (GP) surrogate model that follows the default format produced by <a class="reference external" href="https://nheri-simcenter.github.io/quoFEM-Documentation/common/user_manual/usage/desktop/SimCenterUQSurrogate.html">quoFEM
+GP surrogate modeling</a>. Users will provide two input files
+for the pretrained GP model (the default names are <cite>SimGpModel.json</cite> and <cite>SimGPModel.pkl</cite>,
+please see more descriptions in <a class="reference external" href="https://nheri-simcenter.github.io/quoFEM-Documentation/common/user_manual/usage/desktop/SimCenterUQSurrogate.html#saving-options">quoFEM documentation</a>).
+Once the model is successfully loaded, the intensity measure names in the trained GP model will be displayed in the <cite>Options</cite> panel.  Users need to provide the periods correspond to the
+spectral accelerations in the GP model.  Along with the <cite>Options</cite> panel, the input random variables in the pretrained model will also be displayed with text edit box(es) for evaluating
+the GP model. For instance, <a class="reference internal" href="#figsurrogatehazard"><span class="std std-numref">Fig. 2.4.2.1.1</span></a> shows one example that the surrogate GP model is trained for Hayward earthquake scenarios at San Francisco Bay Area in which the
+Latitude and Longitude (<cite>RV_column1</cite> and <cite>RV_column2</cite>) are input variables to predict response spectral acceleration at various periods from 0.01 to 10 sec.</p></li>
+</ol>
+<div class="align-center figure" id="id6">
+<span id="figsurrogatehazard"></span><a class="reference internal image-reference" href="../../../../../_images/surrogateHazard.png"><img alt="../../../../../_images/surrogateHazard.png" src="../../../../../_images/surrogateHazard.png" style="width: 600px;" /></a>
+<p class="caption"><span class="caption-number">Fig. 2.4.2.1.1 </span><span class="caption-text">Target spectrum from hazard surrogate</span><a class="headerlink" href="#id6" title="Permalink to this image">¶</a></p>
+</div>
 </div>
 <div class="section" id="configure-selection">
 <h2><span class="section-number">2.4.2.2. </span>Configure Selection<a class="headerlink" href="#configure-selection" title="Permalink to this headline">¶</a></h2>
@@ -375,7 +391,7 @@ the number of samples is the total number of selected records, each record will 
 
   <div role="contentinfo">
     <p>
-        &#169; Copyright 2022, The Regents of the University of California.
+        &#169; Copyright 2023, The Regents of the University of California.
 
     </p>
   </div>

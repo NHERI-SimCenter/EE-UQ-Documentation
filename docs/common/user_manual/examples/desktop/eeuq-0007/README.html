@@ -1,0 +1,421 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" />
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  
+  <title>4.7. Target Spectrum by Surrogate Hazard GP Model &mdash; Earthquake Engineering with Uncertainty Quantification  documentation</title>
+  
+
+  
+  <link rel="stylesheet" href="../../../../../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../../../../../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../../../../../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../../../../../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../../../../../_static/tabs.css" type="text/css" />
+  <link rel="stylesheet" href="../../../../../_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" type="text/css" />
+  <link rel="stylesheet" href="../../../../../_static/panels-bootstrap.5fd3999ee7762ccc51105388f4a9d115.css" type="text/css" />
+  <link rel="stylesheet" href="../../../../../_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" type="text/css" />
+  <link rel="stylesheet" href="../../../../../_static/sphinxcontrib-images/LightBox2/lightbox2/dist/css/lightbox.css" type="text/css" />
+  <link rel="stylesheet" href="../../../../../_static/css/custom.css" type="text/css" />
+
+  
+  
+
+  
+  
+
+  
+
+  
+  <!--[if lt IE 9]>
+    <script src="../../../../../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../../../../../" src="../../../../../_static/documentation_options.js"></script>
+        <script data-url_root="../../../../../" id="documentation_options" src="../../../../../_static/documentation_options.js"></script>
+        <script src="../../../../../_static/jquery.js"></script>
+        <script src="../../../../../_static/underscore.js"></script>
+        <script src="../../../../../_static/doctools.js"></script>
+        <script src="../../../../../_static/sphinxcontrib-images/LightBox2/lightbox2/dist/js/lightbox-plus-jquery.min.js"></script>
+        <script src="../../../../../_static/sphinxcontrib-images/LightBox2/lightbox2-customize/jquery-noconflict.js"></script>
+    
+    <script type="text/javascript" src="../../../../../_static/js/theme.js"></script>
+
+    
+    <link rel="index" title="Index" href="../../../../../genindex.html" />
+    <link rel="search" title="Search" href="../../../../../search.html" />
+    <link rel="next" title="5. Requirements" href="../../../../reqments/EEUQ.html" />
+    <link rel="prev" title="4.6. Surrogate Model for Structural Response Prediction (Probabilistic Learning on Manifolds)" href="../eeuq-0006/README.html" />
+<script src="https://cdn.jsdelivr.net/npm/vega@5.12.1"></script>
+<script src="https://cdn.jsdelivr.net/npm/vega-lite@4.13.1"></script>
+<script src="https://cdn.jsdelivr.net/npm/vega-embed@6.8.0"></script>
+<style media="screen">.vega-actions a {margin-right: 5px;}</style>
+<link href="../../../../../_static/css/bootstrap.css" rel="stylesheet">
+
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search"  style="background: #F2F2F2" >
+          
+<a href="https://simcenter.designsafe-ci.org/" style="margin-bottom: 0px;">
+  <img src="../../../../../_static/img/SimCenter-Only.png" class="logo" alt="Org-Logo" />
+</a>
+<hr style="margin: 0px;">
+
+  <a href="../../../../../index.html">
+
+
+
+  
+  <img src="../../../../../_static/EE-UQ-Logo.png" class="logo" alt="Logo"/>
+
+</a>
+
+
+  
+  
+
+
+
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../../../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+
+        </div>
+
+        
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <p class="caption" role="heading"><span class="caption-text">About</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../about/EEUQ/about.html">1. About</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../front-matter/desktop/ack.html">2. Acknowledgments</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../front-matter/license.html">3. Copyright and License</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../front-matter/cite.html">4. How To Cite</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../usage/desktop/earthquake/releasenotes.html">5. Release Notes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../releases/eePlans.html">6. Release Plans</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../front-matter/glossary.html">7. Glossary</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../front-matter/abbreviations.html">8. Abbreviations</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">User Manual</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../../../installation/desktop/installation.html">1. Installation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../usage/desktop/usage.html">2. User Guide</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../troubleshooting/desktop/troubleshooting.html">3. Troubleshooting</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../examples.html">4. Examples</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../eeuq-0001/README.html">4.1. Shear Building: Sampling, Reliability and Sensitivity</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../eeuq-0002/README.html">4.2. Including Spatial Variability in Site Response Event</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../eeuq-0003/README.html">4.3. Ground Motion Selection and Nonlinear Response Analysis</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../eeuq-0004/README.html">4.4. AutoSDA and Nonlinear Response Analysis</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../eeuq-0005/README.html">4.5. Shear Building: Synthetic Ground Motion</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../eeuq-0006/README.html">4.6. Surrogate Model for Structural Response Prediction (Probabilistic Learning on Manifolds)</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">4.7. Target Spectrum by Surrogate Hazard GP Model</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#pre-trained-gaussian-process-surrogate-model">4.7.1. Pre-trained Gaussian Process Surrogate Model</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#configure-surrogate-target-spectrum">4.7.2. Configure Surrogate Target Spectrum</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#select-ground-motion-and-run-analysis">4.7.3. Select Ground Motion and Run Analysis</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../reqments/EEUQ.html">5. Requirements</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../bugs.html">6. Bugs &amp; Feature Requests</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Technical Manual</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../../technical_manual/desktop/technical_manual.html">1. Technical Manual</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Developer Manual</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../../developer_manual/how_to_build/desktop/how_to_build.html">1. How to Build</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../developer_manual/architecture/desktop/architecture.html">2. Software Architecture</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../developer_manual/how_to_extend/desktop/how_to_extend.html">3. How to Extend</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../developer_manual/verification/desktop/verification.html">4. Verification</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../developer_manual/coding_style/desktop/coding_style.html">5. Coding Style</a></li>
+</ul>
+
+            
+          
+        </div>
+        
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../../../../index.html">Earthquake Engineering with Uncertainty Quantification</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../../../../../index.html" class="icon icon-home"></a> &raquo;</li>
+        
+          <li><a href="../examples.html"><span class="section-number">4. </span>Examples</a> &raquo;</li>
+        
+      <li><span class="section-number">4.7. </span>Target Spectrum by Surrogate Hazard GP Model</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+          
+            <a href="../../../../../_sources/common/user_manual/examples/desktop/eeuq-0007/README.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="target-spectrum-by-surrogate-hazard-gp-model">
+<h1><span class="section-number">4.7. </span>Target Spectrum by Surrogate Hazard GP Model<a class="headerlink" href="#target-spectrum-by-surrogate-hazard-gp-model" title="Permalink to this headline">¶</a></h1>
+<p>In some cases, users may want to specify target response spectrum in ground motion selection using pre-trained surrogate
+hazard model. This example demonstrates using quoFEM-trained Gaussian Process hazard model to get target response spectrum
+at a specific site location in San Francisco Bay Area given the seismicity from the Hayward Fault.</p>
+<div class="section" id="pre-trained-gaussian-process-surrogate-model">
+<h2><span class="section-number">4.7.1. </span>Pre-trained Gaussian Process Surrogate Model<a class="headerlink" href="#pre-trained-gaussian-process-surrogate-model" title="Permalink to this headline">¶</a></h2>
+<ol class="arabic simple">
+<li><p>In this example, the Gaussian Process (GP) model is trained on regional earthquake intensity measure maps that are generated
+for 147 possible Hayward earthquake scenarios in UCERF-2 model. For each scenario, the response spectral accelerations at periods
+from 0.01 sec to 10.0 sec are evaluated for overall 961 sites (31 times 31) in the San Francisco Bay Area. Inter-event and intra-event
+correlations are considered for all the sites whose median spectra are used as the training dataset.</p></li>
+</ol>
+<div class="align-center figure" id="fig-trainingdata">
+<a class="reference internal image-reference" href="../../../../../_images/trainingData.png"><img alt="../../../../../_images/trainingData.png" src="../../../../../_images/trainingData.png" style="width: 600px;" /></a>
+</div>
+<ol class="arabic simple" start="2">
+<li><p>The training dataset (<code class="xref download docutils literal notranslate"><span class="pre">X.txt</span></code> and <code class="xref download docutils literal notranslate"><span class="pre">Y.txt</span></code>) is then loaded in
+<a class="reference external" href="https://nheri-simcenter.github.io/quoFEM-Documentation/common/user_manual/usage/desktop/SimCenterUQSurrogate.html">quoFEM</a>
+to train a GP model where the Longitude and Latitude are input variables and the median response spectrum
+at that site location is the output. The training takes about 25 sec and shows good performance and accuracy in the
+cross validation. The trained mdoel is saved into two files (<code class="xref download docutils literal notranslate"><span class="pre">SimGpModel.json</span></code> and
+<code class="xref download docutils literal notranslate"><span class="pre">SimGpModel.pkl</span></code>) for the use in EE-UQ.</p></li>
+</ol>
+<div class="align-center figure" id="fig-trainingconfig">
+<a class="reference internal image-reference" href="../../../../../_images/trainingConfig.png"><img alt="../../../../../_images/trainingConfig.png" src="../../../../../_images/trainingConfig.png" style="width: 600px;" /></a>
+</div>
+<div class="align-center figure" id="fig-trainingres">
+<a class="reference internal image-reference" href="../../../../../_images/trainingRes.png"><img alt="../../../../../_images/trainingRes.png" src="../../../../../_images/trainingRes.png" style="width: 600px;" /></a>
+</div>
+</div>
+<div class="section" id="configure-surrogate-target-spectrum">
+<h2><span class="section-number">4.7.2. </span>Configure Surrogate Target Spectrum<a class="headerlink" href="#configure-surrogate-target-spectrum" title="Permalink to this headline">¶</a></h2>
+<ol class="arabic simple">
+<li><p>Navigate to the <strong>EVT</strong> tab and select the <strong>PEER NGA Records</strong> as the <strong>Load Generator</strong>. In this example
+we use the <strong>Spectrum from Hazard Surrogate</strong> as the Target Spectrum (specified in the dropdown list).</p></li>
+<li><p>Click <strong>Choose</strong> buttons to select and load the <strong>SimGpModel.json</strong> and <strong>SimGpModel.pkl</strong> files as the
+hazard surrogate GP model.</p></li>
+<li><p>In the <strong>Intensity Measure Periods (sec):</strong> textbox, fill in the periods for the response spectral acceleartions which
+are “0.01, 0.02, 0.05, 0.1, 0.2, 0.5, 1, 2, 3, 4, 5, 7.5, 10” in this example.</p></li>
+<li><p>Two random variables (“RV_column1” and “RV_column2”) are automatically populated from the loaded surrogate model, and
+users can specify the desired site location to evaluate the target response spectrum.</p></li>
+</ol>
+<div class="align-center figure" id="fig-configspectrum">
+<a class="reference internal image-reference" href="../../../../../_images/configSpectrum.png"><img alt="../../../../../_images/configSpectrum.png" src="../../../../../_images/configSpectrum.png" style="width: 600px;" /></a>
+</div>
+<ol class="arabic simple" start="5">
+<li><p>Once above configurations are set up, click <strong>Get Spectrum</strong> button which will launch backend surrogate applications
+to predict the response spectrum at the provided location. Note although this example shows the application for
+predicting response spectrum at a given location, the surrogate model can be trained on other input variables (not necessarily
+to be Longitude and Latitude).</p></li>
+<li><p>Once the prediction completed, the Target Spectrum widget will automatically switch to <strong>User Specified</strong> option with the
+tabulated response spectrum predicted for the given input variables.</p></li>
+</ol>
+<div class="align-center figure" id="fig-resspectrum">
+<a class="reference internal image-reference" href="../../../../../_images/resSpectrum.png"><img alt="../../../../../_images/resSpectrum.png" src="../../../../../_images/resSpectrum.png" style="width: 600px;" /></a>
+</div>
+</div>
+<div class="section" id="select-ground-motion-and-run-analysis">
+<h2><span class="section-number">4.7.3. </span>Select Ground Motion and Run Analysis<a class="headerlink" href="#select-ground-motion-and-run-analysis" title="Permalink to this headline">¶</a></h2>
+<ol class="arabic simple">
+<li><p>Once the target response spectrum is available, users can follow the same procedure as introduced in
+<a class="reference external" href="https://nheri-simcenter.github.io/EE-UQ-Documentation/common/user_manual/examples/desktop/eeuq-0003/README.html#select-and-scale-ground-motion-records">EE-UQ Example 3</a> to
+select and scale ground motion records.</p></li>
+</ol>
+<div class="align-center figure" id="fig-evt">
+<a class="reference internal image-reference" href="../../../../../_images/evt4.png"><img alt="../../../../../_images/evt4.png" src="../../../../../_images/evt4.png" style="width: 600px;" /></a>
+</div>
+<ol class="arabic simple" start="2">
+<li><p>In the example, a simple SDOF model is used in <strong>SIM</strong> tab to demonstrate the structural analysis step and default configurations
+are used in the <strong>FEM</strong> and <strong>EDP</strong> tabs.</p></li>
+</ol>
+<div class="align-center figure" id="fig-sim">
+<a class="reference internal image-reference" href="../../../../../_images/sim3.png"><img alt="../../../../../_images/sim3.png" src="../../../../../_images/sim3.png" style="width: 600px;" /></a>
+</div>
+<div class="align-center figure" id="fig-fem">
+<a class="reference internal image-reference" href="../../../../../_images/fem3.png"><img alt="../../../../../_images/fem3.png" src="../../../../../_images/fem3.png" style="width: 600px;" /></a>
+</div>
+<div class="align-center figure" id="id1">
+<a class="reference internal image-reference" href="../../../../../_images/edp1.png"><img alt="../../../../../_images/edp1.png" src="../../../../../_images/edp1.png" style="width: 600px;" /></a>
+</div>
+<ol class="arabic simple" start="3">
+<li><p>By clicking <strong>Run</strong> button, one could launch the analysis and the application will automatically switch to the <strong>RES</strong> tab
+once the analysis completed. One could navigate to the <strong>Data Value</strong> panel to visualize and save the new realizations.</p></li>
+</ol>
+<div class="align-center figure" id="fig-res-data">
+<a class="reference internal image-reference" href="../../../../../_images/res12.png"><img alt="../../../../../_images/res12.png" src="../../../../../_images/res12.png" style="width: 600px;" /></a>
+</div>
+<div class="align-center figure" id="fig-res-comp1">
+<a class="reference internal image-reference" href="../../../../../_images/res2.png"><img alt="../../../../../_images/res2.png" src="../../../../../_images/res2.png" style="width: 600px;" /></a>
+</div>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &#169; Copyright 2023, The Regents of the University of California.
+
+    </p>
+  </div>
+    
+    
+    
+    Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    
+    provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+    <!-- Theme Analytics -->
+    <script>
+    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+      (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+      m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+    })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+    ga('create', 'UA-158130480-1', 'auto');
+    
+    ga('send', 'pageview');
+    </script>
+
+    
+    
+
+  <style>
+         .wy-nav-content { max-width: none; }
+  </style>
+
+<script>
+    /*
+    let selectedFilters = [];
+    const images  = document.getElementsByClassName("gallery-item");
+    const filters = [...document.querySelectorAll('.filter select')];
+    const toggles = [...document.querySelectorAll('.filter input')];
+
+    var show = function (elem) {
+        elem.style.display = 'block';
+    };
+    var hide = function (elem) {
+        elem.style.display = 'none';
+    };
+    var toggleFilter =  function(el,elid) {
+        const filter = document.getElementById(elid);
+        filter.disabled = !el.checked;
+       
+        if ("createEvent" in document) {
+            var evt = document.createEvent("HTMLEvents");
+            evt.initEvent("change", false, true);
+            filter.dispatchEvent(evt);
+        }
+        else
+            filter.fireEvent("change");
+    };
+    
+    for (const filter of filters) {
+        filter.addEventListener('change', function(event) {
+            selectedFilters = filters.map(filter => filter.disabled ? '' : filter.value).filter(Boolean);
+            console.log(selectedFilters);
+            for (const image of images) {
+                if (selectedFilters.every(filter => image.classList.contains(filter))) {
+                    show(image);
+                }
+                else {hide(image)};
+            };
+        })
+    };
+    */
+</script>
+
+
+</body>
+</html>

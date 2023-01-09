@@ -15,6 +15,7 @@
   <link rel="stylesheet" href="../../../../../_static/pygments.css" type="text/css" />
   <link rel="stylesheet" href="../../../../../_static/pygments.css" type="text/css" />
   <link rel="stylesheet" href="../../../../../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../../../../../_static/tabs.css" type="text/css" />
   <link rel="stylesheet" href="../../../../../_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" type="text/css" />
   <link rel="stylesheet" href="../../../../../_static/panels-bootstrap.5fd3999ee7762ccc51105388f4a9d115.css" type="text/css" />
   <link rel="stylesheet" href="../../../../../_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" type="text/css" />
@@ -110,12 +111,13 @@
               <p class="caption" role="heading"><span class="caption-text">About</span></p>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../../../about/EEUQ/about.html">1. About</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../../../front-matter/ack.html">2. Acknowledgments</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../front-matter/desktop/ack.html">2. Acknowledgments</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../../../front-matter/license.html">3. Copyright and License</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../../../front-matter/cite.html">4. How To Cite</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../../../front-matter/glossary.html">5. Glossary</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../../../front-matter/abbreviations.html">6. Abbreviations</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../../usage/desktop/earthquake/releasenotes.html">7. Release Notes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../usage/desktop/earthquake/releasenotes.html">5. Release Notes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../releases/eePlans.html">6. Release Plans</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../front-matter/glossary.html">7. Glossary</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../front-matter/abbreviations.html">8. Abbreviations</a></li>
 </ul>
 <p class="caption" role="heading"><span class="caption-text">User Manual</span></p>
 <ul class="current">
@@ -137,6 +139,8 @@
 <li class="toctree-l2"><a class="reference internal" href="../eeuq-0003/README.html">4.3. Ground Motion Selection and Nonlinear Response Analysis</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../eeuq-0004/README.html">4.4. AutoSDA and Nonlinear Response Analysis</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../eeuq-0005/README.html">4.5. Shear Building: Synthetic Ground Motion</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../eeuq-0006/README.html">4.6. Surrogate Model for Structural Response Prediction (Probabilistic Learning on Manifolds)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../eeuq-0007/README.html">4.7. Target Spectrum by Surrogate Hazard GP Model</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="../../../../reqments/EEUQ.html">5. Requirements</a></li>
@@ -343,11 +347,11 @@ The peak displacement of the roof, is the quantity <strong>PFD</strong>. The <st
 Ru are always zero since there is no volumetric strain in ElasticIsotropic material. <a class="reference internal" href="#fig-elastic-average-respspect"><span class="std std-numref">Fig. 4.2.3.1.3</span></a> depicts the mean and each individual response spectra (5% damping) at surface obtained from 20 realizations.</p>
 <div class="align-center figure" id="id5">
 <span id="fig-elastic-average-profile"></span><a class="reference internal image-reference" href="../../../../../_images/Elastic-Average-Profile.png"><img alt="../../../../../_images/Elastic-Average-Profile.png" src="../../../../../_images/Elastic-Average-Profile.png" style="width: 880.0px; height: 640.0px;" /></a>
-<p class="caption"><span class="caption-number">Fig. 4.2.3.1.2 </span><span class="caption-text">Profiles of shear wave velocity, peak horizontal acceleration, maximum shear strain, and maximum excess pore pressure ratio (Ru) obtained from 20 realizations.</span><a class="headerlink" href="#id5" title="Permalink to this image">¶</a></p>
+<p class="caption"><span class="caption-number">Fig. 4.2.3.1.2 </span><span class="caption-text">Profiles of shear wave velocity, peak horizontal acceleration, maximum shear strain, and maximum excess pore pressure ratio (Ru) obtained from 20 realizations (postprocessed from realization output data).</span><a class="headerlink" href="#id5" title="Permalink to this image">¶</a></p>
 </div>
 <div class="align-center figure" id="id6">
 <span id="fig-elastic-average-respspect"></span><a class="reference internal image-reference" href="../../../../../_images/Elastic-Average-RespSpect.png"><img alt="../../../../../_images/Elastic-Average-RespSpect.png" src="../../../../../_images/Elastic-Average-RespSpect.png" style="width: 480.0px; height: 240.0px;" /></a>
-<p class="caption"><span class="caption-number">Fig. 4.2.3.1.3 </span><span class="caption-text">Response spectra (5% damping) at surface obtained from 20 realizations.</span><a class="headerlink" href="#id6" title="Permalink to this image">¶</a></p>
+<p class="caption"><span class="caption-number">Fig. 4.2.3.1.3 </span><span class="caption-text">Response spectra (5% damping) at surface obtained from 20 realizations (postprocessed from realization output data).</span><a class="headerlink" href="#id6" title="Permalink to this image">¶</a></p>
 </div>
 </div>
 <div class="section" id="case-2-using-pm4sand-material">
@@ -369,11 +373,11 @@ Comparing to elastic material, more variability are shown among these realizatio
 </div>
 <div class="align-center figure" id="id8">
 <span id="fig-pm4sand-average-profile"></span><a class="reference internal image-reference" href="../../../../../_images/PM4Sand-Average-Profile.png"><img alt="../../../../../_images/PM4Sand-Average-Profile.png" src="../../../../../_images/PM4Sand-Average-Profile.png" style="width: 880.0px; height: 640.0px;" /></a>
-<p class="caption"><span class="caption-number">Fig. 4.2.3.2.2 </span><span class="caption-text">Profiles of shear wave velocity, peak horizontal acceleration, maximum shear strain, and maximum excess pore pressure ratio (Ru) obtained from 20 realizations.</span><a class="headerlink" href="#id8" title="Permalink to this image">¶</a></p>
+<p class="caption"><span class="caption-number">Fig. 4.2.3.2.2 </span><span class="caption-text">Profiles of shear wave velocity, peak horizontal acceleration, maximum shear strain, and maximum excess pore pressure ratio (Ru) obtained from 20 realizations (postprocessed from realization output data).</span><a class="headerlink" href="#id8" title="Permalink to this image">¶</a></p>
 </div>
 <div class="align-center figure" id="id9">
 <span id="fig-pm4sand-average-respspect"></span><a class="reference internal image-reference" href="../../../../../_images/PM4Sand-Average-RespSpect.png"><img alt="../../../../../_images/PM4Sand-Average-RespSpect.png" src="../../../../../_images/PM4Sand-Average-RespSpect.png" style="width: 480.0px; height: 240.0px;" /></a>
-<p class="caption"><span class="caption-number">Fig. 4.2.3.2.3 </span><span class="caption-text">Response spectra (5% damping) at surface obtained from 20 realizations.</span><a class="headerlink" href="#id9" title="Permalink to this image">¶</a></p>
+<p class="caption"><span class="caption-number">Fig. 4.2.3.2.3 </span><span class="caption-text">Response spectra (5% damping) at surface obtained from 20 realizations (postprocessed from realization output data).</span><a class="headerlink" href="#id9" title="Permalink to this image">¶</a></p>
 </div>
 </div>
 </div>
@@ -389,7 +393,7 @@ Comparing to elastic material, more variability are shown among these realizatio
 
   <div role="contentinfo">
     <p>
-        &#169; Copyright 2022, The Regents of the University of California.
+        &#169; Copyright 2023, The Regents of the University of California.
 
     </p>
   </div>
