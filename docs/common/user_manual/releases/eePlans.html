@@ -7,7 +7,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   
-  <title>6. Release Plans &mdash; Earthquake Engineering with Uncertainty Quantification  documentation</title>
+  <title>7. Release Plans &mdash; Earthquake Engineering with Uncertainty Quantification  documentation</title>
   
 
   
@@ -49,8 +49,8 @@
     
     <link rel="index" title="Index" href="../../../genindex.html" />
     <link rel="search" title="Search" href="../../../search.html" />
-    <link rel="next" title="7. Glossary" href="../../front-matter/glossary.html" />
-    <link rel="prev" title="5. Release Notes" href="../usage/desktop/earthquake/releasenotes.html" />
+    <link rel="next" title="8. Glossary" href="../../front-matter/glossary.html" />
+    <link rel="prev" title="6. Release Notes" href="eeReleaseNotes.html" />
 <script src="https://cdn.jsdelivr.net/npm/vega@5.12.1"></script>
 <script src="https://cdn.jsdelivr.net/npm/vega-lite@4.13.1"></script>
 <script src="https://cdn.jsdelivr.net/npm/vega-embed@6.8.0"></script>
@@ -113,15 +113,15 @@
 <li class="toctree-l1"><a class="reference internal" href="../../front-matter/desktop/ack.html">2. Acknowledgments</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../front-matter/license.html">3. Copyright and License</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../front-matter/cite.html">4. How To Cite</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../usage/desktop/earthquake/releasenotes.html">5. Release Notes</a></li>
-<li class="toctree-l1 current"><a class="current reference internal" href="#">6. Release Plans</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="#febuary-2023">6.1. Febuary 2023</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#sept-2023">6.2. Sept 2023</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#march-2024">6.3. March 2024</a></li>
+<li class="toctree-l1"><a class="reference internal" href="eeCapabilities.html">5. Cababilities</a></li>
+<li class="toctree-l1"><a class="reference internal" href="eeReleaseNotes.html">6. Release Notes</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">7. Release Plans</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#sept-2023">7.1. Sept 2023</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#march-2024">7.2. March 2024</a></li>
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="../../front-matter/glossary.html">7. Glossary</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../front-matter/abbreviations.html">8. Abbreviations</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../front-matter/glossary.html">8. Glossary</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../front-matter/abbreviations.html">9. Abbreviations</a></li>
 </ul>
 <p class="caption" role="heading"><span class="caption-text">User Manual</span></p>
 <ul>
@@ -191,7 +191,7 @@
     
       <li><a href="../../../index.html" class="icon icon-home"></a> &raquo;</li>
         
-      <li><span class="section-number">6. </span>Release Plans</li>
+      <li><span class="section-number">7. </span>Release Plans</li>
     
     
       <li class="wy-breadcrumbs-aside">
@@ -211,29 +211,21 @@
            <div itemprop="articleBody">
             
   <div class="section" id="release-plans">
-<span id="lbl-future-ee"></span><h1><span class="section-number">6. </span>Release Plans<a class="headerlink" href="#release-plans" title="Permalink to this headline">¶</a></h1>
+<span id="lbl-future-ee"></span><h1><span class="section-number">7. </span>Release Plans<a class="headerlink" href="#release-plans" title="Permalink to this headline">¶</a></h1>
 <p>The following features are planned to be developed for upcoming releases of EE-UQ app. We are actively working on the features in the next release. Farther development priorities may change depending on feedback from the community. If you have any suggestions, we encourage you to contribute and contact us through the SimCenter Forum.</p>
-<div class="section" id="febuary-2023">
-<h2><span class="section-number">6.1. </span>Febuary 2023<a class="headerlink" href="#febuary-2023" title="Permalink to this headline">¶</a></h2>
-<blockquote>
-<div><ol class="arabic simple">
-<li><p>Quantify epistemic uncertainty in structural response by considering multiple models to represent various candidates for events, structural models, or simulation methods (1.2.4.1) - Define weights for each model candidate and propagate epistemic uncertainty by randomly selecting a model for each realization according to these weights.</p></li>
-<li><p>Use any simulation engine with the CustomPy feature - CustomPy allows you to execute a Python script that can serve as a wrapper for any other application. After preparing a wrapper, you can take leverage the applications in the SimCenter backend while running the FEM engine of your choice - OpenSeesPy, ETABS, Perform3D, ANSYS, Abaqus, etc.</p></li>
-</ol>
-</div></blockquote>
-</div>
 <div class="section" id="sept-2023">
-<h2><span class="section-number">6.2. </span>Sept 2023<a class="headerlink" href="#sept-2023" title="Permalink to this headline">¶</a></h2>
+<h2><span class="section-number">7.1. </span>Sept 2023<a class="headerlink" href="#sept-2023" title="Permalink to this headline">¶</a></h2>
 <blockquote>
 <div><ol class="arabic simple">
 <li><p>New, state-of-the-art surrogate methods - Heteroscedastic Gaussian Process Surrogates (1.2.2.2) - First, train a GP surrogate to capture the mean response, then train another GP surrogate the capture the variance using the residuals. This approach is especially powerful when large differences are observed in the variance of the output in different parts of the input space.</p></li>
+<li><p>Allow Multi-Model to be applied to Event options</p></li>
 <li><p>Automatically generate ground motion records that represent a pre-defined intensity-measure input space - Select IMs and corresponding ranges of interest and select ground motions that cover the specified IM space. Such ground motion sets are helpful to train general-purpose surrogate models.</p></li>
 <li><p>Train and export surrogates for regional simulations (1.3.6.1) - Surrogates developed in EE_UQ can be exported, shared, and directly used to represent structural behavior in large regional seismic risk assessments in R2D.</p></li>
 </ol>
 </div></blockquote>
 </div>
 <div class="section" id="march-2024">
-<h2><span class="section-number">6.3. </span>March 2024<a class="headerlink" href="#march-2024" title="Permalink to this headline">¶</a></h2>
+<h2><span class="section-number">7.2. </span>March 2024<a class="headerlink" href="#march-2024" title="Permalink to this headline">¶</a></h2>
 <blockquote>
 <div><blockquote>
 <div><ol class="arabic simple">

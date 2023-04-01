@@ -113,10 +113,11 @@
 <li class="toctree-l1"><a class="reference internal" href="../../../front-matter/desktop/ack.html">2. Acknowledgments</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../../front-matter/license.html">3. Copyright and License</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../../front-matter/cite.html">4. How To Cite</a></li>
-<li class="toctree-l1"><a class="reference internal" href="earthquake/releasenotes.html">5. Release Notes</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../releases/eePlans.html">6. Release Plans</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../../front-matter/glossary.html">7. Glossary</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../../front-matter/abbreviations.html">8. Abbreviations</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../releases/eeCapabilities.html">5. Cababilities</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../releases/eeReleaseNotes.html">6. Release Notes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../releases/eePlans.html">7. Release Plans</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../front-matter/glossary.html">8. Glossary</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../front-matter/abbreviations.html">9. Abbreviations</a></li>
 </ul>
 <p class="caption" role="heading"><span class="caption-text">User Manual</span></p>
 <ul class="current">
@@ -127,9 +128,28 @@
 <li class="toctree-l4"><a class="reference internal" href="DakotaSampling.html">2.1.2.1. Forward Propagation</a></li>
 <li class="toctree-l4"><a class="reference internal" href="DakotaSensitivity.html">2.1.2.2. Global Sensitivity Analysis</a></li>
 <li class="toctree-l4"><a class="reference internal" href="DakotaReliability.html">2.1.2.3. Reliability Analysis</a></li>
+<li class="toctree-l4"><a class="reference internal" href="DakotaSensitivity.html">2.1.2.2. Global Sensitivity Analysis</a></li>
 </ul>
 </li>
-<li class="toctree-l3"><a class="reference internal" href="#id1">2.1.6. SimCenter UQ Engine</a><ul class="simple">
+<li class="toctree-l3"><a class="reference internal" href="#simcenter-uq-engine">2.1.3. SimCenter UQ Engine</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="SimCenterUQSampling.html">2.1.3.1. Forward Propagation</a></li>
+<li class="toctree-l4"><a class="reference internal" href="SimCenterUQSensitivity.html">2.1.3.2. Global Sensitivity Analysis</a></li>
+<li class="toctree-l4"><a class="reference internal" href="SimCenterUQSurrogate.html">2.1.3.3. Surrogate Modeling</a></li>
+<li class="toctree-l4"><a class="reference internal" href="SimCenterUQPLoM.html">2.1.3.4. Probabilistic Learning on Manifolds (PLoM)</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#ucsd-uq-engine">2.1.4. UCSD UQ Engine</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="UCSD_UQ_TMCMC.html">2.1.4.1. Transitional Markov chain Monte Carlo (TMCMC) algorithm</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#custom-uq-engine">2.1.5. Custom UQ Engine</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="Configuring_CustomUQ.html">2.1.5.1. Configuring CustomUQ Engine</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#id1">2.1.6. SimCenter UQ Engine</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="SimCenterUQSampling.html">2.1.3.1. Forward Propagation</a></li>
+<li class="toctree-l4"><a class="reference internal" href="SimCenterUQSensitivity.html">2.1.3.2. Global Sensitivity Analysis</a></li>
+<li class="toctree-l4"><a class="reference internal" href="SimCenterUQPLoM.html">2.1.3.4. Probabilistic Learning on Manifolds (PLoM)</a></li>
 </ul>
 </li>
 </ul>
@@ -249,8 +269,63 @@
 <li class="toctree-l1"><a class="reference internal" href="DakotaSampling.html">2.1.2.1. Forward Propagation</a></li>
 <li class="toctree-l1"><a class="reference internal" href="DakotaSensitivity.html">2.1.2.2. Global Sensitivity Analysis</a></li>
 <li class="toctree-l1"><a class="reference internal" href="DakotaReliability.html">2.1.2.3. Reliability Analysis</a></li>
+<li class="toctree-l1"><a class="reference internal" href="DakotaSensitivity.html">2.1.2.2. Global Sensitivity Analysis</a></li>
 </ul>
 </div>
+</div>
+<div class="section" id="simcenter-uq-engine">
+<h2><span class="section-number">2.1.3. </span>SimCenter UQ Engine<a class="headerlink" href="#simcenter-uq-engine" title="Permalink to this headline">¶</a></h2>
+<blockquote>
+<div><p>The <strong>SimCenterUQ</strong> engine is a UQ engine developed in-house at the SimCenter that accommodates different UQ methods, which are organized into categories that can be accessed through a pull-down menu, as shown below:</p>
+<div class="align-center figure" id="id4">
+<span id="figsimcenteruq"></span><a class="reference internal image-reference" href="../../../../_images/SimCenterUQ.png"><img alt="../../../../_images/SimCenterUQ.png" src="../../../../_images/SimCenterUQ.png" style="width: 1200px;" /></a>
+<p class="caption"><span class="caption-number">Fig. 2.1.3.1 </span><span class="caption-text">SimCenterUQ engine and category selection.</span><a class="headerlink" href="#id4" title="Permalink to this image">¶</a></p>
+</div>
+<p>The following category options are available:</p>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="SimCenterUQSampling.html">2.1.3.1. Forward Propagation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="SimCenterUQSensitivity.html">2.1.3.2. Global Sensitivity Analysis</a></li>
+<li class="toctree-l1"><a class="reference internal" href="SimCenterUQSurrogate.html">2.1.3.3. Surrogate Modeling</a></li>
+<li class="toctree-l1"><a class="reference internal" href="SimCenterUQPLoM.html">2.1.3.4. Probabilistic Learning on Manifolds (PLoM)</a></li>
+</ul>
+</div>
+</div></blockquote>
+</div>
+<div class="section" id="ucsd-uq-engine">
+<h2><span class="section-number">2.1.4. </span>UCSD UQ Engine<a class="headerlink" href="#ucsd-uq-engine" title="Permalink to this headline">¶</a></h2>
+<p>The <strong>UCSD-UQ</strong> engine is a module developed at the SimCenter in collaboration with UCSD. It provides algorithms for Bayesian estimation, which can be accessed through a pull-down menu, as shown in <a class="reference internal" href="#figucsduq"><span class="std std-numref">Fig. 2.1.4.1</span></a>.</p>
+<div class="align-center figure" id="id5">
+<span id="figucsduq"></span><a class="reference internal image-reference" href="../../../../_images/UCSDUQ.png"><img alt="../../../../_images/UCSDUQ.png" src="../../../../_images/UCSDUQ.png" style="width: 1200px;" /></a>
+<p class="caption"><span class="caption-number">Fig. 2.1.4.1 </span><span class="caption-text">UCSD-UQ engine and category selection.</span><a class="headerlink" href="#id5" title="Permalink to this image">¶</a></p>
+</div>
+<p>This module currently offers support for Bayesian estimation using the Transitional Markov chain Monte Carlo (TMCMC) algorithm:</p>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="UCSD_UQ_TMCMC.html">2.1.4.1. Transitional Markov chain Monte Carlo (TMCMC) algorithm</a></li>
+</ul>
+</div>
+</div>
+<div class="section" id="custom-uq-engine">
+<h2><span class="section-number">2.1.5. </span>Custom UQ Engine<a class="headerlink" href="#custom-uq-engine" title="Permalink to this headline">¶</a></h2>
+<p>The <strong>CustomUQ</strong> option enables users to switch out the UQ engine in the quoFEM workflow such that different methods and tools can be applied within the SimCenter framework with minimal effort on the part of the user. The CustomUQ option can be accessed as shown below:</p>
+<blockquote>
+<div><div class="align-center figure" id="id6">
+<span id="figcustomuq"></span><a class="reference internal image-reference" href="../../../../_images/customUQ.png"><img alt="../../../../_images/customUQ.png" src="../../../../_images/customUQ.png" style="width: 1200px;" /></a>
+<p class="caption"><span class="caption-number">Fig. 2.1.5.1 </span><span class="caption-text">CustomUQ engine selection.</span><a class="headerlink" href="#id6" title="Permalink to this image">¶</a></p>
+</div>
+<p>In order to use the CustomUQ engine option, two steps are required:</p>
+<ul class="simple">
+<li><p>Configuring UQ tab to accept the required inputs</p></li>
+<li><p>Adding UQ engine to customized UQ backend</p></li>
+</ul>
+<p>These steps are described in more detail here:</p>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="Configuring_CustomUQ.html">2.1.5.1. Configuring CustomUQ Engine</a></li>
+</ul>
+</div>
+</div></blockquote>
 </div>
 <div class="section" id="id1">
 <h2><span class="section-number">2.1.6. </span>SimCenter UQ Engine<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h2>
@@ -261,6 +336,11 @@
 </div>
 <p>The following category options are available:</p>
 <div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="SimCenterUQSampling.html">2.1.3.1. Forward Propagation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="SimCenterUQSensitivity.html">2.1.3.2. Global Sensitivity Analysis</a></li>
+<li class="toctree-l1"><a class="reference internal" href="SimCenterUQPLoM.html">2.1.3.4. Probabilistic Learning on Manifolds (PLoM)</a></li>
+</ul>
 </div>
 </div>
 </div>
