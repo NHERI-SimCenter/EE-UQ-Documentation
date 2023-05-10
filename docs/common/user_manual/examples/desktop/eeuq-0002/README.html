@@ -7,7 +7,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   
-  <title>4.2. Including Spatial Variability in Site Response Event &mdash; Earthquake Engineering with Uncertainty Quantification  documentation</title>
+  <title>3.2. Including Spatial Variability in Site Response Event &mdash; Earthquake Engineering with Uncertainty Quantification  documentation</title>
   
 
   
@@ -50,8 +50,8 @@
     
     <link rel="index" title="Index" href="../../../../../genindex.html" />
     <link rel="search" title="Search" href="../../../../../search.html" />
-    <link rel="next" title="4.3. Ground Motion Selection and Nonlinear Response Analysis" href="../eeuq-0003/README.html" />
-    <link rel="prev" title="4.1. Shear Building: Sampling, Reliability and Sensitivity" href="../eeuq-0001/README.html" />
+    <link rel="next" title="3.3. Ground Motion Selection and Nonlinear Response Analysis" href="../eeuq-0003/README.html" />
+    <link rel="prev" title="3.1. Shear Building: Sampling, Reliability and Sensitivity" href="../eeuq-0001/README.html" />
 <script src="https://cdn.jsdelivr.net/npm/vega@5.12.1"></script>
 <script src="https://cdn.jsdelivr.net/npm/vega-lite@4.13.1"></script>
 <script src="https://cdn.jsdelivr.net/npm/vega-embed@6.8.0"></script>
@@ -123,28 +123,30 @@
 <p class="caption" role="heading"><span class="caption-text">User Manual</span></p>
 <ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="../../../installation/desktop/installation.html">1. Installation</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../../usage/desktop/usage.html">2. User Guide</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../../troubleshooting/desktop/troubleshooting.html">3. Troubleshooting</a></li>
-<li class="toctree-l1 current"><a class="reference internal" href="../examples.html">4. Examples</a><ul class="current">
-<li class="toctree-l2"><a class="reference internal" href="../eeuq-0001/README.html">4.1. Shear Building: Sampling, Reliability and Sensitivity</a></li>
-<li class="toctree-l2 current"><a class="current reference internal" href="#">4.2. Including Spatial Variability in Site Response Event</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="#problem-statement">4.2.1. Problem Statement</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#general-workflow-for-global-sensitivity-analysis">4.2.2. General Workflow for Global Sensitivity Analysis</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#adding-spatial-variability">4.2.3. Adding Spatial Variability</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="#case-1-using-elasticisotropic-material">4.2.3.1. Case 1: using ElasticIsotropic material</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#case-2-using-pm4sand-material">4.2.3.2. Case 2: using PM4Sand material</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../usage/desktop/usage.html">2. User Interface</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../examples.html">3. Examples</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../eeuq-0001/README.html">3.1. Shear Building: Sampling, Reliability and Sensitivity</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">3.2. Including Spatial Variability in Site Response Event</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#problem-statement">3.2.1. Problem Statement</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#general-workflow-for-global-sensitivity-analysis">3.2.2. General Workflow for Global Sensitivity Analysis</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#adding-spatial-variability">3.2.3. Adding Spatial Variability</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#case-1-using-elasticisotropic-material">3.2.3.1. Case 1: using ElasticIsotropic material</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#case-2-using-pm4sand-material">3.2.3.2. Case 2: using PM4Sand material</a></li>
 </ul>
 </li>
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="../eeuq-0003/README.html">4.3. Ground Motion Selection and Nonlinear Response Analysis</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../eeuq-0004/README.html">4.4. AutoSDA and Nonlinear Response Analysis</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../eeuq-0005/README.html">4.5. Shear Building: Synthetic Ground Motion</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../eeuq-0006/README.html">4.6. Surrogate Model for Structural Response Prediction (Probabilistic Learning on Manifolds)</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../eeuq-0007/README.html">4.7. Target Spectrum by Surrogate Hazard GP Model</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../eeuq-0008/README.html">4.8. Using Multiple Models and Analysis Options in EE-UQ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../eeuq-0003/README.html">3.3. Ground Motion Selection and Nonlinear Response Analysis</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../eeuq-0004/README.html">3.4. AutoSDA and Nonlinear Response Analysis</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../eeuq-0005/README.html">3.5. Shear Building: Synthetic Ground Motion</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../eeuq-0006/README.html">3.6. Surrogate Model for Structural Response Prediction (Probabilistic Learning on Manifolds)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../eeuq-0007/README.html">3.7. Target Spectrum by Surrogate Hazard GP Model</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../eeuq-0008/README.html">3.8. Using Multiple Models and Analysis Options in EE-UQ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../eeuq-0009/README.html">3.9. Training a Surrogate Model (Gaussian Process)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../eeuq-0010/README.html">3.10. Structural Response Prediction Using a Surrogate Model (Gaussian Process)</a></li>
 </ul>
 </li>
+<li class="toctree-l1"><a class="reference internal" href="../../../troubleshooting/desktop/troubleshooting.html">4. Troubleshooting</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../../../reqments/EEUQ.html">5. Requirements</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../../bugs.html">6. Bugs &amp; Feature Requests</a></li>
 </ul>
@@ -207,9 +209,9 @@
     
       <li><a href="../../../../../index.html" class="icon icon-home"></a> &raquo;</li>
         
-          <li><a href="../examples.html"><span class="section-number">4. </span>Examples</a> &raquo;</li>
+          <li><a href="../examples.html"><span class="section-number">3. </span>Examples</a> &raquo;</li>
         
-      <li><span class="section-number">4.2. </span>Including Spatial Variability in Site Response Event</li>
+      <li><span class="section-number">3.2. </span>Including Spatial Variability in Site Response Event</li>
     
     
       <li class="wy-breadcrumbs-aside">
@@ -229,12 +231,12 @@
            <div itemprop="articleBody">
             
   <div class="section" id="including-spatial-variability-in-site-response-event">
-<span id="lbl-example-randomfield"></span><h1><span class="section-number">4.2. </span>Including Spatial Variability in Site Response Event<a class="headerlink" href="#including-spatial-variability-in-site-response-event" title="Permalink to this headline">¶</a></h1>
+<span id="lbl-example-randomfield"></span><h1><span class="section-number">3.2. </span>Including Spatial Variability in Site Response Event<a class="headerlink" href="#including-spatial-variability-in-site-response-event" title="Permalink to this headline">¶</a></h1>
 <p>This page shows two examples on how to incorporate spatial variability into UQ analysis by using various special materials, namely ElasticIsotropic,
 PM4Sand, and PDMY03, in Site Response option under EVENT tab.</p>
 <div class="section" id="problem-statement">
-<h2><span class="section-number">4.2.1. </span>Problem Statement<a class="headerlink" href="#problem-statement" title="Permalink to this headline">¶</a></h2>
-<p>Site response analysis is commonly performed to analyze the propagation of seismic wave through soil. As shown in <a class="reference internal" href="#fig-siteresponse"><span class="std std-numref">Fig. 4.2.1.1</span></a>,
+<h2><span class="section-number">3.2.1. </span>Problem Statement<a class="headerlink" href="#problem-statement" title="Permalink to this headline">¶</a></h2>
+<p>Site response analysis is commonly performed to analyze the propagation of seismic wave through soil. As shown in <a class="reference internal" href="#fig-siteresponse"><span class="std std-numref">Fig. 3.2.1.1</span></a>,
 one-dimensional response analyses, as a simplified method, assume that all boundaries are horizontal and that the response of a soil deposit is
 predominately caused by SH-waves propagating vertically from the underlying bedrock. Ground surface response is usually the major output from
 these analyses, together with profile plots such as peak horizontal acceleration along the soil profile. When liquefiable soils are presenting,
@@ -243,14 +245,14 @@ maximum shear strain and excess pore pressure ratio plots are also important.</p
 and weathering processes. This spatial variability in the soil properties cannot be simply described by a mean and variance, as commonly adopted in UQ analyses,
 since the estimation of the two statistic values does not account for the spatial variation of the soil property data in the soil profile.
 Spatial variability is often modeled using two separated components: a known deterministic trend and a residual variability about the trend.
-These components are illustrated in <a class="reference internal" href="#fig-inherentvariability"><span class="std std-numref">Fig. 4.2.1.2</span></a>.</p>
+These components are illustrated in <a class="reference internal" href="#fig-inherentvariability"><span class="std std-numref">Fig. 3.2.1.2</span></a>.</p>
 <div class="align-center figure" id="id2">
 <span id="fig-siteresponse"></span><a class="reference internal image-reference" href="../../../../../_images/siteResponse1.png"><img alt="../../../../../_images/siteResponse1.png" src="../../../../../_images/siteResponse1.png" style="width: 538.0px; height: 287.5px;" /></a>
-<p class="caption"><span class="caption-number">Fig. 4.2.1.1 </span><span class="caption-text">Simplified 1D site response analysis (courtesy of Pedro Arduino)</span><a class="headerlink" href="#id2" title="Permalink to this image">¶</a></p>
+<p class="caption"><span class="caption-number">Fig. 3.2.1.1 </span><span class="caption-text">Simplified 1D site response analysis (courtesy of Pedro Arduino)</span><a class="headerlink" href="#id2" title="Permalink to this image">¶</a></p>
 </div>
 <div class="align-center figure" id="id3">
 <span id="fig-inherentvariability"></span><a class="reference internal image-reference" href="../../../../../_images/InherentVariability.png"><img alt="../../../../../_images/InherentVariability.png" src="../../../../../_images/InherentVariability.png" style="width: 433.8px; height: 409.2px;" /></a>
-<p class="caption"><span class="caption-number">Fig. 4.2.1.2 </span><span class="caption-text">Inherent soil variability (after <span id="id1">[<a class="reference internal" href="../../../../../index.html#id43" title="Kok Kwang Phoon and Fred H. Kulhawy. Characterization of geotechnical variability. Canadian Geotechnical Journal, 36(4):612–624, 1999. doi:10.1139/t99-038.">PK99</a>]</span>).</span><a class="headerlink" href="#id3" title="Permalink to this image">¶</a></p>
+<p class="caption"><span class="caption-number">Fig. 3.2.1.2 </span><span class="caption-text">Inherent soil variability (after <span id="id1">[<a class="reference internal" href="../../../../../index.html#id43" title="Kok Kwang Phoon and Fred H. Kulhawy. Characterization of geotechnical variability. Canadian Geotechnical Journal, 36(4):612–624, 1999. doi:10.1139/t99-038.">PK99</a>]</span>).</span><a class="headerlink" href="#id3" title="Permalink to this image">¶</a></p>
 </div>
 <p>A summary of the random field preparation procedure for the site response event analysis is summarized here:</p>
 <ol class="arabic simple">
@@ -269,7 +271,7 @@ These components are illustrated in <a class="reference internal" href="#fig-inh
 </div>
 </div>
 <div class="section" id="general-workflow-for-global-sensitivity-analysis">
-<h2><span class="section-number">4.2.2. </span>General Workflow for Global Sensitivity Analysis<a class="headerlink" href="#general-workflow-for-global-sensitivity-analysis" title="Permalink to this headline">¶</a></h2>
+<h2><span class="section-number">3.2.2. </span>General Workflow for Global Sensitivity Analysis<a class="headerlink" href="#general-workflow-for-global-sensitivity-analysis" title="Permalink to this headline">¶</a></h2>
 <p>In a global sensitivity analysis the user is wishing to understand what is the influence of the individual random variables on the quantities of interest.
 This is typically done before the user launches large scale forward uncertainty problems in order to limit the number of random variables used so as to limit the number of simulations performed.</p>
 <p>root mean square (RMS) accelerations in 1 and 2 directions, Peak BAse shear and moments in 1 and 2 directions.</p>
@@ -330,9 +332,9 @@ The peak displacement of the roof, is the quantity <strong>PFD</strong>. The <st
 </div>
 </div>
 <div class="section" id="adding-spatial-variability">
-<h2><span class="section-number">4.2.3. </span>Adding Spatial Variability<a class="headerlink" href="#adding-spatial-variability" title="Permalink to this headline">¶</a></h2>
+<h2><span class="section-number">3.2.3. </span>Adding Spatial Variability<a class="headerlink" href="#adding-spatial-variability" title="Permalink to this headline">¶</a></h2>
 <div class="section" id="case-1-using-elasticisotropic-material">
-<h3><span class="section-number">4.2.3.1. </span>Case 1: using ElasticIsotropic material<a class="headerlink" href="#case-1-using-elasticisotropic-material" title="Permalink to this headline">¶</a></h3>
+<h3><span class="section-number">3.2.3.1. </span>Case 1: using ElasticIsotropic material<a class="headerlink" href="#case-1-using-elasticisotropic-material" title="Permalink to this headline">¶</a></h3>
 <p>For the <strong>Elastic_Random</strong> material, shear wave velocity (Vs) can be selected to be randomized. Then select the <strong>Mean</strong> and <strong>COV</strong> (coefficient of variation <span class="math notranslate nohighlight">\(=\frac{\sigma}{\mu}\)</span>) for shear wave velocity.
 <strong>Correlation length</strong> defines how shear wave velocities are vertically correlated. Subsequently, Young’s modulus is calculated based the stochastic shear velocity profile at the center of each element. No special calibration is required.</p>
 <div class="admonition note">
@@ -343,29 +345,29 @@ The peak displacement of the roof, is the quantity <strong>PFD</strong>. The <st
 </div>
 <div class="align-center figure" id="id4">
 <a class="reference internal image-reference" href="../../../../../_images/Elastic-Random.png"><img alt="../../../../../_images/Elastic-Random.png" src="../../../../../_images/Elastic-Random.png" style="width: 916.1999999999999px; height: 404.4px;" /></a>
-<p class="caption"><span class="caption-number">Fig. 4.2.3.1.1 </span><span class="caption-text">Define inputs for Elastic_Random material.</span><a class="headerlink" href="#id4" title="Permalink to this image">¶</a></p>
+<p class="caption"><span class="caption-number">Fig. 3.2.3.1.1 </span><span class="caption-text">Define inputs for Elastic_Random material.</span><a class="headerlink" href="#id4" title="Permalink to this image">¶</a></p>
 </div>
-<p><a class="reference internal" href="#fig-elastic-average-respspect"><span class="std std-numref">Fig. 4.2.3.1.3</span></a> presents the profiles of shear wave velocity, peak horizontal acceleration, maximum shear strain, and maximum excess pore pressure ratio (Ru) obtained from 20 realizations.
-Ru are always zero since there is no volumetric strain in ElasticIsotropic material. <a class="reference internal" href="#fig-elastic-average-respspect"><span class="std std-numref">Fig. 4.2.3.1.3</span></a> depicts the mean and each individual response spectra (5% damping) at surface obtained from 20 realizations.</p>
+<p><a class="reference internal" href="#fig-elastic-average-respspect"><span class="std std-numref">Fig. 3.2.3.1.3</span></a> presents the profiles of shear wave velocity, peak horizontal acceleration, maximum shear strain, and maximum excess pore pressure ratio (Ru) obtained from 20 realizations.
+Ru are always zero since there is no volumetric strain in ElasticIsotropic material. <a class="reference internal" href="#fig-elastic-average-respspect"><span class="std std-numref">Fig. 3.2.3.1.3</span></a> depicts the mean and each individual response spectra (5% damping) at surface obtained from 20 realizations.</p>
 <div class="align-center figure" id="id5">
 <span id="fig-elastic-average-profile"></span><a class="reference internal image-reference" href="../../../../../_images/Elastic-Average-Profile.png"><img alt="../../../../../_images/Elastic-Average-Profile.png" src="../../../../../_images/Elastic-Average-Profile.png" style="width: 880.0px; height: 640.0px;" /></a>
-<p class="caption"><span class="caption-number">Fig. 4.2.3.1.2 </span><span class="caption-text">Profiles of shear wave velocity, peak horizontal acceleration, maximum shear strain, and maximum excess pore pressure ratio (Ru) obtained from 20 realizations (postprocessed from realization output data).</span><a class="headerlink" href="#id5" title="Permalink to this image">¶</a></p>
+<p class="caption"><span class="caption-number">Fig. 3.2.3.1.2 </span><span class="caption-text">Profiles of shear wave velocity, peak horizontal acceleration, maximum shear strain, and maximum excess pore pressure ratio (Ru) obtained from 20 realizations (postprocessed from realization output data).</span><a class="headerlink" href="#id5" title="Permalink to this image">¶</a></p>
 </div>
 <div class="align-center figure" id="id6">
 <span id="fig-elastic-average-respspect"></span><a class="reference internal image-reference" href="../../../../../_images/Elastic-Average-RespSpect.png"><img alt="../../../../../_images/Elastic-Average-RespSpect.png" src="../../../../../_images/Elastic-Average-RespSpect.png" style="width: 480.0px; height: 240.0px;" /></a>
-<p class="caption"><span class="caption-number">Fig. 4.2.3.1.3 </span><span class="caption-text">Response spectra (5% damping) at surface obtained from 20 realizations (postprocessed from realization output data).</span><a class="headerlink" href="#id6" title="Permalink to this image">¶</a></p>
+<p class="caption"><span class="caption-number">Fig. 3.2.3.1.3 </span><span class="caption-text">Response spectra (5% damping) at surface obtained from 20 realizations (postprocessed from realization output data).</span><a class="headerlink" href="#id6" title="Permalink to this image">¶</a></p>
 </div>
 </div>
 <div class="section" id="case-2-using-pm4sand-material">
-<h3><span class="section-number">4.2.3.2. </span>Case 2: using PM4Sand material<a class="headerlink" href="#case-2-using-pm4sand-material" title="Permalink to this headline">¶</a></h3>
+<h3><span class="section-number">3.2.3.2. </span>Case 2: using PM4Sand material<a class="headerlink" href="#case-2-using-pm4sand-material" title="Permalink to this headline">¶</a></h3>
 <p>For the <strong>PM4Sand_Random</strong> material, relative density (Dr) can be selected to be randomized. Then select the <strong>Mean</strong> and <strong>COV</strong> (coefficient of variation <span class="math notranslate nohighlight">\(COV=\frac{\sigma}{\mu}\)</span>) for shear wave velocity.
 <strong>Correlation length</strong> defines how shear wave velocities are vertically correlated. In ths current calibration procedure, all the other parameters are kept as input except for the contraction rate
 parameter hpo, that is calibrated based on the empirical triggering model proposed by Idriss and Boulanger 2008.</p>
-<p><a class="reference internal" href="#fig-pm4sand-average-respspect"><span class="std std-numref">Fig. 4.2.3.2.3</span></a> presents the profiles of shear wave velocity, peak horizontal acceleration, maximum shear strain, and maximum excess pore pressure ratio (Ru) obtained from 20 realizations.
-Comparing to elastic material, more variability are shown among these realizations. <a class="reference internal" href="#fig-pm4sand-average-respspect"><span class="std std-numref">Fig. 4.2.3.2.3</span></a> depicts the mean and each individual response spectra (5% damping) at surface obtained from 20 realizations.</p>
+<p><a class="reference internal" href="#fig-pm4sand-average-respspect"><span class="std std-numref">Fig. 3.2.3.2.3</span></a> presents the profiles of shear wave velocity, peak horizontal acceleration, maximum shear strain, and maximum excess pore pressure ratio (Ru) obtained from 20 realizations.
+Comparing to elastic material, more variability are shown among these realizations. <a class="reference internal" href="#fig-pm4sand-average-respspect"><span class="std std-numref">Fig. 3.2.3.2.3</span></a> depicts the mean and each individual response spectra (5% damping) at surface obtained from 20 realizations.</p>
 <div class="align-center figure" id="id7">
 <a class="reference internal image-reference" href="../../../../../_images/PM4Sand-Random.png"><img alt="../../../../../_images/PM4Sand-Random.png" src="../../../../../_images/PM4Sand-Random.png" style="width: 856.1999999999999px; height: 405.0px;" /></a>
-<p class="caption"><span class="caption-number">Fig. 4.2.3.2.1 </span><span class="caption-text">Define inputs for PM4Sand_Random material.</span><a class="headerlink" href="#id7" title="Permalink to this image">¶</a></p>
+<p class="caption"><span class="caption-number">Fig. 3.2.3.2.1 </span><span class="caption-text">Define inputs for PM4Sand_Random material.</span><a class="headerlink" href="#id7" title="Permalink to this image">¶</a></p>
 </div>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
@@ -375,11 +377,11 @@ Comparing to elastic material, more variability are shown among these realizatio
 </div>
 <div class="align-center figure" id="id8">
 <span id="fig-pm4sand-average-profile"></span><a class="reference internal image-reference" href="../../../../../_images/PM4Sand-Average-Profile.png"><img alt="../../../../../_images/PM4Sand-Average-Profile.png" src="../../../../../_images/PM4Sand-Average-Profile.png" style="width: 880.0px; height: 640.0px;" /></a>
-<p class="caption"><span class="caption-number">Fig. 4.2.3.2.2 </span><span class="caption-text">Profiles of shear wave velocity, peak horizontal acceleration, maximum shear strain, and maximum excess pore pressure ratio (Ru) obtained from 20 realizations (postprocessed from realization output data).</span><a class="headerlink" href="#id8" title="Permalink to this image">¶</a></p>
+<p class="caption"><span class="caption-number">Fig. 3.2.3.2.2 </span><span class="caption-text">Profiles of shear wave velocity, peak horizontal acceleration, maximum shear strain, and maximum excess pore pressure ratio (Ru) obtained from 20 realizations (postprocessed from realization output data).</span><a class="headerlink" href="#id8" title="Permalink to this image">¶</a></p>
 </div>
 <div class="align-center figure" id="id9">
 <span id="fig-pm4sand-average-respspect"></span><a class="reference internal image-reference" href="../../../../../_images/PM4Sand-Average-RespSpect.png"><img alt="../../../../../_images/PM4Sand-Average-RespSpect.png" src="../../../../../_images/PM4Sand-Average-RespSpect.png" style="width: 480.0px; height: 240.0px;" /></a>
-<p class="caption"><span class="caption-number">Fig. 4.2.3.2.3 </span><span class="caption-text">Response spectra (5% damping) at surface obtained from 20 realizations (postprocessed from realization output data).</span><a class="headerlink" href="#id9" title="Permalink to this image">¶</a></p>
+<p class="caption"><span class="caption-number">Fig. 3.2.3.2.3 </span><span class="caption-text">Response spectra (5% damping) at surface obtained from 20 realizations (postprocessed from realization output data).</span><a class="headerlink" href="#id9" title="Permalink to this image">¶</a></p>
 </div>
 </div>
 </div>

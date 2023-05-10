@@ -116,9 +116,8 @@
 <li class="toctree-l1"><a class="reference internal" href="eeCapabilities.html">5. Capabilities</a></li>
 <li class="toctree-l1"><a class="reference internal" href="eeReleaseNotes.html">6. Release Notes</a></li>
 <li class="toctree-l1 current"><a class="current reference internal" href="#">7. Release Plans</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="#march-2023">7.1. March 2023</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#sept-2023">7.2. Sept 2023</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#march-2024">7.3. March 2024</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#sept-2023">7.1. Sept 2023</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#march-2024">7.2. March 2024</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="../../front-matter/glossary.html">8. Glossary</a></li>
@@ -127,9 +126,9 @@
 <p class="caption" role="heading"><span class="caption-text">User Manual</span></p>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../installation/desktop/installation.html">1. Installation</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../usage/desktop/usage.html">2. User Guide</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../troubleshooting/desktop/troubleshooting.html">3. Troubleshooting</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../examples/desktop/examples.html">4. Examples</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../usage/desktop/usage.html">2. User Interface</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../examples/desktop/examples.html">3. Examples</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../troubleshooting/desktop/troubleshooting.html">4. Troubleshooting</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../reqments/EEUQ.html">5. Requirements</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../bugs.html">6. Bugs &amp; Feature Requests</a></li>
 </ul>
@@ -214,17 +213,8 @@
   <div class="section" id="release-plans">
 <span id="lbl-future-ee"></span><h1><span class="section-number">7. </span>Release Plans<a class="headerlink" href="#release-plans" title="Permalink to this headline">¶</a></h1>
 <p>The following features are planned to be developed for upcoming releases of EE-UQ app. We are actively working on the features in the next release. Farther development priorities may change depending on feedback from the community. If you have any suggestions, we encourage you to contribute and contact us through the SimCenter Forum.</p>
-<div class="section" id="march-2023">
-<h2><span class="section-number">7.1. </span>March 2023<a class="headerlink" href="#march-2023" title="Permalink to this headline">¶</a></h2>
-<blockquote>
-<div><ol class="arabic simple">
-<li><p>Quantify epistemic uncertainty in structural response by considering multiple models to represent various candidates for events, structural models, or simulation methods (1.2.4.1) - Define weights for each model candidate and propagate epistemic uncertainty by randomly selecting a model for each realization according to these weights.</p></li>
-<li><p>Use any simulation engine with the CustomPy feature - CustomPy allows you to execute a Python script that can serve as a wrapper for any other application. After preparing a wrapper, you can take leverage the applications in the SimCenter backend while running the FEM engine of your choice - OpenSeesPy, ETABS, Perform3D, ANSYS, Abaqus, etc.</p></li>
-</ol>
-</div></blockquote>
-</div>
 <div class="section" id="sept-2023">
-<h2><span class="section-number">7.2. </span>Sept 2023<a class="headerlink" href="#sept-2023" title="Permalink to this headline">¶</a></h2>
+<h2><span class="section-number">7.1. </span>Sept 2023<a class="headerlink" href="#sept-2023" title="Permalink to this headline">¶</a></h2>
 <blockquote>
 <div><ol class="arabic simple">
 <li><p>New, state-of-the-art surrogate methods - Heteroscedastic Gaussian Process Surrogates (1.2.2.2) - First, train a GP surrogate to capture the mean response, then train another GP surrogate the capture the variance using the residuals. This approach is especially powerful when large differences are observed in the variance of the output in different parts of the input space.</p></li>
@@ -234,7 +224,7 @@
 </div></blockquote>
 </div>
 <div class="section" id="march-2024">
-<h2><span class="section-number">7.3. </span>March 2024<a class="headerlink" href="#march-2024" title="Permalink to this headline">¶</a></h2>
+<h2><span class="section-number">7.2. </span>March 2024<a class="headerlink" href="#march-2024" title="Permalink to this headline">¶</a></h2>
 <blockquote>
 <div><blockquote>
 <div><ol class="arabic simple">

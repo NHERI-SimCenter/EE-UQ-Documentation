@@ -7,7 +7,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   
-  <title>4.8. Using Multiple Models and Analysis Options in EE-UQ &mdash; Earthquake Engineering with Uncertainty Quantification  documentation</title>
+  <title>3.8. Using Multiple Models and Analysis Options in EE-UQ &mdash; Earthquake Engineering with Uncertainty Quantification  documentation</title>
   
 
   
@@ -49,8 +49,8 @@
     
     <link rel="index" title="Index" href="../../../../../genindex.html" />
     <link rel="search" title="Search" href="../../../../../search.html" />
-    <link rel="next" title="5. Requirements" href="../../../../reqments/EEUQ.html" />
-    <link rel="prev" title="4.7. Target Spectrum by Surrogate Hazard GP Model" href="../eeuq-0007/README.html" />
+    <link rel="next" title="3.9. Training a Surrogate Model (Gaussian Process)" href="../eeuq-0009/README.html" />
+    <link rel="prev" title="3.7. Target Spectrum by Surrogate Hazard GP Model" href="../eeuq-0007/README.html" />
 <script src="https://cdn.jsdelivr.net/npm/vega@5.12.1"></script>
 <script src="https://cdn.jsdelivr.net/npm/vega-lite@4.13.1"></script>
 <script src="https://cdn.jsdelivr.net/npm/vega-embed@6.8.0"></script>
@@ -122,24 +122,26 @@
 <p class="caption" role="heading"><span class="caption-text">User Manual</span></p>
 <ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="../../../installation/desktop/installation.html">1. Installation</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../../usage/desktop/usage.html">2. User Guide</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../../troubleshooting/desktop/troubleshooting.html">3. Troubleshooting</a></li>
-<li class="toctree-l1 current"><a class="reference internal" href="../examples.html">4. Examples</a><ul class="current">
-<li class="toctree-l2"><a class="reference internal" href="../eeuq-0001/README.html">4.1. Shear Building: Sampling, Reliability and Sensitivity</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../eeuq-0002/README.html">4.2. Including Spatial Variability in Site Response Event</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../eeuq-0003/README.html">4.3. Ground Motion Selection and Nonlinear Response Analysis</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../eeuq-0004/README.html">4.4. AutoSDA and Nonlinear Response Analysis</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../eeuq-0005/README.html">4.5. Shear Building: Synthetic Ground Motion</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../eeuq-0006/README.html">4.6. Surrogate Model for Structural Response Prediction (Probabilistic Learning on Manifolds)</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../eeuq-0007/README.html">4.7. Target Spectrum by Surrogate Hazard GP Model</a></li>
-<li class="toctree-l2 current"><a class="current reference internal" href="#">4.8. Using Multiple Models and Analysis Options in EE-UQ</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="#configure-uq-engine">4.8.1. Configure UQ Engine</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#configure-structural-analysis">4.8.2. Configure Structural Analysis</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#run-the-analysis-and-observe-the-results">4.8.3. Run the analysis and observe the results</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../usage/desktop/usage.html">2. User Interface</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../examples.html">3. Examples</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../eeuq-0001/README.html">3.1. Shear Building: Sampling, Reliability and Sensitivity</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../eeuq-0002/README.html">3.2. Including Spatial Variability in Site Response Event</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../eeuq-0003/README.html">3.3. Ground Motion Selection and Nonlinear Response Analysis</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../eeuq-0004/README.html">3.4. AutoSDA and Nonlinear Response Analysis</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../eeuq-0005/README.html">3.5. Shear Building: Synthetic Ground Motion</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../eeuq-0006/README.html">3.6. Surrogate Model for Structural Response Prediction (Probabilistic Learning on Manifolds)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../eeuq-0007/README.html">3.7. Target Spectrum by Surrogate Hazard GP Model</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">3.8. Using Multiple Models and Analysis Options in EE-UQ</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#configure-uq-engine">3.8.1. Configure UQ Engine</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#configure-structural-analysis">3.8.2. Configure Structural Analysis</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#run-the-analysis-and-observe-the-results">3.8.3. Run the analysis and observe the results</a></li>
 </ul>
 </li>
+<li class="toctree-l2"><a class="reference internal" href="../eeuq-0009/README.html">3.9. Training a Surrogate Model (Gaussian Process)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../eeuq-0010/README.html">3.10. Structural Response Prediction Using a Surrogate Model (Gaussian Process)</a></li>
 </ul>
 </li>
+<li class="toctree-l1"><a class="reference internal" href="../../../troubleshooting/desktop/troubleshooting.html">4. Troubleshooting</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../../../reqments/EEUQ.html">5. Requirements</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../../bugs.html">6. Bugs &amp; Feature Requests</a></li>
 </ul>
@@ -202,9 +204,9 @@
     
       <li><a href="../../../../../index.html" class="icon icon-home"></a> &raquo;</li>
         
-          <li><a href="../examples.html"><span class="section-number">4. </span>Examples</a> &raquo;</li>
+          <li><a href="../examples.html"><span class="section-number">3. </span>Examples</a> &raquo;</li>
         
-      <li><span class="section-number">4.8. </span>Using Multiple Models and Analysis Options in EE-UQ</li>
+      <li><span class="section-number">3.8. </span>Using Multiple Models and Analysis Options in EE-UQ</li>
     
     
       <li class="wy-breadcrumbs-aside">
@@ -224,62 +226,69 @@
            <div itemprop="articleBody">
             
   <div class="section" id="using-multiple-models-and-analysis-options-in-ee-uq">
-<h1><span class="section-number">4.8. </span>Using Multiple Models and Analysis Options in EE-UQ<a class="headerlink" href="#using-multiple-models-and-analysis-options-in-ee-uq" title="Permalink to this headline">¶</a></h1>
-<p>This example demonstrates using multiple structural models and finite element analysis options to predict structural responses under earthquake ground motion inputs.</p>
+<h1><span class="section-number">3.8. </span>Using Multiple Models and Analysis Options in EE-UQ<a class="headerlink" href="#using-multiple-models-and-analysis-options-in-ee-uq" title="Permalink to this headline">¶</a></h1>
+<p>This example showcases the use of multiple structural models and finite element analysis options to predict structural responses to earthquake ground motion inputs.</p>
+<p>Non-linear time history analysis is conducted using OpenSees, employing a simple model of a 5 story structure, subjected to recorded ground acceleration time history during an earthquake. The response of the model is used to extract commonly used engineering demand parameters, while considering uncertainties in the value of story stiffnesses and model formulation. By including or excluding the uncertainty in the story stiffness and using modal or Rayleigh damping, four possible models are obtained, with each model having an equal chance of being randomly picked to predict the response of the structure. The resulting distribution of the engineering demand parameters is that obtained by propagating model form uncertainty as well as uncertainty about the value of a parameter of the model.</p>
 <div class="section" id="configure-uq-engine">
-<h2><span class="section-number">4.8.1. </span>Configure UQ Engine<a class="headerlink" href="#configure-uq-engine" title="Permalink to this headline">¶</a></h2>
+<h2><span class="section-number">3.8.1. </span>Configure UQ Engine<a class="headerlink" href="#configure-uq-engine" title="Permalink to this headline">¶</a></h2>
 <ol class="arabic simple">
 <li><p>Navigate to the <strong>UQ</strong> tab in the left menu. In this panel, select <strong>Forward Propagation</strong> as the UQ Method and <strong>Dakota</strong> as the
 <strong>UQ Engine</strong>.  <strong>LHS</strong> is used as the sampling method. Enter the values needed for the LHS method, as shown in the figure below:</p></li>
 </ol>
 <div class="align-center figure">
-<a class="reference internal image-reference" href="../../../../../_images/UQ.png"><img alt="../../../../../_images/UQ.png" src="../../../../../_images/UQ.png" style="width: 600px;" /></a>
+<a class="reference internal image-reference" href="../../../../../_images/ee8-UQ.png"><img alt="../../../../../_images/ee8-UQ.png" src="../../../../../_images/ee8-UQ.png" style="width: 600px;" /></a>
 </div>
 </div>
 <div class="section" id="configure-structural-analysis">
-<h2><span class="section-number">4.8.2. </span>Configure Structural Analysis<a class="headerlink" href="#configure-structural-analysis" title="Permalink to this headline">¶</a></h2>
+<h2><span class="section-number">3.8.2. </span>Configure Structural Analysis<a class="headerlink" href="#configure-structural-analysis" title="Permalink to this headline">¶</a></h2>
 <ol class="arabic simple">
 <li><p>Navigate to the <strong>SIM</strong> tab and select the <strong>Multi Model</strong> option for the <strong>Building Model Generator</strong>. We will use two simulation models for the 5 story structure in this example. Use the <strong>Add</strong> or <strong>Remove</strong> button as appropriate to create two tabs, corresponding to the two models that we will define next. In each of the tabs, choose <strong>MDOF</strong> as the <strong>Building Model Generator</strong>. The difference between the two models in this example is that in one of them we consider the story stiffness in the X and Y directions as being uncertain.</p></li>
 </ol>
 <div class="align-center figure">
-<a class="reference internal image-reference" href="../../../../../_images/SIM1.png"><img alt="../../../../../_images/SIM1.png" src="../../../../../_images/SIM1.png" style="width: 600px;" /></a>
+<a class="reference internal image-reference" href="../../../../../_images/ee8-SIM1.png"><img alt="../../../../../_images/ee8-SIM1.png" src="../../../../../_images/ee8-SIM1.png" style="width: 600px;" /></a>
 </div>
 <div class="align-center figure">
-<a class="reference internal image-reference" href="../../../../../_images/SIM2.png"><img alt="../../../../../_images/SIM2.png" src="../../../../../_images/SIM2.png" style="width: 600px;" /></a>
+<a class="reference internal image-reference" href="../../../../../_images/ee8-SIM2.png"><img alt="../../../../../_images/ee8-SIM2.png" src="../../../../../_images/ee8-SIM2.png" style="width: 600px;" /></a>
 </div>
 <ol class="arabic simple" start="2">
 <li><p>Navigate to the <strong>EVT</strong> tab and select the <strong>Multiple PEER</strong>. We will use a single ground motion in this example. Select the file that contains the acceleration values from the El Centro earthquake. This file can be found in the <cite>Examples</cite> folder that is in the EE-UQ application on your filesystem, under the <cite>eeuq-0001/src</cite> directory.</p></li>
 <li><p>In the <strong>FEM</strong> panel, we will select a <strong>Multi Model</strong> FE Application which allows us to define multiple structural analysis options. In this example, we will use the OpenSees FE Application and specify Raleigh Damping with the options shown in the first figure below for <strong>Simulation-1</strong>, and Modal Damping with the options shown in the second figure below in the <strong>Simulation-2</strong> tab.</p></li>
 </ol>
 <div class="align-center figure">
-<a class="reference internal image-reference" href="../../../../../_images/FEM1.png"><img alt="../../../../../_images/FEM1.png" src="../../../../../_images/FEM1.png" style="width: 600px;" /></a>
+<a class="reference internal image-reference" href="../../../../../_images/ee8-FEM1.png"><img alt="../../../../../_images/ee8-FEM1.png" src="../../../../../_images/ee8-FEM1.png" style="width: 600px;" /></a>
 </div>
 <div class="align-center figure">
-<a class="reference internal image-reference" href="../../../../../_images/FEM2.png"><img alt="../../../../../_images/FEM2.png" src="../../../../../_images/FEM2.png" style="width: 600px;" /></a>
+<a class="reference internal image-reference" href="../../../../../_images/ee8-FEM2.png"><img alt="../../../../../_images/ee8-FEM2.png" src="../../../../../_images/ee8-FEM2.png" style="width: 600px;" /></a>
 </div>
 <ol class="arabic simple" start="4">
 <li><p>In the <strong>EDP</strong> panel, we use the default option to record the
 standard earthquake EDPs, i.e., peak displacement, drift ratio, and acceleration demands.</p></li>
 </ol>
 <div class="align-center figure">
-<a class="reference internal image-reference" href="../../../../../_images/EDP.png"><img alt="../../../../../_images/EDP.png" src="../../../../../_images/EDP.png" style="width: 600px;" /></a>
+<a class="reference internal image-reference" href="../../../../../_images/ee8-EDP.png"><img alt="../../../../../_images/ee8-EDP.png" src="../../../../../_images/ee8-EDP.png" style="width: 600px;" /></a>
 </div>
 <ol class="arabic simple" start="5">
 <li><p>The <strong>RV</strong> panel will be auto-populated with the name of the variable for the story stiffness that was entered in the <strong>SIM</strong> panel. In this example, we will assume that the uncertainty about the story stiffness value is represented by a Normal distribution with a mean value of 100 units and a standard deviation of 1. By pressing the <strong>Show PDF</strong> button, a visualization of the Probability Density Function will be displayed in a separate window. For the probability distribution used in this example, about 95% of the randomly sampled values of the story stiffness will be between 98 and 102.</p></li>
 </ol>
 <div class="align-center figure">
-<a class="reference internal image-reference" href="../../../../../_images/RV.png"><img alt="../../../../../_images/RV.png" src="../../../../../_images/RV.png" style="width: 600px;" /></a>
+<a class="reference internal image-reference" href="../../../../../_images/ee8-RV.png"><img alt="../../../../../_images/ee8-RV.png" src="../../../../../_images/ee8-RV.png" style="width: 600px;" /></a>
 </div>
 </div>
 <div class="section" id="run-the-analysis-and-observe-the-results">
-<h2><span class="section-number">4.8.3. </span>Run the analysis and observe the results<a class="headerlink" href="#run-the-analysis-and-observe-the-results" title="Permalink to this headline">¶</a></h2>
+<h2><span class="section-number">3.8.3. </span>Run the analysis and observe the results<a class="headerlink" href="#run-the-analysis-and-observe-the-results" title="Permalink to this headline">¶</a></h2>
 <ol class="arabic simple">
 <li><p>Next, click on the <strong>Run</strong> button. This will call the backend application to launch the analysis. When the analysis is finished,
 the <strong>RES</strong> panel will be displayed, which shows summary statistics of the output quantities in the <strong>Summary</strong> tab.</p></li>
+</ol>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>The use of multiple models in the analysis results in the automatic creation of new variables by the tools during the analysis. In this example, two variables named ‘Multimodel-Modeling’ and ‘Multimodel-Simulation’ are created automatically, with their values representing the index of the models as defined within the <strong>SIM</strong> and <strong>FEM</strong> panels, respectively.</p>
+</div>
+<ol class="arabic simple" start="2">
 <li><p>In the <strong>Data Value</strong> tab, a spreadsheet shows the sampled values of the input random variables and the corresponding output engineering demand parameters. A chart shows scatter plots of the sampled values, and by clicking the left or right mouse buttons within the spreadsheet, the chart shows a histogram or a plot of the cumulative frequency distribution of the sampled values.</p></li>
 </ol>
 <div class="align-center figure">
-<a class="reference internal image-reference" href="../../../../../_images/RES.png"><img alt="../../../../../_images/RES.png" src="../../../../../_images/RES.png" style="width: 600px;" /></a>
+<a class="reference internal image-reference" href="../../../../../_images/ee8-RES.png"><img alt="../../../../../_images/ee8-RES.png" src="../../../../../_images/ee8-RES.png" style="width: 600px;" /></a>
 </div>
 <p>In this figure, it is observed that if there is uncertainty about the story stiffness, there is a resulting uncertainty in the predicted engineering demand parameters, which can be characterized by performing the forward propagation analysis as shown in this example. To precisely characterize the uncertainty in the predicted EDPs, a large number of sample values (at least in the order of 1000) must be used. Running such large number of model evaluations easily is facilitated by EE-UQ through the <strong>RUN at DesignSafe</strong> option. This allows the users of the tool to utilize the high performance computing resources provided by DesignSafe. A DesignSafe account, which is free to obtain, is required to use this facility.</p>
 </div>

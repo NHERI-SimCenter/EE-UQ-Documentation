@@ -1,0 +1,548 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" />
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  
+  <title>3.9. Training a Surrogate Model (Gaussian Process) &mdash; Earthquake Engineering with Uncertainty Quantification  documentation</title>
+  
+
+  
+  <link rel="stylesheet" href="../../../../../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../../../../../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../../../../../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../../../../../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../../../../../_static/tabs.css" type="text/css" />
+  <link rel="stylesheet" href="../../../../../_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" type="text/css" />
+  <link rel="stylesheet" href="../../../../../_static/panels-bootstrap.5fd3999ee7762ccc51105388f4a9d115.css" type="text/css" />
+  <link rel="stylesheet" href="../../../../../_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" type="text/css" />
+  <link rel="stylesheet" href="../../../../../_static/sphinxcontrib-images/LightBox2/lightbox2/dist/css/lightbox.css" type="text/css" />
+  <link rel="stylesheet" href="../../../../../_static/css/custom.css" type="text/css" />
+
+  
+  
+
+  
+  
+
+  
+
+  
+  <!--[if lt IE 9]>
+    <script src="../../../../../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../../../../../" src="../../../../../_static/documentation_options.js"></script>
+        <script data-url_root="../../../../../" id="documentation_options" src="../../../../../_static/documentation_options.js"></script>
+        <script src="../../../../../_static/jquery.js"></script>
+        <script src="../../../../../_static/underscore.js"></script>
+        <script src="../../../../../_static/doctools.js"></script>
+        <script src="../../../../../_static/sphinxcontrib-images/LightBox2/lightbox2/dist/js/lightbox-plus-jquery.min.js"></script>
+        <script src="../../../../../_static/sphinxcontrib-images/LightBox2/lightbox2-customize/jquery-noconflict.js"></script>
+    
+    <script type="text/javascript" src="../../../../../_static/js/theme.js"></script>
+
+    
+    <link rel="index" title="Index" href="../../../../../genindex.html" />
+    <link rel="search" title="Search" href="../../../../../search.html" />
+    <link rel="next" title="3.10. Structural Response Prediction Using a Surrogate Model (Gaussian Process)" href="../eeuq-0010/README.html" />
+    <link rel="prev" title="3.8. Using Multiple Models and Analysis Options in EE-UQ" href="../eeuq-0008/README.html" />
+<script src="https://cdn.jsdelivr.net/npm/vega@5.12.1"></script>
+<script src="https://cdn.jsdelivr.net/npm/vega-lite@4.13.1"></script>
+<script src="https://cdn.jsdelivr.net/npm/vega-embed@6.8.0"></script>
+<style media="screen">.vega-actions a {margin-right: 5px;}</style>
+<link href="../../../../../_static/css/bootstrap.css" rel="stylesheet">
+
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search"  style="background: #F2F2F2" >
+          
+<a href="https://simcenter.designsafe-ci.org/" style="margin-bottom: 0px;">
+  <img src="../../../../../_static/img/SimCenter-Only.png" class="logo" alt="Org-Logo" />
+</a>
+<hr style="margin: 0px;">
+
+  <a href="../../../../../index.html">
+
+
+
+  
+  <img src="../../../../../_static/EE-UQ-Logo.png" class="logo" alt="Logo"/>
+
+</a>
+
+
+  
+  
+
+
+
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../../../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+
+        </div>
+
+        
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <p class="caption" role="heading"><span class="caption-text">About</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../about/EEUQ/about.html">1. About</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../front-matter/desktop/ack.html">2. Acknowledgments</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../front-matter/license.html">3. Copyright and License</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../front-matter/cite.html">4. How To Cite</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../releases/eeCapabilities.html">5. Capabilities</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../releases/eeReleaseNotes.html">6. Release Notes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../releases/eePlans.html">7. Release Plans</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../front-matter/glossary.html">8. Glossary</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../front-matter/abbreviations.html">9. Abbreviations</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">User Manual</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../../../installation/desktop/installation.html">1. Installation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../usage/desktop/usage.html">2. User Interface</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../examples.html">3. Examples</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../eeuq-0001/README.html">3.1. Shear Building: Sampling, Reliability and Sensitivity</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../eeuq-0002/README.html">3.2. Including Spatial Variability in Site Response Event</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../eeuq-0003/README.html">3.3. Ground Motion Selection and Nonlinear Response Analysis</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../eeuq-0004/README.html">3.4. AutoSDA and Nonlinear Response Analysis</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../eeuq-0005/README.html">3.5. Shear Building: Synthetic Ground Motion</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../eeuq-0006/README.html">3.6. Surrogate Model for Structural Response Prediction (Probabilistic Learning on Manifolds)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../eeuq-0007/README.html">3.7. Target Spectrum by Surrogate Hazard GP Model</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../eeuq-0008/README.html">3.8. Using Multiple Models and Analysis Options in EE-UQ</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">3.9. Training a Surrogate Model (Gaussian Process)</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#training-gaussian-process-surrogate-model">3.9.1. Training Gaussian Process Surrogate Model</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#set-up-gp-surrogate-modeling-options">3.9.2. Set Up GP Surrogate Modeling Options</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#define-target-structure">3.9.3. Define Target Structure</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#select-ground-motions-for-the-training">3.9.4. Select Ground Motions for the Training</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#set-up-training-domain">3.9.5. Set Up Training Domain</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#run-the-analysis-and-process-results">3.9.6. Run the Analysis and Process Results</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../eeuq-0010/README.html">3.10. Structural Response Prediction Using a Surrogate Model (Gaussian Process)</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../../troubleshooting/desktop/troubleshooting.html">4. Troubleshooting</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../reqments/EEUQ.html">5. Requirements</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../bugs.html">6. Bugs &amp; Feature Requests</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Technical Manual</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../../technical_manual/desktop/technical_manual.html">1. Technical Manual</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Developer Manual</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../../developer_manual/how_to_build/desktop/how_to_build.html">1. How to Build</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../developer_manual/architecture/desktop/architecture.html">2. Software Architecture</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../developer_manual/how_to_extend/desktop/how_to_extend.html">3. How to Extend</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../developer_manual/verification/desktop/verification.html">4. Verification</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../developer_manual/coding_style/desktop/coding_style.html">5. Coding Style</a></li>
+</ul>
+
+            
+          
+        </div>
+        
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../../../../index.html">Earthquake Engineering with Uncertainty Quantification</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../../../../../index.html" class="icon icon-home"></a> &raquo;</li>
+        
+          <li><a href="../examples.html"><span class="section-number">3. </span>Examples</a> &raquo;</li>
+        
+      <li><span class="section-number">3.9. </span>Training a Surrogate Model (Gaussian Process)</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+          
+            <a href="../../../../../_sources/common/user_manual/examples/desktop/eeuq-0009/README.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="training-a-surrogate-model-gaussian-process">
+<span id="eeuq-0009"></span><h1><span class="section-number">3.9. </span>Training a Surrogate Model (Gaussian Process)<a class="headerlink" href="#training-a-surrogate-model-gaussian-process" title="Permalink to this headline">¶</a></h1>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>To reproduce the result of this example, the user should first click <strong>EVT</strong> and <strong>Select Records</strong>, and then click the <strong>RUN</strong> button. See the below procedure for details.</p>
+</div>
+<div class="section" id="training-gaussian-process-surrogate-model">
+<h2><span class="section-number">3.9.1. </span>Training Gaussian Process Surrogate Model<a class="headerlink" href="#training-gaussian-process-surrogate-model" title="Permalink to this headline">¶</a></h2>
+<p>This example shows how to train a surrogate model that can be imported into EE-UQ and replace structural dynamic simulations. The training of a surrogate model requires some number of structural dynamic simulations for representative scenarios [i.e. training set]. In this example, these simulations are performed using recorded ground motions selected from the PEER NGA database. The ground motions are selected such that it covers a wide domain of intensity measure (IM) space, as uniform as possible. Three IMs are considered in the example: pseudo-spectral acceleration at period 0.5 sec (PSA), 5-75% duration (D5-75), and SaRatio following the work in <a class="reference internal" href="#zhong2023" id="id1"><span>[Zhong2023]</span></a>. We additionally consider the stiffness of the target structure (3 story building) as input for the surrogate model.</p>
+<blockquote>
+<div><div class="align-center figure" id="uq-inputs">
+<a class="reference internal image-reference" href="../../../../../_images/EE09_main2.png"><img alt="../../../../../_images/EE09_main2.png" src="../../../../../_images/EE09_main2.png" style="width: 900px;" /></a>
+<p class="caption"><span class="caption-number">Fig. 3.9.1.1 </span><span class="caption-text">Training a surrogate model for seismic response</span><a class="headerlink" href="#uq-inputs" title="Permalink to this image">¶</a></p>
+</div>
+</div></blockquote>
+<dl class="citation">
+<dt class="label" id="zhong2023"><span class="brackets"><a class="fn-backref" href="#id1">Zhong2023</a></span></dt>
+<dd><p>Zhong, K., Navarro, J.G., Govindjee, S., and Deierlein, G.G., “Surrogate Modeling of Structural Seismic Response Using Probabilistic Learning on Manifolds,” <em>Earthquake Engineering &amp; Structural Dynamics</em>, 1-22, (2023) <a class="reference external" href="https://doi.org/10.1002/eqe.3839">https://doi.org/10.1002/eqe.3839</a></p>
+</dd>
+</dl>
+</div>
+<div class="section" id="set-up-gp-surrogate-modeling-options">
+<h2><span class="section-number">3.9.2. </span>Set Up GP Surrogate Modeling Options<a class="headerlink" href="#set-up-gp-surrogate-modeling-options" title="Permalink to this headline">¶</a></h2>
+<ol class="arabic">
+<li><p>In the <strong>UQ tab</strong> select the <strong>Surrogate Modeling</strong> as <strong>UQ Method</strong>. Then, select the <strong>Train GP Surrogate Model</strong>.</p>
+<blockquote>
+<div><div class="align-center figure" id="id2">
+<a class="reference internal image-reference" href="../../../../../_images/EE09_UQ.png"><img alt="../../../../../_images/EE09_UQ.png" src="../../../../../_images/EE09_UQ.png" style="width: 900px;" /></a>
+<p class="caption"><span class="caption-number">Fig. 3.9.2.1 </span><span class="caption-text">UQ tab</span><a class="headerlink" href="#id2" title="Permalink to this image">¶</a></p>
+</div>
+</div></blockquote>
+<p>Below are the details of the selected inputs:</p>
+<ul class="simple">
+<li><p><strong>Number of Samples</strong> : The number of samples should be the same as the ground motions to be selected in the EVT tab, i.e. 100. This number can be flexible when stochastic ground motion is used. Typically, as the number of samples increases, the accuracy of the surrogate model will increase but training time will also increase.</p></li>
+<li><p><strong>Max Computation Time</strong> : 60 mins (default)</p></li>
+<li><p><strong>Target Accuracy</strong> : 0.02. EE-UQ will give a warning when this accuracy target is not met</p></li>
+<li><p><strong>Random Seed</strong> : 984. An arbitrarily selected seed for the random generator used in the Surrogate modeling algorithm</p></li>
+<li><p><strong>Parallel Execution</strong> : True. This will parallelize multiple dynamic simulations</p></li>
+<li><p><strong>Advanced Options for Gaussian Process Model</strong> : False. By default, EE-UQ takes <strong>Martern 5/2</strong>, <strong>Log-space transform of QoI</strong>, <strong>Heteroskedastic nugget variance</strong> options.</p></li>
+<li><p><strong>Existing Data set</strong> : False. This is useful when one hopes to resume the surrogate model training after one training round is finished, by performing more simulations</p></li>
+<li><p><strong>Intensity Measure Calculation</strong>: Select the intensity measures (IMs) to be used as the augmented input of the surrogate model -Sa(T=0.5 sec), D5-75, and SaRatio(T=1.0 sec in the range of 0.1-1.5 sec)</p></li>
+</ul>
+</li>
+</ol>
+<p>More information can be found in the <a class="reference internal" href="../../../usage/desktop/SimCenterUQSurrogate.html#lblsimsurrogate"><span class="std std-ref">User Guide</span></a>.</p>
+</div>
+<div class="section" id="define-target-structure">
+<h2><span class="section-number">3.9.3. </span>Define Target Structure<a class="headerlink" href="#define-target-structure" title="Permalink to this headline">¶</a></h2>
+<ol class="arabic">
+<li><p>In <strong>GI tab</strong>, set the number of stories, 3.</p>
+<blockquote>
+<div><div class="align-center figure" id="id3">
+<a class="reference internal image-reference" href="../../../../../_images/EE09_GI.png"><img alt="../../../../../_images/EE09_GI.png" src="../../../../../_images/EE09_GI.png" style="width: 900px;" /></a>
+<p class="caption"><span class="caption-number">Fig. 3.9.3.1 </span><span class="caption-text">GI tab - Specify 3 story building</span><a class="headerlink" href="#id3" title="Permalink to this image">¶</a></p>
+</div>
+</div></blockquote>
+</li>
+<li><p>In <strong>SIM tab</strong>, the specifics of the target structural model is provided via <strong>MDOF</strong> building generator. A three-story building is created having stiffness as an input parameter.</p>
+<blockquote>
+<div><div class="align-center figure" id="id4">
+<a class="reference internal image-reference" href="../../../../../_images/EE09_SIM.png"><img alt="../../../../../_images/EE09_SIM.png" src="../../../../../_images/EE09_SIM.png" style="width: 900px;" /></a>
+<p class="caption"><span class="caption-number">Fig. 3.9.3.2 </span><span class="caption-text">SIM tab</span><a class="headerlink" href="#id4" title="Permalink to this image">¶</a></p>
+</div>
+</div></blockquote>
+</li>
+</ol>
+</div>
+<div class="section" id="select-ground-motions-for-the-training">
+<h2><span class="section-number">3.9.4. </span>Select Ground Motions for the Training<a class="headerlink" href="#select-ground-motions-for-the-training" title="Permalink to this headline">¶</a></h2>
+<ol class="arabic" start="3">
+<li><p>In <strong>EVT tab</strong>, the option to retrieve ground motions from <strong>PEER NGA records</strong> is selected. To allow the surrogate models to cover a wide variety of ground motions (represented as “wide IM domain”), let us select <strong>No Spectrum - Uniform IMs</strong> for the analysis. Set the <strong>Number of samples per bin</strong> 1, and add three intensity measures that are specified in the UQ tab as the input of surrogate, i.e. “5-75% Significant Duration”, “Pseudo Spectral Acceleration (with a natural period of 0.5 sec)”, and “SaRatio (at 1.0 sec in range of 0.1-1.5 sec). Set the coverage ranges respectively to [2.5, 30], [0.1, 2.0], and [0.25, 1.2]. For the former two IMs, the number of bins is set as 5, and the SaRatio will have 4 bins. Therefore, the total number of bins (i.e. grid points in 3-dimensional space) is 100.</p>
+<blockquote>
+<div><div class="align-center figure" id="id5">
+<a class="reference internal image-reference" href="../../../../../_images/EE09_EVT1.png"><img alt="../../../../../_images/EE09_EVT1.png" src="../../../../../_images/EE09_EVT1.png" style="width: 900px;" /></a>
+<p class="caption"><span class="caption-number">Fig. 3.9.4.1 </span><span class="caption-text">EVT tab - configuration of IM bins</span><a class="headerlink" href="#id5" title="Permalink to this image">¶</a></p>
+</div>
+</div></blockquote>
+</li>
+</ol>
+<blockquote>
+<div><p>The selected excitation time histories will be saved in the “Temporary records Directory” shown in the figure. It is recommended to use a user-defined directory to reuse the data files in different analyses.</p>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>Due to copyright issues, PEER imposes a strict limit on the number of records that can be downloaded within a unique time window. The current limit is set at approximately 200 records every two weeks, 400 every month. Please make sure this limit is not exceeded. Otherwise, the analysis will fail.</p>
+</div>
+</div></blockquote>
+<ul>
+<li><p><strong>Temporary Records Directory</strong> is where the downloaded ground motion records are stored.</p></li>
+<li><p><strong>Acceleration Components</strong> option is used to select the directional components to be used in the analysis. For example, if H1 is selected, single-directional ground motions will be excited to the structure.</p>
+<blockquote>
+<div><div class="align-center figure" id="id6">
+<a class="reference internal image-reference" href="../../../../../_images/EE09_EVT2.png"><img alt="../../../../../_images/EE09_EVT2.png" src="../../../../../_images/EE09_EVT2.png" style="width: 600px;" /></a>
+<p class="caption"><span class="caption-number">Fig. 3.9.4.2 </span><span class="caption-text">EVT tab - Selected ground motions in a table</span><a class="headerlink" href="#id6" title="Permalink to this image">¶</a></p>
+</div>
+</div></blockquote>
+</li>
+</ul>
+<ul>
+<li><p>Press <strong>Select Records</strong> when ready, which will connect the PEER NGA West Ground Motion Database. You could use your account and password to log in. If you don’t have an account, you can easily sign up at <a href="https://ngawest2.berkeley.edu/" target="_blank">PEER Ground Motion Database</a>. The list of selected ground motions and their scaling factors are displayed in the table. The coverage of IMs of the selected ground motions will be displayed in the right-hand side panel as below.</p>
+<blockquote>
+<div><div class="align-center figure" id="id7">
+<a class="reference internal image-reference" href="../../../../../_images/EE09_EVT3.png"><img alt="../../../../../_images/EE09_EVT3.png" src="../../../../../_images/EE09_EVT3.png" style="width: 500px;" /></a>
+<p class="caption"><span class="caption-number">Fig. 3.9.4.3 </span><span class="caption-text">EVT tab - Selected ground motions in IM space</span><a class="headerlink" href="#id7" title="Permalink to this image">¶</a></p>
+</div>
+</div></blockquote>
+</li>
+</ul>
+<p>Note that <em>approximated</em> IM values are used for this ground motion selection. The approximated IMs are read from the flat file PEER provides, and the geometric mean is used to average out the two horizontal directional components. Therefore the actual IM used as the surrogate input may not exactly match the IM value shown in the above figure. The yellow dots represent the selected 100 ground motion records having corresponding IMs, blue/red dots represent the center of each bin, i.e. anchor point. It is colored red when no matching ground motion is found to be close to the anchor point. This informs users how good the IM coverage is.</p>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>Note that the surrogate modeling algorithms are stronger in “interpolation” rather than extrapolation. Therefore, when later using the pre-trained surrogate model to predict the response of the structure subjected to new (untrained) IM values (e.g. <a class="reference internal" href="../eeuq-0010/README.html#eeuq-0010"><span class="std std-ref">example 10</span></a>), it is important to make sure the IMs of the new ground motions are well covered by the domain of the training samples, i.e. it should lie the area that is shown blue in the above figure. Otherwise, the prediction from the surrogate model is likely not reliable.</p>
+</div>
+<ol class="arabic simple" start="4">
+<li><p>The <strong>FEM tab</strong> is kept as default.</p></li>
+</ol>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>Do NOT select the “None (only for the surrogate)” option in the FEM tab. This option is not for training a surrogate model but for using a pre-trained surrogate model. (See <a class="reference internal" href="../eeuq-0010/README.html#eeuq-0010"><span class="std std-ref">example 10</span></a>)</p>
+</div>
+<ol class="arabic simple" start="5">
+<li><p>The <strong>EDP tab</strong> is kept as default. For the surrogate model to be compatible with the PBE and other applications, it should follow the naming of the Standard Earthquake. Under the <strong>Standard Earthquake</strong>, in this example, the structural model will automatically output peak floor acceleration (PFA), peak floor displacement respective to the ground (PFD), Peak inter-story drift ratio (PID), peak roof drift ratio (PRD).</p></li>
+</ol>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>Do NOT select the “None (only for the surrogate)” option in the EDP tab. This option is not for training a surrogate model but for using a pre-trained surrogate model. (See <a class="reference internal" href="../eeuq-0010/README.html#eeuq-0010"><span class="std std-ref">example 10</span></a>)</p>
+</div>
+</div>
+<div class="section" id="set-up-training-domain">
+<h2><span class="section-number">3.9.5. </span>Set Up Training Domain<a class="headerlink" href="#set-up-training-domain" title="Permalink to this headline">¶</a></h2>
+<ol class="arabic">
+<li><p>In <strong>RV tab</strong> set the range of stiffness to be [50, 150] as shown in the below image. This is equivalent to the range of stiffness of which the response can be predicted using the surrogate. The selected IMs (Sa, D5-75, and SaRatio) in each two horizontal directions will be additional inputs of the surrogate model. Therefore, the total dimension of the surrogate model input is 7.</p>
+<blockquote>
+<div><div class="align-center figure" id="id8">
+<a class="reference internal image-reference" href="../../../../../_images/EE09_RV.png"><img alt="../../../../../_images/EE09_RV.png" src="../../../../../_images/EE09_RV.png" style="width: 900px;" /></a>
+<p class="caption"><span class="caption-number">Fig. 3.9.5.1 </span><span class="caption-text">RV tab</span><a class="headerlink" href="#id8" title="Permalink to this image">¶</a></p>
+</div>
+</div></blockquote>
+</li>
+</ol>
+</div>
+<div class="section" id="run-the-analysis-and-process-results">
+<h2><span class="section-number">3.9.6. </span>Run the Analysis and Process Results<a class="headerlink" href="#run-the-analysis-and-process-results" title="Permalink to this headline">¶</a></h2>
+<ol class="arabic" start="6">
+<li><p>Click <strong>Run</strong> button. The analysis may take several minutes to run. The <strong>RES tab</strong> will be highlighted when the analysis is completed.</p>
+<p>The EDP name consists of the quantity of interest, story number, and the direction of interest - for example:</p>
+<blockquote>
+<div><ul class="simple">
+<li><p>1-PFA-0-1 : <strong>peak floor acceleration</strong> at the <strong>ground floor</strong>, <strong>component 1</strong> (x-dir)</p></li>
+<li><p>1-PFD-1-2 : <strong>peak floor displacement</strong> (respective to the ground) at the <strong>1st floor</strong> ceiling, <strong>component 2</strong> (y-dir)</p></li>
+<li><p>1-PID-3-1 : <strong>peak inter-story drift ratio</strong> of the <strong>1st floor</strong>, <strong>component 1</strong> (x-dir)</p></li>
+<li><p>1-PRD-1-1 : <strong>peak roof drift ratio</strong>, <strong>component 1</strong> (x-dir)</p></li>
+</ul>
+</div></blockquote>
+</li>
+<li><p>Two Goodness-of-fit measures are provided : Inter-quartile ratio (IQR) and normality (Cramer-Von Mises test) score. Using the leave-one-out cross-validation predictions, the IQR provides the ratio of the sample QoIs that lies in 25-75% LOOCV prediction bounds (interquartile range). The IQR values should theoretically approach 0.5 if the prediction is accurate.</p>
+<div class="align-center figure" id="id9">
+<a class="reference internal image-reference" href="../../../../../_images/EE09_RES1.png"><img alt="../../../../../_images/EE09_RES1.png" src="../../../../../_images/EE09_RES1.png" style="width: 900px;" /></a>
+<p class="caption"><span class="caption-number">Fig. 3.9.6.1 </span><span class="caption-text">RES tab - summary</span><a class="headerlink" href="#id9" title="Permalink to this image">¶</a></p>
+</div>
+</li>
+<li><p>Additionally the comparison between the original simulation samples and leave-one-out cross-validation (LOOCV) predictions from the surrogate is provided as the scatter plot. When we have a large variance in the response observations, as in this example, the LOOCV mean is not expected to match exactly the data samples observed. Instead, they are expected to lie on a reasonable prediction bound. The below graph shows the inter-quartile prediction bounds, i.e. 25%-75%, which are expected to cover 50% of the sample observations.</p>
+<blockquote>
+<div><div class="align-center figure" id="id10">
+<a class="reference internal image-reference" href="../../../../../_images/EE09_RES2.png"><img alt="../../../../../_images/EE09_RES2.png" src="../../../../../_images/EE09_RES2.png" style="width: 600px;" /></a>
+<p class="caption"><span class="caption-number">Fig. 3.9.6.2 </span><span class="caption-text">RES tab - Leave-one-out cross-validation error measure</span><a class="headerlink" href="#id10" title="Permalink to this image">¶</a></p>
+</div>
+</div></blockquote>
+</li>
+</ol>
+<p>Please see the <a class="reference internal" href="../../../usage/desktop/SimCenterUQSurrogate.html#lblsimsurrogate"><span class="std std-ref">User Guide</span></a> for more details on the verification measures.</p>
+<ol class="arabic" start="9">
+<li><p>The LOOCV predictions can be compared for different input realizations under “Data Values” tab.</p>
+<blockquote>
+<div><div class="align-center figure" id="id11">
+<a class="reference internal image-reference" href="../../../../../_images/EE09_RES3.png"><img alt="../../../../../_images/EE09_RES3.png" src="../../../../../_images/EE09_RES3.png" style="width: 900px;" /></a>
+<p class="caption"><span class="caption-number">Fig. 3.9.6.3 </span><span class="caption-text">RES tab - Scatter plots</span><a class="headerlink" href="#id11" title="Permalink to this image">¶</a></p>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>The user can interact with the plot as follows.</p>
+<ul class="simple">
+<li><p>Windows: left-click sets the Y axis (ordinate).  right-click sets the X axis (abscissa).</p></li>
+<li><p>MAC: fn-clink, option-click, and command-click all set the Y axis (ordinate).  ctrl-click sets the X axis (abscissa).</p></li>
+</ul>
+</div>
+</div></blockquote>
+</li>
+<li><p>The surrogate model can be saved in a json file by clicking the “Save GP Model” button at the bottom of the “Summary” tab. One main file and one auxiliary folder will be saved.</p>
+<blockquote>
+<div><div class="align-center figure" id="id12">
+<a class="reference internal image-reference" href="../../../../../_images/EE09_RES_buttons.png"><img alt="../../../../../_images/EE09_RES_buttons.png" src="../../../../../_images/EE09_RES_buttons.png" style="width: 600px;" /></a>
+<p class="caption"><span class="caption-number">Fig. 3.9.6.4 </span><span class="caption-text">RES tab - Save GP</span><a class="headerlink" href="#id12" title="Permalink to this image">¶</a></p>
+</div>
+<div class="align-center figure" id="id13">
+<a class="reference internal image-reference" href="../../../../../_images/EE09_RES4.jpg"><img alt="../../../../../_images/EE09_RES4.jpg" src="../../../../../_images/EE09_RES4.jpg" style="width: 900px;" /></a>
+<p class="caption"><span class="caption-number">Fig. 3.9.6.5 </span><span class="caption-text">RES tab - Trained surrogate model</span><a class="headerlink" href="#id13" title="Permalink to this image">¶</a></p>
+</div>
+</div></blockquote>
+</li>
+</ol>
+<blockquote>
+<div><ul class="simple">
+<li><p><strong>SimGPModel.json</strong> : This file contains information required to quickly reconstruct the surrogate model and predict the response for different input realizations. This can be later imported into EEUQ.</p></li>
+<li><p><strong>tmplatedir_SIM</strong> : This folder contains all the scripts and commands to run the original dynamic time history analysis. This folder can later be imported into EEUQ along with the surrogate model to alternate between original simulations and surrogate predictions or compare the surrogate predictions to the response of the original model.</p></li>
+</ul>
+<p>The button “Save GP Info” will additionally allow users to save GP information, e.g. calibrated hyper-parameter values.</p>
+</div></blockquote>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p><a class="reference internal" href="../eeuq-0010/README.html#eeuq-0010"><span class="std std-ref">Example 10</span></a> demonstrates how to use the trained surrogate model for UQ analysis.</p>
+</div>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &#169; Copyright 2023, The Regents of the University of California.
+
+    </p>
+  </div>
+    
+    
+    
+    Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    
+    provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+    <!-- Theme Analytics -->
+    <script>
+    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+      (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+      m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+    })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+    ga('create', 'UA-158130480-1', 'auto');
+    
+    ga('send', 'pageview');
+    </script>
+
+    
+    
+
+  <style>
+         .wy-nav-content { max-width: none; }
+  </style>
+
+<script>
+    /*
+    let selectedFilters = [];
+    const images  = document.getElementsByClassName("gallery-item");
+    const filters = [...document.querySelectorAll('.filter select')];
+    const toggles = [...document.querySelectorAll('.filter input')];
+
+    var show = function (elem) {
+        elem.style.display = 'block';
+    };
+    var hide = function (elem) {
+        elem.style.display = 'none';
+    };
+    var toggleFilter =  function(el,elid) {
+        const filter = document.getElementById(elid);
+        filter.disabled = !el.checked;
+       
+        if ("createEvent" in document) {
+            var evt = document.createEvent("HTMLEvents");
+            evt.initEvent("change", false, true);
+            filter.dispatchEvent(evt);
+        }
+        else
+            filter.fireEvent("change");
+    };
+    
+    for (const filter of filters) {
+        filter.addEventListener('change', function(event) {
+            selectedFilters = filters.map(filter => filter.disabled ? '' : filter.value).filter(Boolean);
+            console.log(selectedFilters);
+            for (const image of images) {
+                if (selectedFilters.every(filter => image.classList.contains(filter))) {
+                    show(image);
+                }
+                else {hide(image)};
+            };
+        })
+    };
+    */
+</script>
+
+
+</body>
+</html>
