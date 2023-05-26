@@ -280,24 +280,24 @@
 <div class="section" id="select-ground-motions">
 <h2><span class="section-number">3.10.3. </span>Select Ground Motions<a class="headerlink" href="#select-ground-motions" title="Permalink to this headline">¶</a></h2>
 <ol class="arabic" start="4">
-<li><p>In <strong>EVT tab</strong>, <strong>PEER NGA ground motion records</strong> is selected. Let us consider the site of interest located at (37.8715, -122.273), Hard Rock (A) site class. From ASCE 7-16, the design spectrum for risk category I (low hazard) can be obtained. Let us select 30 ground motion time histories that match this spectrum by clicking <a href="#id3"><span class="problematic" id="id4">**</span></a>Select records**button. The target response spectrum curve and the selected ground motions will be displayed in the right-hand side panel as shown below.</p>
+<li><p>In <strong>EVT tab</strong>, <strong>PEER NGA ground motion records</strong> option is selected. Let us consider the site of interest located at (37.8715, -122.273), of which we would like to select ground motions that follows USGS Uniform Hazard Spectrum (2014 v4.2.0) with return period 2475. Vs30 is assumed 760 m/s. Let us select 30 ground motion time histories that match this spectrum by clicking <strong>Select records</strong> button. The target response spectrum curve and the selected ground motions will be displayed on the right-hand side panel as shown below.</p>
 <blockquote>
-<div><div class="align-center figure" id="id5">
+<div><div class="align-center figure" id="id3">
 <a class="reference internal image-reference" href="../../../../../_images/EE10_EVT1.png"><img alt="../../../../../_images/EE10_EVT1.png" src="../../../../../_images/EE10_EVT1.png" style="width: 900px;" /></a>
-<p class="caption"><span class="caption-number">Fig. 3.10.3.1 </span><span class="caption-text">EVT tab - target response spectrum</span><a class="headerlink" href="#id5" title="Permalink to this image">¶</a></p>
+<p class="caption"><span class="caption-number">Fig. 3.10.3.1 </span><span class="caption-text">EVT tab - target response spectrum</span><a class="headerlink" href="#id3" title="Permalink to this image">¶</a></p>
 </div>
-<div class="align-center figure" id="id6">
+<div class="align-center figure" id="id4">
 <a class="reference internal image-reference" href="../../../../../_images/EE10_EVT3.png"><img alt="../../../../../_images/EE10_EVT3.png" src="../../../../../_images/EE10_EVT3.png" style="width: 600px;" /></a>
-<p class="caption"><span class="caption-number">Fig. 3.10.3.2 </span><span class="caption-text">EVT tab - selected ground motion records on the response spectrum curve</span><a class="headerlink" href="#id6" title="Permalink to this image">¶</a></p>
+<p class="caption"><span class="caption-number">Fig. 3.10.3.2 </span><span class="caption-text">EVT tab - selected ground motion records on the response spectrum curve</span><a class="headerlink" href="#id4" title="Permalink to this image">¶</a></p>
 </div>
 </div></blockquote>
 </li>
 </ol>
 <p>The list of the selected ground motions is shown in the table.</p>
 <blockquote>
-<div><div class="align-center figure" id="id7">
+<div><div class="align-center figure" id="id5">
 <a class="reference internal image-reference" href="../../../../../_images/EE10_EVT2.png"><img alt="../../../../../_images/EE10_EVT2.png" src="../../../../../_images/EE10_EVT2.png" style="width: 600px;" /></a>
-<p class="caption"><span class="caption-number">Fig. 3.10.3.3 </span><span class="caption-text">EVT tab - temporary records directory and scaling options</span><a class="headerlink" href="#id7" title="Permalink to this image">¶</a></p>
+<p class="caption"><span class="caption-number">Fig. 3.10.3.3 </span><span class="caption-text">EVT tab - temporary records directory and scaling options</span><a class="headerlink" href="#id5" title="Permalink to this image">¶</a></p>
 </div>
 </div></blockquote>
 <p>The actual time histories are saved in the “Temporary Records Directory”.</p>
@@ -312,17 +312,17 @@
 <ol class="arabic" start="5">
 <li><p>In <strong>FEM tab</strong> select <strong>None (only for surrogate)</strong>.</p>
 <blockquote>
-<div><div class="align-center figure" id="id8">
+<div><div class="align-center figure" id="id6">
 <a class="reference internal image-reference" href="../../../../../_images/EE10_FEM.png"><img alt="../../../../../_images/EE10_FEM.png" src="../../../../../_images/EE10_FEM.png" style="width: 900px;" /></a>
-<p class="caption"><span class="caption-number">Fig. 3.10.3.4 </span><span class="caption-text">FEM tab</span><a class="headerlink" href="#id8" title="Permalink to this image">¶</a></p>
+<p class="caption"><span class="caption-number">Fig. 3.10.3.4 </span><span class="caption-text">FEM tab</span><a class="headerlink" href="#id6" title="Permalink to this image">¶</a></p>
 </div>
 </div></blockquote>
 </li>
 <li><p>The <strong>EDP tab</strong> is automatically populated with the EDP names used when training the surrogate. Keep the option  <strong>None (only for surrogate)</strong></p>
 <blockquote>
-<div><div class="align-center figure" id="id9">
+<div><div class="align-center figure" id="id7">
 <a class="reference internal image-reference" href="../../../../../_images/EE10_EDP.png"><img alt="../../../../../_images/EE10_EDP.png" src="../../../../../_images/EE10_EDP.png" style="width: 900px;" /></a>
-<p class="caption"><span class="caption-number">Fig. 3.10.3.5 </span><span class="caption-text">EDP tab</span><a class="headerlink" href="#id9" title="Permalink to this image">¶</a></p>
+<p class="caption"><span class="caption-number">Fig. 3.10.3.5 </span><span class="caption-text">EDP tab</span><a class="headerlink" href="#id7" title="Permalink to this image">¶</a></p>
 </div>
 </div></blockquote>
 </li>
@@ -333,9 +333,9 @@
 <ol class="arabic" start="7">
 <li><p>The <strong>RV tab</strong> is pre-populated with the random variables that were used to train the surrogate. Change the distribution of the statistical parameters as desired. In this example, the stiffness is assumed to be distributed around 120 with a standard deviation of 5.</p>
 <blockquote>
-<div><div class="align-center figure" id="id10">
+<div><div class="align-center figure" id="id8">
 <a class="reference internal image-reference" href="../../../../../_images/EE10_RV.png"><img alt="../../../../../_images/EE10_RV.png" src="../../../../../_images/EE10_RV.png" style="width: 900px;" /></a>
-<p class="caption"><span class="caption-number">Fig. 3.10.4.1 </span><span class="caption-text">RV tab</span><a class="headerlink" href="#id10" title="Permalink to this image">¶</a></p>
+<p class="caption"><span class="caption-number">Fig. 3.10.4.1 </span><span class="caption-text">RV tab</span><a class="headerlink" href="#id8" title="Permalink to this image">¶</a></p>
 </div>
 </div></blockquote>
 </li>
@@ -351,22 +351,22 @@
 <li><p>Click <strong>Run</strong> button. The analysis may take several minutes. The <strong>RES tab</strong> will be highlighted when the analysis is completed</p></li>
 <li><p>The obtained statistics of responses are shown in the “Summary tab”</p>
 <blockquote>
-<div><div class="align-center figure" id="id11">
+<div><div class="align-center figure" id="id9">
 <a class="reference internal image-reference" href="../../../../../_images/EE10_RES1.png"><img alt="../../../../../_images/EE10_RES1.png" src="../../../../../_images/EE10_RES1.png" style="width: 900px;" /></a>
-<p class="caption"><span class="caption-number">Fig. 3.10.5.1 </span><span class="caption-text">RES tab - summary of response statistics</span><a class="headerlink" href="#id11" title="Permalink to this image">¶</a></p>
+<p class="caption"><span class="caption-number">Fig. 3.10.5.1 </span><span class="caption-text">RES tab - summary of response statistics</span><a class="headerlink" href="#id9" title="Permalink to this image">¶</a></p>
 </div>
 </div></blockquote>
 </li>
 <li><p>In the “Data Values” tab, one can plot the histogram and cumulative density function (CDF) of the samples, as well as scatter plots between the input and output of surrogate predictions</p></li>
 </ol>
 <blockquote>
-<div><div class="align-center figure" id="id12">
+<div><div class="align-center figure" id="id10">
 <a class="reference internal image-reference" href="../../../../../_images/EE10_RES2.png"><img alt="../../../../../_images/EE10_RES2.png" src="../../../../../_images/EE10_RES2.png" style="width: 900px;" /></a>
-<p class="caption"><span class="caption-number">Fig. 3.10.5.2 </span><span class="caption-text">RES tab - cumulative density function</span><a class="headerlink" href="#id12" title="Permalink to this image">¶</a></p>
+<p class="caption"><span class="caption-number">Fig. 3.10.5.2 </span><span class="caption-text">RES tab - cumulative density function</span><a class="headerlink" href="#id10" title="Permalink to this image">¶</a></p>
 </div>
-<div class="align-center figure" id="id13">
+<div class="align-center figure" id="id11">
 <a class="reference internal image-reference" href="../../../../../_images/EE10_RES3.png"><img alt="../../../../../_images/EE10_RES3.png" src="../../../../../_images/EE10_RES3.png" style="width: 900px;" /></a>
-<p class="caption"><span class="caption-number">Fig. 3.10.5.3 </span><span class="caption-text">RES tab - scatter plots</span><a class="headerlink" href="#id13" title="Permalink to this image">¶</a></p>
+<p class="caption"><span class="caption-number">Fig. 3.10.5.3 </span><span class="caption-text">RES tab - scatter plots</span><a class="headerlink" href="#id11" title="Permalink to this image">¶</a></p>
 </div>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
@@ -386,16 +386,26 @@
 </div>
 </div></blockquote>
 <ol class="arabic simple" start="11">
-<li><p><strong>[Verification]</strong> Only for verification purposes, an additional forward propagation is performed using the exact simulation model instead of the surrogate model, using the exact same ground motion/structural parameters. For this, UQ, GI, EVT, RV tabs are kept unchanged, and SIM, FEM, EDP tabs are modified to replace the surrogate with the original model, i.e. for SIM, FEM, EDP tabs, the exact same configuration used in <a class="reference internal" href="../eeuq-0009/README.html#eeuq-0009"><span class="std std-ref">example 09</span></a> was used.  Below is a comparison of the obtained median (and log-mean) and log-standard deviation of the EDPs from 30 samples:</p></li>
+<li><p><strong>[Verification]</strong> Only for verification purposes, an additional forward propagation is performed using the exact simulation model instead of the surrogate model, using the exact same ground motion/structural parameters. For this, UQ, GI, EVT, RV tabs are kept unchanged, and SIM, FEM, EDP tabs are modified to replace the surrogate with the original model, i.e. for SIM, FEM, EDP tabs, the exact same configuration used in <a class="reference internal" href="../eeuq-0009/README.html#eeuq-0009"><span class="std std-ref">example 09</span></a> was used.  Below is a comparison of the obtained mean log-EDPs from 30 samples:</p></li>
 </ol>
 <blockquote>
-<div><div class="align-center figure" id="id14">
-<a class="reference internal image-reference" href="../../../../../_images/EE10_RES4_1.png"><img alt="../../../../../_images/EE10_RES4_1.png" src="../../../../../_images/EE10_RES4_1.png" style="width: 900px;" /></a>
-<p class="caption"><span class="caption-number">Fig. 3.10.5.4 </span><span class="caption-text">Comparison of median</span><a class="headerlink" href="#id14" title="Permalink to this image">¶</a></p>
+<div><div class="align-center figure" id="id12">
+<a class="reference internal image-reference" href="../../../../../_images/EE10_RES4_1.png"><img alt="../../../../../_images/EE10_RES4_1.png" src="../../../../../_images/EE10_RES4_1.png" style="width: 700px;" /></a>
+<p class="caption"><span class="caption-number">Fig. 3.10.5.4 </span><span class="caption-text">Comparing median of log-EDP</span><a class="headerlink" href="#id12" title="Permalink to this image">¶</a></p>
 </div>
-<div class="align-center figure" id="id15">
-<a class="reference internal image-reference" href="../../../../../_images/EE10_RES4_2.png"><img alt="../../../../../_images/EE10_RES4_2.png" src="../../../../../_images/EE10_RES4_2.png" style="width: 400px;" /></a>
-<p class="caption"><span class="caption-number">Fig. 3.10.5.5 </span><span class="caption-text">Comparison of log-standard deviation</span><a class="headerlink" href="#id15" title="Permalink to this image">¶</a></p>
+</div></blockquote>
+<p>The same comparison in the original scale shown below.</p>
+<blockquote>
+<div><div class="align-center figure" id="id13">
+<a class="reference internal image-reference" href="../../../../../_images/EE10_RES4_2.png"><img alt="../../../../../_images/EE10_RES4_2.png" src="../../../../../_images/EE10_RES4_2.png" style="width: 700px;" /></a>
+<p class="caption"><span class="caption-number">Fig. 3.10.5.5 </span><span class="caption-text">Comparison of log-standard deviation</span><a class="headerlink" href="#id13" title="Permalink to this image">¶</a></p>
+</div>
+</div></blockquote>
+<p>On the other hand, log-standard deviation of the EDPs from 30 samples are obtained as below.</p>
+<blockquote>
+<div><div class="align-center figure" id="id14">
+<a class="reference internal image-reference" href="../../../../../_images/EE10_RES4_3.png"><img alt="../../../../../_images/EE10_RES4_3.png" src="../../../../../_images/EE10_RES4_3.png" style="width: 700px;" /></a>
+<p class="caption"><span class="caption-number">Fig. 3.10.5.6 </span><span class="caption-text">Comparing standard deviation of log-EDP</span><a class="headerlink" href="#id14" title="Permalink to this image">¶</a></p>
 </div>
 </div></blockquote>
 <p>The estimated medians of EDPs from the surrogate and the original model show in general good agreement. The standard deviation of the surrogate model is larger partly because of the added uncertainty in surrogate model approximation. The difference in the statistics may also attribute to the small sample size of 30.</p>

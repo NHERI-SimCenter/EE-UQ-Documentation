@@ -7,7 +7,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   
-  <title>Release Plans &mdash; Earthquake Engineering with Uncertainty Quantification  documentation</title>
+  <title>Release Notes &mdash; Earthquake Engineering with Uncertainty Quantification  documentation</title>
   
 
   
@@ -185,13 +185,13 @@
     
       <li><a href="../../../index.html" class="icon icon-home"></a> &raquo;</li>
         
-      <li>Release Plans</li>
+      <li>Release Notes</li>
     
     
       <li class="wy-breadcrumbs-aside">
         
           
-            <a href="../../../_sources/common/user_manual/releases/r2dPlans.rst.txt" rel="nofollow"> View page source</a>
+            <a href="../../../_sources/common/user_manual/releases/r2dReleaseNotes.rst.txt" rel="nofollow"> View page source</a>
           
         
       </li>
@@ -204,54 +204,74 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
             
-  <div class="section" id="release-plans">
-<span id="lbl-future-r2d"></span><h1>Release Plans<a class="headerlink" href="#release-plans" title="Permalink to this headline">¶</a></h1>
-<p>The following features are planned to be developed for upcoming releases of EE-UQ app. We are actively working on the features in the next release. Farther development priorities may change depending on feedback from the community. If you have any suggestions, we encourage you to contribute and contact us through the SimCenter Forum.</p>
-<div class="section" id="june-2023">
-<h2>June 2023<a class="headerlink" href="#june-2023" title="Permalink to this headline">¶</a></h2>
+  <div class="section" id="release-notes">
+<span id="lbl-release"></span><h1>Release Notes<a class="headerlink" href="#release-notes" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="version-3-0-0-current">
+<h2>Version 3.0.0 (Current)<a class="headerlink" href="#version-3-0-0-current" title="Permalink to this headline">¶</a></h2>
+<p><strong>Release date:</strong> May. 2023</p>
+<p><strong>Highlights</strong></p>
 <ol class="arabic simple">
-<li><p>Water Distribution Network, buried pipelines.(1.3.4.3)</p></li>
+<li><p>Revised Interface, added new Tools section and moved some existing applications to that pulldown</p></li>
+<li><p>Hazard Occurance Model added to earthquake selection</p></li>
+<li><p>Revised input file format in anticipation of multiple asset types with multiple options for each</p></li>
 </ol>
 </div>
-<div class="section" id="sept-2023">
-<h2>Sept 2023<a class="headerlink" href="#sept-2023" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="version-2-2-0">
+<h2>Version 2.2.0<a class="headerlink" href="#version-2-2-0" title="Permalink to this headline">¶</a></h2>
+<p><strong>Release date:</strong> Sept 2022</p>
+<p><strong>Highlights</strong></p>
 <ol class="arabic simple">
-<li><p>Efficient forward propagation using Multi-Fidelity Monte-Carlo (1.2.3.1) - Use a few realizations of the output calculated with expensive, high-fidelity models to evaluate and correct the bias in efficient, approximate models, such as surrogates. With little extra computational demands, this method provides a substantial improvement in surrogate model performance if you have the high-fidelity models available that were used to train the surrogates.</p></li>
-<li><p>Support transportation networks hazus level analysis (1.3.4.3) and provide corresponding Examples (1.3.4.7) - Extend the scope of tool with transportation networks and add examples that can serve as templates.</p></li>
-<li><p>Add datasets to simulate subassembly damage and losses under wind demands (1.3.5.1) - Data from recent publications in the Performance-Based Wind Engineering literature is collected to enable high-resolution performance assessment under wind hazard, add data to DB-DamegeAndLoss.</p></li>
-<li><p>Incorprate surrogate models created by other SimCenter tools in regional assesments (1.3.6.1) - Other tools can export models in a standard format that can be imported directly in R2D for use in regional simulations.</p></li>
-<li><p>Probabilistic asset inventories (1.3.6.2) - Calibrate, store, and propagate uncertainties in building features at the regional scale. For example, we have some but not all information for all buildings in an area, fill in the gaps using information we do know.</p></li>
+<li><p>Obtain information from Census and ARC</p></li>
+<li><p>Updated ground motion input options for OpenQuake</p></li>
 </ol>
 </div>
-<div class="section" id="march-2024">
-<h2>March 2024<a class="headerlink" href="#march-2024" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="version-2-1-0">
+<h2>Version 2.1.0<a class="headerlink" href="#version-2-1-0" title="Permalink to this headline">¶</a></h2>
+<p><strong>Release date:</strong> March 2022</p>
+<p><strong>Highlights</strong></p>
 <ol class="arabic simple">
-<li><p>Automatic access to physics-based ground motion simulation results (1.1.1.3)</p></li>
-<li><p>Add datasets to simulate subassembly damage and losses under water demands (1.3.5.2)</p></li>
-<li><p>Add datasets to simulate high-resolution damages and losses in buried pipeline networks (1.3.5.4)</p></li>
+<li><p>Ability to perform regional site response analysis taking motions at rock to surface</p></li>
+<li><p>Ability to import hazards as a raster</p></li>
+<li><p>Ability to employ custom fragility functions in Pelicun DL framework</p></li>
+<li><p>Support of tsunami hazards</p></li>
+<li><p>Ability to import population demographics from census and merge with building inventory</p></li>
 </ol>
 </div>
-<div class="section" id="sept-2024">
-<h2>Sept 2024<a class="headerlink" href="#sept-2024" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="version-2-0-0">
+<h2>Version 2.0.0<a class="headerlink" href="#version-2-0-0" title="Permalink to this headline">¶</a></h2>
+<p><strong>Release date:</strong> Dec. 2021</p>
 <ol class="arabic simple">
-<li><p>Develop methods to model interdependencies between physical components, housing, socio-economic functions, and lifelines (1.3.4.6)</p></li>
-<li><p>Add datasets to simulate high-resolution damages and losses in transportation networks (1.3.5.3)</p></li>
-<li><p>Develop and implement metrics and their visualization to inform recovery and community resilience (1.4.3.2)</p></li>
-<li><p>Look at aspects related to recovery. Housholds (1.4.3.2), Infrastructure )1.4.2.4), Business operations (1.4.2.5)</p></li>
-</ol>
-</div>
-<div class="section" id="sept-2025">
-<h2>Sept 2025<a class="headerlink" href="#sept-2025" title="Permalink to this headline">¶</a></h2>
+<li><p>QGIS integrated into R2D with the ability to:</p>
 <ol class="arabic simple">
-<li><p>Multi-fidelity models in regional simulations (1.3.3.1)</p></li>
-<li><p>Multi-scale models for wind and water (1.3.3.2)</p></li>
+<li><p>load several types of GIS files into R2D to visualize and extract information</p></li>
 </ol>
-<blockquote>
-<div><div class="admonition note">
-<p class="admonition-title">Note</p>
-<p>The numbers in parentheses are for internal tracking purposes.</p>
+</li>
+</ol>
+<p>post-process results based on advanced queries and expression filters
+join external databases to GIS features to add additional information for pre- and post-processing
+export GIS layers into many supported formats for viewing in other GIS applications</p>
+<ol class="arabic simple">
+<li><p>Filtering of assets to include in an analysis based on advanced queries and expressions</p></li>
+<li><p>OpenQuake source selection tool</p>
+<ol class="arabic simple">
+<li><p>OpenQuake Scenario-Based Seismic Hazard Analysis to calculate intensity measure from OpenQuake rupture sources</p></li>
+<li><p>OpenQuake Classical Probabilistic Seismic Hazard Analysis to calculate intensity measures from OpenQuake seismic source and ground motion logic trees</p></li>
+</ol>
+</li>
+<li><p>Widget to import building inventory in ShapeFile format</p></li>
+</ol>
+<p>version updates to 2.0.0 as older versions run at design-safe will not load due to changes in backend.</p>
 </div>
-</div></blockquote>
+<div class="section" id="version-1-0-0">
+<h2>Version 1.0.0<a class="headerlink" href="#version-1-0-0" title="Permalink to this headline">¶</a></h2>
+<p>Initial Release allows assessment of impact of earthquake on a region</p>
+<ol class="arabic simple">
+<li><p>Ground motion Selection using EarthquakeScenario application to obtain scenario specific ground motions for user defined scenario utiling PEER NGA &amp; user defined inputs</p></li>
+<li><p>Building Inventory input by user</p></li>
+<li><p>Building Modeling utilizing MDOF-LU</p></li>
+<li><p>Building Loss Estimation using Pelicun and Hazus fragilities &amp; consequence function.</p></li>
+<li><p>Interface incorporated ArcGis</p></li>
+</ol>
 </div>
 </div>
 
