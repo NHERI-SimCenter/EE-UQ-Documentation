@@ -151,6 +151,11 @@
 <li class="toctree-l1"><a class="reference internal" href="../../../../reqments/EEUQ.html">5. Requirements</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../../bugs.html">6. Bugs &amp; Feature Requests</a></li>
 </ul>
+<p class="caption" role="heading"><span class="caption-text">Damage and Loss DB</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../../dldb/damage/index.html">1. Damage Models</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../dldb/repair/index.html">2. Repair Consequence Models</a></li>
+</ul>
 <p class="caption" role="heading"><span class="caption-text">Technical Manual</span></p>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../../../../technical_manual/desktop/technical_manual.html">1. Technical Manual</a></li>
@@ -233,17 +238,17 @@
             
   <div class="section" id="including-spatial-variability-in-site-response-event">
 <span id="lbl-example-randomfield"></span><h1><span class="section-number">3.2. </span>Including Spatial Variability in Site Response Event<a class="headerlink" href="#including-spatial-variability-in-site-response-event" title="Permalink to this headline">¶</a></h1>
-<p>This page shows two examples on how to incorporate spatial variability into UQ analysis by using various special materials, namely ElasticIsotropic,
-PM4Sand, and PDMY03, in Site Response option under EVENT tab.</p>
+<p>This page shows two examples of how to incorporate spatial variability into UQ analysis by using various special materials, namely ElasticIsotropic,
+PM4Sand, and PDMY03, in the Site Response option under the EVENT tab.</p>
 <div class="section" id="problem-statement">
 <h2><span class="section-number">3.2.1. </span>Problem Statement<a class="headerlink" href="#problem-statement" title="Permalink to this headline">¶</a></h2>
-<p>Site response analysis is commonly performed to analyze the propagation of seismic wave through soil. As shown in <a class="reference internal" href="#fig-siteresponse"><span class="std std-numref">Fig. 3.2.1.1</span></a>,
+<p>Site response analysis is commonly performed to analyze the propagation of seismic waves through soil. As shown in <a class="reference internal" href="#fig-siteresponse"><span class="std std-numref">Fig. 3.2.1.1</span></a>,
 one-dimensional response analyses, as a simplified method, assume that all boundaries are horizontal and that the response of a soil deposit is
 predominately caused by SH-waves propagating vertically from the underlying bedrock. Ground surface response is usually the major output from
 these analyses, together with profile plots such as peak horizontal acceleration along the soil profile. When liquefiable soils are presenting,
 maximum shear strain and excess pore pressure ratio plots are also important.</p>
-<p>In the real world condition, physical properties of soils vary from place to place within a soil deposit due to varying geologic formation and loading histories such as sedimentation, erosion, transportation,
-and weathering processes. This spatial variability in the soil properties cannot be simply described by a mean and variance, as commonly adopted in UQ analyses,
+<p>In real-world conditions, the physical properties of soils vary from place to place within a soil deposit due to varying geologic formation and loading histories such as sedimentation, erosion, transportation,
+and weathering processes. This spatial variability in the soil properties cannot be simply described by a mean and variance, as commonly adopted in UQ analyses
 since the estimation of the two statistic values does not account for the spatial variation of the soil property data in the soil profile.
 Spatial variability is often modeled using two separated components: a known deterministic trend and a residual variability about the trend.
 These components are illustrated in <a class="reference internal" href="#fig-inherentvariability"><span class="std std-numref">Fig. 3.2.1.2</span></a>.</p>
@@ -262,29 +267,29 @@ These components are illustrated in <a class="reference internal" href="#fig-inh
 <li><p>Interpolate Gaussian field to FEM mesh</p></li>
 <li><p>Combine the mean (trend) field and Gaussian (residual variability) field to obtain a stochastic field</p></li>
 <li><p>Generate material input for site response analysis based on predefined model calibration methods</p></li>
-<li><p>Perform site response analysis using the randomized material input and obtain acceleration response at the surface of soil column for subsequent UQ analysis</p></li>
+<li><p>Perform site response analysis using the randomized material input and obtain acceleration response at the surface of the soil column for subsequent UQ analysis</p></li>
 </ol>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
 <ul class="simple">
-<li><p>Currently only <strong>2D</strong> plain-strain materials (including PDMY03 and ElasticIsotropic) are supported when using random field. Therefore, 1-component motion is required.</p></li>
+<li><p>Currently only <strong>2D</strong> plain-strain materials (including PDMY03 and ElasticIsotropic) are supported when using random field. Therefore, 1-component motions are required.</p></li>
 </ul>
 </div>
 </div>
 <div class="section" id="general-workflow-for-global-sensitivity-analysis">
 <h2><span class="section-number">3.2.2. </span>General Workflow for Global Sensitivity Analysis<a class="headerlink" href="#general-workflow-for-global-sensitivity-analysis" title="Permalink to this headline">¶</a></h2>
-<p>In a global sensitivity analysis the user is wishing to understand what is the influence of the individual random variables on the quantities of interest.
-This is typically done before the user launches large scale forward uncertainty problems in order to limit the number of random variables used so as to limit the number of simulations performed.</p>
+<p>In a global sensitivity analysis, the user wishes to understand what is the influence of the individual random variables on the quantities of interest.
+This is typically done before the user launches large-scale forward uncertainty problems in order to limit the number of random variables used so as to limit the number of simulations performed.</p>
 <p>root mean square (RMS) accelerations in 1 and 2 directions, Peak BAse shear and moments in 1 and 2 directions.</p>
 <p>To perform a Global Sensitivity analysis the user would perform the following steps:</p>
 <p>The steps involved:</p>
-<p>1. Start the application and the UQ Selection will be highlighted. In the panel for the UQ selection, keep the UQ engine as that selected, i.e. Dakota. From the UQ Method Category drop down menu
+<p>1. Start the application and the UQ Selection will be highlighted. In the panel for the UQ selection, keep the UQ engine as that selected, i.e. Dakota. From the UQ Method Category drop-down menu
 select Sensitivity Analysis, Keeping the method as LHS (Latin Hypercube). Change the <strong># Samples</strong> to 20 and the <strong>Seed</strong> to 273 as shown in the figure. The seed specification allows a user to obtain repeatable
 results from multiple runs.</p>
 <div class="align-center figure">
 <img alt="../../../../../_images/randomField-UQ.png" src="../../../../../_images/randomField-UQ.png" />
 </div>
-<p>2. Next select the <strong>GI</strong> panel. In this panel the building properties and units are set. For this example enter <strong>1</strong> for the number of stories, <strong>144</strong> for building height, <strong>360</strong> fow building width,
+<p>2. Next select the <strong>GI</strong> panel. In this panel, the building properties and units are set. For this example enter <strong>1</strong> for the number of stories, <strong>144</strong> for building height, <strong>360</strong> for building width,
 and <strong>360</strong> for building depth.</p>
 <div class="align-center figure">
 <img alt="../../../../../_images/randomField-GI.png" src="../../../../../_images/randomField-GI.png" />
@@ -294,12 +299,12 @@ Define other input variables as shown in figure:</p>
 <div class="align-center figure">
 <img alt="../../../../../_images/randomField-SIM.png" src="../../../../../_images/randomField-SIM.png" />
 </div>
-<p>3. Next select the <strong>EVT</strong> panel. From the Load Generator pull down menu select the <strong>Site Response</strong> option. Define soil profile, ground water table (GWT), and mesh. Then select interested material, e.g.,
-<em>PM4Sand_Random</em>, <em>PDMY03_Random</em>, or <em>Elastic_Random</em>. Under <strong>Configure</strong> tab, select path to the input motion.</p>
+<p>3. Next select the <strong>EVT</strong> panel. From the Load Generator pull-down menu select the <strong>Site Response</strong> option. Define soil profile, groundwater table (GWT), and mesh. Then select interested material, e.g.,
+<em>PM4Sand_Random</em>, <em>PDMY03_Random</em>, or <em>Elastic_Random</em>. Under <strong>Configure</strong> tab, select the path to the input motion.</p>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
 <ul class="simple">
-<li><p>A reasonable mesh resolution is recommended. Selection of element size should consider several factors, including but not limited to, layer shear wave velocity (for frequency resolution), corelation length (for random field resolution), and computation efficiency.</p></li>
+<li><p>A reasonable mesh resolution is recommended. Selection of element size should consider several factors, including but not limited to, layer shear wave velocity (for frequency resolution), correlation length (for random field resolution), and computation efficiency.</p></li>
 </ul>
 </div>
 <div class="align-center figure">
@@ -312,12 +317,12 @@ Define other input variables as shown in figure:</p>
 <img alt="../../../../../_images/randomField-FEM.png" src="../../../../../_images/randomField-FEM.png" />
 </div>
 <ol class="arabic simple" start="4">
-<li><p>We will skip the <strong>EDP</strong> panel leaving it in it’s default condition, that being to use the <strong>Standard Earthquake</strong> EDP generator.</p></li>
+<li><p>We will skip the <strong>EDP</strong> panel leaving it in its default condition, that being to use the <strong>Standard Earthquake</strong> EDP generator.</p></li>
 </ol>
 <div class="align-center figure">
 <img alt="../../../../../_images/randomField-EDP.png" src="../../../../../_images/randomField-EDP.png" />
 </div>
-<p>5. For the <strong>RV</strong> panel, we will enter the distributions and values for our random variables. If only the uncertainty related to spatial variability is interested, a dummy random variable can be defined in this tab.
+<p>5. For the <strong>RV</strong> panel, we will enter the distributions and values for our random variables. If only the uncertainty related to spatial variability is of interest, a dummy random variable can be defined in this tab.
 Then all the variability shown in the response will solely be due to spatial variability in the site response analysis.</p>
 <div class="align-center figure">
 <img alt="../../../../../_images/randomField-RV.png" src="../../../../../_images/randomField-RV.png" />
@@ -326,8 +331,8 @@ Then all the variability shown in the response will solely be due to spatial var
 <p class="admonition-title">Warning</p>
 <p>The user cannot leave any of the distributions for these values as constant for the Dakota UQ engine.</p>
 </div>
-<p>5. Next click on the ‘Run’ button. This will cause the backend application to launch dakota. When done the <strong>RES</strong> tab will be selected and the results will be displayed. The results show the values the mean and standard deviation.
-The peak displacement of the roof, is the quantity <strong>PFD</strong>. The <strong>PFA</strong> and <strong>PFD</strong> quantity defines peak floor acceleration and displacement, respectively, and the <strong>PID</strong> quantity corresponds to peak interstory drift.</p>
+<p>5. Next click on the ‘Run’ button. This will cause the backend application to launch dakota. When done the <strong>RES</strong> tab will be selected and the results will be displayed. The results show the values of the mean and standard deviation.
+The peak displacement of the roof is the quantity <strong>PFD</strong>. The <strong>PFA</strong> and <strong>PFD</strong> quantity defines peak floor acceleration and displacement, respectively, and the <strong>PID</strong> quantity corresponds to peak inter-story drift.</p>
 <div class="align-center figure">
 <img alt="../../../../../_images/Elastic-RES.png" src="../../../../../_images/Elastic-RES.png" />
 </div>
@@ -337,7 +342,7 @@ The peak displacement of the roof, is the quantity <strong>PFD</strong>. The <st
 <div class="section" id="case-1-using-elasticisotropic-material">
 <h3><span class="section-number">3.2.3.1. </span>Case 1: using ElasticIsotropic material<a class="headerlink" href="#case-1-using-elasticisotropic-material" title="Permalink to this headline">¶</a></h3>
 <p>For the <strong>Elastic_Random</strong> material, shear wave velocity (Vs) can be selected to be randomized. Then select the <strong>Mean</strong> and <strong>COV</strong> (coefficient of variation <span class="math notranslate nohighlight">\(=\frac{\sigma}{\mu}\)</span>) for shear wave velocity.
-<strong>Correlation length</strong> defines how shear wave velocities are vertically correlated. Subsequently, Young’s modulus is calculated based the stochastic shear velocity profile at the center of each element. No special calibration is required.</p>
+<strong>Correlation length</strong> defines how shear wave velocities are vertically correlated. Subsequently, Young’s modulus is calculated based on the stochastic shear velocity profile at the center of each element. No special calibration is required.</p>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
 <ul class="simple">
@@ -349,23 +354,23 @@ The peak displacement of the roof, is the quantity <strong>PFD</strong>. The <st
 <p class="caption"><span class="caption-number">Fig. 3.2.3.1.1 </span><span class="caption-text">Define inputs for Elastic_Random material.</span><a class="headerlink" href="#id4" title="Permalink to this image">¶</a></p>
 </div>
 <p><a class="reference internal" href="#fig-elastic-average-respspect"><span class="std std-numref">Fig. 3.2.3.1.3</span></a> presents the profiles of shear wave velocity, peak horizontal acceleration, maximum shear strain, and maximum excess pore pressure ratio (Ru) obtained from 20 realizations.
-Ru are always zero since there is no volumetric strain in ElasticIsotropic material. <a class="reference internal" href="#fig-elastic-average-respspect"><span class="std std-numref">Fig. 3.2.3.1.3</span></a> depicts the mean and each individual response spectra (5% damping) at surface obtained from 20 realizations.</p>
+Ru is always zero since there is no volumetric strain in ElasticIsotropic material. <a class="reference internal" href="#fig-elastic-average-respspect"><span class="std std-numref">Fig. 3.2.3.1.3</span></a> depicts the mean and each individual response spectra (5% damping) at the surface obtained from 20 realizations.</p>
 <div class="align-center figure" id="id5">
 <span id="fig-elastic-average-profile"></span><a class="reference internal image-reference" href="../../../../../_images/Elastic-Average-Profile.png"><img alt="../../../../../_images/Elastic-Average-Profile.png" src="../../../../../_images/Elastic-Average-Profile.png" style="width: 880.0px; height: 640.0px;" /></a>
-<p class="caption"><span class="caption-number">Fig. 3.2.3.1.2 </span><span class="caption-text">Profiles of shear wave velocity, peak horizontal acceleration, maximum shear strain, and maximum excess pore pressure ratio (Ru) obtained from 20 realizations (postprocessed from realization output data).</span><a class="headerlink" href="#id5" title="Permalink to this image">¶</a></p>
+<p class="caption"><span class="caption-number">Fig. 3.2.3.1.2 </span><span class="caption-text">Profiles of shear wave velocity, peak horizontal acceleration, maximum shear strain, and maximum excess pore pressure ratio (Ru) were obtained from 20 realizations (postprocessed from realization output data).</span><a class="headerlink" href="#id5" title="Permalink to this image">¶</a></p>
 </div>
 <div class="align-center figure" id="id6">
 <span id="fig-elastic-average-respspect"></span><a class="reference internal image-reference" href="../../../../../_images/Elastic-Average-RespSpect.png"><img alt="../../../../../_images/Elastic-Average-RespSpect.png" src="../../../../../_images/Elastic-Average-RespSpect.png" style="width: 480.0px; height: 240.0px;" /></a>
-<p class="caption"><span class="caption-number">Fig. 3.2.3.1.3 </span><span class="caption-text">Response spectra (5% damping) at surface obtained from 20 realizations (postprocessed from realization output data).</span><a class="headerlink" href="#id6" title="Permalink to this image">¶</a></p>
+<p class="caption"><span class="caption-number">Fig. 3.2.3.1.3 </span><span class="caption-text">Response spectra (5% damping) at the surface obtained from 20 realizations (postprocessed from realization output data).</span><a class="headerlink" href="#id6" title="Permalink to this image">¶</a></p>
 </div>
 </div>
 <div class="section" id="case-2-using-pm4sand-material">
 <h3><span class="section-number">3.2.3.2. </span>Case 2: using PM4Sand material<a class="headerlink" href="#case-2-using-pm4sand-material" title="Permalink to this headline">¶</a></h3>
 <p>For the <strong>PM4Sand_Random</strong> material, relative density (Dr) can be selected to be randomized. Then select the <strong>Mean</strong> and <strong>COV</strong> (coefficient of variation <span class="math notranslate nohighlight">\(COV=\frac{\sigma}{\mu}\)</span>) for shear wave velocity.
-<strong>Correlation length</strong> defines how shear wave velocities are vertically correlated. In ths current calibration procedure, all the other parameters are kept as input except for the contraction rate
-parameter hpo, that is calibrated based on the empirical triggering model proposed by Idriss and Boulanger 2008.</p>
+<strong>Correlation length</strong> defines how shear wave velocities are vertically correlated. In the current calibration procedure, all the other parameters are kept as input except for the contraction rate
+parameter hpo, which is calibrated based on the empirical triggering model proposed by Idriss and Boulanger 2008.</p>
 <p><a class="reference internal" href="#fig-pm4sand-average-respspect"><span class="std std-numref">Fig. 3.2.3.2.3</span></a> presents the profiles of shear wave velocity, peak horizontal acceleration, maximum shear strain, and maximum excess pore pressure ratio (Ru) obtained from 20 realizations.
-Comparing to elastic material, more variability are shown among these realizations. <a class="reference internal" href="#fig-pm4sand-average-respspect"><span class="std std-numref">Fig. 3.2.3.2.3</span></a> depicts the mean and each individual response spectra (5% damping) at surface obtained from 20 realizations.</p>
+Compared to elastic material, more variability is shown among these realizations. <a class="reference internal" href="#fig-pm4sand-average-respspect"><span class="std std-numref">Fig. 3.2.3.2.3</span></a> depicts the mean and each individual response spectra (5% damping) at the surface obtained from 20 realizations.</p>
 <div class="align-center figure" id="id7">
 <a class="reference internal image-reference" href="../../../../../_images/PM4Sand-Random.png"><img alt="../../../../../_images/PM4Sand-Random.png" src="../../../../../_images/PM4Sand-Random.png" style="width: 856.1999999999999px; height: 405.0px;" /></a>
 <p class="caption"><span class="caption-number">Fig. 3.2.3.2.1 </span><span class="caption-text">Define inputs for PM4Sand_Random material.</span><a class="headerlink" href="#id7" title="Permalink to this image">¶</a></p>
@@ -378,11 +383,11 @@ Comparing to elastic material, more variability are shown among these realizatio
 </div>
 <div class="align-center figure" id="id8">
 <span id="fig-pm4sand-average-profile"></span><a class="reference internal image-reference" href="../../../../../_images/PM4Sand-Average-Profile.png"><img alt="../../../../../_images/PM4Sand-Average-Profile.png" src="../../../../../_images/PM4Sand-Average-Profile.png" style="width: 880.0px; height: 640.0px;" /></a>
-<p class="caption"><span class="caption-number">Fig. 3.2.3.2.2 </span><span class="caption-text">Profiles of shear wave velocity, peak horizontal acceleration, maximum shear strain, and maximum excess pore pressure ratio (Ru) obtained from 20 realizations (postprocessed from realization output data).</span><a class="headerlink" href="#id8" title="Permalink to this image">¶</a></p>
+<p class="caption"><span class="caption-number">Fig. 3.2.3.2.2 </span><span class="caption-text">Profiles of shear wave velocity, peak horizontal acceleration, maximum shear strain, and maximum excess pore pressure ratio (Ru) were obtained from 20 realizations (postprocessed from realization output data).</span><a class="headerlink" href="#id8" title="Permalink to this image">¶</a></p>
 </div>
 <div class="align-center figure" id="id9">
 <span id="fig-pm4sand-average-respspect"></span><a class="reference internal image-reference" href="../../../../../_images/PM4Sand-Average-RespSpect.png"><img alt="../../../../../_images/PM4Sand-Average-RespSpect.png" src="../../../../../_images/PM4Sand-Average-RespSpect.png" style="width: 480.0px; height: 240.0px;" /></a>
-<p class="caption"><span class="caption-number">Fig. 3.2.3.2.3 </span><span class="caption-text">Response spectra (5% damping) at surface obtained from 20 realizations (postprocessed from realization output data).</span><a class="headerlink" href="#id9" title="Permalink to this image">¶</a></p>
+<p class="caption"><span class="caption-number">Fig. 3.2.3.2.3 </span><span class="caption-text">Response spectra (5% damping) at the surface obtained from 20 realizations (postprocessed from realization output data).</span><a class="headerlink" href="#id9" title="Permalink to this image">¶</a></p>
 </div>
 </div>
 </div>

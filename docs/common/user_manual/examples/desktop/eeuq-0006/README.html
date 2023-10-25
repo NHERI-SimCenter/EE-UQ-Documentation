@@ -132,7 +132,7 @@
 <li class="toctree-l2 current"><a class="current reference internal" href="#">3.6. Surrogate Model for Structural Response Prediction (Probabilistic Learning on Manifolds)</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="#configure-uq-engine">3.6.1. Configure UQ Engine</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#configure-structural-analysis">3.6.2. Configure Structural Analysis</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#run-the-analysis-and-postprocess-results">3.6.3. Run the analysis and postprocess results</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#run-the-analysis-and-post-process-results">3.6.3. Run the analysis and post-process results</a></li>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="../eeuq-0007/README.html">3.7. Target Spectrum by Surrogate Hazard GP Model</a></li>
@@ -145,6 +145,11 @@
 <li class="toctree-l1"><a class="reference internal" href="../../../troubleshooting/desktop/troubleshooting.html">4. Troubleshooting</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../../../reqments/EEUQ.html">5. Requirements</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../../bugs.html">6. Bugs &amp; Feature Requests</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Damage and Loss DB</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../../dldb/damage/index.html">1. Damage Models</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../dldb/repair/index.html">2. Repair Consequence Models</a></li>
 </ul>
 <p class="caption" role="heading"><span class="caption-text">Technical Manual</span></p>
 <ul>
@@ -230,18 +235,18 @@
 <h1><span class="section-number">3.6. </span>Surrogate Model for Structural Response Prediction (Probabilistic Learning on Manifolds)<a class="headerlink" href="#surrogate-model-for-structural-response-prediction-probabilistic-learning-on-manifolds" title="Permalink to this headline">¶</a></h1>
 <p>One essential step in seismic structural performance assessment is evaluating structural responses
 under earthquake ground motion inputs. The typical workflow is demonstrated in <a class="reference external" href="https://nheri-simcenter.github.io/EE-UQ-Documentation/common/user_manual/examples/desktop/eeuq-0003/README.html">Example 4.3</a>.
-The trade-off between computational efficiency and accuracy is one of major challenges in problems that
-requires large number of time history analyses (e.g., risk analysis, structural optimization). One
+The trade-off between computational efficiency and accuracy is one of the major challenges in problems that
+require a large number of time history analyses (e.g., risk analysis, and structural optimization). One
 possible solution is using surrogate models (e.g., response surface, kriging). The surrogate models are first
 trained for interested responses given a set of relatively expensive simulations. The resulting models can then be
-applied to predic new realizations more efficiently.</p>
+applied to predict new realizations more efficiently.</p>
 <p>This example demonstrates using a novel method, Probabilistic Learning on Manifolds (PLoM) <a class="reference internal" href="#soize2016" id="id1"><span>[Soize2016]</span></a>, to develop surrogate models
 for structural responses under earthquake ground motion inputs.</p>
 <div class="section" id="configure-uq-engine">
 <h2><span class="section-number">3.6.1. </span>Configure UQ Engine<a class="headerlink" href="#configure-uq-engine" title="Permalink to this headline">¶</a></h2>
 <ol class="arabic simple">
-<li><p>Navigate to the <strong>UQ</strong> tab in the left menu. In is panel, select the <strong>SimCenterUQ</strong> as the
-<strong>UQ Engine</strong>. In the <strong>SimCenterUQ Method Category</strong>, select tehe <strong>PLoM Model</strong> method. There are
+<li><p>Navigate to the <strong>UQ</strong> tab in the left menu. In this panel, select the <strong>SimCenterUQ</strong> as the
+<strong>UQ Engine</strong>. In the <strong>SimCenterUQ Method Category</strong>, select the <strong>PLoM Model</strong> method. There are
 two options for defining a training dataset, <strong>Import Data File</strong> and <strong>Sampling and Simulation</strong>. We
 start with <strong>Sampling and Simulation</strong> here while the former will be introduced later. <strong>LHS</strong> is
 used as the sampling method with 20 samples (corresponding to the 20 ground motions in the run). And we
@@ -278,7 +283,7 @@ default Design Spectrum for analyzing the structural responses under earthquake 
 <a class="reference internal image-reference" href="../../../../../_images/evt3.png"><img alt="../../../../../_images/evt3.png" src="../../../../../_images/evt3.png" style="width: 600px;" /></a>
 </div>
 <ol class="arabic simple" start="3">
-<li><p>For the <strong>FEM</strong> and <strong>EDP</strong> panels, we use defualt setups to analyze the structural model and record the
+<li><p>For the <strong>FEM</strong> and <strong>EDP</strong> panels, we use default setups to analyze the structural model and record the
 standard earthquake EDPs, i.e., peak displacement, drift ratio, and acceleration demands.</p></li>
 </ol>
 <div class="align-center figure" id="fig-fem">
@@ -292,14 +297,14 @@ standard earthquake EDPs, i.e., peak displacement, drift ratio, and acceleration
 files in the user-defined location (<code class="xref download docutils literal notranslate"><span class="pre">ELFParameters.csv</span></code>,
 <code class="xref download docutils literal notranslate"><span class="pre">Geometry.csv</span></code>, <code class="xref download docutils literal notranslate"><span class="pre">Loads.csv</span></code>, and
 <code class="xref download docutils literal notranslate"><span class="pre">MemberDepth.csv</span></code>). These four files store the data from the four discussed
-sections above. Users can also directly modified these data tables.</p></li>
+sections above. Users can also directly modify these data tables.</p></li>
 </ol>
 <div class="align-center figure" id="fig-bdf">
 <a class="reference internal image-reference" href="common/user_manual/examples/desktop/eeuq-0006/figures/bdf.png"><img alt="common/user_manual/examples/desktop/eeuq-0006/figures/bdf.png" src="common/user_manual/examples/desktop/eeuq-0006/figures/bdf.png" style="width: 600px;" /></a>
 </div>
 </div>
-<div class="section" id="run-the-analysis-and-postprocess-results">
-<h2><span class="section-number">3.6.3. </span>Run the analysis and postprocess results<a class="headerlink" href="#run-the-analysis-and-postprocess-results" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="run-the-analysis-and-post-process-results">
+<h2><span class="section-number">3.6.3. </span>Run the analysis and post-process results<a class="headerlink" href="#run-the-analysis-and-post-process-results" title="Permalink to this headline">¶</a></h2>
 <ol class="arabic simple">
 <li><p>Next click on the <strong>Run</strong> button. This will call the backend application to launch the analysis. When done
 the <strong>RES</strong> panel will first arrive at the <strong>Summary</strong> panel. Two plots are created to summarize the PLoM training
@@ -313,7 +318,7 @@ by clicking the <strong>PCA</strong> and <strong>KDE</strong> tabs located on th
 <a class="reference internal image-reference" href="../../../../../_images/res_kde.png"><img alt="../../../../../_images/res_kde.png" src="../../../../../_images/res_kde.png" style="width: 400px;" /></a>
 </div>
 <ol class="arabic simple" start="2">
-<li><p>One could save the PLoM model by clicking on <strong>Save PLoM Model</strong> - a HDF-formatted database along with supplemental
+<li><p>One could save the PLoM model by clicking on <strong>Save PLoM Model</strong> - an HDF-formatted database along with supplemental
 files will be stored in the user-defined directory. The saved model can be imported for generating new realizations
 which will be introduced in a second.</p></li>
 </ol>
@@ -327,7 +332,7 @@ which will be introduced in a second.</p></li>
 <a class="reference internal image-reference" href="../../../../../_images/res_data.png"><img alt="../../../../../_images/res_data.png" src="../../../../../_images/res_data.png" style="width: 600px;" /></a>
 </div>
 <ol class="arabic simple" start="4">
-<li><p>The two figures below compares the data scatter plots between the simulation samples (training set) and
+<li><p>The two figures below compare the data scatter plots between the simulation samples (training set) and
 surrogate samples (prediction set) which are in good agreement.</p></li>
 </ol>
 <div class="align-center figure" id="fig-res-comp1">

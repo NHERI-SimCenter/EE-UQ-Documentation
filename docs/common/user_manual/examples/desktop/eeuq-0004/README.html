@@ -129,9 +129,9 @@
 <li class="toctree-l2"><a class="reference internal" href="../eeuq-0002/README.html">3.2. Including Spatial Variability in Site Response Event</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../eeuq-0003/README.html">3.3. Ground Motion Selection and Nonlinear Response Analysis</a></li>
 <li class="toctree-l2 current"><a class="current reference internal" href="#">3.4. AutoSDA and Nonlinear Response Analysis</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="#design-and-create-numerical-model">3.4.1. Design and create numerical model</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#design-and-create-a-numerical-model">3.4.1. Design and create a numerical model</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#select-and-scale-ground-motion-records">3.4.2. Select and scale ground motion records</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#run-the-analysis-and-postprocess-results">3.4.3. Run the analysis and postprocess results</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#run-the-analysis-and-post-process-results">3.4.3. Run the analysis and post-process results</a></li>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="../eeuq-0005/README.html">3.5. Shear Building: Synthetic Ground Motion</a></li>
@@ -146,6 +146,11 @@
 <li class="toctree-l1"><a class="reference internal" href="../../../troubleshooting/desktop/troubleshooting.html">4. Troubleshooting</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../../../reqments/EEUQ.html">5. Requirements</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../../bugs.html">6. Bugs &amp; Feature Requests</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Damage and Loss DB</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../../dldb/damage/index.html">1. Damage Models</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../dldb/repair/index.html">2. Repair Consequence Models</a></li>
 </ul>
 <p class="caption" role="heading"><span class="caption-text">Technical Manual</span></p>
 <ul>
@@ -229,12 +234,12 @@
             
   <div class="section" id="autosda-and-nonlinear-response-analysis">
 <h1><span class="section-number">3.4. </span>AutoSDA and Nonlinear Response Analysis<a class="headerlink" href="#autosda-and-nonlinear-response-analysis" title="Permalink to this headline">¶</a></h1>
-<p>This example demonstrate the use of a python-based computation platform to automate seismic desing and analysis of
+<p>This example demonstrates the use of a Python-based computation platform to automate seismic design and analysis of
 of steel moment resisting frames (<strong>AutoSDA</strong>) (<a class="reference internal" href="#gbs20" id="id1"><span>[GBS20]</span></a>).</p>
-<div class="section" id="design-and-create-numerical-model">
-<h2><span class="section-number">3.4.1. </span>Design and create numerical model<a class="headerlink" href="#design-and-create-numerical-model" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="design-and-create-a-numerical-model">
+<h2><span class="section-number">3.4.1. </span>Design and create a numerical model<a class="headerlink" href="#design-and-create-a-numerical-model" title="Permalink to this headline">¶</a></h2>
 <ol class="arabic simple">
-<li><p>Navigate to the <strong>SIM</strong> tab in the left menu. In is panel, select the <strong>Steel Building Model</strong> as the
+<li><p>Navigate to the <strong>SIM</strong> tab in the left menu. In this panel, select the <strong>Steel Building Model</strong> as the
 <strong>Building Model Generator</strong>. In the user interface, five major input sections: (1)
 Building Information, (2) ELF Parameters, (3) Member Depth, (4) Loading, and (5) Building Data Files.</p></li>
 </ol>
@@ -243,7 +248,7 @@ Building Information, (2) ELF Parameters, (3) Member Depth, (4) Loading, and (5)
 </div>
 <ol class="arabic simple" start="2">
 <li><p>In the Building Information section, we define the number of stories of the example steel moment frame to 3 and
-the uniform story height to 13.0 ft. There are 4 bays in both horizontal directions with the uniform bay width
+the uniform story height to 13.0 ft. There are 4 bays in both horizontal directions with a uniform bay width
 of 30 ft.</p></li>
 </ol>
 <div class="align-center figure" id="fig-bim">
@@ -256,9 +261,9 @@ of 30 ft.</p></li>
 <a class="reference internal image-reference" href="../../../../../_images/elf.png"><img alt="../../../../../_images/elf.png" src="../../../../../_images/elf.png" style="width: 400px;" /></a>
 </div>
 <ol class="arabic simple" start="4">
-<li><p>In the Member Depth section, users can specify cross sections in the the table list
+<li><p>In the Member Depth section, users can specify cross sections in the table list
 for the interior columns, exterior columns, and beams. Starting from top to bottom, each row
-corresponding to one story from bottom story to top story. In this example, we simplify all columns to have
+corresponds to one story from bottom story to top story. In this example, we simplify all columns to have
 the same <span class="math notranslate nohighlight">\(W14\)</span> section, and use three sections for beams.</p></li>
 </ol>
 <div class="align-center figure" id="fig-mem">
@@ -277,7 +282,7 @@ distribution from 450 kips to 550 kips (as defined in the <strong>RV</strong> pa
 files in the user-defined location (<code class="xref download docutils literal notranslate"><span class="pre">ELFParameters.csv</span></code>,
 <code class="xref download docutils literal notranslate"><span class="pre">Geometry.csv</span></code>, <code class="xref download docutils literal notranslate"><span class="pre">Loads.csv</span></code>, and
 <code class="xref download docutils literal notranslate"><span class="pre">MemberDepth.csv</span></code>). These four files store the data from the four discussed
-sections above. Users can also directly modified these data tables.</p></li>
+sections above. Users can also directly modify these data tables.</p></li>
 </ol>
 <div class="align-center figure" id="fig-bdf">
 <a class="reference internal image-reference" href="../../../../../_images/bdf.png"><img alt="../../../../../_images/bdf.png" src="../../../../../_images/bdf.png" style="width: 400px;" /></a>
@@ -287,12 +292,12 @@ sections above. Users can also directly modified these data tables.</p></li>
 <h2><span class="section-number">3.4.2. </span>Select and scale ground motion records<a class="headerlink" href="#select-and-scale-ground-motion-records" title="Permalink to this headline">¶</a></h2>
 <ol class="arabic simple">
 <li><p>Navigate to the <strong>EVT</strong> panel and select the <strong>PEER NGA Records</strong> as the <strong>Load Generator</strong>. We can use the
-<strong>Uniform Hazard Spectrum</strong> as an example target spectrum here. We can specify the site lcoation, the
-site class (D) and return period (2500 years). Then on the left panel, please specify the number of records with optional
+<strong>Uniform Hazard Spectrum</strong> as an example target spectrum here. We can specify the site location, the
+site class (D) and the return period (2500 years). Then on the left panel, please specify the number of records with optional
 filters on the earthquake magnitude, site-source distance, and <span class="math notranslate nohighlight">\(V_{S30}\)</span>.</p></li>
 <li><p>In the <strong>Scaling</strong> panel, we could use the <strong>Minimize MSE</strong> as the <strong>Scaling Method</strong> which will compute and
 minimize the mean standard error between the average response spectrum and the target spectrum. You can specify
-a set of periods and corresponding error-calucation weights.</p></li>
+a set of periods and corresponding error-calculation weights.</p></li>
 </ol>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
@@ -304,14 +309,14 @@ a set of periods and corresponding error-calucation weights.</p></li>
 options (<strong>GeoMean</strong>, <strong>RotD50</strong>, and <strong>RotD100</strong>) are available for 3D models.</p></li>
 <li><p>Once set up the configurations above, please click the <strong>Select Records</strong> which will connect the <a class="reference external" href="https://ngawest2.berkeley.edu/users/sign_in?unauthenticated=true">PEER NGA West
 Ground Motion Database</a>. You could use your
-account and password to login and execute the selection and scaling.</p></li>
+account and password to log in and execute the selection and scaling.</p></li>
 </ol>
 <div class="align-center figure" id="fig-evt">
 <a class="reference internal image-reference" href="../../../../../_images/evt1.png"><img alt="../../../../../_images/evt1.png" src="../../../../../_images/evt1.png" style="width: 750px;" /></a>
 </div>
 </div>
-<div class="section" id="run-the-analysis-and-postprocess-results">
-<h2><span class="section-number">3.4.3. </span>Run the analysis and postprocess results<a class="headerlink" href="#run-the-analysis-and-postprocess-results" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="run-the-analysis-and-post-process-results">
+<h2><span class="section-number">3.4.3. </span>Run the analysis and post-process results<a class="headerlink" href="#run-the-analysis-and-post-process-results" title="Permalink to this headline">¶</a></h2>
 <ol class="arabic simple">
 <li><p>Navigate to the <strong>UQ</strong> panel, use the default <strong>Forward Propagation</strong> method with the <strong># Sample</strong> same as
 the number of selected records.</p></li>
@@ -321,7 +326,7 @@ the number of selected records.</p></li>
 </div>
 <ol class="arabic simple" start="2">
 <li><p>Next click on the <strong>Run</strong> button. This will cause the backend application to launch the analysis. When done
-the <strong>RES</strong> panel will be selected and the results will be displayed. The results show the values the mean
+the <strong>RES</strong> panel will be selected and the results will be displayed. The results show the values of the mean
 and standard deviation as before but now only for the one quantity of interest.</p></li>
 </ol>
 <div class="align-center figure" id="fig-res">

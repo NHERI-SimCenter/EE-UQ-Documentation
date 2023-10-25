@@ -146,6 +146,11 @@
 <li class="toctree-l1"><a class="reference internal" href="../../../../reqments/EEUQ.html">5. Requirements</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../../bugs.html">6. Bugs &amp; Feature Requests</a></li>
 </ul>
+<p class="caption" role="heading"><span class="caption-text">Damage and Loss DB</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../../dldb/damage/index.html">1. Damage Models</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../dldb/repair/index.html">2. Repair Consequence Models</a></li>
+</ul>
 <p class="caption" role="heading"><span class="caption-text">Technical Manual</span></p>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../../../../technical_manual/desktop/technical_manual.html">1. Technical Manual</a></li>
@@ -228,8 +233,8 @@
             
   <div class="section" id="target-spectrum-by-surrogate-hazard-gp-model">
 <h1><span class="section-number">3.7. </span>Target Spectrum by Surrogate Hazard GP Model<a class="headerlink" href="#target-spectrum-by-surrogate-hazard-gp-model" title="Permalink to this headline">¶</a></h1>
-<p>In some cases, users may want to specify target response spectrum in ground motion selection using pre-trained surrogate
-hazard model. This example demonstrates using quoFEM-trained Gaussian Process hazard model to get target response spectrum
+<p>In some cases, users may want to specify the target response spectrum in ground motion selection using a pre-trained surrogate
+hazard model. This example demonstrates using quoFEM-trained Gaussian Process hazard model to get a target response spectrum
 at a specific site location in San Francisco Bay Area given the seismicity from the Hayward Fault.</p>
 <div class="section" id="pre-trained-gaussian-process-surrogate-model">
 <h2><span class="section-number">3.7.1. </span>Pre-trained Gaussian Process Surrogate Model<a class="headerlink" href="#pre-trained-gaussian-process-surrogate-model" title="Permalink to this headline">¶</a></h2>
@@ -247,7 +252,7 @@ correlations are considered for all the sites whose median spectra are used as t
 <a class="reference external" href="https://nheri-simcenter.github.io/quoFEM-Documentation/common/user_manual/usage/desktop/SimCenterUQSurrogate.html">quoFEM</a>
 to train a GP model where the Longitude and Latitude are input variables and the median response spectrum
 at that site location is the output. The training takes about 25 sec and shows good performance and accuracy in the
-cross validation. The trained mdoel is saved into two files (<code class="xref download docutils literal notranslate"><span class="pre">SimGpModel.json</span></code> and
+cross-validation. The trained model is saved into two files (<code class="xref download docutils literal notranslate"><span class="pre">SimGpModel.json</span></code> and
 <code class="xref download docutils literal notranslate"><span class="pre">SimGpModel.pkl</span></code>) for the use in EE-UQ.</p></li>
 </ol>
 <div class="align-center figure" id="fig-trainingconfig">
@@ -264,7 +269,7 @@ cross validation. The trained mdoel is saved into two files (<code class="xref d
 we use the <strong>Spectrum from Hazard Surrogate</strong> as the Target Spectrum (specified in the dropdown list).</p></li>
 <li><p>Click <strong>Choose</strong> buttons to select and load the <strong>SimGpModel.json</strong> and <strong>SimGpModel.pkl</strong> files as the
 hazard surrogate GP model.</p></li>
-<li><p>In the <strong>Intensity Measure Periods (sec):</strong> textbox, fill in the periods for the response spectral acceleartions which
+<li><p>In the <strong>Intensity Measure Periods (sec):</strong> textbox, fill in the periods for the response spectral accelerations which
 are “0.01, 0.02, 0.05, 0.1, 0.2, 0.5, 1, 2, 3, 4, 5, 7.5, 10” in this example.</p></li>
 <li><p>Two random variables (“RV_column1” and “RV_column2”) are automatically populated from the loaded surrogate model, and
 users can specify the desired site location to evaluate the target response spectrum.</p></li>
@@ -273,11 +278,11 @@ users can specify the desired site location to evaluate the target response spec
 <a class="reference internal image-reference" href="../../../../../_images/configSpectrum.png"><img alt="../../../../../_images/configSpectrum.png" src="../../../../../_images/configSpectrum.png" style="width: 600px;" /></a>
 </div>
 <ol class="arabic simple" start="5">
-<li><p>Once above configurations are set up, click <strong>Get Spectrum</strong> button which will launch backend surrogate applications
+<li><p>Once the above configurations are set up, click <strong>Get Spectrum</strong> button which will launch backend surrogate applications
 to predict the response spectrum at the provided location. Note although this example shows the application for
-predicting response spectrum at a given location, the surrogate model can be trained on other input variables (not necessarily
-to be Longitude and Latitude).</p></li>
-<li><p>Once the prediction completed, the Target Spectrum widget will automatically switch to <strong>User Specified</strong> option with the
+predicting the response spectrum at a given location, the surrogate model can be trained on other input variables (not necessarily
+Longitude and Latitude).</p></li>
+<li><p>Once the prediction is completed, the Target Spectrum widget will automatically switch to <strong>User Specified</strong> option with the
 tabulated response spectrum predicted for the given input variables.</p></li>
 </ol>
 <div class="align-center figure" id="fig-resspectrum">
@@ -308,8 +313,8 @@ are used in the <strong>FEM</strong> and <strong>EDP</strong> tabs.</p></li>
 <a class="reference internal image-reference" href="../../../../../_images/edp1.png"><img alt="../../../../../_images/edp1.png" src="../../../../../_images/edp1.png" style="width: 600px;" /></a>
 </div>
 <ol class="arabic simple" start="3">
-<li><p>By clicking <strong>Run</strong> button, one could launch the analysis and the application will automatically switch to the <strong>RES</strong> tab
-once the analysis completed. One could navigate to the <strong>Data Value</strong> panel to visualize and save the new realizations.</p></li>
+<li><p>By clicking <strong>Run</strong> button, one can launch the analysis and the application will automatically switch to the <strong>RES</strong> tab
+once the analysis is completed. One could navigate to the <strong>Data Value</strong> panel to visualize and save the new realizations.</p></li>
 </ol>
 <div class="align-center figure" id="fig-res-data">
 <a class="reference internal image-reference" href="../../../../../_images/res12.png"><img alt="../../../../../_images/res12.png" src="../../../../../_images/res12.png" style="width: 600px;" /></a>
