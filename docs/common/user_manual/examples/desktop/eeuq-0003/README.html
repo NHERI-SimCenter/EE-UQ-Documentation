@@ -40,6 +40,7 @@
         <script data-url_root="../../../../../" id="documentation_options" src="../../../../../_static/documentation_options.js"></script>
         <script src="../../../../../_static/jquery.js"></script>
         <script src="../../../../../_static/underscore.js"></script>
+        <script src="../../../../../_static/_sphinx_javascript_frameworks_compat.js"></script>
         <script src="../../../../../_static/doctools.js"></script>
         <script src="../../../../../_static/sphinxcontrib-images/LightBox2/lightbox2/dist/js/lightbox-plus-jquery.min.js"></script>
         <script src="../../../../../_static/sphinxcontrib-images/LightBox2/lightbox2-customize/jquery-noconflict.js"></script>
@@ -147,11 +148,6 @@
 <li class="toctree-l1"><a class="reference internal" href="../../../../reqments/EEUQ.html">5. Requirements</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../../bugs.html">6. Bugs &amp; Feature Requests</a></li>
 </ul>
-<p class="caption" role="heading"><span class="caption-text">Damage and Loss DB</span></p>
-<ul>
-<li class="toctree-l1"><a class="reference internal" href="../../../../dldb/damage/index.html">1. Damage Models</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../../../dldb/repair/index.html">2. Repair Consequence Models</a></li>
-</ul>
 <p class="caption" role="heading"><span class="caption-text">Technical Manual</span></p>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../../../../technical_manual/desktop/technical_manual.html">1. Technical Manual</a></li>
@@ -233,7 +229,7 @@
            <div itemprop="articleBody">
             
   <div class="section" id="ground-motion-selection-and-nonlinear-response-analysis">
-<span id="eeuq-0003"></span><h1><span class="section-number">3.3. </span>Ground Motion Selection and Nonlinear Response Analysis<a class="headerlink" href="#ground-motion-selection-and-nonlinear-response-analysis" title="Permalink to this headline">¶</a></h1>
+<span id="eeuq-0003"></span><h1><span class="section-number">3.3. </span>Ground Motion Selection and Nonlinear Response Analysis<a class="headerlink" href="#ground-motion-selection-and-nonlinear-response-analysis" title="Permalink to this heading">¶</a></h1>
 <p>Shown in <a class="reference internal" href="#fig-frame"><span class="std std-numref">Fig. 3.3.1</span></a> is an OpenSees model sketch of a 2D steel moment frame building.
 The building has a four-bay lateral frame with gravity system
 which is modeled by the leaning column in the model. The bottom two stories
@@ -248,7 +244,7 @@ use the column section of <span class="math notranslate nohighlight">\(W24 \time
 <p>This example shows how to select ground motion records and run nonlinear time history analysis for the OpenSees/tcl
 model of interest.</p>
 <div class="section" id="load-opensees-tcl-model-and-analysis-script">
-<h2><span class="section-number">3.3.1. </span>Load OpenSees/tcl model and analysis script<a class="headerlink" href="#load-opensees-tcl-model-and-analysis-script" title="Permalink to this headline">¶</a></h2>
+<h2><span class="section-number">3.3.1. </span>Load OpenSees/tcl model and analysis script<a class="headerlink" href="#load-opensees-tcl-model-and-analysis-script" title="Permalink to this heading">¶</a></h2>
 <ol class="arabic simple">
 <li><p>Navigate to the <strong>SIM</strong> tab in the left menu. In is panel, select the <strong>OpenSees</strong> as the
 <strong>Building Model Generator</strong>. Use the <strong>Choose</strong> button to select the
@@ -269,7 +265,7 @@ Note that the user-defined analysis script will overwrite other specifications i
 </div>
 </div>
 <div class="section" id="select-and-scale-ground-motion-records">
-<h2><span class="section-number">3.3.2. </span>Select and scale ground motion records<a class="headerlink" href="#select-and-scale-ground-motion-records" title="Permalink to this headline">¶</a></h2>
+<h2><span class="section-number">3.3.2. </span>Select and scale ground motion records<a class="headerlink" href="#select-and-scale-ground-motion-records" title="Permalink to this heading">¶</a></h2>
 <ol class="arabic simple">
 <li><p>Navigate to the <strong>EVT</strong> panel and select the <strong>PEER NGA Records</strong> as the <strong>Load Generator</strong>. We can use the
 <strong>Design Spectrum (ASCE 7-10)</strong> as an example target spectrum here. First, please specify the <span class="math notranslate nohighlight">\(S_{DS}\)</span>,
@@ -296,7 +292,7 @@ account and password to login and execute the selection and scaling.</p></li>
 </div>
 </div>
 <div class="section" id="run-the-analysis-and-postprocess-results">
-<h2><span class="section-number">3.3.3. </span>Run the analysis and postprocess results<a class="headerlink" href="#run-the-analysis-and-postprocess-results" title="Permalink to this headline">¶</a></h2>
+<h2><span class="section-number">3.3.3. </span>Run the analysis and postprocess results<a class="headerlink" href="#run-the-analysis-and-postprocess-results" title="Permalink to this heading">¶</a></h2>
 <ol class="arabic simple">
 <li><p>Navigate to the <strong>UQ</strong> panel, use the default <strong>Forward Propagation</strong> method with the <strong># Sample</strong> same as
 the number of selected records.</p></li>
@@ -333,7 +329,7 @@ drift ratios and peak floor accelerations of the 4-story frame.</p></li>
 
   <div role="contentinfo">
     <p>
-        &#169; Copyright 2023, The Regents of the University of California.
+        &#169; Copyright 2024, The Regents of the University of California.
 
     </p>
   </div>

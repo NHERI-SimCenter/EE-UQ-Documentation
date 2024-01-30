@@ -40,6 +40,7 @@
         <script data-url_root="../../../../../" id="documentation_options" src="../../../../../_static/documentation_options.js"></script>
         <script src="../../../../../_static/jquery.js"></script>
         <script src="../../../../../_static/underscore.js"></script>
+        <script src="../../../../../_static/_sphinx_javascript_frameworks_compat.js"></script>
         <script src="../../../../../_static/doctools.js"></script>
         <script src="../../../../../_static/sphinxcontrib-images/LightBox2/lightbox2/dist/js/lightbox-plus-jquery.min.js"></script>
         <script src="../../../../../_static/sphinxcontrib-images/LightBox2/lightbox2-customize/jquery-noconflict.js"></script>
@@ -148,11 +149,6 @@
 <li class="toctree-l1"><a class="reference internal" href="../../../../reqments/EEUQ.html">5. Requirements</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../../bugs.html">6. Bugs &amp; Feature Requests</a></li>
 </ul>
-<p class="caption" role="heading"><span class="caption-text">Damage and Loss DB</span></p>
-<ul>
-<li class="toctree-l1"><a class="reference internal" href="../../../../dldb/damage/index.html">1. Damage Models</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../../../dldb/repair/index.html">2. Repair Consequence Models</a></li>
-</ul>
 <p class="caption" role="heading"><span class="caption-text">Technical Manual</span></p>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../../../../technical_manual/desktop/technical_manual.html">1. Technical Manual</a></li>
@@ -234,7 +230,7 @@
            <div itemprop="articleBody">
             
   <div class="section" id="multi-fidelity-monte-carlo-simulation">
-<span id="eeuq-0011"></span><h1><span class="section-number">3.11. </span>Multi-fidelity Monte Carlo Simulation<a class="headerlink" href="#multi-fidelity-monte-carlo-simulation" title="Permalink to this headline">¶</a></h1>
+<span id="eeuq-0011"></span><h1><span class="section-number">3.11. </span>Multi-fidelity Monte Carlo Simulation<a class="headerlink" href="#multi-fidelity-monte-carlo-simulation" title="Permalink to this heading">¶</a></h1>
 <p>This example demonstrates Multi-fidelity Monte Carlo (MFMC) supported in EE-UQ. The high- and low-fidelity building models of a benchmark 9-story steel structure (<a class="reference internal" href="#ohtori2004" id="id1"><span>[Ohtori2004]</span></a>) are used for the demonstration, following the implementation in (<a class="reference internal" href="#patsialis2023" id="id2"><span>[Patsialis2023]</span></a>).</p>
 <blockquote>
 <div><div class="align-center figure" id="uq-inputs">
@@ -251,7 +247,7 @@
 </dd>
 </dl>
 <div class="section" id="target-structure">
-<h2><span class="section-number">3.11.1. </span>Target structure<a class="headerlink" href="#target-structure" title="Permalink to this headline">¶</a></h2>
+<h2><span class="section-number">3.11.1. </span>Target structure<a class="headerlink" href="#target-structure" title="Permalink to this heading">¶</a></h2>
 <p>The target structure is a nine-story moment-resisting five-bay frame with a total height of 37.19 m and a length of 45.73 m.</p>
 <p>The
 <a class="reference external" href="https://github.com/NHERI-SimCenter/EE-UQ/tree/master/Examples/eeuq-0011/src/model1">High-Fidelity model</a> (main script: <a class="reference external" href="https://github.com/NHERI-SimCenter/EE-UQ/tree/master/Examples/eeuq-0011/src/model1/benchmark_9st_model.tcl">benchmark_9st_model.tcl</a>) is a nonlinear finite element model developed in OpenSees. Material characteristics are modulus of elasticity E=1.99 105 MPa for both beams and columns, yield stress for the columns 345 MPa and 248 MPa for the beams using values proposed in <a class="reference internal" href="#ohtori2004" id="id3"><span>[Ohtori2004]</span></a>. For modeling material inelastic behavior, the Giufre’-Menegotto-Pinto model with isotropic strain hardening is chosen for the steel fibers. The fundamental period is 2.274 sec, and under the Rayleigh damping assumption, the damping ratio is selected as 2% for the 1st and 3rd modes.</p>
@@ -267,7 +263,7 @@
 </dl>
 </div>
 <div class="section" id="procedure">
-<h2><span class="section-number">3.11.2. </span>Procedure<a class="headerlink" href="#procedure" title="Permalink to this headline">¶</a></h2>
+<h2><span class="section-number">3.11.2. </span>Procedure<a class="headerlink" href="#procedure" title="Permalink to this heading">¶</a></h2>
 <ol class="arabic">
 <li><p>In <strong>UQ tab</strong> select the <strong>Forward Propagation</strong> as <strong>UQ Method</strong>. Select <strong>SimCenterUQ</strong> engine. Select <strong>Multi-fidelity Monte Carlo</strong> method.</p>
 <blockquote>
@@ -347,7 +343,7 @@
 </ol>
 </div>
 <div class="section" id="run-the-analysis">
-<h2><span class="section-number">3.11.3. </span>Run the Analysis<a class="headerlink" href="#run-the-analysis" title="Permalink to this headline">¶</a></h2>
+<h2><span class="section-number">3.11.3. </span>Run the Analysis<a class="headerlink" href="#run-the-analysis" title="Permalink to this heading">¶</a></h2>
 <ol class="arabic" start="8">
 <li><p>Click <strong>Run</strong> button. The analysis may take several minutes. The <strong>RES tab</strong> will be highlighted when the analysis is completed</p>
 <p>The EDP name consists of the quantity of interest, story number, and the direction of interest - for example:</p>
@@ -387,7 +383,7 @@
 </div></blockquote>
 </div>
 <div class="section" id="comparison-to-high-fidelity-only-and-low-fidelity-only-simulations">
-<h2><span class="section-number">3.11.4. </span>Comparison to High-fidelity-only and low-fidelity-only simulations<a class="headerlink" href="#comparison-to-high-fidelity-only-and-low-fidelity-only-simulations" title="Permalink to this headline">¶</a></h2>
+<h2><span class="section-number">3.11.4. </span>Comparison to High-fidelity-only and low-fidelity-only simulations<a class="headerlink" href="#comparison-to-high-fidelity-only-and-low-fidelity-only-simulations" title="Permalink to this heading">¶</a></h2>
 <p>Only for validation purposes, high-fidelity simulations are performed 1000 times and the resulting statistics (reference) are compared with the above multifidelity (MF) estimates. Recall that the estimation was based on 32 high-fidelity (HF) simulations and 1027 low-fidelity (LF) simulations.</p>
 <blockquote>
 <div><div class="align-center figure" id="id15">
@@ -422,7 +418,7 @@
 
   <div role="contentinfo">
     <p>
-        &#169; Copyright 2023, The Regents of the University of California.
+        &#169; Copyright 2024, The Regents of the University of California.
 
     </p>
   </div>

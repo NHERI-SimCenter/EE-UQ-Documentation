@@ -40,6 +40,7 @@
         <script data-url_root="../../../../../" id="documentation_options" src="../../../../../_static/documentation_options.js"></script>
         <script src="../../../../../_static/jquery.js"></script>
         <script src="../../../../../_static/underscore.js"></script>
+        <script src="../../../../../_static/_sphinx_javascript_frameworks_compat.js"></script>
         <script src="../../../../../_static/doctools.js"></script>
         <script src="../../../../../_static/sphinxcontrib-images/LightBox2/lightbox2/dist/js/lightbox-plus-jquery.min.js"></script>
         <script src="../../../../../_static/sphinxcontrib-images/LightBox2/lightbox2-customize/jquery-noconflict.js"></script>
@@ -149,11 +150,6 @@
 <li class="toctree-l1"><a class="reference internal" href="../../../../reqments/EEUQ.html">5. Requirements</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../../bugs.html">6. Bugs &amp; Feature Requests</a></li>
 </ul>
-<p class="caption" role="heading"><span class="caption-text">Damage and Loss DB</span></p>
-<ul>
-<li class="toctree-l1"><a class="reference internal" href="../../../../dldb/damage/index.html">1. Damage Models</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../../../dldb/repair/index.html">2. Repair Consequence Models</a></li>
-</ul>
 <p class="caption" role="heading"><span class="caption-text">Technical Manual</span></p>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../../../../technical_manual/desktop/technical_manual.html">1. Technical Manual</a></li>
@@ -235,14 +231,14 @@
            <div itemprop="articleBody">
             
   <div class="section" id="training-a-surrogate-model-gaussian-process">
-<span id="eeuq-0009"></span><h1><span class="section-number">3.9. </span>Training a Surrogate Model (Gaussian Process)<a class="headerlink" href="#training-a-surrogate-model-gaussian-process" title="Permalink to this headline">¶</a></h1>
+<span id="eeuq-0009"></span><h1><span class="section-number">3.9. </span>Training a Surrogate Model (Gaussian Process)<a class="headerlink" href="#training-a-surrogate-model-gaussian-process" title="Permalink to this heading">¶</a></h1>
 <div class="admonition warning">
 <p class="admonition-title">Warning</p>
 <p>To reproduce the result of this example, the user should first click <strong>EVT</strong> and <strong>Select Records</strong>, and then click the <strong>RUN</strong> button. See the below procedure for details.</p>
 </div>
 <div class="section" id="training-gaussian-process-surrogate-model">
-<h2><span class="section-number">3.9.1. </span>Training Gaussian Process Surrogate Model<a class="headerlink" href="#training-gaussian-process-surrogate-model" title="Permalink to this headline">¶</a></h2>
-<p>This example shows how to train a surrogate model that can be imported into EE-UQ and replace structural dynamic simulations. The training of a surrogate model requires some number of structural dynamic simulations for representative scenarios [i.e. training set]. In this example, these simulations are performed using recorded ground motions selected from the PEER NGA database. The ground motions are selected such that it covers a wide domain of intensity measure (IM) space, as uniform as possible. Three IMs are considered in the example: pseudo-spectral acceleration at period 0.5 sec (PSA), 5-75% duration (D5-75), and SaRatio following the work in <a class="reference internal" href="#zhong2023" id="id1"><span>[Zhong2023]</span></a>. We additionally consider the stiffness of the target structure (3 story building) as input for the surrogate model.</p>
+<h2><span class="section-number">3.9.1. </span>Training Gaussian Process Surrogate Model<a class="headerlink" href="#training-gaussian-process-surrogate-model" title="Permalink to this heading">¶</a></h2>
+<p>This example shows how to train a surrogate model that can be imported into EE-UQ and replace structural dynamic simulations. The training of a surrogate model requires some number of structural dynamic simulations for representative scenarios [i.e. training set]. In this example, these simulations are performed using recorded ground motions selected from the PEER NGA database. The ground motions are selected such that it covers a wide domain of intensity measure (IM) space, as uniform as possible. Three IMs are considered in the example: pseudo-spectral acceleration at period 0.5 sec (PSA), 5-75% duration (D5-75), and SaRatio following the work in <a class="reference internal" href="../../../usage/desktop/earthquake/peerNGA.html#zhong2023" id="id1"><span>[Zhong2023]</span></a>. We additionally consider the stiffness of the target structure (3 story building) as input for the surrogate model.</p>
 <blockquote>
 <div><div class="align-center figure" id="uq-inputs">
 <a class="reference internal image-reference" href="../../../../../_images/EE09_main2.png"><img alt="../../../../../_images/EE09_main2.png" src="../../../../../_images/EE09_main2.png" style="width: 900px;" /></a>
@@ -256,7 +252,7 @@
 </dl>
 </div>
 <div class="section" id="set-up-gp-surrogate-modeling-options">
-<h2><span class="section-number">3.9.2. </span>Set Up GP Surrogate Modeling Options<a class="headerlink" href="#set-up-gp-surrogate-modeling-options" title="Permalink to this headline">¶</a></h2>
+<h2><span class="section-number">3.9.2. </span>Set Up GP Surrogate Modeling Options<a class="headerlink" href="#set-up-gp-surrogate-modeling-options" title="Permalink to this heading">¶</a></h2>
 <ol class="arabic">
 <li><p>In the <strong>UQ tab</strong> select the <strong>Surrogate Modeling</strong> as <strong>UQ Method</strong>. Then, select the <strong>Train GP Surrogate Model</strong>.</p>
 <blockquote>
@@ -281,7 +277,7 @@
 <p>More information can be found in the <a class="reference internal" href="../../../usage/desktop/SimCenterUQSurrogate.html#lblsimsurrogate"><span class="std std-ref">User Guide</span></a>.</p>
 </div>
 <div class="section" id="define-target-structure">
-<h2><span class="section-number">3.9.3. </span>Define Target Structure<a class="headerlink" href="#define-target-structure" title="Permalink to this headline">¶</a></h2>
+<h2><span class="section-number">3.9.3. </span>Define Target Structure<a class="headerlink" href="#define-target-structure" title="Permalink to this heading">¶</a></h2>
 <ol class="arabic">
 <li><p>In <strong>GI tab</strong>, set the number of stories, 3.</p>
 <blockquote>
@@ -302,7 +298,7 @@
 </ol>
 </div>
 <div class="section" id="select-ground-motions-for-the-training">
-<h2><span class="section-number">3.9.4. </span>Select Ground Motions for the Training<a class="headerlink" href="#select-ground-motions-for-the-training" title="Permalink to this headline">¶</a></h2>
+<h2><span class="section-number">3.9.4. </span>Select Ground Motions for the Training<a class="headerlink" href="#select-ground-motions-for-the-training" title="Permalink to this heading">¶</a></h2>
 <ol class="arabic" start="3">
 <li><p>In <strong>EVT tab</strong>, the option to retrieve ground motions from <strong>PEER NGA records</strong> is selected. To allow the surrogate models to cover a wide variety of ground motions (represented as “wide IM domain”), let us select <strong>No Spectrum - Uniform IMs</strong> for the analysis. Set the <strong>Number of samples per bin</strong> 1, and add three intensity measures that are specified in the UQ tab as the input of surrogate, i.e. “5-75% Significant Duration”, “Pseudo Spectral Acceleration (with a natural period of 0.5 sec)”, and “SaRatio (at 1.0 sec in range of 0.1-1.5 sec). Set the coverage ranges respectively to [2.5, 30], [0.1, 2.0], and [0.25, 1.2]. For the former two IMs, the number of bins is set as 5, and the SaRatio will have 4 bins. Therefore, the total number of bins (i.e. grid points in 3-dimensional space) is 100.</p>
 <blockquote>
@@ -362,7 +358,7 @@
 </div>
 </div>
 <div class="section" id="set-up-training-domain">
-<h2><span class="section-number">3.9.5. </span>Set Up Training Domain<a class="headerlink" href="#set-up-training-domain" title="Permalink to this headline">¶</a></h2>
+<h2><span class="section-number">3.9.5. </span>Set Up Training Domain<a class="headerlink" href="#set-up-training-domain" title="Permalink to this heading">¶</a></h2>
 <ol class="arabic">
 <li><p>In <strong>RV tab</strong> set the range of stiffness to be [50, 150] as shown in the below image. This is equivalent to the range of stiffness of which the response can be predicted using the surrogate. The selected IMs (Sa, D5-75, and SaRatio) in each two horizontal directions will be additional inputs of the surrogate model. Therefore, the total dimension of the surrogate model input is 7.</p>
 <blockquote>
@@ -375,7 +371,7 @@
 </ol>
 </div>
 <div class="section" id="run-the-analysis-and-process-results">
-<h2><span class="section-number">3.9.6. </span>Run the Analysis and Process Results<a class="headerlink" href="#run-the-analysis-and-process-results" title="Permalink to this headline">¶</a></h2>
+<h2><span class="section-number">3.9.6. </span>Run the Analysis and Process Results<a class="headerlink" href="#run-the-analysis-and-process-results" title="Permalink to this heading">¶</a></h2>
 <ol class="arabic" start="6">
 <li><p>Click <strong>Run</strong> button. The analysis may take several minutes to run. The <strong>RES tab</strong> will be highlighted when the analysis is completed.</p>
 <p>The EDP name consists of the quantity of interest, story number, and the direction of interest - for example:</p>
@@ -458,7 +454,7 @@
 
   <div role="contentinfo">
     <p>
-        &#169; Copyright 2023, The Regents of the University of California.
+        &#169; Copyright 2024, The Regents of the University of California.
 
     </p>
   </div>

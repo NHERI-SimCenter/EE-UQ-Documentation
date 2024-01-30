@@ -40,6 +40,7 @@
         <script data-url_root="../../../../../" id="documentation_options" src="../../../../../_static/documentation_options.js"></script>
         <script src="../../../../../_static/jquery.js"></script>
         <script src="../../../../../_static/underscore.js"></script>
+        <script src="../../../../../_static/_sphinx_javascript_frameworks_compat.js"></script>
         <script src="../../../../../_static/doctools.js"></script>
         <script src="../../../../../_static/sphinxcontrib-images/LightBox2/lightbox2/dist/js/lightbox-plus-jquery.min.js"></script>
         <script src="../../../../../_static/sphinxcontrib-images/LightBox2/lightbox2-customize/jquery-noconflict.js"></script>
@@ -146,11 +147,6 @@
 <li class="toctree-l1"><a class="reference internal" href="../../../../reqments/EEUQ.html">5. Requirements</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../../bugs.html">6. Bugs &amp; Feature Requests</a></li>
 </ul>
-<p class="caption" role="heading"><span class="caption-text">Damage and Loss DB</span></p>
-<ul>
-<li class="toctree-l1"><a class="reference internal" href="../../../../dldb/damage/index.html">1. Damage Models</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../../../dldb/repair/index.html">2. Repair Consequence Models</a></li>
-</ul>
 <p class="caption" role="heading"><span class="caption-text">Technical Manual</span></p>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../../../../technical_manual/desktop/technical_manual.html">1. Technical Manual</a></li>
@@ -232,11 +228,11 @@
            <div itemprop="articleBody">
             
   <div class="section" id="using-multiple-models-and-analysis-options-in-ee-uq">
-<h1><span class="section-number">3.8. </span>Using Multiple Models and Analysis Options in EE-UQ<a class="headerlink" href="#using-multiple-models-and-analysis-options-in-ee-uq" title="Permalink to this headline">¶</a></h1>
+<h1><span class="section-number">3.8. </span>Using Multiple Models and Analysis Options in EE-UQ<a class="headerlink" href="#using-multiple-models-and-analysis-options-in-ee-uq" title="Permalink to this heading">¶</a></h1>
 <p>This example showcases the use of multiple structural models and finite element analysis options to predict structural responses to earthquake ground motion inputs.</p>
 <p>Non-linear time history analysis is conducted using OpenSees, employing a simple model of a 5-story structure, subjected to recorded ground acceleration time history during an earthquake. The response of the model is used to extract commonly used engineering demand parameters while considering uncertainties in the value of story stiffnesses and model formulation. By including or excluding the uncertainty in the story stiffness and using modal or Rayleigh damping, four possible models are obtained, with each model having an equal chance of being randomly picked to predict the response of the structure. The resulting distribution of the engineering demand parameters is that obtained by propagating model form uncertainty as well as uncertainty about the value of a parameter of the model.</p>
 <div class="section" id="configure-uq-engine">
-<h2><span class="section-number">3.8.1. </span>Configure UQ Engine<a class="headerlink" href="#configure-uq-engine" title="Permalink to this headline">¶</a></h2>
+<h2><span class="section-number">3.8.1. </span>Configure UQ Engine<a class="headerlink" href="#configure-uq-engine" title="Permalink to this heading">¶</a></h2>
 <ol class="arabic simple">
 <li><p>Navigate to the <strong>UQ</strong> tab in the left menu. In this panel, select <strong>Forward Propagation</strong> as the UQ Method and <strong>Dakota</strong> as the
 <strong>UQ Engine</strong>.  <strong>LHS</strong> is used as the sampling method. Enter the values needed for the LHS method, as shown in the figure below:</p></li>
@@ -246,7 +242,7 @@
 </div>
 </div>
 <div class="section" id="configure-structural-analysis">
-<h2><span class="section-number">3.8.2. </span>Configure Structural Analysis<a class="headerlink" href="#configure-structural-analysis" title="Permalink to this headline">¶</a></h2>
+<h2><span class="section-number">3.8.2. </span>Configure Structural Analysis<a class="headerlink" href="#configure-structural-analysis" title="Permalink to this heading">¶</a></h2>
 <ol class="arabic simple">
 <li><p>Navigate to the <strong>SIM</strong> tab and select the <strong>Multi Model</strong> option for the <strong>Building Model Generator</strong>. We will use two simulation models for the 5 story structure in this example. Use the <strong>Add</strong> or <strong>Remove</strong> button as appropriate to create two tabs, corresponding to the two models that we will define next. In each of the tabs, choose <strong>MDOF</strong> as the <strong>Building Model Generator</strong>. The difference between the two models in this example is that in one of them, we consider the story stiffness in the X and Y directions as being uncertain.</p></li>
 </ol>
@@ -281,7 +277,7 @@ standard earthquake EDPs, i.e., peak displacement, drift ratio, and acceleration
 </div>
 </div>
 <div class="section" id="run-the-analysis-and-observe-the-results">
-<h2><span class="section-number">3.8.3. </span>Run the analysis and observe the results<a class="headerlink" href="#run-the-analysis-and-observe-the-results" title="Permalink to this headline">¶</a></h2>
+<h2><span class="section-number">3.8.3. </span>Run the analysis and observe the results<a class="headerlink" href="#run-the-analysis-and-observe-the-results" title="Permalink to this heading">¶</a></h2>
 <ol class="arabic simple">
 <li><p>Next, click on the <strong>Run</strong> button. This will call the backend application to launch the analysis. When the analysis is finished,
 the <strong>RES</strong> panel will be displayed, which shows summary statistics of the output quantities in the <strong>Summary</strong> tab.</p></li>
@@ -310,7 +306,7 @@ the <strong>RES</strong> panel will be displayed, which shows summary statistics
 
   <div role="contentinfo">
     <p>
-        &#169; Copyright 2023, The Regents of the University of California.
+        &#169; Copyright 2024, The Regents of the University of California.
 
     </p>
   </div>

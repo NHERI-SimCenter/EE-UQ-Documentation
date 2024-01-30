@@ -40,6 +40,7 @@
         <script data-url_root="../../../../../" id="documentation_options" src="../../../../../_static/documentation_options.js"></script>
         <script src="../../../../../_static/jquery.js"></script>
         <script src="../../../../../_static/underscore.js"></script>
+        <script src="../../../../../_static/_sphinx_javascript_frameworks_compat.js"></script>
         <script src="../../../../../_static/doctools.js"></script>
         <script src="../../../../../_static/sphinxcontrib-images/LightBox2/lightbox2/dist/js/lightbox-plus-jquery.min.js"></script>
         <script src="../../../../../_static/sphinxcontrib-images/LightBox2/lightbox2-customize/jquery-noconflict.js"></script>
@@ -146,11 +147,6 @@
 <li class="toctree-l1"><a class="reference internal" href="../../../../reqments/EEUQ.html">5. Requirements</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../../bugs.html">6. Bugs &amp; Feature Requests</a></li>
 </ul>
-<p class="caption" role="heading"><span class="caption-text">Damage and Loss DB</span></p>
-<ul>
-<li class="toctree-l1"><a class="reference internal" href="../../../../dldb/damage/index.html">1. Damage Models</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../../../dldb/repair/index.html">2. Repair Consequence Models</a></li>
-</ul>
 <p class="caption" role="heading"><span class="caption-text">Technical Manual</span></p>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../../../../technical_manual/desktop/technical_manual.html">1. Technical Manual</a></li>
@@ -232,12 +228,12 @@
            <div itemprop="articleBody">
             
   <div class="section" id="target-spectrum-by-surrogate-hazard-gp-model">
-<h1><span class="section-number">3.7. </span>Target Spectrum by Surrogate Hazard GP Model<a class="headerlink" href="#target-spectrum-by-surrogate-hazard-gp-model" title="Permalink to this headline">¶</a></h1>
+<h1><span class="section-number">3.7. </span>Target Spectrum by Surrogate Hazard GP Model<a class="headerlink" href="#target-spectrum-by-surrogate-hazard-gp-model" title="Permalink to this heading">¶</a></h1>
 <p>In some cases, users may want to specify the target response spectrum in ground motion selection using a pre-trained surrogate
 hazard model. This example demonstrates using quoFEM-trained Gaussian Process hazard model to get a target response spectrum
 at a specific site location in San Francisco Bay Area given the seismicity from the Hayward Fault.</p>
 <div class="section" id="pre-trained-gaussian-process-surrogate-model">
-<h2><span class="section-number">3.7.1. </span>Pre-trained Gaussian Process Surrogate Model<a class="headerlink" href="#pre-trained-gaussian-process-surrogate-model" title="Permalink to this headline">¶</a></h2>
+<h2><span class="section-number">3.7.1. </span>Pre-trained Gaussian Process Surrogate Model<a class="headerlink" href="#pre-trained-gaussian-process-surrogate-model" title="Permalink to this heading">¶</a></h2>
 <ol class="arabic simple">
 <li><p>In this example, the Gaussian Process (GP) model is trained on regional earthquake intensity measure maps that are generated
 for 147 possible Hayward earthquake scenarios in UCERF-2 model. For each scenario, the response spectral accelerations at periods
@@ -263,7 +259,7 @@ cross-validation. The trained model is saved into two files (<code class="xref d
 </div>
 </div>
 <div class="section" id="configure-surrogate-target-spectrum">
-<h2><span class="section-number">3.7.2. </span>Configure Surrogate Target Spectrum<a class="headerlink" href="#configure-surrogate-target-spectrum" title="Permalink to this headline">¶</a></h2>
+<h2><span class="section-number">3.7.2. </span>Configure Surrogate Target Spectrum<a class="headerlink" href="#configure-surrogate-target-spectrum" title="Permalink to this heading">¶</a></h2>
 <ol class="arabic simple">
 <li><p>Navigate to the <strong>EVT</strong> tab and select the <strong>PEER NGA Records</strong> as the <strong>Load Generator</strong>. In this example
 we use the <strong>Spectrum from Hazard Surrogate</strong> as the Target Spectrum (specified in the dropdown list).</p></li>
@@ -290,7 +286,7 @@ tabulated response spectrum predicted for the given input variables.</p></li>
 </div>
 </div>
 <div class="section" id="select-ground-motion-and-run-analysis">
-<h2><span class="section-number">3.7.3. </span>Select Ground Motion and Run Analysis<a class="headerlink" href="#select-ground-motion-and-run-analysis" title="Permalink to this headline">¶</a></h2>
+<h2><span class="section-number">3.7.3. </span>Select Ground Motion and Run Analysis<a class="headerlink" href="#select-ground-motion-and-run-analysis" title="Permalink to this heading">¶</a></h2>
 <ol class="arabic simple">
 <li><p>Once the target response spectrum is available, users can follow the same procedure as introduced in
 <a class="reference external" href="https://nheri-simcenter.github.io/EE-UQ-Documentation/common/user_manual/examples/desktop/eeuq-0003/README.html#select-and-scale-ground-motion-records">EE-UQ Example 3</a> to
@@ -335,7 +331,7 @@ once the analysis is completed. One could navigate to the <strong>Data Value</st
 
   <div role="contentinfo">
     <p>
-        &#169; Copyright 2023, The Regents of the University of California.
+        &#169; Copyright 2024, The Regents of the University of California.
 
     </p>
   </div>

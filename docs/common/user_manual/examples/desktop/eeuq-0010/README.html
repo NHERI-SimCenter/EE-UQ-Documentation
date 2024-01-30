@@ -40,6 +40,7 @@
         <script data-url_root="../../../../../" id="documentation_options" src="../../../../../_static/documentation_options.js"></script>
         <script src="../../../../../_static/jquery.js"></script>
         <script src="../../../../../_static/underscore.js"></script>
+        <script src="../../../../../_static/_sphinx_javascript_frameworks_compat.js"></script>
         <script src="../../../../../_static/doctools.js"></script>
         <script src="../../../../../_static/sphinxcontrib-images/LightBox2/lightbox2/dist/js/lightbox-plus-jquery.min.js"></script>
         <script src="../../../../../_static/sphinxcontrib-images/LightBox2/lightbox2-customize/jquery-noconflict.js"></script>
@@ -148,11 +149,6 @@
 <li class="toctree-l1"><a class="reference internal" href="../../../../reqments/EEUQ.html">5. Requirements</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../../bugs.html">6. Bugs &amp; Feature Requests</a></li>
 </ul>
-<p class="caption" role="heading"><span class="caption-text">Damage and Loss DB</span></p>
-<ul>
-<li class="toctree-l1"><a class="reference internal" href="../../../../dldb/damage/index.html">1. Damage Models</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../../../dldb/repair/index.html">2. Repair Consequence Models</a></li>
-</ul>
 <p class="caption" role="heading"><span class="caption-text">Technical Manual</span></p>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../../../../technical_manual/desktop/technical_manual.html">1. Technical Manual</a></li>
@@ -234,7 +230,7 @@
            <div itemprop="articleBody">
             
   <div class="section" id="structural-response-prediction-using-a-surrogate-model-gaussian-process">
-<span id="eeuq-0010"></span><h1><span class="section-number">3.10. </span>Structural Response Prediction Using a Surrogate Model (Gaussian Process)<a class="headerlink" href="#structural-response-prediction-using-a-surrogate-model-gaussian-process" title="Permalink to this headline">¶</a></h1>
+<span id="eeuq-0010"></span><h1><span class="section-number">3.10. </span>Structural Response Prediction Using a Surrogate Model (Gaussian Process)<a class="headerlink" href="#structural-response-prediction-using-a-surrogate-model-gaussian-process" title="Permalink to this heading">¶</a></h1>
 <div class="admonition warning">
 <p class="admonition-title">Warning</p>
 <p>To reproduce the result of this example, the user should first click <strong>EVT</strong> and <strong>Select Records</strong>, and then click the <strong>RUN</strong> button. See the below procedure for details.</p>
@@ -251,7 +247,7 @@
 <p>This examples uses the surrogate model trained in <a class="reference internal" href="../eeuq-0009/README.html#eeuq-0009"><span class="std std-ref">example 09</span></a></p>
 </div>
 <div class="section" id="set-up-forward-propagation-configuration">
-<h2><span class="section-number">3.10.1. </span>Set Up Forward Propagation Configuration<a class="headerlink" href="#set-up-forward-propagation-configuration" title="Permalink to this headline">¶</a></h2>
+<h2><span class="section-number">3.10.1. </span>Set Up Forward Propagation Configuration<a class="headerlink" href="#set-up-forward-propagation-configuration" title="Permalink to this heading">¶</a></h2>
 <ol class="arabic">
 <li><p>In <strong>UQ tab</strong> select the <strong>Forward modeling</strong> as <strong>UQ Method</strong>. Select <strong>Dakota</strong> engine.</p>
 <blockquote>
@@ -265,7 +261,7 @@
 </ol>
 </div>
 <div class="section" id="define-target-structure">
-<h2><span class="section-number">3.10.2. </span>Define Target Structure<a class="headerlink" href="#define-target-structure" title="Permalink to this headline">¶</a></h2>
+<h2><span class="section-number">3.10.2. </span>Define Target Structure<a class="headerlink" href="#define-target-structure" title="Permalink to this heading">¶</a></h2>
 <ol class="arabic" start="2">
 <li><p>The <strong>GI tab</strong> is kept as default. (GI tab is not used when a surrogate model is used in SIM tab)</p></li>
 <li><p>In <strong>SIM tab</strong>, the surrogate model (.json) trained in <a class="reference internal" href="../eeuq-0009/README.html#eeuq-0009"><span class="std std-ref">Example 09</span></a> is imported as shown in the figure.</p>
@@ -284,7 +280,7 @@
 </ol>
 </div>
 <div class="section" id="select-ground-motions">
-<h2><span class="section-number">3.10.3. </span>Select Ground Motions<a class="headerlink" href="#select-ground-motions" title="Permalink to this headline">¶</a></h2>
+<h2><span class="section-number">3.10.3. </span>Select Ground Motions<a class="headerlink" href="#select-ground-motions" title="Permalink to this heading">¶</a></h2>
 <ol class="arabic" start="4">
 <li><p>In <strong>EVT tab</strong>, <strong>PEER NGA ground motion records</strong> option is selected. Let us consider the site of interest located at (37.8715, -122.273), of which we would like to select ground motions that follow USGS Uniform Hazard Spectrum (2014 v4.2.0) with return period 2475. Vs30 is assumed 760 m/s. Let us select 30 ground motion time histories that match this spectrum by clicking <strong>Select records</strong> button. The target response spectrum curve and the selected ground motions will be displayed on the right-hand side panel as shown below.</p>
 <blockquote>
@@ -335,7 +331,7 @@
 </ol>
 </div>
 <div class="section" id="distribution-of-random-variables">
-<h2><span class="section-number">3.10.4. </span>Distribution of Random Variables<a class="headerlink" href="#distribution-of-random-variables" title="Permalink to this headline">¶</a></h2>
+<h2><span class="section-number">3.10.4. </span>Distribution of Random Variables<a class="headerlink" href="#distribution-of-random-variables" title="Permalink to this heading">¶</a></h2>
 <ol class="arabic" start="7">
 <li><p>The <strong>RV tab</strong> is pre-populated with the random variables that were used to train the surrogate. Change the distribution of the statistical parameters as desired. In this example, the stiffness is assumed to be distributed around 120 with a standard deviation of 5.</p>
 <blockquote>
@@ -352,7 +348,7 @@
 </div>
 </div>
 <div class="section" id="run-the-analysis-and-process-results">
-<h2><span class="section-number">3.10.5. </span>Run the Analysis and Process Results<a class="headerlink" href="#run-the-analysis-and-process-results" title="Permalink to this headline">¶</a></h2>
+<h2><span class="section-number">3.10.5. </span>Run the Analysis and Process Results<a class="headerlink" href="#run-the-analysis-and-process-results" title="Permalink to this heading">¶</a></h2>
 <ol class="arabic" start="8">
 <li><p>Click <strong>Run</strong> button. The analysis may take several minutes. The <strong>RES tab</strong> will be highlighted when the analysis is completed</p></li>
 <li><p>The obtained statistics of responses are shown in the “Summary tab”</p>
@@ -428,7 +424,7 @@
 
   <div role="contentinfo">
     <p>
-        &#169; Copyright 2023, The Regents of the University of California.
+        &#169; Copyright 2024, The Regents of the University of California.
 
     </p>
   </div>
