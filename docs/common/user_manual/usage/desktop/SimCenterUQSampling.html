@@ -16,9 +16,7 @@
   <link rel="stylesheet" href="../../../../_static/pygments.css" type="text/css" />
   <link rel="stylesheet" href="../../../../_static/css/theme.css" type="text/css" />
   <link rel="stylesheet" href="../../../../_static/tabs.css" type="text/css" />
-  <link rel="stylesheet" href="../../../../_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" type="text/css" />
-  <link rel="stylesheet" href="../../../../_static/panels-bootstrap.5fd3999ee7762ccc51105388f4a9d115.css" type="text/css" />
-  <link rel="stylesheet" href="../../../../_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" type="text/css" />
+  <link rel="stylesheet" href="../../../../_static/design-style.1e8bd061cd6da7fc9cf755528e8ffc24.min.css" type="text/css" />
   <link rel="stylesheet" href="../../../../_static/sphinxcontrib-images/LightBox2/lightbox2/dist/css/lightbox.css" type="text/css" />
   <link rel="stylesheet" href="../../../../_static/css/custom.css" type="text/css" />
 
@@ -42,6 +40,7 @@
         <script src="../../../../_static/underscore.js"></script>
         <script src="../../../../_static/_sphinx_javascript_frameworks_compat.js"></script>
         <script src="../../../../_static/doctools.js"></script>
+        <script src="../../../../_static/design-tabs.js"></script>
         <script src="../../../../_static/sphinxcontrib-images/LightBox2/lightbox2/dist/js/lightbox-plus-jquery.min.js"></script>
         <script src="../../../../_static/sphinxcontrib-images/LightBox2/lightbox2-customize/jquery-noconflict.js"></script>
         <script async="async" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
@@ -272,13 +271,14 @@
 <p class="admonition-title">Tip</p>
 <p>Summary of capabilities and limitations</p>
 <ul class="simple">
-<li><p><span class="sphinx-bs badge badge-primary">o</span> Run Monte Carlo simulation for 12 different kinds of probability distributions with correlations.</p></li>
-<li><p><span class="sphinx-bs badge badge-primary">o</span> Use data samples as discrete distribution (especially useful when propagating samples from Bayesian updating)</p></li>
-<li><p><span class="sphinx-bs badge badge-danger">x</span> Run advanced sampling algorithms including Latin hypercube and surrogate-aided sampling. <strong>[Available in Dakota engine]</strong></p></li>
+<li><p><span class="sd-sphinx-override sd-badge sd-bg-primary sd-bg-text-primary">o</span> Run Monte Carlo simulation for 12 different kinds of probability distributions with correlations.</p></li>
+<li><p><span class="sd-sphinx-override sd-badge sd-bg-primary sd-bg-text-primary">o</span> Use data samples as discrete distribution (especially useful when propagating samples from Bayesian updating)</p></li>
+<li><p><span class="sd-sphinx-override sd-badge sd-bg-danger sd-bg-text-danger">x</span> Run advanced sampling algorithms including Latin hypercube and surrogate-aided sampling. <strong>[Available in Dakota engine]</strong></p></li>
 </ul>
 </div>
+</div>
 <div class="section" id="id1">
-<span id="id2"></span><h3>Multi-fidelity Monte Carlo<a class="headerlink" href="#id1" title="Permalink to this heading">¶</a></h3>
+<span id="id2"></span><h2>Multi-fidelity Monte Carlo<a class="headerlink" href="#id1" title="Permalink to this heading">¶</a></h2>
 <p>SimCenter UQ supports a multi-fidelity Monte Carlo option, where the user can import both high-fidelity and low-fidelity simulation models to estimate the statistics of high-fidelity responses. See more information in the <a class="reference internal" href="../../../technical_manual/desktop/SimCenterUQTechnical.html#lbluqsimtechnical-mfmc"><span class="std std-ref">technical manual</span></a>.</p>
 <div class="align-center figure" id="id12">
 <a class="reference internal image-reference" href="../../../../_images/Sampling_MF1.png"><img alt="../../../../_images/Sampling_MF1.png" src="../../../../_images/Sampling_MF1.png" style="width: 900px;" /></a>
@@ -302,7 +302,6 @@
 <div class="admonition note">
 <p class="admonition-title">Note</p>
 <p>The multiple models should be specified in the SIM and FEM tabs, the lower value of the model index corresponds to a higher fidelity model. Therefore the high-fidelity model should always be imported as model 1 for both SIM and FEM tabs. The model order in SIM tab should follow that of FEM tab. The <strong>Belief</strong> field will be ignored.</p>
-</div>
 </div>
 </div>
 </div>
