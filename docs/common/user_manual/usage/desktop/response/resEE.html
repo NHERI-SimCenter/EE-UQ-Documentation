@@ -50,7 +50,7 @@
     <link rel="index" title="Index" href="../../../../../genindex.html" />
     <link rel="search" title="Search" href="../../../../../search.html" />
     <link rel="next" title="3. Examples" href="../../../examples/desktop/examples.html" />
-    <link rel="prev" title="2.7. EDP: Demand Parameters" href="EDP.html" />
+    <link rel="prev" title="2.7. RV: Random Variables" href="../RV.html" />
 <script src="https://cdn.jsdelivr.net/npm/vega@5.12.1"></script>
 <script src="https://cdn.jsdelivr.net/npm/vega-lite@4.13.1"></script>
 <script src="https://cdn.jsdelivr.net/npm/vega-embed@6.8.0"></script>
@@ -128,8 +128,8 @@
 <li class="toctree-l2"><a class="reference internal" href="../SIM.html">2.3. SIM: Structural Model</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../earthquake/earthquakeEvents.html">2.4. EVT: Earthquake Events</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../FEM.html">2.5. FEM: Finite Element Method</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../RV.html">2.6. RV: Random Variables</a></li>
-<li class="toctree-l2"><a class="reference internal" href="EDP.html">2.7. EDP: Demand Parameters</a></li>
+<li class="toctree-l2"><a class="reference internal" href="EDP.html">2.6. EDP: Demand Parameters</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../RV.html">2.7. RV: Random Variables</a></li>
 <li class="toctree-l2 current"><a class="current reference internal" href="#">2.8. RES: Results</a></li>
 </ul>
 </li>
@@ -146,8 +146,9 @@
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../../../../developer_manual/how_to_build/desktop/how_to_build.html">1. How to Build</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../../../developer_manual/architecture/desktop/architecture.html">2. Software Architecture</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../../../developer_manual/verification/desktop/verification.html">3. Verification</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../../../developer_manual/coding_style/desktop/coding_style.html">4. Coding Style</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../developer_manual/how_to_extend/desktop/how_to_extend.html">3. How to Extend</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../developer_manual/verification/desktop/verification.html">4. Verification</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../developer_manual/coding_style/desktop/coding_style.html">5. Coding Style</a></li>
 </ul>
 
             
@@ -219,7 +220,7 @@
             
   <div class="section" id="res-results">
 <span id="lblgi"></span><h1><span class="section-number">2.8. </span>RES: Results<a class="headerlink" href="#res-results" title="Permalink to this heading">¶</a></h1>
-<p>A successful run or download of a job that ran successfully at <a class="reference external" href="https://designsafe-ci.org">DesignSafe</a> will result in 2 tabbed widgets being displayed in the results panel.  The first tab, as shown in <a class="reference internal" href="#figresultssummary"><span class="std std-numref">Fig. 2.8.1</span></a> shows the summary statistics: <strong>mean</strong>, <strong>stdDev</strong>, and <strong>kurtosis</strong>.</p>
+<p>A successful run or download of a job that ran successfully at <a class="reference external" href="https://designsafe-ci.org">DesignSafe</a> will result in 2 tabbed widgets being displayed in the results panel.  The first tab, as shown in <a class="reference internal" href="#figresultssummary"><span class="std std-numref">Fig. 2.8.1</span></a> shows the summary statistics, e.g. <strong>mean</strong> and <strong>stdDev</strong>.</p>
 <div class="align-center figure" id="id1">
 <span id="figresultssummary"></span><img alt="../../../../../_images/resultsSummary.png" src="../../../../../_images/resultsSummary.png" />
 <p class="caption"><span class="caption-number">Fig. 2.8.1 </span><span class="caption-text">Results summary.</span><a class="headerlink" href="#id1" title="Permalink to this image">¶</a></p>
@@ -230,10 +231,13 @@ columns with left and right mouse buttons in the table below the
 graphic, the information in the graph is changed. Selecting the left
 mouse button changes the Y axis, the right mouse changes the X
 axis. If the same column is selected using both left and right keys,
-either the CDF and PDF is displayed. If the last mouse press was with the left
+either the cumulative density function (CDF) and probability density function (PDF) is displayed. If the last mouse press was with the left
 button, the PDF will be displayed; if the last mouse press was the right one, the CDF
 will be displayed.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
 <p>Regarding the columns in the table below the figure: You will see a column for each random variable the workflow came across and then the columns for the response quantities. There may be more random variables than you specified. This is because certain applications the user selected may introduce additional random variables for the UQ engine to consider.</p>
+</div>
 <div class="align-center figure" id="id2">
 <span id="figresultsdata"></span><img alt="../../../../../_images/resultsData.png" src="../../../../../_images/resultsData.png" />
 <p class="caption"><span class="caption-number">Fig. 2.8.2 </span><span class="caption-text">Results presented both graphically and in tabular form.</span><a class="headerlink" href="#id2" title="Permalink to this image">¶</a></p>

@@ -7,7 +7,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   
-  <title>3.6. Surrogate Model for Structural Response Prediction (Probabilistic Learning on Manifolds) &mdash; Earthquake Engineering with Uncertainty Quantification  documentation</title>
+  <title>3.6. PLoM Surrogate Model &mdash; Earthquake Engineering with Uncertainty Quantification  documentation</title>
   
 
   
@@ -50,7 +50,7 @@
     <link rel="index" title="Index" href="../../../../../genindex.html" />
     <link rel="search" title="Search" href="../../../../../search.html" />
     <link rel="next" title="3.7. Target Spectrum by Surrogate Hazard GP Model" href="../eeuq-0007/README.html" />
-    <link rel="prev" title="3.5. Shear Building: Synthetic Ground Motion" href="../eeuq-0005/README.html" />
+    <link rel="prev" title="3.5. Synthetic Ground Motion Applied to a Shear Buildilng" href="../eeuq-0005/README.html" />
 <script src="https://cdn.jsdelivr.net/npm/vega@5.12.1"></script>
 <script src="https://cdn.jsdelivr.net/npm/vega-lite@4.13.1"></script>
 <script src="https://cdn.jsdelivr.net/npm/vega-embed@6.8.0"></script>
@@ -124,12 +124,12 @@
 <li class="toctree-l1"><a class="reference internal" href="../../../installation/desktop/installation.html">1. Installation</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../../usage/desktop/usage.html">2. User Interface</a></li>
 <li class="toctree-l1 current"><a class="reference internal" href="../examples.html">3. Examples</a><ul class="current">
-<li class="toctree-l2"><a class="reference internal" href="../eeuq-0001/README.html">3.1. Shear Building: Sampling, Reliability and Sensitivity</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../eeuq-0002/README.html">3.2. Including Spatial Variability in Site Response Event</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../eeuq-0003/README.html">3.3. Ground Motion Selection and Nonlinear Response Analysis</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../eeuq-0001/README.html">3.1. Sampling, Reliability and Sensitivity Analysis of a Shear Building</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../eeuq-0002/README.html">3.2. Site Response Analysis with Spatial Variability</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../eeuq-0003/README.html">3.3. PEER Ground Motion Selection and Nonlinear Response Analysis</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../eeuq-0004/README.html">3.4. AutoSDA and Nonlinear Response Analysis</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../eeuq-0005/README.html">3.5. Shear Building: Synthetic Ground Motion</a></li>
-<li class="toctree-l2 current"><a class="current reference internal" href="#">3.6. Surrogate Model for Structural Response Prediction (Probabilistic Learning on Manifolds)</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../eeuq-0005/README.html">3.5. Synthetic Ground Motion Applied to a Shear Buildilng</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">3.6. PLoM Surrogate Model</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="#configure-uq-engine">3.6.1. Configure UQ Engine</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#configure-structural-analysis">3.6.2. Configure Structural Analysis</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#run-the-analysis-and-post-process-results">3.6.3. Run the analysis and post-process results</a></li>
@@ -137,8 +137,8 @@
 </li>
 <li class="toctree-l2"><a class="reference internal" href="../eeuq-0007/README.html">3.7. Target Spectrum by Surrogate Hazard GP Model</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../eeuq-0008/README.html">3.8. Using Multiple Models and Analysis Options in EE-UQ</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../eeuq-0009/README.html">3.9. Training a Surrogate Model (Gaussian Process)</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../eeuq-0010/README.html">3.10. Structural Response Prediction Using a Surrogate Model (Gaussian Process)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../eeuq-0009/README.html">3.9. Training GP Surrogate Model</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../eeuq-0010/README.html">3.10. Prediction from GP Surrogate Model</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../eeuq-0011/README.html">3.11. Multi-fidelity Monte Carlo Simulation</a></li>
 </ul>
 </li>
@@ -154,8 +154,9 @@
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../../../../developer_manual/how_to_build/desktop/how_to_build.html">1. How to Build</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../../../developer_manual/architecture/desktop/architecture.html">2. Software Architecture</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../../../developer_manual/verification/desktop/verification.html">3. Verification</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../../../developer_manual/coding_style/desktop/coding_style.html">4. Coding Style</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../developer_manual/how_to_extend/desktop/how_to_extend.html">3. How to Extend</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../developer_manual/verification/desktop/verification.html">4. Verification</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../developer_manual/coding_style/desktop/coding_style.html">5. Coding Style</a></li>
 </ul>
 
             
@@ -206,7 +207,7 @@
         
           <li><a href="../examples.html"><span class="section-number">3. </span>Examples</a> &raquo;</li>
         
-      <li><span class="section-number">3.6. </span>Surrogate Model for Structural Response Prediction (Probabilistic Learning on Manifolds)</li>
+      <li><span class="section-number">3.6. </span>PLoM Surrogate Model</li>
     
     
       <li class="wy-breadcrumbs-aside">
@@ -225,8 +226,8 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
             
-  <div class="section" id="surrogate-model-for-structural-response-prediction-probabilistic-learning-on-manifolds">
-<h1><span class="section-number">3.6. </span>Surrogate Model for Structural Response Prediction (Probabilistic Learning on Manifolds)<a class="headerlink" href="#surrogate-model-for-structural-response-prediction-probabilistic-learning-on-manifolds" title="Permalink to this heading">¶</a></h1>
+  <div class="section" id="plom-surrogate-model">
+<span id="eeuq-0006"></span><h1><span class="section-number">3.6. </span>PLoM Surrogate Model<a class="headerlink" href="#plom-surrogate-model" title="Permalink to this heading">¶</a></h1>
 <p>One essential step in seismic structural performance assessment is evaluating structural responses
 under earthquake ground motion inputs. The typical workflow is demonstrated in <a class="reference external" href="https://nheri-simcenter.github.io/EE-UQ-Documentation/common/user_manual/examples/desktop/eeuq-0003/README.html">Example 4.3</a>.
 The trade-off between computational efficiency and accuracy is one of the major challenges in problems that
@@ -234,6 +235,10 @@ require a large number of time history analyses (e.g., risk analysis, and struct
 possible solution is using surrogate models (e.g., response surface, kriging). The surrogate models are first
 trained for interested responses given a set of relatively expensive simulations. The resulting models can then be
 applied to predict new realizations more efficiently.</p>
+<div class="align-center figure" id="id3">
+<a class="reference internal image-reference" href="../../../../../_images/res_comp3.png"><img alt="../../../../../_images/res_comp3.png" src="../../../../../_images/res_comp3.png" style="width: 400px;" /></a>
+<p class="caption"><span class="caption-number">Fig. 3.6.1 </span><span class="caption-text">Samples generated from the physical simulation model (blue) and the surrogate model (orange)</span><a class="headerlink" href="#id3" title="Permalink to this image">¶</a></p>
+</div>
 <p>This example demonstrates using a novel method, Probabilistic Learning on Manifolds (PLoM) <a class="reference internal" href="#soize2016" id="id1"><span>[Soize2016]</span></a>, to develop surrogate models
 for structural responses under earthquake ground motion inputs.</p>
 <div class="section" id="configure-uq-engine">
@@ -248,16 +253,16 @@ would like to generate 40 new realizations from the 20 training samples
 (i.e., the <strong>New Sample Number Ratio</strong> is 2).</p></li>
 </ol>
 <div class="align-center figure" id="fig-uq-plot">
-<a class="reference internal image-reference" href="../../../../../_images/uq_plom.png"><img alt="../../../../../_images/uq_plom.png" src="../../../../../_images/uq_plom.png" style="width: 600px;" /></a>
+<a class="reference internal image-reference" href="../../../../../_images/uq_plom.png"><img alt="../../../../../_images/uq_plom.png" src="../../../../../_images/uq_plom.png" style="width: 100%;" /></a>
 </div>
 <ol class="arabic simple" start="2">
 <li><p>Activate the <strong>Advanced Options</strong> and select <strong>Affiliate Variable</strong>. In the <strong>Type</strong> options, select
-<strong>Ground Motion Intensity</strong> - a <strong>Intensity Measure Calculation</strong> window would be displayed and allow
+<strong>Ground Motion Intensity</strong> - <strong>Intensity Measure Calculation</strong> window would be displayed and allow
 users to add/remove intensity measures to the surrogate models. In this example, we add two intensity
 measures, <strong>Pseudo Spectral Acceleration</strong> and <strong>SaRatio</strong>.</p></li>
 </ol>
 <div class="align-center figure" id="fig-bim">
-<a class="reference internal image-reference" href="../../../../../_images/uq_imc.png"><img alt="../../../../../_images/uq_imc.png" src="../../../../../_images/uq_imc.png" style="width: 600px;" /></a>
+<a class="reference internal image-reference" href="../../../../../_images/uq_imc.png"><img alt="../../../../../_images/uq_imc.png" src="../../../../../_images/uq_imc.png" style="width: 100%;" /></a>
 </div>
 </div>
 <div class="section" id="configure-structural-analysis">
@@ -267,34 +272,24 @@ measures, <strong>Pseudo Spectral Acceleration</strong> and <strong>SaRatio</str
 we use a simple nonlinear SDOF model (yield displacement is 0.01 inch and hardening ratio is 0.1).</p></li>
 </ol>
 <div class="align-center figure" id="fig-sim">
-<a class="reference internal image-reference" href="../../../../../_images/sim2.png"><img alt="../../../../../_images/sim2.png" src="../../../../../_images/sim2.png" style="width: 600px;" /></a>
+<a class="reference internal image-reference" href="../../../../../_images/sim2.png"><img alt="../../../../../_images/sim2.png" src="../../../../../_images/sim2.png" style="width: 100%;" /></a>
 </div>
 <ol class="arabic simple" start="2">
 <li><p>Navigate to the <strong>EVT</strong> tab and select the <strong>PEER NGA Records</strong>. We select 20 ground motions to match the
 default Design Spectrum for analyzing the structural responses under earthquake inputs.</p></li>
 </ol>
 <div class="align-center figure" id="fig-evt">
-<a class="reference internal image-reference" href="../../../../../_images/evt3.png"><img alt="../../../../../_images/evt3.png" src="../../../../../_images/evt3.png" style="width: 600px;" /></a>
+<a class="reference internal image-reference" href="../../../../../_images/evt3.png"><img alt="../../../../../_images/evt3.png" src="../../../../../_images/evt3.png" style="width: 100%;" /></a>
 </div>
 <ol class="arabic simple" start="3">
 <li><p>For the <strong>FEM</strong> and <strong>EDP</strong> panels, we use default setups to analyze the structural model and record the
 standard earthquake EDPs, i.e., peak displacement, drift ratio, and acceleration demands.</p></li>
 </ol>
 <div class="align-center figure" id="fig-fem">
-<a class="reference internal image-reference" href="../../../../../_images/fem2.png"><img alt="../../../../../_images/fem2.png" src="../../../../../_images/fem2.png" style="width: 600px;" /></a>
+<a class="reference internal image-reference" href="../../../../../_images/fem2.png"><img alt="../../../../../_images/fem2.png" src="../../../../../_images/fem2.png" style="width: 100%;" /></a>
 </div>
 <div class="align-center figure" id="fig-edp">
-<a class="reference internal image-reference" href="../../../../../_images/edp.png"><img alt="../../../../../_images/edp.png" src="../../../../../_images/edp.png" style="width: 600px;" /></a>
-</div>
-<ol class="arabic simple">
-<li><p>In the Building Data Files section, clicking the Save File button will automatically generate four modeling data
-files in the user-defined location (<code class="xref download docutils literal notranslate"><span class="pre">ELFParameters.csv</span></code>,
-<code class="xref download docutils literal notranslate"><span class="pre">Geometry.csv</span></code>, <code class="xref download docutils literal notranslate"><span class="pre">Loads.csv</span></code>, and
-<code class="xref download docutils literal notranslate"><span class="pre">MemberDepth.csv</span></code>). These four files store the data from the four discussed
-sections above. Users can also directly modify these data tables.</p></li>
-</ol>
-<div class="align-center figure" id="fig-bdf">
-<a class="reference internal image-reference" href="common/user_manual/examples/desktop/eeuq-0006/figures/bdf.png"><img alt="common/user_manual/examples/desktop/eeuq-0006/figures/bdf.png" src="common/user_manual/examples/desktop/eeuq-0006/figures/bdf.png" style="width: 600px;" /></a>
+<a class="reference internal image-reference" href="../../../../../_images/edp.png"><img alt="../../../../../_images/edp.png" src="../../../../../_images/edp.png" style="width: 100%;" /></a>
 </div>
 </div>
 <div class="section" id="run-the-analysis-and-post-process-results">
@@ -306,10 +301,10 @@ results in the panel (i.e., errors in PCA approximation and diffusion-maps eigen
 by clicking the <strong>PCA</strong> and <strong>KDE</strong> tabs located on the top-right corner of the chart.</p></li>
 </ol>
 <div class="align-center figure" id="fig-res-summary">
-<a class="reference internal image-reference" href="../../../../../_images/res_summary.png"><img alt="../../../../../_images/res_summary.png" src="../../../../../_images/res_summary.png" style="width: 600px;" /></a>
+<a class="reference internal image-reference" href="../../../../../_images/res_summary.png"><img alt="../../../../../_images/res_summary.png" src="../../../../../_images/res_summary.png" style="width: 100%;" /></a>
 </div>
 <div class="align-center figure" id="fig-res-kde">
-<a class="reference internal image-reference" href="../../../../../_images/res_kde.png"><img alt="../../../../../_images/res_kde.png" src="../../../../../_images/res_kde.png" style="width: 400px;" /></a>
+<a class="reference internal image-reference" href="../../../../../_images/res_kde.png"><img alt="../../../../../_images/res_kde.png" src="../../../../../_images/res_kde.png" style="width: 60%;" /></a>
 </div>
 <ol class="arabic simple" start="2">
 <li><p>One could save the PLoM model by clicking on <strong>Save PLoM Model</strong> - an HDF-formatted database along with supplemental
@@ -317,27 +312,27 @@ files will be stored in the user-defined directory. The saved model can be impor
 which will be introduced in a second.</p></li>
 </ol>
 <div class="align-center figure" id="fig-res-save">
-<a class="reference internal image-reference" href="../../../../../_images/res_save.png"><img alt="../../../../../_images/res_save.png" src="../../../../../_images/res_save.png" style="width: 600px;" /></a>
+<a class="reference internal image-reference" href="../../../../../_images/res_save.png"><img alt="../../../../../_images/res_save.png" src="../../../../../_images/res_save.png" style="width: 100%;" /></a>
 </div>
 <ol class="arabic simple" start="3">
 <li><p>One could navigate to the <strong>Data Value</strong> panel to visualize and save the new realizations.</p></li>
 </ol>
 <div class="align-center figure" id="fig-res-data">
-<a class="reference internal image-reference" href="../../../../../_images/res_data.png"><img alt="../../../../../_images/res_data.png" src="../../../../../_images/res_data.png" style="width: 600px;" /></a>
+<a class="reference internal image-reference" href="../../../../../_images/res_data.png"><img alt="../../../../../_images/res_data.png" src="../../../../../_images/res_data.png" style="width: 70%;" /></a>
 </div>
 <ol class="arabic simple" start="4">
 <li><p>The two figures below compare the data scatter plots between the simulation samples (training set) and
 surrogate samples (prediction set) which are in good agreement.</p></li>
 </ol>
 <div class="align-center figure" id="fig-res-comp1">
-<a class="reference internal image-reference" href="../../../../../_images/res_comp1.png"><img alt="../../../../../_images/res_comp1.png" src="../../../../../_images/res_comp1.png" style="width: 400px;" /></a>
+<a class="reference internal image-reference" href="../../../../../_images/res_comp1.png"><img alt="../../../../../_images/res_comp1.png" src="../../../../../_images/res_comp1.png" style="width: 60%;" /></a>
 </div>
 <div class="align-center figure" id="id2">
-<a class="reference internal image-reference" href="../../../../../_images/res_comp2.png"><img alt="../../../../../_images/res_comp2.png" src="../../../../../_images/res_comp2.png" style="width: 400px;" /></a>
+<a class="reference internal image-reference" href="../../../../../_images/res_comp2.png"><img alt="../../../../../_images/res_comp2.png" src="../../../../../_images/res_comp2.png" style="width: 60%;" /></a>
 </div>
 <dl class="citation">
 <dt class="label" id="soize2016"><span class="brackets"><a class="fn-backref" href="#id1">Soize2016</a></span></dt>
-<dd><p>Soize, C., &amp; Ghanem, R. (2016). Data-driven probability concentration and sampling on manifold. Journal of Computational Physics, 321, 242-258.</p>
+<dd><p>Soize, C., &amp; Ghanem, R. (2016). Data-driven probability concentration and sampling on the manifold. Journal of Computational Physics, 321, 242-258.</p>
 </dd>
 </dl>
 </div>

@@ -7,7 +7,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   
-  <title>3.10. Structural Response Prediction Using a Surrogate Model (Gaussian Process) &mdash; Earthquake Engineering with Uncertainty Quantification  documentation</title>
+  <title>3.10. Prediction from GP Surrogate Model &mdash; Earthquake Engineering with Uncertainty Quantification  documentation</title>
   
 
   
@@ -50,7 +50,7 @@
     <link rel="index" title="Index" href="../../../../../genindex.html" />
     <link rel="search" title="Search" href="../../../../../search.html" />
     <link rel="next" title="3.11. Multi-fidelity Monte Carlo Simulation" href="../eeuq-0011/README.html" />
-    <link rel="prev" title="3.9. Training a Surrogate Model (Gaussian Process)" href="../eeuq-0009/README.html" />
+    <link rel="prev" title="3.9. Training GP Surrogate Model" href="../eeuq-0009/README.html" />
 <script src="https://cdn.jsdelivr.net/npm/vega@5.12.1"></script>
 <script src="https://cdn.jsdelivr.net/npm/vega-lite@4.13.1"></script>
 <script src="https://cdn.jsdelivr.net/npm/vega-embed@6.8.0"></script>
@@ -124,16 +124,16 @@
 <li class="toctree-l1"><a class="reference internal" href="../../../installation/desktop/installation.html">1. Installation</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../../usage/desktop/usage.html">2. User Interface</a></li>
 <li class="toctree-l1 current"><a class="reference internal" href="../examples.html">3. Examples</a><ul class="current">
-<li class="toctree-l2"><a class="reference internal" href="../eeuq-0001/README.html">3.1. Shear Building: Sampling, Reliability and Sensitivity</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../eeuq-0002/README.html">3.2. Including Spatial Variability in Site Response Event</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../eeuq-0003/README.html">3.3. Ground Motion Selection and Nonlinear Response Analysis</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../eeuq-0001/README.html">3.1. Sampling, Reliability and Sensitivity Analysis of a Shear Building</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../eeuq-0002/README.html">3.2. Site Response Analysis with Spatial Variability</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../eeuq-0003/README.html">3.3. PEER Ground Motion Selection and Nonlinear Response Analysis</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../eeuq-0004/README.html">3.4. AutoSDA and Nonlinear Response Analysis</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../eeuq-0005/README.html">3.5. Shear Building: Synthetic Ground Motion</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../eeuq-0006/README.html">3.6. Surrogate Model for Structural Response Prediction (Probabilistic Learning on Manifolds)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../eeuq-0005/README.html">3.5. Synthetic Ground Motion Applied to a Shear Buildilng</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../eeuq-0006/README.html">3.6. PLoM Surrogate Model</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../eeuq-0007/README.html">3.7. Target Spectrum by Surrogate Hazard GP Model</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../eeuq-0008/README.html">3.8. Using Multiple Models and Analysis Options in EE-UQ</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../eeuq-0009/README.html">3.9. Training a Surrogate Model (Gaussian Process)</a></li>
-<li class="toctree-l2 current"><a class="current reference internal" href="#">3.10. Structural Response Prediction Using a Surrogate Model (Gaussian Process)</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../eeuq-0009/README.html">3.9. Training GP Surrogate Model</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">3.10. Prediction from GP Surrogate Model</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="#set-up-forward-propagation-configuration">3.10.1. Set Up Forward Propagation Configuration</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#define-target-structure">3.10.2. Define Target Structure</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#select-ground-motions">3.10.3. Select Ground Motions</a></li>
@@ -156,8 +156,9 @@
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../../../../developer_manual/how_to_build/desktop/how_to_build.html">1. How to Build</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../../../developer_manual/architecture/desktop/architecture.html">2. Software Architecture</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../../../developer_manual/verification/desktop/verification.html">3. Verification</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../../../developer_manual/coding_style/desktop/coding_style.html">4. Coding Style</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../developer_manual/how_to_extend/desktop/how_to_extend.html">3. How to Extend</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../developer_manual/verification/desktop/verification.html">4. Verification</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../developer_manual/coding_style/desktop/coding_style.html">5. Coding Style</a></li>
 </ul>
 
             
@@ -208,7 +209,7 @@
         
           <li><a href="../examples.html"><span class="section-number">3. </span>Examples</a> &raquo;</li>
         
-      <li><span class="section-number">3.10. </span>Structural Response Prediction Using a Surrogate Model (Gaussian Process)</li>
+      <li><span class="section-number">3.10. </span>Prediction from GP Surrogate Model</li>
     
     
       <li class="wy-breadcrumbs-aside">
@@ -227,8 +228,8 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
             
-  <div class="section" id="structural-response-prediction-using-a-surrogate-model-gaussian-process">
-<span id="eeuq-0010"></span><h1><span class="section-number">3.10. </span>Structural Response Prediction Using a Surrogate Model (Gaussian Process)<a class="headerlink" href="#structural-response-prediction-using-a-surrogate-model-gaussian-process" title="Permalink to this heading">¶</a></h1>
+  <div class="section" id="prediction-from-gp-surrogate-model">
+<span id="eeuq-0010"></span><h1><span class="section-number">3.10. </span>Prediction from GP Surrogate Model<a class="headerlink" href="#prediction-from-gp-surrogate-model" title="Permalink to this heading">¶</a></h1>
 <div class="admonition warning">
 <p class="admonition-title">Warning</p>
 <p>To reproduce the result of this example, the user should first click <strong>EVT</strong> and <strong>Select Records</strong>, and then click the <strong>RUN</strong> button. See the below procedure for details.</p>
@@ -236,7 +237,7 @@
 <p>This example shows how to replace structural dynamic simulations using a pre-trained Gaussian process (GP) surrogate model for running forward uncertainty propagation (Monte Carlo Simulation). The ground motions are selected from the PEER NGA database matching the Design Spectrum of ASCE 7-16 standard.</p>
 <blockquote>
 <div><div class="align-center figure" id="uq-inputs">
-<a class="reference internal image-reference" href="../../../../../_images/EE10_main2.png"><img alt="../../../../../_images/EE10_main2.png" src="../../../../../_images/EE10_main2.png" style="width: 900px;" /></a>
+<a class="reference internal image-reference" href="../../../../../_images/EE10_main3.png"><img alt="../../../../../_images/EE10_main3.png" src="../../../../../_images/EE10_main3.png" style="width: 40%;" /></a>
 <p class="caption"><span class="caption-number">Fig. 3.10.1 </span><span class="caption-text">Prediction of response statistics using a surrogate model</span><a class="headerlink" href="#uq-inputs" title="Permalink to this image">¶</a></p>
 </div>
 </div></blockquote>
@@ -261,7 +262,7 @@
 <div class="section" id="define-target-structure">
 <h2><span class="section-number">3.10.2. </span>Define Target Structure<a class="headerlink" href="#define-target-structure" title="Permalink to this heading">¶</a></h2>
 <ol class="arabic" start="2">
-<li><p>The <strong>GI tab</strong> is kept as default. (GI tab is not used when a surrogate model is used in SIM tab)</p></li>
+<li><p>The <strong>GI tab</strong> is kept as default. (The GI tab is not used when a surrogate model is used in the SIM tab)</p></li>
 <li><p>In <strong>SIM tab</strong>, the surrogate model (.json) trained in <a class="reference internal" href="../eeuq-0009/README.html#eeuq-0009"><span class="std std-ref">Example 09</span></a> is imported as shown in the figure.</p>
 <blockquote>
 <div><div class="align-center figure" id="id2">
@@ -271,7 +272,7 @@
 </div></blockquote>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
-<p><a class="reference internal" href="../eeuq-0009/README.html#eeuq-0009"><span class="std std-ref">Example 09</span></a> describes how to train GP surrogate model and save it as <cite>.json</cite> format.</p>
+<p><a class="reference internal" href="../eeuq-0009/README.html#eeuq-0009"><span class="std std-ref">Example 09</span></a> describes how to train the GP surrogate model and save it as <cite>.json</cite> format.</p>
 </div>
 <p>When the option “Random sample under prediction uncertainty” is selected, the predictions from GP are random realizations that account for both model uncertainty and a portion of uncertainty in the ground motion time histories (i.e. the remaining uncertainty after given intensity measures (IMs)). Alternatively, when the user is interested in only the mean of the response, disregarding all the uncertainties, the user can select “Median (representative) prediction”.</p>
 </li>
@@ -376,7 +377,7 @@
 <li><p>MAC: fn-clink, option-click, and command-click all set the Y axis (ordinate).  ctrl-click sets the X axis (abscissa).</p></li>
 </ul>
 </div>
-<p>In the scatter plot, the gray square markers represent the mean prediction from the surrogate, gray bounds denote 90% prediction interval, orange bounds denote 90% confidence interval of the mean prediction, and blue dots represent the sample obtained from the surrogate prediction.</p>
+<p>In the scatter plot, the gray square markers represent the mean prediction from the surrogate, gray bounds denote the 90% prediction interval, orange bounds denote the 90% confidence interval of the mean prediction, and blue dots represent the sample obtained from the surrogate prediction.</p>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
 <ul class="simple">
@@ -386,7 +387,7 @@
 </div>
 </div></blockquote>
 <ol class="arabic simple" start="11">
-<li><p><strong>[Verification]</strong> Only for verification purposes, an additional forward propagation is performed using the exact simulation model instead of the surrogate model, using the exact same ground motion/structural parameters. For this, UQ, GI, EVT, RV tabs are kept unchanged, and SIM, FEM, EDP tabs are modified to replace the surrogate with the original model, i.e. for SIM, FEM, EDP tabs, the exact same configuration used in <a class="reference internal" href="../eeuq-0009/README.html#eeuq-0009"><span class="std std-ref">example 09</span></a> was used.  Below is a comparison of the obtained mean log-EDPs from 30 samples:</p></li>
+<li><p><strong>[Verification]</strong> Only for verification purposes, an additional forward propagation is performed using the exact simulation model instead of the surrogate model, using the exact same ground motion/structural parameters. For this, UQ, GI, EVT, and RV tabs are kept unchanged, and SIM, FEM, and EDP tabs are modified to replace the surrogate with the original model, i.e. for SIM, FEM, EDP tabs, the exact same configuration used in <a class="reference internal" href="../eeuq-0009/README.html#eeuq-0009"><span class="std std-ref">example 09</span></a> was used.  Below is a comparison of the obtained mean log-EDPs from 30 samples:</p></li>
 </ol>
 <blockquote>
 <div><div class="align-center figure" id="id12">
