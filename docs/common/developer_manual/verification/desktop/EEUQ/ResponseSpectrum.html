@@ -7,7 +7,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   
-  <title>4.2. Response to Stochastic Ground Motion &mdash; Earthquake Engineering with Uncertainty Quantification  documentation</title>
+  <title>3.2. Response to Stochastic Ground Motion &mdash; Earthquake Engineering with Uncertainty Quantification  documentation</title>
   
 
   
@@ -50,8 +50,7 @@
     
     <link rel="index" title="Index" href="../../../../../genindex.html" />
     <link rel="search" title="Search" href="../../../../../search.html" />
-    <link rel="next" title="5. Coding Style" href="../../../coding_style/desktop/coding_style.html" />
-    <link rel="prev" title="4.1. Earthquake Response of Portal Frame" href="PortalFrameEarthquake.html" />
+    <link rel="prev" title="3.1. Earthquake Response of Portal Frame" href="PortalFrameEarthquake.html" />
 <script src="https://cdn.jsdelivr.net/npm/vega@5.12.1"></script>
 <script src="https://cdn.jsdelivr.net/npm/vega-lite@4.13.1"></script>
 <script src="https://cdn.jsdelivr.net/npm/vega-embed@6.8.0"></script>
@@ -139,14 +138,12 @@
 <p class="caption" role="heading"><span class="caption-text">Developer Manual</span></p>
 <ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="../../../how_to_build/desktop/how_to_build.html">1. How to Build</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../../architecture/desktop/architecture.html">2. Software Architecture</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../../how_to_extend/desktop/how_to_extend.html">3. How to Extend</a></li>
-<li class="toctree-l1 current"><a class="reference internal" href="../verification.html">4. Verification</a><ul class="current">
-<li class="toctree-l2"><a class="reference internal" href="PortalFrameEarthquake.html">4.1. Earthquake Response of Portal Frame</a></li>
-<li class="toctree-l2 current"><a class="current reference internal" href="#">4.2. Response to Stochastic Ground Motion</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../how_to_extend.html">2. How to Extend</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../verification.html">3. Verification</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="PortalFrameEarthquake.html">3.1. Earthquake Response of Portal Frame</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">3.2. Response to Stochastic Ground Motion</a></li>
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="../../../coding_style/desktop/coding_style.html">5. Coding Style</a></li>
 </ul>
 
             
@@ -195,9 +192,9 @@
     
       <li><a href="../../../../../index.html" class="icon icon-home"></a> &raquo;</li>
         
-          <li><a href="../verification.html"><span class="section-number">4. </span>Verification</a> &raquo;</li>
+          <li><a href="../verification.html"><span class="section-number">3. </span>Verification</a> &raquo;</li>
         
-      <li><span class="section-number">4.2. </span>Response to Stochastic Ground Motion</li>
+      <li><span class="section-number">3.2. </span>Response to Stochastic Ground Motion</li>
     
     
       <li class="wy-breadcrumbs-aside">
@@ -217,7 +214,7 @@
            <div itemprop="articleBody">
             
   <div class="section" id="response-to-stochastic-ground-motion">
-<span id="lblresponsespectrum"></span><h1><span class="section-number">4.2. </span>Response to Stochastic Ground Motion<a class="headerlink" href="#response-to-stochastic-ground-motion" title="Permalink to this heading">¶</a></h1>
+<span id="lblresponsespectrum"></span><h1><span class="section-number">3.2. </span>Response to Stochastic Ground Motion<a class="headerlink" href="#response-to-stochastic-ground-motion" title="Permalink to this heading">¶</a></h1>
 <p>The purpose of this analysis is to verify that EE-UQ app is able
 to reproduce the correct pseudo-acceleration response spectrum when
 using synthetic acceleration time histories generated using the
@@ -237,7 +234,7 @@ to set the natural frequency of the system in order to calculate the
 response spectrum. The structural response was calculated for 10
 sample synthetic acceleration time histories for each structural
 period and compared to those from <a class="reference external" href="https://github.com/NHERI-SimCenter/smelt">smelt</a> and the GMPEs, as
-shown in <a class="reference internal" href="#figstochasticvalidation"><span class="std std-numref">Fig. 4.2.1</span></a>. As can be seen in this
+shown in <a class="reference internal" href="#figstochasticvalidation"><span class="std std-numref">Fig. 3.2.1</span></a>. As can be seen in this
 figure, the spectral response calculated by EE-UQ app falls
 within the mean plus/minus one sigma bounds of the GMPEs and
 <a class="reference external" href="https://github.com/NHERI-SimCenter/smelt">smelt</a> while tending toward the mean. This produces the
@@ -248,7 +245,7 @@ proposed by Vlachos et al. (2018) <span class="xref std std-ref">vlachos2018pred
 found in the <a class="reference external" href="https://github.com/NHERI-SimCenter/smelt">smelt library documentation</a>.</p>
 <div class="align-center figure" id="id1">
 <span id="figstochasticvalidation"></span><img alt="../../../../../_images/M65R20V400.png" src="../../../../../_images/M65R20V400.png" />
-<p class="caption"><span class="caption-number">Fig. 4.2.1 </span><span class="caption-text">Response spectra generated using NGA-West2 GMPEs, smelt &amp; EE-UQ for <span class="math notranslate nohighlight">\(M_W = 6.5\)</span>, closest-to-site distance <span class="math notranslate nohighlight">\(R_{rupt} = 20km\)</span>, and average shear-wave velocity <span class="math notranslate nohighlight">\(V_{s30} = 400 \frac{m}{s}\)</span>.</span><a class="headerlink" href="#id1" title="Permalink to this image">¶</a></p>
+<p class="caption"><span class="caption-number">Fig. 3.2.1 </span><span class="caption-text">Response spectra generated using NGA-West2 GMPEs, smelt &amp; EE-UQ for <span class="math notranslate nohighlight">\(M_W = 6.5\)</span>, closest-to-site distance <span class="math notranslate nohighlight">\(R_{rupt} = 20km\)</span>, and average shear-wave velocity <span class="math notranslate nohighlight">\(V_{s30} = 400 \frac{m}{s}\)</span>.</span><a class="headerlink" href="#id1" title="Permalink to this image">¶</a></p>
 </div>
 <div class="admonition note">
 <p class="admonition-title">Note</p>

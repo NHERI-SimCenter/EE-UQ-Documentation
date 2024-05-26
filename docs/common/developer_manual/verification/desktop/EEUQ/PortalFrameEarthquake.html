@@ -7,7 +7,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   
-  <title>4.1. Earthquake Response of Portal Frame &mdash; Earthquake Engineering with Uncertainty Quantification  documentation</title>
+  <title>3.1. Earthquake Response of Portal Frame &mdash; Earthquake Engineering with Uncertainty Quantification  documentation</title>
   
 
   
@@ -50,8 +50,8 @@
     
     <link rel="index" title="Index" href="../../../../../genindex.html" />
     <link rel="search" title="Search" href="../../../../../search.html" />
-    <link rel="next" title="4.2. Response to Stochastic Ground Motion" href="ResponseSpectrum.html" />
-    <link rel="prev" title="4. Verification" href="../verification.html" />
+    <link rel="next" title="3.2. Response to Stochastic Ground Motion" href="ResponseSpectrum.html" />
+    <link rel="prev" title="3. Verification" href="../verification.html" />
 <script src="https://cdn.jsdelivr.net/npm/vega@5.12.1"></script>
 <script src="https://cdn.jsdelivr.net/npm/vega-lite@4.13.1"></script>
 <script src="https://cdn.jsdelivr.net/npm/vega-embed@6.8.0"></script>
@@ -139,18 +139,16 @@
 <p class="caption" role="heading"><span class="caption-text">Developer Manual</span></p>
 <ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="../../../how_to_build/desktop/how_to_build.html">1. How to Build</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../../architecture/desktop/architecture.html">2. Software Architecture</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../../how_to_extend/desktop/how_to_extend.html">3. How to Extend</a></li>
-<li class="toctree-l1 current"><a class="reference internal" href="../verification.html">4. Verification</a><ul class="current">
-<li class="toctree-l2 current"><a class="current reference internal" href="#">4.1. Earthquake Response of Portal Frame</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="#verification-script">4.1.1. Verification Script</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#verification-of-results">4.1.2. Verification of Results</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../how_to_extend.html">2. How to Extend</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../verification.html">3. Verification</a><ul class="current">
+<li class="toctree-l2 current"><a class="current reference internal" href="#">3.1. Earthquake Response of Portal Frame</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#verification-script">3.1.1. Verification Script</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#verification-of-results">3.1.2. Verification of Results</a></li>
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="ResponseSpectrum.html">4.2. Response to Stochastic Ground Motion</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ResponseSpectrum.html">3.2. Response to Stochastic Ground Motion</a></li>
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="../../../coding_style/desktop/coding_style.html">5. Coding Style</a></li>
 </ul>
 
             
@@ -199,9 +197,9 @@
     
       <li><a href="../../../../../index.html" class="icon icon-home"></a> &raquo;</li>
         
-          <li><a href="../verification.html"><span class="section-number">4. </span>Verification</a> &raquo;</li>
+          <li><a href="../verification.html"><span class="section-number">3. </span>Verification</a> &raquo;</li>
         
-      <li><span class="section-number">4.1. </span>Earthquake Response of Portal Frame</li>
+      <li><span class="section-number">3.1. </span>Earthquake Response of Portal Frame</li>
     
     
       <li class="wy-breadcrumbs-aside">
@@ -221,11 +219,11 @@
            <div itemprop="articleBody">
             
   <div class="section" id="earthquake-response-of-portal-frame">
-<span id="lblportalframeearthquake"></span><h1><span class="section-number">4.1. </span>Earthquake Response of Portal Frame<a class="headerlink" href="#earthquake-response-of-portal-frame" title="Permalink to this heading">¶</a></h1>
+<span id="lblportalframeearthquake"></span><h1><span class="section-number">3.1. </span>Earthquake Response of Portal Frame<a class="headerlink" href="#earthquake-response-of-portal-frame" title="Permalink to this heading">¶</a></h1>
 <p>In this example, a simple 2D portal frame model is used to verify the
 results of EE-UQ app. The model is a linear elastic single-bay,
 single-story model of a reinforced concrete portal frame, as shown in
-<a class="reference internal" href="#figportalverification"><span class="std std-numref">Fig. 4.1.9</span></a>. The analysis of this model considers both
+<a class="reference internal" href="#figportalverification"><span class="std std-numref">Fig. 3.1.2</span></a>. The analysis of this model considers both
 gravity loading and lateral earthquake loading due to the El Centro
 earthquake (Borrego Mountain 04/09/68 0230, El Centro ARRAY 9, 270).
 The original model and ground motion used in this example were
@@ -237,7 +235,7 @@ Examples folder in a subfolder called <strong>PortalFrame2D</strong>.</p>
 <blockquote>
 <div><div class="align-center figure" id="id1">
 <span id="figportalverification"></span><img alt="../../../../../_images/portalFrame.png" src="../../../../../_images/portalFrame.png" />
-<p class="caption"><span class="caption-number">Fig. 4.1.9 </span><span class="caption-text">Two-dimensional portal frame model subjected to gravity and earthquake loading.</span><a class="headerlink" href="#id1" title="Permalink to this image">¶</a></p>
+<p class="caption"><span class="caption-number">Fig. 3.1.2 </span><span class="caption-text">Two-dimensional portal frame model subjected to gravity and earthquake loading.</span><a class="headerlink" href="#id1" title="Permalink to this image">¶</a></p>
 </div>
 </div></blockquote>
 <p>To introduce uncertainty in the model, both mass and Young’s modulus
@@ -248,7 +246,7 @@ method using both EE-UQ app and a Python script
 (<code class="docutils literal notranslate"><span class="pre">PortalFrameSampling.py</span></code>) and response statistics from both
 analyses are compared.</p>
 <table class="colwidths-given docutils align-default" id="id2">
-<caption><span class="caption-number">Table 4.1.5 </span><span class="caption-text">Uncertain parameters defined in the portal frame model</span><a class="headerlink" href="#id2" title="Permalink to this table">¶</a></caption>
+<caption><span class="caption-number">Table 3.1.1 </span><span class="caption-text">Uncertain parameters defined in the portal frame model</span><a class="headerlink" href="#id2" title="Permalink to this table">¶</a></caption>
 <colgroup>
 <col style="width: 40%" />
 <col style="width: 20%" />
@@ -280,39 +278,39 @@ analyses are compared.</p>
 <li><p>Start EE-UQ app, click on the simulation tab (SIM) in the left bar to open a building simulation model. Click on choose button in the input script row:</p>
 <div class="align-center figure" id="id3">
 <img alt="../../../../../_images/portalFrameTcl.png" src="../../../../../_images/portalFrameTcl.png" />
-<p class="caption"><span class="caption-number">Fig. 4.1.10 </span><span class="caption-text">Choose building model</span><a class="headerlink" href="#id3" title="Permalink to this image">¶</a></p>
+<p class="caption"><span class="caption-number">Fig. 3.1.3 </span><span class="caption-text">Choose building model</span><a class="headerlink" href="#id3" title="Permalink to this image">¶</a></p>
 </div>
 </li>
 <li><p>Choose the model file <code class="docutils literal notranslate"><span class="pre">Portal2D-UQ.tcl</span></code> from the <code class="docutils literal notranslate"><span class="pre">PortalFrame2D</span></code> example folder.</p></li>
 <li><p>In the list of Clines Nodes edit box, enter <code class="docutils literal notranslate"><span class="pre">1,</span> <span class="pre">3</span></code>. This indicates to EE-UQ app that nodes 1 and 3 are the nodes used to obtain EDPs at different floor levels (i.e. base and first floor).</p>
 <div class="align-center figure" id="id4">
 <img alt="../../../../../_images/cLineNodes.png" src="../../../../../_images/cLineNodes.png" />
-<p class="caption"><span class="caption-number">Fig. 4.1.11 </span><span class="caption-text">Node selection.</span><a class="headerlink" href="#id4" title="Permalink to this image">¶</a></p>
+<p class="caption"><span class="caption-number">Fig. 3.1.4 </span><span class="caption-text">Node selection.</span><a class="headerlink" href="#id4" title="Permalink to this image">¶</a></p>
 </div>
 </li>
 <li><p>Click on the event tab (<strong>EVT</strong>) in the left bar to open the earthquake event specification tab, select <strong>Multiple Existing</strong> for loading Type. Click on the <strong>add</strong> button to add an earthquake event. Then click on the <strong>choose</strong> button to select the event file.</p>
 <div class="align-center figure" id="id5">
 <img alt="../../../../../_images/workEvtTab.png" src="../../../../../_images/workEvtTab.png" />
-<p class="caption"><span class="caption-number">Fig. 4.1.12 </span><span class="caption-text">Work on EVT.</span><a class="headerlink" href="#id5" title="Permalink to this image">¶</a></p>
+<p class="caption"><span class="caption-number">Fig. 3.1.5 </span><span class="caption-text">Work on EVT.</span><a class="headerlink" href="#id5" title="Permalink to this image">¶</a></p>
 </div>
 </li>
 <li><p>Choose the event file (<code class="docutils literal notranslate"><span class="pre">BM68elc.json</span></code>) for the El Centro earthquake provided in the portal frame 2D example folder.</p></li>
 <li><p>Now select the random variables panel (<strong>RV</strong>) from the left bar, change the random variables types to normal and set the mean and standard deviation values of the floor mass and Young’s modulus. Notice that EE-UQ app has automatically detected parameters defined in the OpenSees tcl file using the <code class="docutils literal notranslate"><span class="pre">pset</span></code> command and defined them as random variables.</p>
 <div class="align-center figure" id="id6">
 <img alt="../../../../../_images/workUqTab.png" src="../../../../../_images/workUqTab.png" />
-<p class="caption"><span class="caption-number">Fig. 4.1.13 </span><span class="caption-text">Work on <strong>UQ</strong> tab</span><a class="headerlink" href="#id6" title="Permalink to this image">¶</a></p>
+<p class="caption"><span class="caption-number">Fig. 3.1.6 </span><span class="caption-text">Work on <strong>UQ</strong> tab</span><a class="headerlink" href="#id6" title="Permalink to this image">¶</a></p>
 </div>
 </li>
 <li><p>Now click on <strong>run</strong>, set the analysis parameters, working directory and applications directory and click submit to run the analysis.</p></li>
 </ol>
 <p>If the run is successful the program will automatically open the
-results tab showing the summary of results (<a class="reference internal" href="#fig-figure27"><span class="std std-numref">Fig. 4.1.14</span></a>).</p>
+results tab showing the summary of results (<a class="reference internal" href="#fig-figure27"><span class="std std-numref">Fig. 3.1.7</span></a>).</p>
 <div class="align-center figure" id="id7">
 <span id="fig-figure27"></span><img alt="../../../../../_images/runAnalysis.png" src="../../../../../_images/runAnalysis.png" />
-<p class="caption"><span class="caption-number">Fig. 4.1.14 </span><span class="caption-text">Pop-up shown when clicking <strong>Run</strong>.</span><a class="headerlink" href="#id7" title="Permalink to this image">¶</a></p>
+<p class="caption"><span class="caption-number">Fig. 3.1.7 </span><span class="caption-text">Pop-up shown when clicking <strong>Run</strong>.</span><a class="headerlink" href="#id7" title="Permalink to this image">¶</a></p>
 </div>
 <div class="section" id="verification-script">
-<h2><span class="section-number">4.1.1. </span>Verification Script<a class="headerlink" href="#verification-script" title="Permalink to this heading">¶</a></h2>
+<h2><span class="section-number">3.1.1. </span>Verification Script<a class="headerlink" href="#verification-script" title="Permalink to this heading">¶</a></h2>
 <p>A verification script (Listing 1) for propagating the uncertainty was
 developed in Python and is included in the example folder.  The script
 creates 1000 samples for both Young’s modulus and mass values
@@ -383,7 +381,7 @@ deviation values of the peak floor acceleration and peak drift.</p>
 </div>
 </div>
 <div class="section" id="verification-of-results">
-<h2><span class="section-number">4.1.2. </span>Verification of Results<a class="headerlink" href="#verification-of-results" title="Permalink to this heading">¶</a></h2>
+<h2><span class="section-number">3.1.2. </span>Verification of Results<a class="headerlink" href="#verification-of-results" title="Permalink to this heading">¶</a></h2>
 <p>This section verifies the results produced for the portal frame
 by EE-UQ app against the results of running the same
 problem using the Python script.  Running the uncertainty
@@ -393,11 +391,11 @@ values of EDPs) for both are compared in the table below and, as seen, are in go
 agreement.</p>
 <div class="align-center figure" id="id8">
 <img alt="../../../../../_images/resultsSummaryTab.png" src="../../../../../_images/resultsSummaryTab.png" />
-<p class="caption"><span class="caption-number">Fig. 4.1.2.1 </span><span class="caption-text">Outputs from EE-UQ</span><a class="headerlink" href="#id8" title="Permalink to this image">¶</a></p>
+<p class="caption"><span class="caption-number">Fig. 3.1.2.1 </span><span class="caption-text">Outputs from EE-UQ</span><a class="headerlink" href="#id8" title="Permalink to this image">¶</a></p>
 </div>
 <div class="align-center figure" id="id9">
 <img alt="../../../../../_images/pyOutputs.png" src="../../../../../_images/pyOutputs.png" />
-<p class="caption"><span class="caption-number">Fig. 4.1.2.2 </span><span class="caption-text">Outputs from PortalFrameSampling.py script</span><a class="headerlink" href="#id9" title="Permalink to this image">¶</a></p>
+<p class="caption"><span class="caption-number">Fig. 3.1.2.2 </span><span class="caption-text">Outputs from PortalFrameSampling.py script</span><a class="headerlink" href="#id9" title="Permalink to this image">¶</a></p>
 </div>
 <table class="docutils align-default">
 <colgroup>
