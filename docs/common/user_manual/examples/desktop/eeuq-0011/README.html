@@ -234,7 +234,7 @@
 <p>This example demonstrates Multi-fidelity Monte Carlo (MFMC) supported in EE-UQ. The high- and low-fidelity building models of a benchmark 9-story steel structure (<a class="reference internal" href="#ohtori2004" id="id1"><span>[Ohtori2004]</span></a>) are used for the demonstration, following the implementation in (<a class="reference internal" href="#patsialis2023" id="id2"><span>[Patsialis2023]</span></a>).</p>
 <blockquote>
 <div><div class="align-center figure" id="uq-inputs">
-<a class="reference internal image-reference" href="../../../../../_images/ee11_main2.png"><img alt="../../../../../_images/ee11_main2.png" src="../../../../../_images/ee11_main2.png" style="width: 50%;" /></a>
+<a class="reference internal image-reference" href="../../../../../_images/ee11_main2.png"><img alt="The image shows two diagrams representing electrical circuits. On the left is a complex circuit diagram with multiple resistors in series and parallel configurations, labeled with resistance values and connected with lines. On the right is a simplified version of the circuit diagram showing the equivalent resistance with fewer components. Arrows between the two diagrams suggest the process of circuit simplification from the complex to the simplified representation." src="../../../../../_images/ee11_main2.png" style="width: 50%;" /></a>
 <p class="caption"><span class="caption-number">Fig. 3.11.1 </span><span class="caption-text">Illustration of Multi-fidelity Monte Carlo</span><a class="headerlink" href="#uq-inputs" title="Permalink to this image">¶</a></p>
 </div>
 </div></blockquote>
@@ -268,7 +268,7 @@
 <li><p>In <strong>UQ tab</strong> select the <strong>Forward Propagation</strong> as <strong>UQ Method</strong>. Select <strong>SimCenterUQ</strong> engine. Select <strong>Multi-fidelity Monte Carlo</strong> method.</p>
 <blockquote>
 <div><div class="align-center figure" id="id6">
-<a class="reference internal image-reference" href="../../../../../_images/ee11_UQ.png"><img alt="../../../../../_images/ee11_UQ.png" src="../../../../../_images/ee11_UQ.png" style="width: 900px;" /></a>
+<a class="reference internal image-reference" href="../../../../../_images/ee11_UQ.png"><img alt="Screenshot of a graphical user interface for uncertainty quantification setup, showcasing a sidebar with categories such as UQ, FEM, RV, EDP, and RES. The main panel displays options for UQ Method with Forward Propagation selected, UQ Engine as SimCenterUO, Method chosen as Multi-fidelity Monte Carlo, fields for Max Computation Time and seed value, and an Advanced Options section including the minimum number of simulations per model and an option to perform log-transform." src="../../../../../_images/ee11_UQ.png" style="width: 900px;" /></a>
 <p class="caption"><span class="caption-number">Fig. 3.11.2.1 </span><span class="caption-text">UQ tab</span><a class="headerlink" href="#id6" title="Permalink to this image">¶</a></p>
 </div>
 </div></blockquote>
@@ -281,7 +281,7 @@
 <li><p>The <strong>GI tab</strong> is kept as default. (GI tab is not used when OpenSees models are imported in SIM tab)</p></li>
 <li><p>In <strong>SIM tab</strong>, select the <strong>Multiple Models</strong> option. Use <strong>Add</strong> button to import two models. The model with a lower index value should be a higher fidelity model. Therefore, high-fidelity and low-fidelity models should respectively be loaded in <strong>Model 1</strong> and <strong>Model 2</strong> tabs. In <strong>Model 1</strong>, import the main file, and set the response nodes by picking one node per story starting from the ground floor. In the current example, the ten nodes specified in the <strong>response nodes</strong> field, 7, 13, 19, 25, 31, 37, 43, 49, 55, 61, represent respectively from the ground floor(7) to the top story (61) ceiling. This is the list of nodes that will be used to evaluate the engineering demand parameters.</p>
 <div class="align-center figure" id="id7">
-<a class="reference internal image-reference" href="../../../../../_images/ee11_SIM1.png"><img alt="../../../../../_images/ee11_SIM1.png" src="../../../../../_images/ee11_SIM1.png" style="width: 900px;" /></a>
+<a class="reference internal image-reference" href="../../../../../_images/ee11_SIM1.png"><img alt="Screenshot of a user interface for a &quot;Building Model Generator&quot; with various settings and parameters. The interface has two sections: the top section is labeled &quot;Multiple Models&quot;, with tabs for &quot;Modeling-1&quot; and &quot;Modeling-2&quot;, buttons labeled &quot;Add&quot; and &quot;Remove&quot;, and fields for setting 'Belief’ and 'Out of 2 (i.e., 50%)'. The bottom section is labeled &quot;Building Model Generator OpenSees&quot;, with fields for 'Input Script', 'Response Nodes', 'Spatial Dimension', '# DOF at Nodes', and 'Damping Ratio', all with specified values. On the left side, there are menu items listed vertically including 'UQ', 'GI', 'SIM', 'EVT', 'FEM', 'EDP', and 'RV'." src="../../../../../_images/ee11_SIM1.png" style="width: 900px;" /></a>
 <p class="caption"><span class="caption-number">Fig. 3.11.2.2 </span><span class="caption-text">SIM tab</span><a class="headerlink" href="#id7" title="Permalink to this image">¶</a></p>
 </div>
 </li>
@@ -289,7 +289,7 @@
 <p>Similarly, the main analysis script for the low-fidelity model is imported into <strong>Model 2</strong>. The ten nodes specified in the <strong>response nodes</strong> field, 10, 1, 2, 3, 4, 5, 6, 7, 8, 9, represent respectively from the ground floor (10) to the top story (9) ceiling. This is again the list of nodes that will be used to evaluate the engineering demand parameters.</p>
 <blockquote>
 <div><div class="align-center figure" id="id8">
-<a class="reference internal image-reference" href="../../../../../_images/ee11_SIM2.png"><img alt="../../../../../_images/ee11_SIM2.png" src="../../../../../_images/ee11_SIM2.png" style="width: 900px;" /></a>
+<a class="reference internal image-reference" href="../../../../../_images/ee11_SIM2.png"><img alt="Screenshot of a user interface for a building model generator with multiple tabs on the left side, including UQ, GI, SIM, EVT, FEM, EDP, RV, and RES. The main content area is titled &quot;Building Model Generator&quot; with options for &quot;Multiple Models&quot; and includes settings such as 'Belief', 'Out of 2 (i.e., 50%)', software selection drop-down for 'OpenSees', and an 'Input Script' text field showing a file path. Below are fields for 'Response Nodes', 'Spatial Dimension', '# DOF at Nodes', and 'Damping Ratio' with numeric values and a 'Choose' button to the right." src="../../../../../_images/ee11_SIM2.png" style="width: 900px;" /></a>
 <p class="caption"><span class="caption-number">Fig. 3.11.2.3 </span><span class="caption-text">SIM tab</span><a class="headerlink" href="#id8" title="Permalink to this image">¶</a></p>
 </div>
 </div></blockquote>
@@ -307,13 +307,13 @@
 <ol class="arabic" start="4">
 <li><p>In <strong>EVT tab</strong>, <strong>Stochastic Ground Motion</strong> option is selected. In particular, <strong>Vlachos et al. (2018)</strong> is selected among alternatives. Let us assume the Moment Magnitude is a random variable by putting the letter <code class="docutils literal notranslate"><span class="pre">M</span></code> instead of a number. The random distribution can be specified later in the <strong>RV tab</strong></p>
 <div class="align-center figure" id="id9">
-<a class="reference internal image-reference" href="../../../../../_images/ee11_EVT.png"><img alt="../../../../../_images/ee11_EVT.png" src="../../../../../_images/ee11_EVT.png" style="width: 900px;" /></a>
+<a class="reference internal image-reference" href="../../../../../_images/ee11_EVT.png"><img alt="Screenshot of a user interface for a Load Generator, specifically dealing with Stochastic Ground Motion. It includes a reference to a &quot;Stochastic Loading Model&quot; by Vlachos et al. (2018) with a brief description of the model and fields for inputting data such as &quot;Moment Magnitude,&quot; &quot;Closest-to-Site Rupture Distance,&quot; and &quot;Average shear-wave velocity for top 30 meters,&quot; with values of 40 km and 500 m/s provided for the latter two fields, respectively. Additionally, there is a checked option to &quot;Throw an error when the model inputs exceed the validated range M&gt;7.5, R&lt;5 km.&quot; To the left side, there's a vertical menu with selected options including UQ, GI, SIM, and EVT (in focus), among others." src="../../../../../_images/ee11_EVT.png" style="width: 900px;" /></a>
 <p class="caption"><span class="caption-number">Fig. 3.11.2.4 </span><span class="caption-text">EVT tab</span><a class="headerlink" href="#id9" title="Permalink to this image">¶</a></p>
 </div>
 </li>
 <li><p>In <strong>FEM tab</strong>, <strong>Multiple Models</strong> are selected, similar to what was done for <strong>SIM tab</strong>. Each model in the <strong>FEM tab</strong> corresponds to that in the <strong>SIM tab</strong>. For the high-fidelity model, we will use the <strong>OpenSees</strong> FE application with the default options.</p>
 <div class="align-center figure" id="id10">
-<a class="reference internal image-reference" href="../../../../../_images/ee11_FEM1.png"><img alt="../../../../../_images/ee11_FEM1.png" src="../../../../../_images/ee11_FEM1.png" style="width: 900px;" /></a>
+<a class="reference internal image-reference" href="../../../../../_images/ee11_FEM1.png"><img alt="Screenshot of a software interface for finite element application configuration with options visible for Analysis, Integration, Algorithm, ConvergenceTest, Solver, and Damping Model among others. The &quot;FE Application&quot; section is selected, showing &quot;OpenSees&quot; as the FE Application, with settings for a transient analysis including sublevels and substeps, integration and algorithm parameters, convergence test criteria, solver selection, and damping model with additional fields for selecting tangent stiffness and specifying modes. A sidebar with acronyms like UQ, GI, SIM, EVT, FEM, EDP, RV, and RES suggests a technical or engineering tool." src="../../../../../_images/ee11_FEM1.png" style="width: 900px;" /></a>
 <p class="caption"><span class="caption-number">Fig. 3.11.2.5 </span><span class="caption-text">EVT tab</span><a class="headerlink" href="#id10" title="Permalink to this image">¶</a></p>
 </div>
 </li>
@@ -321,7 +321,7 @@
 <p>For the low-fidelity model, again select the <strong>OpenSees</strong> FE application. But to increase the stability of eigenvalue analysis, we will use a custom analysis script with an additional “-fullGenLapack” flag. Import the analysis script to the <strong>Analysis Script</strong> field. The other options in the widget (Analysis, integration, Algorithm, ConvergenceTest, Solver, Damping etc.) will be ignored.</p>
 <blockquote>
 <div><div class="align-center figure" id="id11">
-<a class="reference internal image-reference" href="../../../../../_images/ee11_FEM2.png"><img alt="../../../../../_images/ee11_FEM2.png" src="../../../../../_images/ee11_FEM2.png" style="width: 900px;" /></a>
+<a class="reference internal image-reference" href="../../../../../_images/ee11_FEM2.png"><img alt="Screenshot of a graphical user interface for a Finite Element (FE) Application, showing simulation tabs and detailed settings for an engineering analysis. The settings include analysis type, integration method, algorithm, convergence test, solver, and damping model. A field for entering the analysis script path is also visible, along with buttons to add, remove, and choose files or models." src="../../../../../_images/ee11_FEM2.png" style="width: 900px;" /></a>
 <p class="caption"><span class="caption-number">Fig. 3.11.2.6 </span><span class="caption-text">EVT tab</span><a class="headerlink" href="#id11" title="Permalink to this image">¶</a></p>
 </div>
 </div></blockquote>
@@ -335,7 +335,7 @@
 <li><p>The <strong>RV tab</strong> is pre-populated with the variable <code class="docutils literal notranslate"><span class="pre">M</span></code> when we specified <code class="docutils literal notranslate"><span class="pre">M</span></code> in the <strong>EVT tab</strong>. Let us assume the Gutenberg-Richter model truncated in interval [6, 8], which lead to a truncated exponential distribution. The parameter of the distribution is taken to be <span class="math notranslate nohighlight">\(0.9ln(10)=2.0723\)</span>.</p>
 <blockquote>
 <div><div class="align-center figure" id="id12">
-<a class="reference internal image-reference" href="../../../../../_images/ee11_RV.png"><img alt="../../../../../_images/ee11_RV.png" src="../../../../../_images/ee11_RV.png" style="width: 900px;" /></a>
+<a class="reference internal image-reference" href="../../../../../_images/ee11_RV.png"><img alt="Screenshot of a user interface for entering input random variables, with a sidebar on the left listing categories: UQ, FEM, RV, EDP, and RES. The RV category is highlighted. The main area features a form with the header &quot;Input Random Variables&quot; and fields including &quot;Variable Name&quot; with the entry 'M', &quot;Input Type&quot; set to 'Parameters', &quot;Distribution&quot; selected as 'Truncated exponential', and numeric fields for the 'lambda' parameter value '2.0723', 'Min.' value '5.25', and 'Max.' value '7.2'. At the top right, buttons for 'Export' and 'Import' are present, and at the bottom right, there's a 'Show PDF' button." src="../../../../../_images/ee11_RV.png" style="width: 900px;" /></a>
 <p class="caption"><span class="caption-number">Fig. 3.11.2.7 </span><span class="caption-text">RV tab</span><a class="headerlink" href="#id12" title="Permalink to this image">¶</a></p>
 </div>
 </div></blockquote>
@@ -359,7 +359,7 @@
 <li><p>The obtained statistics of responses are shown in the “Summary tab”</p>
 <blockquote>
 <div><div class="align-center figure" id="id13">
-<a class="reference internal image-reference" href="../../../../../_images/ee11_RES1.png"><img alt="../../../../../_images/ee11_RES1.png" src="../../../../../_images/ee11_RES1.png" style="width: 900px;" /></a>
+<a class="reference internal image-reference" href="../../../../../_images/ee11_RES1.png"><img alt="Screenshot of a computer interface displaying a summary table with statistical data. The table is divided into four columns labeled Name, Log Mean, Log StdDev, Speed Up (1st order moment), and Speed Up (2nd order moment). Each row represents a different dataset with codes such as 1-PFA-8-1, 1-PFD-8-1, etc., followed by their corresponding log mean, standard deviation, and speed-up values for both first and second-order moments. At the bottom, there's additional information on elapsed time and model evaluation counts indicating that Model 1 is evaluated 32 times with a computation time of 65.4 seconds per evaluation, and Model 2 is evaluated 1207 times with 1.5 seconds per evaluation." src="../../../../../_images/ee11_RES1.png" style="width: 900px;" /></a>
 <p class="caption"><span class="caption-number">Fig. 3.11.3.1 </span><span class="caption-text">RES tab - summary of response statistics</span><a class="headerlink" href="#id13" title="Permalink to this image">¶</a></p>
 </div>
 </div></blockquote>
@@ -369,7 +369,7 @@
 </ol>
 <blockquote>
 <div><div class="align-center figure" id="id14">
-<a class="reference internal image-reference" href="../../../../../_images/ee11_RES2.png"><img alt="../../../../../_images/ee11_RES2.png" src="../../../../../_images/ee11_RES2.png" style="width: 900px;" /></a>
+<a class="reference internal image-reference" href="../../../../../_images/ee11_RES2.png"><img alt="The image depicts a composite screenshot from a software application related to data analysis. On the left side, there's a vertical navigation bar with various options such as UQ, FEM, RV, EDP, and a highlighted option RES. In the center is a scatter plot graph titled with &quot;Samples&quot; and &quot;Run # 8&quot;, showing data points along the X and Y axes, which are labeled as &quot;1-PFA-9-1-M1&quot; and &quot;1-PRA-9-1-M1^2&quot; respectively, with a noted correlation coefficient (corr coef.) of 0.95. On the right side of the image, there's a data table with multiple columns of numerical data, identified by headings like &quot;-PID-7-1-M2,&quot; and &quot;1-PFA-9-1-M2,&quot; among others, with one of the values in the table highlighted with a blue background. Above the table are buttons &quot;Save Table,&quot; &quot;Save Columns Separately,&quot; &quot;Save RVs,&quot; and &quot;Save QoIs&quot;. The image is likely from a statistical or engineering analysis tool used for evaluating and managing large sets of data." src="../../../../../_images/ee11_RES2.png" style="width: 900px;" /></a>
 <p class="caption"><span class="caption-number">Fig. 3.11.3.2 </span><span class="caption-text">RES tab - cumulative density function</span><a class="headerlink" href="#id14" title="Permalink to this image">¶</a></p>
 </div>
 <div class="admonition note">
@@ -387,20 +387,20 @@
 <p>Only for validation purposes, high-fidelity simulations are performed 1000 times and the resulting statistics (reference) are compared with the above multifidelity (MF) estimates. Recall that the estimation was based on 32 high-fidelity (HF) simulations and 1027 low-fidelity (LF) simulations.</p>
 <blockquote>
 <div><div class="align-center figure" id="id15">
-<a class="reference internal image-reference" href="../../../../../_images/ee11_res1_seed30.svg"><img alt="../../../../../_images/ee11_res1_seed30.svg" src="../../../../../_images/ee11_res1_seed30.svg" width="100%" /></a>
+<a class="reference internal image-reference" href="../../../../../_images/ee11_res1_seed30.svg"><img alt="Image showing error in description" src="../../../../../_images/ee11_res1_seed30.svg" width="100%" /></a>
 </div>
 <div class="align-center figure" id="id16">
-<a class="reference internal image-reference" href="../../../../../_images/ee11_res2_seed30.svg"><img alt="../../../../../_images/ee11_res2_seed30.svg" src="../../../../../_images/ee11_res2_seed30.svg" width="100%" /></a>
+<a class="reference internal image-reference" href="../../../../../_images/ee11_res2_seed30.svg"><img alt="Image showing error in description" src="../../../../../_images/ee11_res2_seed30.svg" width="100%" /></a>
 <p class="caption"><span class="caption-number">Fig. 3.11.4.1 </span><span class="caption-text">Error in MF, HF-only, and LF-only estimations of the first- and second-order moments. MF effectively reduces the sample variability observed in HF-only estimates and corrects the bias in LF-only estimates (Seed = 30).</span><a class="headerlink" href="#id16" title="Permalink to this image">¶</a></p>
 </div>
 </div></blockquote>
 <p>The presented error (y-axis) is the absolute un-normalized difference between the reference and the estimated moments. Note that <strong>the large errors in HF results are attributed to sample variability originating from the small sample size. As more HF simulations are performed, HF error will approach zero.</strong> On the other hand, the errors in LF results are attributed to inherent bias, and therefore, it is not likely to be reduced by adding more samples. Meanwhile, MF results successfully correct the bias in the LF estimations, by additionally utilizing the 32 HF simulation samples. To emphasize the different nature of the errors observed in HF and LF estimates (i.e., the former representing sample variability and the latter representing inherent model bias), the Multi-fidelity Monte Carlo is performed once more with a different initial random seed (seed is specified in the  UQ Tab). The corresponding validation results are presented below.</p>
 <blockquote>
 <div><div class="align-center figure" id="id17">
-<a class="reference internal image-reference" href="../../../../../_images/ee11_res1_seed3.svg"><img alt="../../../../../_images/ee11_res1_seed3.svg" src="../../../../../_images/ee11_res1_seed3.svg" width="100%" /></a>
+<a class="reference internal image-reference" href="../../../../../_images/ee11_res1_seed3.svg"><img alt="Image showing error in description" src="../../../../../_images/ee11_res1_seed3.svg" width="100%" /></a>
 </div>
 <div class="align-center figure" id="id18">
-<a class="reference internal image-reference" href="../../../../../_images/ee11_res2_seed3.svg"><img alt="../../../../../_images/ee11_res2_seed3.svg" src="../../../../../_images/ee11_res2_seed3.svg" width="100%" /></a>
+<a class="reference internal image-reference" href="../../../../../_images/ee11_res2_seed3.svg"><img alt="Image showing error in description" src="../../../../../_images/ee11_res2_seed3.svg" width="100%" /></a>
 <p class="caption"><span class="caption-number">Fig. 3.11.4.2 </span><span class="caption-text">Error in MF, HF, and LF estimations. MF reduces the sample variability observed in HF and corrects the bias in LF estimation (Seed = 3).</span><a class="headerlink" href="#id18" title="Permalink to this image">¶</a></p>
 </div>
 </div></blockquote>

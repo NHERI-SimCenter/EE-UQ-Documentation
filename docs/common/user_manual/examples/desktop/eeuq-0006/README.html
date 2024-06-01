@@ -237,7 +237,7 @@ possible solution is using surrogate models (e.g., response surface, kriging). T
 trained for interested responses given a set of relatively expensive simulations. The resulting models can then be
 applied to predict new realizations more efficiently.</p>
 <div class="align-center figure" id="id3">
-<a class="reference internal image-reference" href="../../../../../_images/res_comp3.png"><img alt="../../../../../_images/res_comp3.png" src="../../../../../_images/res_comp3.png" style="width: 400px;" /></a>
+<a class="reference internal image-reference" href="../../../../../_images/res_comp3.png"><img alt="A scatter plot displaying two types of data points, labeled as 'Training' in blue and 'Surrogate' in orange. The x-axis is labeled &quot;I-PFA-I (in/sec/sec)&quot; with a range from 0 to 800, and the y-axis is labeled &quot;I-PFA-l_2 (in/sec/sec)&quot; with a range from 0 to 1000. The data points are mostly clustered in the lower left quadrant of the graph, indicating a correlation between the two variables for both the training and surrogate data. Some outlier points are spread out towards the higher values on both axes." src="../../../../../_images/res_comp3.png" style="width: 400px;" /></a>
 <p class="caption"><span class="caption-number">Fig. 3.6.1 </span><span class="caption-text">Samples generated from the physical simulation model (blue) and the surrogate model (orange)</span><a class="headerlink" href="#id3" title="Permalink to this image">¶</a></p>
 </div>
 <p>This example demonstrates using a novel method, Probabilistic Learning on Manifolds (PLoM) <a class="reference internal" href="#soize2016" id="id1"><span>[Soize2016]</span></a>, to develop surrogate models
@@ -254,7 +254,7 @@ would like to generate 40 new realizations from the 20 training samples
 (i.e., the <strong>New Sample Number Ratio</strong> is 2).</p></li>
 </ol>
 <div class="align-center figure" id="fig-uq-plot">
-<a class="reference internal image-reference" href="../../../../../_images/uq_plom.png"><img alt="../../../../../_images/uq_plom.png" src="../../../../../_images/uq_plom.png" style="width: 100%;" /></a>
+<a class="reference internal image-reference" href="../../../../../_images/uq_plom.png"><img alt="Screenshot of a software interface labeled 'UQ Engine' displaying settings for uncertainty quantification analysis. The interface shows options for 'SimCenterUQ Method Category' set to 'PLOM Model', 'Training Dataset' set to 'Sampling and Simulation', and 'Method' set to 'LHS'. There are fields for '# Samples' with a value of 20, 'Seed' with a value of 314, and 'New Sample Number Ratio' with a value of 2. The user interface has a clean, minimalistic design with drop-down menus and input boxes for various parameters." src="../../../../../_images/uq_plom.png" style="width: 100%;" /></a>
 </div>
 <ol class="arabic simple" start="2">
 <li><p>Activate the <strong>Advanced Options</strong> and select <strong>Affiliate Variable</strong>. In the <strong>Type</strong> options, select
@@ -263,7 +263,7 @@ users to add/remove intensity measures to the surrogate models. In this example,
 measures, <strong>Pseudo Spectral Acceleration</strong> and <strong>SaRatio</strong>.</p></li>
 </ol>
 <div class="align-center figure" id="fig-bim">
-<a class="reference internal image-reference" href="../../../../../_images/uq_imc.png"><img alt="../../../../../_images/uq_imc.png" src="../../../../../_images/uq_imc.png" style="width: 100%;" /></a>
+<a class="reference internal image-reference" href="../../../../../_images/uq_imc.png"><img alt="Screenshot of a graphical user interface for ground motion intensity calculation. It includes an &quot;Advanced Options&quot; section with a dropdown menu labeled &quot;Type&quot; set to &quot;Ground Motion Intensity&quot; and a selectable &quot;Affiliate Variable&quot; toggle. Below that, there's a section for &quot;Intensity Measure Calculation&quot; with &quot;Add&quot; and &quot;Remove&quot; buttons. Two radio button options are shown: &quot;Pseudo Spectral Acceleration&quot; with dropdown menus for &quot;Gravitational constant (g)&quot; set to a value and &quot;Periods: 0.5&quot;; and &quot;SaRatio&quot; with dropdown menus for &quot;Unitless (scalar)&quot; and &quot;Periods: 0.1,0.5,1.5.&quot; The interface has a clean design with a light background and clear delineation of options." src="../../../../../_images/uq_imc.png" style="width: 100%;" /></a>
 </div>
 </div>
 <div class="section" id="configure-structural-analysis">
@@ -273,24 +273,24 @@ measures, <strong>Pseudo Spectral Acceleration</strong> and <strong>SaRatio</str
 we use a simple nonlinear SDOF model (yield displacement is 0.01 inch and hardening ratio is 0.1).</p></li>
 </ol>
 <div class="align-center figure" id="fig-sim">
-<a class="reference internal image-reference" href="../../../../../_images/sim2.png"><img alt="../../../../../_images/sim2.png" src="../../../../../_images/sim2.png" style="width: 100%;" /></a>
+<a class="reference internal image-reference" href="../../../../../_images/sim2.png"><img alt="Screenshot of a computer interface titled 'Building Model Generator' with input fields for building information parameters such as 'Number Stories', 'Floor Weights', and 'Story Stiffness' among others. To the right side of the inputs, there is a visualization of a simple one-story building structure represented as a vertical line with a square on top, indicating a model generated based on the input parameters. The interface is designed for creating a multi-degree-of-freedom (MDOF) system for structural analysis." src="../../../../../_images/sim2.png" style="width: 100%;" /></a>
 </div>
 <ol class="arabic simple" start="2">
 <li><p>Navigate to the <strong>EVT</strong> tab and select the <strong>PEER NGA Records</strong>. We select 20 ground motions to match the
 default Design Spectrum for analyzing the structural responses under earthquake inputs.</p></li>
 </ol>
 <div class="align-center figure" id="fig-evt">
-<a class="reference internal image-reference" href="../../../../../_images/evt3.png"><img alt="../../../../../_images/evt3.png" src="../../../../../_images/evt3.png" style="width: 100%;" /></a>
+<a class="reference internal image-reference" href="../../../../../_images/evt3.png"><img alt="Screenshot of a software interface with two main sections related to earthquake engineering. The left panel is titled &quot;Load Generator&quot; with tabs for &quot;PEER NGA Records&quot; and options for Target Spectrum, Output Directory, Ground Motion Components, and Scaling/Selection Criteria. The right panel displays a chart titled &quot;Response Spectra,&quot; showing multiple overlapping curves representing spectral acceleration vs. period, with associated legend indicating average and standard deviation values. The interface includes numerical inputs and dropdown menus for selecting and analyzing earthquake ground motion data." src="../../../../../_images/evt3.png" style="width: 100%;" /></a>
 </div>
 <ol class="arabic simple" start="3">
 <li><p>For the <strong>FEM</strong> and <strong>EDP</strong> panels, we use default setups to analyze the structural model and record the
 standard earthquake EDPs, i.e., peak displacement, drift ratio, and acceleration demands.</p></li>
 </ol>
 <div class="align-center figure" id="fig-fem">
-<a class="reference internal image-reference" href="../../../../../_images/fem2.png"><img alt="../../../../../_images/fem2.png" src="../../../../../_images/fem2.png" style="width: 100%;" /></a>
+<a class="reference internal image-reference" href="../../../../../_images/fem2.png"><img alt="Screenshot of a computer interface for a finite element (FE) application, possibly named OpenSees, with various fields to set up a simulation. The fields include settings for Analysis (options for a Transient analysis with sub-levels and sub-steps), Integration (Newmark method with beta and gamma values), Algorithm (Newton), ConvergenceTest (NormUnbalance), Solver (Umfpack), Damping Model (Rayleigh Damping with a damping ratio), Selected Tangent Stiffness, and fields to input values for Mode 1 and Mode 2. There is also an input field for an Analysis Script, and a 'Choose' button at the bottom right. The interface is pragmatic with a focus on functionality." src="../../../../../_images/fem2.png" style="width: 100%;" /></a>
 </div>
 <div class="align-center figure" id="fig-edp">
-<a class="reference internal image-reference" href="../../../../../_images/edp.png"><img alt="../../../../../_images/edp.png" src="../../../../../_images/edp.png" style="width: 100%;" /></a>
+<a class="reference internal image-reference" href="../../../../../_images/edp.png"><img alt="A screenshot of a computer interface with a dropdown menu titled &quot;Engineering Demand Parameter Generator&quot; next to a selected option named &quot;Standard Earthquake&quot; with a downward arrow indicating more options are available in the dropdown menu." src="../../../../../_images/edp.png" style="width: 100%;" /></a>
 </div>
 </div>
 <div class="section" id="run-the-analysis-and-post-process-results">
@@ -302,10 +302,10 @@ results in the panel (i.e., errors in PCA approximation and diffusion-maps eigen
 by clicking the <strong>PCA</strong> and <strong>KDE</strong> tabs located on the top-right corner of the chart.</p></li>
 </ol>
 <div class="align-center figure" id="fig-res-summary">
-<a class="reference internal image-reference" href="../../../../../_images/res_summary.png"><img alt="../../../../../_images/res_summary.png" src="../../../../../_images/res_summary.png" style="width: 100%;" /></a>
+<a class="reference internal image-reference" href="../../../../../_images/res_summary.png"><img alt="A screenshot of a software interface showing the results of a surrogate model training with a graph titled &quot;PLOM Training Results.&quot; The graph plots 'PCA Error' against 'PCA Eigenvalues' in a scatter plot with a line connecting the points, indicating a decreasing trend in error with smaller eigenvalues. The interface also includes text indicating &quot;Surrogate Modeling Completed! termination code unidentified,&quot; &quot;# training samples 20,&quot; &quot;# model simulations 0,&quot; and &quot;Analysis time 0.0 min.&quot; A panel on the left side contains navigation tabs labelled UQ, GI, SIM, EVT, FEM, EDP, RV, and RES, with the PLOM Training Results displayed in the central section of the interface. Below the graph, there is a &quot;Save PLOM Model&quot; button." src="../../../../../_images/res_summary.png" style="width: 100%;" /></a>
 </div>
 <div class="align-center figure" id="fig-res-kde">
-<a class="reference internal image-reference" href="../../../../../_images/res_kde.png"><img alt="../../../../../_images/res_kde.png" src="../../../../../_images/res_kde.png" style="width: 60%;" /></a>
+<a class="reference internal image-reference" href="../../../../../_images/res_kde.png"><img alt="A graph titled &quot;PLoM Training Results&quot; displaying the relationship between 'Diff. Maps Eigenvalue' (y-axis) and 'Number of Component' (x-axis). The graph shows a blue line plot with eigenvalues starting high at the first component and decreasing sharply as the number of components increases before plateauing. A horizontal red line marks the 'Minimum eigen considered' threshold, which intersects the blue line plot around the sixth component, suggesting the point after which additional components have a lower eigenvalue than the considered minimum." src="../../../../../_images/res_kde.png" style="width: 60%;" /></a>
 </div>
 <ol class="arabic simple" start="2">
 <li><p>One could save the PLoM model by clicking on <strong>Save PLoM Model</strong> - an HDF-formatted database along with supplemental
@@ -313,23 +313,23 @@ files will be stored in the user-defined directory. The saved model can be impor
 which will be introduced in a second.</p></li>
 </ol>
 <div class="align-center figure" id="fig-res-save">
-<a class="reference internal image-reference" href="../../../../../_images/res_save.png"><img alt="../../../../../_images/res_save.png" src="../../../../../_images/res_save.png" style="width: 100%;" /></a>
+<a class="reference internal image-reference" href="../../../../../_images/res_save.png"><img alt="Screenshot of a Windows Save Data dialog box with 'This PC &gt; Desktop &gt; testFiles' as the save location. The file name is entered as 'SurrogatePLoM.h5' with the file type set to 'H5 File (*.h5)'. The dialog box shows an empty folder with columns for Name, Date modified, Type, and Size. Several folders are listed on the left side pane, and options to save or cancel are presented at the bottom of the window." src="../../../../../_images/res_save.png" style="width: 100%;" /></a>
 </div>
 <ol class="arabic simple" start="3">
 <li><p>One could navigate to the <strong>Data Value</strong> panel to visualize and save the new realizations.</p></li>
 </ol>
 <div class="align-center figure" id="fig-res-data">
-<a class="reference internal image-reference" href="../../../../../_images/res_data.png"><img alt="../../../../../_images/res_data.png" src="../../../../../_images/res_data.png" style="width: 70%;" /></a>
+<a class="reference internal image-reference" href="../../../../../_images/res_data.png"><img alt="A screenshot displaying a scatter plot with various data points spread across the chart, which seems to depict some form of scientific or statistical data. On the bottom, a data table is visible with numerical values labeled &quot;Run #,&quot; &quot;1-PSA(0.5)-0-1,&quot; &quot;1-SaRatio-0-1,&quot; and other headers, suggesting the scatter plot above correlates to these data entries. There are buttons to &quot;Save Table&quot; and &quot;Save Columns Separately.&quot; The scatter plot has labeled axes, but the details are not fully legible in this image." src="../../../../../_images/res_data.png" style="width: 70%;" /></a>
 </div>
 <ol class="arabic simple" start="4">
 <li><p>The two figures below compare the data scatter plots between the simulation samples (training set) and
 surrogate samples (prediction set) which are in good agreement.</p></li>
 </ol>
 <div class="align-center figure" id="fig-res-comp1">
-<a class="reference internal image-reference" href="../../../../../_images/res_comp1.png"><img alt="../../../../../_images/res_comp1.png" src="../../../../../_images/res_comp1.png" style="width: 60%;" /></a>
+<a class="reference internal image-reference" href="../../../../../_images/res_comp1.png"><img alt="A scatter plot with two sets of data points labeled as 'Training' in blue and 'Surrogate' in orange. The horizontal axis is labeled 'I-SaRatio-0-I' and ranges from 0 to 2. The vertical axis is labeled '|-PDi-l - I (in)' and ranges from 0 to 30. The distribution of data points is scattered mostly in the center of the graph with no clear pattern, and both 'Training' and 'Surrogate' points are interspersed throughout." src="../../../../../_images/res_comp1.png" style="width: 60%;" /></a>
 </div>
 <div class="align-center figure" id="id2">
-<a class="reference internal image-reference" href="../../../../../_images/res_comp2.png"><img alt="../../../../../_images/res_comp2.png" src="../../../../../_images/res_comp2.png" style="width: 60%;" /></a>
+<a class="reference internal image-reference" href="../../../../../_images/res_comp2.png"><img alt="A scatter plot comparing two variables indicated as &quot;|-PFA-1-|2 (in/sec/sec)&quot; on the y-axis and &quot;|-PFA-1-|&quot; on the x-axis (also in units of in/sec/sec), with points plotted for 'Training' in blue and 'Surrogate' in orange. The data points are dispersed across the graph, with a concentration of points towards the lower left corner where both variables have smaller values. There's no clear trend or correlation visible from the distribution of points. The range of the x-axis is from 0 to approximately 800 in/sec/sec and the y-axis from 0 to roughly 1000 in/sec/sec." src="../../../../../_images/res_comp2.png" style="width: 60%;" /></a>
 </div>
 <dl class="citation">
 <dt class="label" id="soize2016"><span class="brackets"><a class="fn-backref" href="#id1">Soize2016</a></span></dt>
