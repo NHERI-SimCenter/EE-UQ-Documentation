@@ -16,7 +16,7 @@
   <link rel="stylesheet" href="../../../../_static/pygments.css" type="text/css" />
   <link rel="stylesheet" href="../../../../_static/css/theme.css" type="text/css" />
   <link rel="stylesheet" href="../../../../_static/tabs.css" type="text/css" />
-  <link rel="stylesheet" href="../../../../_static/design-style.1e8bd061cd6da7fc9cf755528e8ffc24.min.css" type="text/css" />
+  <link rel="stylesheet" href="../../../../_static/sphinx-design.5ea377869091fd0449014c60fc090103.min.css" type="text/css" />
   <link rel="stylesheet" href="../../../../_static/sphinxcontrib-images/LightBox2/lightbox2/dist/css/lightbox.css" type="text/css" />
   <link rel="stylesheet" href="../../../../_static/css/custom.css" type="text/css" />
 
@@ -219,7 +219,7 @@
 <ol class="arabic simple">
 <li><p>A temporary directory, <code class="docutils literal notranslate"><span class="pre">tmp.SimCenter</span></code>, is created in the working directory, followed by a <code class="docutils literal notranslate"><span class="pre">templatedir</span></code> within it.</p></li>
 <li><p>The UI processes all input panels, and workflow applications transfer necessary files to the <code class="docutils literal notranslate"><span class="pre">templatedir</span></code>.</p></li>
-<li><p>A Python script, specific to the simulation type (rWHALE.py for regional simulations, sWHALE.py for individual assessments), is executed from <code class="docutils literal notranslate"><span class="pre">templatedir</span></code>. rWHALE serves as a wrapper, invoking sWHALE for each asset in regional assessments.</p></li>
+<li><p>A Python script, specific to the simulation type (rWHALE.py for regional simulations, sWHALE.py for individual assessments), is executed from the <code class="docutils literal notranslate"><span class="pre">templatedir</span></code>. rWHALE serves as a wrapper, invoking sWHALE for each asset in regional assessments.</p></li>
 <li><p>For structural response simulations, uncertainty quantification is managed by the chosen UQ Engine (e.g., Dakota), which generates an input file (e.g., <code class="docutils literal notranslate"><span class="pre">dakota.in</span></code>) placed in <code class="docutils literal notranslate"><span class="pre">tmp.SimCenter</span></code>.</p></li>
 <li><p>The UQ engine runs the response simulation using the earlier created input file.</p></li>
 <li><p>For each structural response realization, the UQ engine creates a separate workdir folder within <code class="docutils literal notranslate"><span class="pre">tmp.SimCenter</span></code>.</p></li>
