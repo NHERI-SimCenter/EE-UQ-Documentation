@@ -7,7 +7,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   
-  <title>3.10. Prediction from GP Surrogate Model &mdash; Earthquake Engineering with Uncertainty Quantification  documentation</title>
+  <title>4.10. Prediction from GP Surrogate Model &mdash; Earthquake Engineering with Uncertainty Quantification  documentation</title>
   
 
   
@@ -49,8 +49,8 @@
     
     <link rel="index" title="Index" href="../../../../../genindex.html" />
     <link rel="search" title="Search" href="../../../../../search.html" />
-    <link rel="next" title="3.11. Multi-fidelity Monte Carlo Simulation" href="../eeuq-0011/README.html" />
-    <link rel="prev" title="3.9. Training GP Surrogate Model" href="../eeuq-0009/README.html" />
+    <link rel="next" title="4.11. Multi-fidelity Monte Carlo Simulation" href="../eeuq-0011/README.html" />
+    <link rel="prev" title="4.9. Training GP Surrogate Model" href="../eeuq-0009/README.html" />
 <script src="https://cdn.jsdelivr.net/npm/vega@5.12.1"></script>
 <script src="https://cdn.jsdelivr.net/npm/vega-lite@4.13.1"></script>
 <script src="https://cdn.jsdelivr.net/npm/vega-embed@6.8.0"></script>
@@ -123,30 +123,31 @@
 <ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="../../../installation/desktop/installation.html">1. Installation</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../../usage/desktop/usage.html">2. User Interface</a></li>
-<li class="toctree-l1 current"><a class="reference internal" href="../examples.html">3. Examples</a><ul class="current">
-<li class="toctree-l2"><a class="reference internal" href="../eeuq-0001/README.html">3.1. Sampling, Reliability and Sensitivity Analysis of a Shear Building</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../eeuq-0002/README.html">3.2. Site Response Analysis with Spatial Variability</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../eeuq-0003/README.html">3.3. PEER Ground Motion Selection and Nonlinear Response Analysis</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../eeuq-0004/README.html">3.4. AutoSDA and Nonlinear Response Analysis</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../eeuq-0005/README.html">3.5. Synthetic Ground Motion Applied to a Shear Buildilng</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../eeuq-0006/README.html">3.6. PLoM Surrogate Model</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../eeuq-0007/README.html">3.7. Target Spectrum by Surrogate Hazard GP Model</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../eeuq-0008/README.html">3.8. Using Multiple Models and Analysis Options in EE-UQ</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../eeuq-0009/README.html">3.9. Training GP Surrogate Model</a></li>
-<li class="toctree-l2 current"><a class="current reference internal" href="#">3.10. Prediction from GP Surrogate Model</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="#set-up-forward-propagation-configuration">3.10.1. Set Up Forward Propagation Configuration</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#define-target-structure">3.10.2. Define Target Structure</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#select-ground-motions">3.10.3. Select Ground Motions</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#distribution-of-random-variables">3.10.4. Distribution of Random Variables</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#run-the-analysis-and-process-results">3.10.5. Run the Analysis and Process Results</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../usage/desktop/earthquake/tools.html">3. Tools</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../examples.html">4. Examples</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../eeuq-0001/README.html">4.1. Sampling, Reliability and Sensitivity Analysis of a Shear Building</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../eeuq-0002/README.html">4.2. Site Response Analysis with Spatial Variability</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../eeuq-0003/README.html">4.3. PEER Ground Motion Selection and Nonlinear Response Analysis</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../eeuq-0004/README.html">4.4. AutoSDA and Nonlinear Response Analysis</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../eeuq-0005/README.html">4.5. Synthetic Ground Motion Applied to a Shear Buildilng</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../eeuq-0006/README.html">4.6. PLoM Surrogate Model</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../eeuq-0007/README.html">4.7. Target Spectrum by Surrogate Hazard GP Model</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../eeuq-0008/README.html">4.8. Using Multiple Models and Analysis Options in EE-UQ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../eeuq-0009/README.html">4.9. Training GP Surrogate Model</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">4.10. Prediction from GP Surrogate Model</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#set-up-forward-propagation-configuration">4.10.1. Set Up Forward Propagation Configuration</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#define-target-structure">4.10.2. Define Target Structure</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#select-ground-motions">4.10.3. Select Ground Motions</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#distribution-of-random-variables">4.10.4. Distribution of Random Variables</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#run-the-analysis-and-process-results">4.10.5. Run the Analysis and Process Results</a></li>
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="../eeuq-0011/README.html">3.11. Multi-fidelity Monte Carlo Simulation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../eeuq-0011/README.html">4.11. Multi-fidelity Monte Carlo Simulation</a></li>
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="../../../troubleshooting/desktop/troubleshooting.html">4. Troubleshooting</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../../../reqments/EEUQ.html">5. Requirements</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../../bugs.html">6. Bugs &amp; Feature Requests</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../troubleshooting/desktop/troubleshooting.html">5. Troubleshooting</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../reqments/EEUQ.html">6. Requirements</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../bugs.html">7. Bugs &amp; Feature Requests</a></li>
 </ul>
 <p class="caption" role="heading"><span class="caption-text">Technical Manual</span></p>
 <ul>
@@ -208,9 +209,9 @@
     
       <li><a href="../../../../../index.html" class="icon icon-home"></a> &raquo;</li>
         
-          <li><a href="../examples.html"><span class="section-number">3. </span>Examples</a> &raquo;</li>
+          <li><a href="../examples.html"><span class="section-number">4. </span>Examples</a> &raquo;</li>
         
-      <li><span class="section-number">3.10. </span>Prediction from GP Surrogate Model</li>
+      <li><span class="section-number">4.10. </span>Prediction from GP Surrogate Model</li>
     
     
       <li class="wy-breadcrumbs-aside">
@@ -230,7 +231,7 @@
            <div itemprop="articleBody">
             
   <div class="section" id="prediction-from-gp-surrogate-model">
-<span id="eeuq-0010"></span><h1><span class="section-number">3.10. </span>Prediction from GP Surrogate Model<a class="headerlink" href="#prediction-from-gp-surrogate-model" title="Permalink to this heading">¶</a></h1>
+<span id="eeuq-0010"></span><h1><span class="section-number">4.10. </span>Prediction from GP Surrogate Model<a class="headerlink" href="#prediction-from-gp-surrogate-model" title="Permalink to this heading">¶</a></h1>
 <div class="admonition warning">
 <p class="admonition-title">Warning</p>
 <p>To reproduce the result of this example, the user should first click <strong>EVT</strong> and <strong>Select Records</strong>, and then click the <strong>RUN</strong> button. See the below procedure for details.</p>
@@ -239,7 +240,7 @@
 <blockquote>
 <div><div class="align-center figure" id="uq-inputs">
 <a class="reference internal image-reference" href="../../../../../_images/EE10_main3.png"><img alt="A complex graphical presentation on a black background. On the left, there is a two-dimensional waveform plot with a red dot indicating a particular point of interest. The center features a three-dimensional bar graph depicting varying heights of bars with a connecting trend line, and red dots scattered at the base, possibly representing data points. To the right, there are abstract shapes including a bell curve and a series of circle diagrams in a vertical arrangement, each with a varying number of circles, perhaps illustrating different datasets or statistical distributions." src="../../../../../_images/EE10_main3.png" style="width: 40%;" /></a>
-<p class="caption"><span class="caption-number">Fig. 3.10.1 </span><span class="caption-text">Prediction of response statistics using a surrogate model</span><a class="headerlink" href="#uq-inputs" title="Permalink to this image">¶</a></p>
+<p class="caption"><span class="caption-number">Fig. 4.10.1 </span><span class="caption-text">Prediction of response statistics using a surrogate model</span><a class="headerlink" href="#uq-inputs" title="Permalink to this image">¶</a></p>
 </div>
 </div></blockquote>
 <div class="admonition important">
@@ -247,13 +248,13 @@
 <p>This examples uses the surrogate model trained in <a class="reference internal" href="../eeuq-0009/README.html#eeuq-0009"><span class="std std-ref">example 09</span></a></p>
 </div>
 <div class="section" id="set-up-forward-propagation-configuration">
-<h2><span class="section-number">3.10.1. </span>Set Up Forward Propagation Configuration<a class="headerlink" href="#set-up-forward-propagation-configuration" title="Permalink to this heading">¶</a></h2>
+<h2><span class="section-number">4.10.1. </span>Set Up Forward Propagation Configuration<a class="headerlink" href="#set-up-forward-propagation-configuration" title="Permalink to this heading">¶</a></h2>
 <ol class="arabic">
 <li><p>In <strong>UQ tab</strong> select the <strong>Forward modeling</strong> as <strong>UQ Method</strong>. Select <strong>Dakota</strong> engine.</p>
 <blockquote>
 <div><div class="align-center figure" id="id1">
 <a class="reference internal image-reference" href="../../../../../_images/EE10_UQ.png"><img alt="Screenshot of a user interface for a software tool, with a navigation menu on the left labeled with acronyms &quot;G1,&quot; &quot;SIM,&quot; and &quot;EVT,&quot; highlighted on &quot;UQ.&quot; On the right is the main content section titled &quot;UQ Method&quot; with dropdown options for &quot;Forward Propagation&quot; and &quot;UQ Engine: Dakota.&quot; There are checkboxes for &quot;Parallel Execution&quot; and &quot;Save Working dirs.&quot; Under &quot;Method LHS,&quot; there are input fields for &quot;# Samples&quot; set to &quot;30&quot; and &quot;Seed&quot; set to &quot;413.&quot;" src="../../../../../_images/EE10_UQ.png" style="width: 900px;" /></a>
-<p class="caption"><span class="caption-number">Fig. 3.10.1.1 </span><span class="caption-text">UQ tab - Scatter plots</span><a class="headerlink" href="#id1" title="Permalink to this image">¶</a></p>
+<p class="caption"><span class="caption-number">Fig. 4.10.1.1 </span><span class="caption-text">UQ tab - Scatter plots</span><a class="headerlink" href="#id1" title="Permalink to this image">¶</a></p>
 </div>
 </div></blockquote>
 <p>We will select 30 samples. If recorded ground motions will be used as input excitation, as in this example, the number of ground motions that will be selected in the EVT tab should match the number of samples specified in this tab. This restriction does not apply when a stochastic ground motion generator is used instead of the recorded ground motions.</p>
@@ -261,14 +262,14 @@
 </ol>
 </div>
 <div class="section" id="define-target-structure">
-<h2><span class="section-number">3.10.2. </span>Define Target Structure<a class="headerlink" href="#define-target-structure" title="Permalink to this heading">¶</a></h2>
+<h2><span class="section-number">4.10.2. </span>Define Target Structure<a class="headerlink" href="#define-target-structure" title="Permalink to this heading">¶</a></h2>
 <ol class="arabic" start="2">
 <li><p>The <strong>GI tab</strong> is kept as default. (The GI tab is not used when a surrogate model is used in the SIM tab)</p></li>
 <li><p>In <strong>SIM tab</strong>, the surrogate model (.json) trained in <a class="reference internal" href="../eeuq-0009/README.html#eeuq-0009"><span class="std std-ref">Example 09</span></a> is imported as shown in the figure.</p>
 <blockquote>
 <div><div class="align-center figure" id="id2">
 <a class="reference internal image-reference" href="../../../../../_images/EE10_SIM.png"><img alt="Screenshot of a user interface from a software application, showing the 'Building Model Generator' section with a dropdown menu titled 'Surrogate (GP)' selected. Below it, there is an input field for 'SurrogateGP Info (.json)' with a file path entered and a 'Choose' button to its right. The options section includes 'GP output' dropdown menu with 'Random sample under prediction uncertainty' selected and an unchecked 'Advanced Options' checkbox. To the left, vertical navigation tabs are partially visible with labels 'UQ', 'GI', 'SIM', and 'EVT', where 'SIM' is highlighted." src="../../../../../_images/EE10_SIM.png" style="width: 900px;" /></a>
-<p class="caption"><span class="caption-number">Fig. 3.10.2.1 </span><span class="caption-text">SIM tab</span><a class="headerlink" href="#id2" title="Permalink to this image">¶</a></p>
+<p class="caption"><span class="caption-number">Fig. 4.10.2.1 </span><span class="caption-text">SIM tab</span><a class="headerlink" href="#id2" title="Permalink to this image">¶</a></p>
 </div>
 </div></blockquote>
 <div class="admonition note">
@@ -280,17 +281,17 @@
 </ol>
 </div>
 <div class="section" id="select-ground-motions">
-<h2><span class="section-number">3.10.3. </span>Select Ground Motions<a class="headerlink" href="#select-ground-motions" title="Permalink to this heading">¶</a></h2>
+<h2><span class="section-number">4.10.3. </span>Select Ground Motions<a class="headerlink" href="#select-ground-motions" title="Permalink to this heading">¶</a></h2>
 <ol class="arabic" start="4">
 <li><p>In <strong>EVT tab</strong>, <strong>PEER NGA ground motion records</strong> option is selected. Let us consider the site of interest located at (37.8715, -122.273), of which we would like to select ground motions that follow USGS Uniform Hazard Spectrum (2014 v4.2.0) with return period 2475. Vs30 is assumed 760 m/s. Let us select 30 ground motion time histories that match this spectrum by clicking <strong>Select records</strong> button. The target response spectrum curve and the selected ground motions will be displayed on the right-hand side panel as shown below.</p>
 <blockquote>
 <div><div class="align-center figure" id="id3">
 <a class="reference internal image-reference" href="../../../../../_images/EE10_EVT1.png"><img alt="Screenshot of a software interface for seismic analysis with two sections: &quot;Target Spectrum&quot; on the left and &quot;Record Selection&quot; on the right. The &quot;Target Spectrum&quot; section has fields for Type, with &quot;Uniform Hazard Spectrum (USGS NSHMP)&quot; selected from a dropdown menu, Latitude set to 37.8715, Longitude set to -122.273, Edition set to &quot;2014 v4.2.0 (Dynamic)&quot; from a dropdown menu, Vs30 set to &quot;760 (B/C)&quot; with m/s unit, and Return Period set to 2475 years. The &quot;Record Selection&quot; section includes a field for &quot;Number of Records&quot; set to 30, drop-down menus for &quot;Fault Type&quot; with &quot;All Types&quot; selected, and &quot;Pulse&quot; with &quot;All&quot; selected. There are checkboxes for &quot;Magnitude,&quot; &quot;Distance,&quot; &quot;Vs30,&quot; and &quot;D5-95,&quot; each followed by an empty text box with units indicated as km, m/s, and sec." src="../../../../../_images/EE10_EVT1.png" style="width: 900px;" /></a>
-<p class="caption"><span class="caption-number">Fig. 3.10.3.1 </span><span class="caption-text">EVT tab - target response spectrum</span><a class="headerlink" href="#id3" title="Permalink to this image">¶</a></p>
+<p class="caption"><span class="caption-number">Fig. 4.10.3.1 </span><span class="caption-text">EVT tab - target response spectrum</span><a class="headerlink" href="#id3" title="Permalink to this image">¶</a></p>
 </div>
 <div class="align-center figure" id="id4">
 <a class="reference internal image-reference" href="../../../../../_images/EE10_EVT3.png"><img alt="A graph titled &quot;Response Spectra&quot; showing a collection of curves that represent spectral acceleration versus period in seconds. A dense plot of thin grey lines likely represents individual response spectra. There are highlighted lines indicating the mean (thick blue line), mean plus standard deviation and mean minus standard deviation (thin black lines around the mean), and target spectrum (dotted red lines). The axes are logarithmic, with spectral acceleration on the y-axis and period on the x-axis. The graph displays data variability and conformities to a target response spectrum in engineering or seismology." src="../../../../../_images/EE10_EVT3.png" style="width: 600px;" /></a>
-<p class="caption"><span class="caption-number">Fig. 3.10.3.2 </span><span class="caption-text">EVT tab - selected ground motion records on the response spectrum curve</span><a class="headerlink" href="#id4" title="Permalink to this image">¶</a></p>
+<p class="caption"><span class="caption-number">Fig. 4.10.3.2 </span><span class="caption-text">EVT tab - selected ground motion records on the response spectrum curve</span><a class="headerlink" href="#id4" title="Permalink to this image">¶</a></p>
 </div>
 </div></blockquote>
 </li>
@@ -299,7 +300,7 @@
 <blockquote>
 <div><div class="align-center figure" id="id5">
 <a class="reference internal image-reference" href="../../../../../_images/EE10_EVT2.png"><img alt="Screenshot of a computer interface related to seismic activity analysis with a section labeled &quot;Temporary records Directory&quot; displaying a file path, and a table titled &quot;Ground Motion Components&quot; showing entries related to earthquakes, including columns for RSN, Scale, Earthquake, Station, Magnitude, Distance, Vs30, and Hc. Below are additional settings for &quot;Scaling/Selection Criteria&quot; with options for scaling method, selection error weight function, and a blue &quot;Select Records&quot; button at the bottom." src="../../../../../_images/EE10_EVT2.png" style="width: 600px;" /></a>
-<p class="caption"><span class="caption-number">Fig. 3.10.3.3 </span><span class="caption-text">EVT tab - temporary records directory and scaling options</span><a class="headerlink" href="#id5" title="Permalink to this image">¶</a></p>
+<p class="caption"><span class="caption-number">Fig. 4.10.3.3 </span><span class="caption-text">EVT tab - temporary records directory and scaling options</span><a class="headerlink" href="#id5" title="Permalink to this image">¶</a></p>
 </div>
 </div></blockquote>
 <p>The actual time histories are saved in the “Temporary Records Directory”.</p>
@@ -316,7 +317,7 @@
 <blockquote>
 <div><div class="align-center figure" id="id6">
 <a class="reference internal image-reference" href="../../../../../_images/EE10_FEM.png"><img alt="A user interface with a left-side vertical nav bar featuring the labels &quot;UQ&quot; at the top and &quot;GI&quot; at the bottom. The main panel is titled &quot;FE Application&quot; and includes a dropdown menu with the option &quot;None (only for surrogate)&quot; selected. The interface has a minimalist design with grayscale colors." src="../../../../../_images/EE10_FEM.png" style="width: 900px;" /></a>
-<p class="caption"><span class="caption-number">Fig. 3.10.3.4 </span><span class="caption-text">FEM tab</span><a class="headerlink" href="#id6" title="Permalink to this image">¶</a></p>
+<p class="caption"><span class="caption-number">Fig. 4.10.3.4 </span><span class="caption-text">FEM tab</span><a class="headerlink" href="#id6" title="Permalink to this image">¶</a></p>
 </div>
 </div></blockquote>
 </li>
@@ -324,20 +325,20 @@
 <blockquote>
 <div><div class="align-center figure" id="id7">
 <a class="reference internal image-reference" href="../../../../../_images/EE10_EDP.png"><img alt="Screenshot of a software interface with a vertical toolbar on the left side containing acronyms such as UQ, GI, SIM, EVT, FEM, EDP, RV, and RES, highlighted in dark shades. On the right, a selected tab reads &quot;Engineering Demand Parameter Generator&quot; with a drop-down menu stating &quot;None (only for surrogate)&quot; and a list of alphanumeric codes below it such as &quot;1-PFA-0-1,&quot; &quot;1-PFD-1-1,&quot; &quot;1-PID-1-1,&quot; and similar patterns, suggesting parameters or settings within the engineering software." src="../../../../../_images/EE10_EDP.png" style="width: 900px;" /></a>
-<p class="caption"><span class="caption-number">Fig. 3.10.3.5 </span><span class="caption-text">EDP tab</span><a class="headerlink" href="#id7" title="Permalink to this image">¶</a></p>
+<p class="caption"><span class="caption-number">Fig. 4.10.3.5 </span><span class="caption-text">EDP tab</span><a class="headerlink" href="#id7" title="Permalink to this image">¶</a></p>
 </div>
 </div></blockquote>
 </li>
 </ol>
 </div>
 <div class="section" id="distribution-of-random-variables">
-<h2><span class="section-number">3.10.4. </span>Distribution of Random Variables<a class="headerlink" href="#distribution-of-random-variables" title="Permalink to this heading">¶</a></h2>
+<h2><span class="section-number">4.10.4. </span>Distribution of Random Variables<a class="headerlink" href="#distribution-of-random-variables" title="Permalink to this heading">¶</a></h2>
 <ol class="arabic" start="7">
 <li><p>The <strong>RV tab</strong> is pre-populated with the random variables that were used to train the surrogate. Change the distribution of the statistical parameters as desired. In this example, the stiffness is assumed to be distributed around 120 with a standard deviation of 5.</p>
 <blockquote>
 <div><div class="align-center figure" id="id8">
 <a class="reference internal image-reference" href="../../../../../_images/EE10_RV.png"><img alt="&quot;Screenshot of a user interface for inputting random variables, showing a sidebar with the labels UQ, GI, and SIM. The main panel is titled 'Input Random Variables' with fields for 'Variable Name', 'Input Type', 'Distribution', 'Mean', and 'Standard Dev'. The variable name 'K' is entered with 'Parameters' selected as the input type, 'Normal' distribution, a mean of 120, and a standard deviation of 5. There are buttons for 'Add', 'Clear All', 'Correlation Matrix', 'Show PDF', 'Export', and 'Import'.&quot;" src="../../../../../_images/EE10_RV.png" style="width: 900px;" /></a>
-<p class="caption"><span class="caption-number">Fig. 3.10.4.1 </span><span class="caption-text">RV tab</span><a class="headerlink" href="#id8" title="Permalink to this image">¶</a></p>
+<p class="caption"><span class="caption-number">Fig. 4.10.4.1 </span><span class="caption-text">RV tab</span><a class="headerlink" href="#id8" title="Permalink to this image">¶</a></p>
 </div>
 </div></blockquote>
 </li>
@@ -348,14 +349,14 @@
 </div>
 </div>
 <div class="section" id="run-the-analysis-and-process-results">
-<h2><span class="section-number">3.10.5. </span>Run the Analysis and Process Results<a class="headerlink" href="#run-the-analysis-and-process-results" title="Permalink to this heading">¶</a></h2>
+<h2><span class="section-number">4.10.5. </span>Run the Analysis and Process Results<a class="headerlink" href="#run-the-analysis-and-process-results" title="Permalink to this heading">¶</a></h2>
 <ol class="arabic" start="8">
 <li><p>Click <strong>Run</strong> button. The analysis may take several minutes. The <strong>RES tab</strong> will be highlighted when the analysis is completed</p></li>
 <li><p>The obtained statistics of responses are shown in the “Summary tab”</p>
 <blockquote>
 <div><div class="align-center figure" id="id9">
 <a class="reference internal image-reference" href="../../../../../_images/EE10_RES1.png"><img alt="A screenshot of a statistical analysis interface showing a table with various entries under the headings &quot;Name,&quot; &quot;Mean,&quot; &quot;StdDev&quot; (Standard Deviation), &quot;Skewness,&quot; and &quot;Kurtosis.&quot; Each row provides the name and statistical values for a different dataset, with names such as &quot;1-DS575-0-1,&quot; &quot;1-PSA(0.5s)-0-1,&quot; and &quot;1-SaRatio-0-1.&quot; The data values vary across different rows, indicating diverse statistical properties of the datasets. The interface has a left-side navigation bar with shortened titles like &quot;UQ,&quot; &quot;GI,&quot; &quot;SIM,&quot; with &quot;RES&quot; highlighted." src="../../../../../_images/EE10_RES1.png" style="width: 900px;" /></a>
-<p class="caption"><span class="caption-number">Fig. 3.10.5.1 </span><span class="caption-text">RES tab - summary of response statistics</span><a class="headerlink" href="#id9" title="Permalink to this image">¶</a></p>
+<p class="caption"><span class="caption-number">Fig. 4.10.5.1 </span><span class="caption-text">RES tab - summary of response statistics</span><a class="headerlink" href="#id9" title="Permalink to this image">¶</a></p>
 </div>
 </div></blockquote>
 </li>
@@ -364,11 +365,11 @@
 <blockquote>
 <div><div class="align-center figure" id="id10">
 <a class="reference internal image-reference" href="../../../../../_images/EE10_RES2.png"><img alt="A screenshot of a computer interface involving data analysis. On the left side, a vertical navigation menu with options like UQ, GI, SIM, EVT, FEM, EDP, RV, and RES is shown with RES highlighted. In the main pane, there are two tabs: &quot;Summary&quot; and &quot;Data Values.&quot; The &quot;Data Values&quot; tab is active, showing a cumulative frequency distribution graph to the left. Next to the graph, there is a grid of data values with headers such as &quot;1-DSS75-0-2,&quot; &quot;1-PSA(0.5s)-0-2,&quot; &quot;1-SaRatio-0-2,&quot; &quot;1-PFA-0-1,&quot; and &quot;1-PFA-0-1 Predictions.&quot; Below the data grid, there are options to &quot;Save Table,&quot; &quot;Save Columns Separately,&quot; &quot;Save RVs,&quot; &quot;Save QoIs,&quot; and &quot;Save Surrogate Predictions.&quot; A checkbox labeled &quot;Show surrogate model prediction bounds&quot; is at the top next to the tabs." src="../../../../../_images/EE10_RES2.png" style="width: 900px;" /></a>
-<p class="caption"><span class="caption-number">Fig. 3.10.5.2 </span><span class="caption-text">RES tab - cumulative density function</span><a class="headerlink" href="#id10" title="Permalink to this image">¶</a></p>
+<p class="caption"><span class="caption-number">Fig. 4.10.5.2 </span><span class="caption-text">RES tab - cumulative density function</span><a class="headerlink" href="#id10" title="Permalink to this image">¶</a></p>
 </div>
 <div class="align-center figure" id="id11">
 <a class="reference internal image-reference" href="../../../../../_images/EE10_RES3.png"><img alt="Screenshot of a computer interface with a scatterplot and a data table. The scatterplot shows various data points with error bars and is labeled with axes &quot;1-SaRatio-0-1&quot; and &quot;1-PJD-3-1.&quot; A correlation coefficient of 0.72 is displayed. The data table to the right lists values under headings such as &quot;1-PFA-3-2&quot; and &quot;1-PFD-3-1,&quot; with one value highlighted in blue. The interface includes tabs like &quot;Summary&quot; and &quot;Data Values,&quot; and buttons for saving the table, columns, RVs, QoIs, and Surrogate Predictions. There is also a checkbox option titled &quot;Show surrogate model prediction bounds.&quot;" src="../../../../../_images/EE10_RES3.png" style="width: 900px;" /></a>
-<p class="caption"><span class="caption-number">Fig. 3.10.5.3 </span><span class="caption-text">RES tab - scatter plots</span><a class="headerlink" href="#id11" title="Permalink to this image">¶</a></p>
+<p class="caption"><span class="caption-number">Fig. 4.10.5.3 </span><span class="caption-text">RES tab - scatter plots</span><a class="headerlink" href="#id11" title="Permalink to this image">¶</a></p>
 </div>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
@@ -393,7 +394,7 @@
 <blockquote>
 <div><div class="align-center figure" id="id12">
 <a class="reference internal image-reference" href="../../../../../_images/EE10_RES4_1.png"><img alt="A bar chart titled 'Mean of log EDP' showing two sets of bars for each category on the x-axis labeled with various codes such as '1_PFRA-0-1', '1_PFRA-1-2', '1_PFED-3-1', etc. The categories represent different data groups, and each group has two bars adjacent to each other; one bar is colored blue, labeled 'original', and the other is colored orange, labeled 'surrogate'. The y-axis represents the mean of log EDP with values ranging from approximately -5 to 5. The pattern of the bars indicates a comparison between the &quot;original&quot; and &quot;surrogate&quot; data across the different categories." src="../../../../../_images/EE10_RES4_1.png" style="width: 700px;" /></a>
-<p class="caption"><span class="caption-number">Fig. 3.10.5.4 </span><span class="caption-text">Comparing median of log-EDP</span><a class="headerlink" href="#id12" title="Permalink to this image">¶</a></p>
+<p class="caption"><span class="caption-number">Fig. 4.10.5.4 </span><span class="caption-text">Comparing median of log-EDP</span><a class="headerlink" href="#id12" title="Permalink to this image">¶</a></p>
 </div>
 </div></blockquote>
 <p>The same comparison in the original scale is shown below.</p>
@@ -415,7 +416,7 @@
 <blockquote>
 <div><div class="align-center figure" id="id14">
 <a class="reference internal image-reference" href="../../../../../_images/EE10_RES4_3.png"><img alt="A bar chart comparing the standard deviation of log EDP (Engineering Demand Parameter) between original and surrogate data. The x-axis lists different data sets labeled 1-PFA-0-1, 1-PFA-1-1, and so on, up to 1-PRD-3-1. The y-axis ranges from 0 to 1 in increments of 0.2. Blue bars represent original data, and orange bars represent surrogate data. The bars vary in height, indicating differences in the standard deviation of log EDP for each data set. The orange bars generally appear to show a higher standard deviation than the blue bars." src="../../../../../_images/EE10_RES4_3.png" style="width: 700px;" /></a>
-<p class="caption"><span class="caption-number">Fig. 3.10.5.5 </span><span class="caption-text">Comparing the standard deviation of log-EDP</span><a class="headerlink" href="#id14" title="Permalink to this image">¶</a></p>
+<p class="caption"><span class="caption-number">Fig. 4.10.5.5 </span><span class="caption-text">Comparing the standard deviation of log-EDP</span><a class="headerlink" href="#id14" title="Permalink to this image">¶</a></p>
 </div>
 </div></blockquote>
 <p>The estimated medians of EDPs from the surrogate and the original model show in general good agreement. The standard deviation of the surrogate model is larger partly because of the added uncertainty in the surrogate model approximation. The difference in the statistics may also be attributed to the small sample size of 30.</p>

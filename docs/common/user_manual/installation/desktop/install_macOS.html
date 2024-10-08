@@ -133,10 +133,11 @@
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="../../usage/desktop/usage.html">2. User Interface</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../examples/desktop/examples.html">3. Examples</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../troubleshooting/desktop/troubleshooting.html">4. Troubleshooting</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../../reqments/EEUQ.html">5. Requirements</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../bugs.html">6. Bugs &amp; Feature Requests</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../usage/desktop/earthquake/tools.html">3. Tools</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../examples/desktop/examples.html">4. Examples</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../troubleshooting/desktop/troubleshooting.html">5. Troubleshooting</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../reqments/EEUQ.html">6. Requirements</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../bugs.html">7. Bugs &amp; Feature Requests</a></li>
 </ul>
 <p class="caption" role="heading"><span class="caption-text">Technical Manual</span></p>
 <ul>
@@ -233,16 +234,16 @@
 </pre></div>
 </div>
 <p>Ensure the output indicates Python 3.9 and <cite>machine=’x86_64’</cite>, as shown in the screenshot below. If not, proceed to install Python 3.9 x86.</p>
-<div class="align-center figure" id="id6">
+<div class="align-center figure" id="id5">
 <a class="reference internal image-reference" href="../../../../_images/pythonKernel.png"><img alt="../../../../_images/pythonKernel.png" src="../../../../_images/pythonKernel.png" style="width: 75%;" /></a>
-<p class="caption"><span class="caption-number">Fig. 1.2.1.1 </span><span class="caption-text">Python: Kernel Version</span><a class="headerlink" href="#id6" title="Permalink to this image">¶</a></p>
+<p class="caption"><span class="caption-number">Fig. 1.2.1.1 </span><span class="caption-text">Python: Kernel Version</span><a class="headerlink" href="#id5" title="Permalink to this image">¶</a></p>
 </div>
 </li>
 <li><p>To download a Python installer with your browser open the <a class="reference external" href="https://www.designsafe-ci.org/data/browser/public/designsafe.storage.community//SimCenter/Software/EE_UQ">EE-UQ Download</a> page. There, you will find various files and directories available for download. Locate the file named <strong>python-3.9.13-macosx10.9.pkg</strong>, which we copied from <a class="reference external" href="https://www.python.org/downloads/macos/">Python.org</a>. Proceed to download this installer file and then open it on your local machine to initiate the Python installation process.</p></li>
 <li><p>Run the installer. Upon completion, a folder with several files will open, as shown in the figure below. Execute <code class="docutils literal notranslate"><span class="pre">Update</span> <span class="pre">Shell</span> <span class="pre">Profile.command.sh</span></code> and <code class="docutils literal notranslate"><span class="pre">Install</span> <span class="pre">CertificateCommand.sh</span></code> by double-clicking each.</p>
-<div class="align-center figure" id="id7">
+<div class="align-center figure" id="id6">
 <a class="reference internal image-reference" href="../../../../_images/pythonInstallShell.png"><img alt="../../../../_images/pythonInstallShell.png" src="../../../../_images/pythonInstallShell.png" style="width: 75%;" /></a>
-<p class="caption"><span class="caption-number">Fig. 1.2.1.2 </span><span class="caption-text">Python: Folder Displayed at Conclusion of Install</span><a class="headerlink" href="#id7" title="Permalink to this image">¶</a></p>
+<p class="caption"><span class="caption-number">Fig. 1.2.1.2 </span><span class="caption-text">Python: Folder Displayed at Conclusion of Install</span><a class="headerlink" href="#id6" title="Permalink to this image">¶</a></p>
 </div>
 </li>
 <li><p>Install additional packages via the <strong>nheri_simcenter</strong> package by starting a Terminal window and type the following command:</p>
@@ -277,9 +278,9 @@ When the frontend application is running the computations it is actually running
 <div class="section" id="download-the-application">
 <h2><span class="section-number">1.2.5. </span><strong>Download the Application</strong><a class="headerlink" href="#download-the-application" title="Permalink to this heading">¶</a></h2>
 <p>To download the EE-UQ app, navigate to the <a class="reference external" href="https://www.designsafe-ci.org/data/browser/public/designsafe.storage.community//SimCenter/Software/EE_UQ">EE-UQ Download</a> page which should resemble <a class="reference internal" href="#figdownload-ee"><span class="std std-numref">Fig. 1.2.5.3</span></a>. The download page contains a list of downloadable files and directories.</p>
-<div class="align-center figure" id="id10">
+<div class="align-center figure" id="id9">
 <span id="figdownload-ee"></span><img alt="../../../../_images/eeDownload.png" src="../../../../_images/eeDownload.png" />
-<p class="caption"><span class="caption-number">Fig. 1.2.5.3 </span><span class="caption-text">EE-UQ download page.</span><a class="headerlink" href="#id10" title="Permalink to this image">¶</a></p>
+<p class="caption"><span class="caption-number">Fig. 1.2.5.3 </span><span class="caption-text">EE-UQ download page.</span><a class="headerlink" href="#id9" title="Permalink to this image">¶</a></p>
 </div>
 <p>Click on the file with a name ending with <strong>Mac_Download.dmg</strong> to download the EE-UQ app. In the pop-up window, click on the <strong>Download</strong> button in the bottom right corner. After the download is completed, open the dmg file and <strong>copy</strong> the EE-UQ app <strong>to a location in your filesystem</strong>.</p>
 <div class="admonition note">
@@ -299,16 +300,16 @@ When the frontend application is running the computations it is actually running
 </div>
 </div>
 <p>Once the application starts, verify the setup by running an example problem <a class="reference internal" href="../../examples/desktop/eeuq-0001/README.html#eeuq-0001"><span class="std std-ref">Sampling, Reliability and Sensitivity Analysis of a Shear Building</span></a>, see <a class="reference internal" href="#figui-ee"><span class="std std-numref">Fig. 1.2.6.3</span></a>.</p>
-<div class="figure align-default" id="id16">
+<div class="figure align-default" id="id15">
 <span id="figui-ee"></span><img alt="common/user_manual/installation/desktop/figures/EE-UQ.png:align:center:figclass:align-center:width:75%" src="common/user_manual/installation/desktop/figures/EE-UQ.png:align:center:figclass:align-center:width:75%" />
-<p class="caption"><span class="caption-number">Fig. 1.2.6.3 </span><span class="caption-text">EE-UQ application on startup.</span><a class="headerlink" href="#id16" title="Permalink to this image">¶</a></p>
+<p class="caption"><span class="caption-number">Fig. 1.2.6.3 </span><span class="caption-text">EE-UQ application on startup.</span><a class="headerlink" href="#id15" title="Permalink to this image">¶</a></p>
 </div>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
 <p>When the EE-UQ app is running, open the app/preferences or File/Preferences and make sure that <code class="docutils literal notranslate"><span class="pre">python3</span></code> appears under <strong>External Applications:Python</strong>, as shown in the figure below. If you used older versions of SimCenter tools this was not the default. The exact location of Python3 that you installed can be found by opening the terminal application and executing the <strong>which python3</strong> command. Enter the path shown as a response in the Preferences panel under Python and then press the <strong>Save</strong> button.</p>
-<div class="align-center figure" id="id20">
+<div class="align-center figure" id="id19">
 <span id="figui-preferences"></span><a class="reference internal image-reference" href="../../../../_images/pythonPreferences.png"><img alt="../../../../_images/pythonPreferences.png" src="../../../../_images/pythonPreferences.png" style="width: 75%;" /></a>
-<p class="caption"><span class="caption-number">Fig. 1.2.6.7 </span><span class="caption-text">Set Python Preferences.</span><a class="headerlink" href="#id20" title="Permalink to this image">¶</a></p>
+<p class="caption"><span class="caption-number">Fig. 1.2.6.7 </span><span class="caption-text">Set Python Preferences.</span><a class="headerlink" href="#id19" title="Permalink to this image">¶</a></p>
 </div>
 </div>
 </div>

@@ -7,7 +7,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   
-  <title>3.4. AutoSDA and Nonlinear Response Analysis &mdash; Earthquake Engineering with Uncertainty Quantification  documentation</title>
+  <title>4.4. AutoSDA and Nonlinear Response Analysis &mdash; Earthquake Engineering with Uncertainty Quantification  documentation</title>
   
 
   
@@ -50,8 +50,8 @@
     
     <link rel="index" title="Index" href="../../../../../genindex.html" />
     <link rel="search" title="Search" href="../../../../../search.html" />
-    <link rel="next" title="3.5. Synthetic Ground Motion Applied to a Shear Buildilng" href="../eeuq-0005/README.html" />
-    <link rel="prev" title="3.3. PEER Ground Motion Selection and Nonlinear Response Analysis" href="../eeuq-0003/README.html" />
+    <link rel="next" title="4.5. Synthetic Ground Motion Applied to a Shear Buildilng" href="../eeuq-0005/README.html" />
+    <link rel="prev" title="4.3. PEER Ground Motion Selection and Nonlinear Response Analysis" href="../eeuq-0003/README.html" />
 <script src="https://cdn.jsdelivr.net/npm/vega@5.12.1"></script>
 <script src="https://cdn.jsdelivr.net/npm/vega-lite@4.13.1"></script>
 <script src="https://cdn.jsdelivr.net/npm/vega-embed@6.8.0"></script>
@@ -124,28 +124,29 @@
 <ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="../../../installation/desktop/installation.html">1. Installation</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../../usage/desktop/usage.html">2. User Interface</a></li>
-<li class="toctree-l1 current"><a class="reference internal" href="../examples.html">3. Examples</a><ul class="current">
-<li class="toctree-l2"><a class="reference internal" href="../eeuq-0001/README.html">3.1. Sampling, Reliability and Sensitivity Analysis of a Shear Building</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../eeuq-0002/README.html">3.2. Site Response Analysis with Spatial Variability</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../eeuq-0003/README.html">3.3. PEER Ground Motion Selection and Nonlinear Response Analysis</a></li>
-<li class="toctree-l2 current"><a class="current reference internal" href="#">3.4. AutoSDA and Nonlinear Response Analysis</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="#design-and-create-a-numerical-model">3.4.1. Design and create a numerical model</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#select-and-scale-ground-motion-records">3.4.2. Select and scale ground motion records</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#run-the-analysis-and-post-process-results">3.4.3. Run the analysis and post-process results</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../usage/desktop/earthquake/tools.html">3. Tools</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../examples.html">4. Examples</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../eeuq-0001/README.html">4.1. Sampling, Reliability and Sensitivity Analysis of a Shear Building</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../eeuq-0002/README.html">4.2. Site Response Analysis with Spatial Variability</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../eeuq-0003/README.html">4.3. PEER Ground Motion Selection and Nonlinear Response Analysis</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">4.4. AutoSDA and Nonlinear Response Analysis</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#design-and-create-a-numerical-model">4.4.1. Design and create a numerical model</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#select-and-scale-ground-motion-records">4.4.2. Select and scale ground motion records</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#run-the-analysis-and-post-process-results">4.4.3. Run the analysis and post-process results</a></li>
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="../eeuq-0005/README.html">3.5. Synthetic Ground Motion Applied to a Shear Buildilng</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../eeuq-0006/README.html">3.6. PLoM Surrogate Model</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../eeuq-0007/README.html">3.7. Target Spectrum by Surrogate Hazard GP Model</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../eeuq-0008/README.html">3.8. Using Multiple Models and Analysis Options in EE-UQ</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../eeuq-0009/README.html">3.9. Training GP Surrogate Model</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../eeuq-0010/README.html">3.10. Prediction from GP Surrogate Model</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../eeuq-0011/README.html">3.11. Multi-fidelity Monte Carlo Simulation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../eeuq-0005/README.html">4.5. Synthetic Ground Motion Applied to a Shear Buildilng</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../eeuq-0006/README.html">4.6. PLoM Surrogate Model</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../eeuq-0007/README.html">4.7. Target Spectrum by Surrogate Hazard GP Model</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../eeuq-0008/README.html">4.8. Using Multiple Models and Analysis Options in EE-UQ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../eeuq-0009/README.html">4.9. Training GP Surrogate Model</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../eeuq-0010/README.html">4.10. Prediction from GP Surrogate Model</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../eeuq-0011/README.html">4.11. Multi-fidelity Monte Carlo Simulation</a></li>
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="../../../troubleshooting/desktop/troubleshooting.html">4. Troubleshooting</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../../../reqments/EEUQ.html">5. Requirements</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../../bugs.html">6. Bugs &amp; Feature Requests</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../troubleshooting/desktop/troubleshooting.html">5. Troubleshooting</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../reqments/EEUQ.html">6. Requirements</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../bugs.html">7. Bugs &amp; Feature Requests</a></li>
 </ul>
 <p class="caption" role="heading"><span class="caption-text">Technical Manual</span></p>
 <ul>
@@ -207,9 +208,9 @@
     
       <li><a href="../../../../../index.html" class="icon icon-home"></a> &raquo;</li>
         
-          <li><a href="../examples.html"><span class="section-number">3. </span>Examples</a> &raquo;</li>
+          <li><a href="../examples.html"><span class="section-number">4. </span>Examples</a> &raquo;</li>
         
-      <li><span class="section-number">3.4. </span>AutoSDA and Nonlinear Response Analysis</li>
+      <li><span class="section-number">4.4. </span>AutoSDA and Nonlinear Response Analysis</li>
     
     
       <li class="wy-breadcrumbs-aside">
@@ -229,15 +230,15 @@
            <div itemprop="articleBody">
             
   <div class="section" id="autosda-and-nonlinear-response-analysis">
-<span id="eeuq-0004"></span><h1><span class="section-number">3.4. </span>AutoSDA and Nonlinear Response Analysis<a class="headerlink" href="#autosda-and-nonlinear-response-analysis" title="Permalink to this heading">¶</a></h1>
+<span id="eeuq-0004"></span><h1><span class="section-number">4.4. </span>AutoSDA and Nonlinear Response Analysis<a class="headerlink" href="#autosda-and-nonlinear-response-analysis" title="Permalink to this heading">¶</a></h1>
 <p>This example demonstrates the use of a Python-based computation platform to automate seismic design and analysis of
 of steel moment resisting frames (<strong>AutoSDA</strong>) (<a class="reference internal" href="#gbs20" id="id1"><span>[GBS20]</span></a>).</p>
 <div class="align-center figure" id="fig-frame">
 <a class="reference internal image-reference" href="../../../../../_images/sbm2.png"><img alt="A data table titled &quot;Building Information&quot; with input fields and values for various building parameters. It includes the number of stories (3), typical story height (13.0 ft), first story height (13.0 ft), number of bays in both X and Z directions (4 each), width of bays in both X and Z directions (30.0 ft each), and number of Lateral Force Resisting Systems (LFRS) in both X and Z directions (2 each)." src="../../../../../_images/sbm2.png" style="width: 50%;" /></a>
-<p class="caption"><span class="caption-number">Fig. 3.4.1 </span><span class="caption-text">Basic building information in AutoSDA</span><a class="headerlink" href="#fig-frame" title="Permalink to this image">¶</a></p>
+<p class="caption"><span class="caption-number">Fig. 4.4.1 </span><span class="caption-text">Basic building information in AutoSDA</span><a class="headerlink" href="#fig-frame" title="Permalink to this image">¶</a></p>
 </div>
 <div class="section" id="design-and-create-a-numerical-model">
-<h2><span class="section-number">3.4.1. </span>Design and create a numerical model<a class="headerlink" href="#design-and-create-a-numerical-model" title="Permalink to this heading">¶</a></h2>
+<h2><span class="section-number">4.4.1. </span>Design and create a numerical model<a class="headerlink" href="#design-and-create-a-numerical-model" title="Permalink to this heading">¶</a></h2>
 <ol class="arabic simple">
 <li><p>Navigate to the <strong>SIM</strong> tab in the left menu. In this panel, select the <strong>Steel Building Model</strong> as the
 <strong>Building Model Generator</strong>. In the user interface, five major input sections: (1)
@@ -289,7 +290,7 @@ sections above. Users can also directly modify these data tables.</p></li>
 </div>
 </div>
 <div class="section" id="select-and-scale-ground-motion-records">
-<h2><span class="section-number">3.4.2. </span>Select and scale ground motion records<a class="headerlink" href="#select-and-scale-ground-motion-records" title="Permalink to this heading">¶</a></h2>
+<h2><span class="section-number">4.4.2. </span>Select and scale ground motion records<a class="headerlink" href="#select-and-scale-ground-motion-records" title="Permalink to this heading">¶</a></h2>
 <ol class="arabic simple">
 <li><p>Navigate to the <strong>EVT</strong> panel and select the <strong>PEER NGA Records</strong> as the <strong>Load Generator</strong>. We can use the
 <strong>Uniform Hazard Spectrum</strong> as an example target spectrum here. We can specify the site location, the
@@ -316,7 +317,7 @@ account and password to log in and execute the selection and scaling.</p></li>
 </div>
 </div>
 <div class="section" id="run-the-analysis-and-post-process-results">
-<h2><span class="section-number">3.4.3. </span>Run the analysis and post-process results<a class="headerlink" href="#run-the-analysis-and-post-process-results" title="Permalink to this heading">¶</a></h2>
+<h2><span class="section-number">4.4.3. </span>Run the analysis and post-process results<a class="headerlink" href="#run-the-analysis-and-post-process-results" title="Permalink to this heading">¶</a></h2>
 <ol class="arabic simple">
 <li><p>Navigate to the <strong>UQ</strong> panel, use the default <strong>Forward Propagation</strong> method with the <strong># Sample</strong> same as
 the number of selected records.</p></li>

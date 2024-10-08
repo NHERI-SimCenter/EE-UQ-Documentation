@@ -121,10 +121,11 @@
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../installation/desktop/installation.html">1. Installation</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../usage/desktop/usage.html">2. User Interface</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../examples/desktop/examples.html">3. Examples</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../troubleshooting/desktop/troubleshooting.html">4. Troubleshooting</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../reqments/EEUQ.html">5. Requirements</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../bugs.html">6. Bugs &amp; Feature Requests</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../usage/desktop/earthquake/tools.html">3. Tools</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../examples/desktop/examples.html">4. Examples</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../troubleshooting/desktop/troubleshooting.html">5. Troubleshooting</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../reqments/EEUQ.html">6. Requirements</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../bugs.html">7. Bugs &amp; Feature Requests</a></li>
 </ul>
 <p class="caption" role="heading"><span class="caption-text">Technical Manual</span></p>
 <ul>
@@ -207,7 +208,7 @@
             
   <div class="section" id="capabilities">
 <span id="lbl-capabilities-weuq"></span><h1>Capabilities<a class="headerlink" href="#capabilities" title="Permalink to this heading">¶</a></h1>
-<p><strong>Version 3.3.0</strong> of EE-UQ app was released <strong>April 2024</strong>. The following lists the functionality available in this current version. (Note: New features and fixes in this release are marked <span class="blue">blue</span> in the following list of features.)</p>
+<p><strong>Version 4.1.0</strong> of EE-UQ app was released <strong>Sept 2024</strong>. The following lists the functionality available in this current version. (Note: New features and fixes in this release are marked <span class="blue">blue</span> in the following list of features.)</p>
 <div class="section" id="structural-information-model">
 <h2>Structural Information Model<a class="headerlink" href="#structural-information-model" title="Permalink to this heading">¶</a></h2>
 <p>Applications are used to specify/select the structural model to be used in the analysis.</p>
@@ -317,8 +318,10 @@ a. Resample from an existing correlated dataset of samples</p></li>
 <div class="section" id="additional-tools">
 <h2>Additional Tools<a class="headerlink" href="#additional-tools" title="Permalink to this heading">¶</a></h2>
 <ol class="arabic simple">
-<li><p><span class="blue">Empty Domain CFD Simulation</span>:
+<li><p><strong>Empty Domain CFD Simulation</strong>:
 Capability to perform empty domain simulation to characterize Atmospheric Boundary Layer (ABL) flows using large-eddy simulation (LES). This feature uses the Turbulence Inflow Tool (TInF) tool for calibrating ABL flows for a subsequent wind load evaluation study.</p></li>
+<li><p><span class="blue">Isolated Building CFD Simulation</span>:
+Added a functionality to perform CFD-based wind load simulation on isolated building as a stand-alone workflow tool. This tool uses the user’s local machine for performing pre-processing and run the actual CFD simulation on DesignSafe.</p></li>
 </ol>
 </div>
 </div>
