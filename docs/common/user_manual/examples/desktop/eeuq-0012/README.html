@@ -1,0 +1,550 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" data-content_root="../../../../../">
+<head>
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>4.12. Seismic Wave Basin Effects Model (DRM Example) &mdash; Earthquake Engineering with Uncertainty Quantification  documentation</title>
+      <link rel="stylesheet" type="text/css" href="../../../../../_static/pygments.css?v=b86133f3" />
+      <link rel="stylesheet" type="text/css" href="../../../../../_static/css/theme.css?v=66b6668b" />
+      <link rel="stylesheet" type="text/css" href="../../../../../_static/copybutton.css?v=76b2166b" />
+      <link rel="stylesheet" type="text/css" href="../../../../../_static/tabs.css?v=a5c4661c" />
+      <link rel="stylesheet" type="text/css" href="../../../../../_static/sphinx-design.min.css?v=95c83b7e" />
+      <link rel="stylesheet" type="text/css" href="../../../../../_static/sphinxcontrib-images/LightBox2/lightbox2/dist/css/lightbox.css?v=5c84f910" />
+      <link rel="stylesheet" type="text/css" href="../../../../../_static/css/custom.css?v=4b5bf716" />
+
+  
+      <script src="../../../../../_static/jquery.js?v=5d32c60e"></script>
+      <script src="../../../../../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+      <script src="../../../../../_static/documentation_options.js?v=5929fcd5"></script>
+      <script src="../../../../../_static/doctools.js?v=9a2dae69"></script>
+      <script src="../../../../../_static/sphinx_highlight.js?v=dc90522c"></script>
+      <script src="../../../../../_static/clipboard.min.js?v=a7894cd8"></script>
+      <script src="../../../../../_static/copybutton.js?v=f281be69"></script>
+      <script src="../../../../../_static/design-tabs.js?v=36754332"></script>
+      <script src="../../../../../_static/sphinxcontrib-images/LightBox2/lightbox2/dist/js/lightbox-plus-jquery.min.js?v=ffc8af2d"></script>
+      <script src="../../../../../_static/sphinxcontrib-images/LightBox2/lightbox2-customize/jquery-noconflict.js?v=12818e64"></script>
+    <script src="../../../../../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../../../../../genindex.html" />
+    <link rel="search" title="Search" href="../../../../../search.html" />
+    <link rel="next" title="4.13. Full 3D SSI Model with Laminar and DRM Inputs (Custom 3D Building)" href="../eeuq-0013/README.html" />
+    <link rel="prev" title="4.11. Multi-fidelity Monte Carlo Simulation" href="../eeuq-0011/README.html" />
+<script src="https://cdn.jsdelivr.net/npm/vega@5.12.1"></script>
+<script src="https://cdn.jsdelivr.net/npm/vega-lite@4.13.1"></script>
+<script src="https://cdn.jsdelivr.net/npm/vega-embed@6.8.0"></script>
+<style media="screen">.vega-actions a {margin-right: 5px;}</style>
+<link href="../../../../../_static/css/bootstrap.css" rel="stylesheet">
+
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search"  style="background: #F2F2F2" >
+<a href="https://simcenter.designsafe-ci.org/" style="margin-bottom: 0px;">
+  <img src="../../../../../_static/img/SimCenter-Only.png" class="logo" alt="Org-Logo" />
+</a>
+<hr style="margin: 0px;">
+
+  <a href="../../../../../index.html" class="icon icon-home"> Earthquake Engineering with Uncertainty Quantification
+
+
+
+</a>
+
+
+
+
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../../../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">About</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../about/EEUQ/about.html">1. About</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../front-matter/desktop/ack.html">2. Acknowledgments</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../front-matter/license.html">3. Copyright and License</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../front-matter/cite.html">4. How To Cite</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../releases/eeCapabilities.html">5. Capabilities</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../releases/eeReleaseNotes.html">6. Release Notes</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">User Manual</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../../../installation/desktop/installation.html">1. Running Application</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../usage/desktop/usage.html">2. User Interface</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../usage/desktop/earthquake/tools.html">3. Tools</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../examples.html">4. Examples</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../eeuq-0001/README.html">4.1. Sampling, Reliability and Sensitivity Analysis of a Shear Building</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../eeuq-0002/README.html">4.2. Site Response Analysis with Spatial Variability</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../eeuq-0003/README.html">4.3. PEER Ground Motion Selection and Nonlinear Response Analysis</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../eeuq-0004/README.html">4.4. AutoSDA and Nonlinear Response Analysis</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../eeuq-0005/README.html">4.5. Synthetic Ground Motion Applied to a Shear Buildilng</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../eeuq-0006/README.html">4.6. PLoM Surrogate Model</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../eeuq-0007/README.html">4.7. Target Spectrum by Surrogate Hazard GP Model</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../eeuq-0008/README.html">4.8. Using Multiple Models and Analysis Options in EE-UQ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../eeuq-0009/README.html">4.9. Training GP Surrogate Model</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../eeuq-0010/README.html">4.10. Prediction from GP Surrogate Model</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../eeuq-0011/README.html">4.11. Multi-fidelity Monte Carlo Simulation</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">4.12. Seismic Wave Basin Effects Model (DRM Example)</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#what-is-femora">4.12.1. What is Femora?</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#why-use-a-library-like-femora">4.12.2. Why use a library like Femora?</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#femora-as-a-backend-in-ee-uq">4.12.3. Femora as a Backend in EE-UQ</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#parallel-opensees-simulations-with-femora">4.12.4. Parallel OpenSees Simulations with Femora</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#domain-reduction-method-drm-overview">4.12.5. Domain Reduction Method (DRM) Overview</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#about-the-semi-hemispherical-basin-example">4.12.6. About the Semi-Hemispherical Basin Example</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#additional-results-effect-of-basin-softness">4.12.7. Additional Results: Effect of Basin Softness</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#uncertainty-in-basin-properties">4.12.8. Uncertainty in Basin Properties</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#step-by-step-procedure-in-ee-uq">4.12.9. Step-by-Step Procedure in EE-UQ</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../eeuq-0013/README.html">4.13. Full 3D SSI Model with Laminar and DRM Inputs (Custom 3D Building)</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../../usage/desktop/jobs.html">5. Jobs</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../troubleshooting/desktop/troubleshooting.html">6. Troubleshooting</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../reqments/EEUQ.html">7. Requirements</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../bugs.html">8. Bugs &amp; Feature Requests</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Technical Manual</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../../technical_manual/desktop/uqTechnical.html">1. Dakota Methods</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../technical_manual/desktop/SimCenterUQTechnical.html">2. Methods in SimCenterUQ Engine</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../technical_manual/desktop/damping.html">3. Damping Options</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../technical_manual/desktop/spatial_correlation.html">4. Ground Motion Intensity Spatial Correlation Model Options</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Developer Manual</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../../developer_manual/how_to_build/desktop/how_to_build.html">1. How to Build</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../developer_manual/how_to_extend.html">2. How to Extend</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../developer_manual/verification/desktop/verification.html">3. Verification</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu"  style="background: #F2F2F2" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../../../../index.html">Earthquake Engineering with Uncertainty Quantification</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../../../../../index.html" class="icon icon-home" aria-label="Home"></a></li>
+          <li class="breadcrumb-item"><a href="../examples.html"><span class="section-number">4. </span>Examples</a></li>
+      <li class="breadcrumb-item active"><span class="section-number">4.12. </span>Seismic Wave Basin Effects Model (DRM Example)</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="../../../../../_sources/common/user_manual/examples/desktop/eeuq-0012/README.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="seismic-wave-basin-effects-model-drm-example">
+<span id="eeuq-0012"></span><h1><span class="section-number">4.12. </span>Seismic Wave Basin Effects Model (DRM Example)<a class="headerlink" href="#seismic-wave-basin-effects-model-drm-example" title="Link to this heading"></a></h1>
+<section id="what-is-femora">
+<h2><span class="section-number">4.12.1. </span>What is Femora?<a class="headerlink" href="#what-is-femora" title="Link to this heading"></a></h2>
+<p>Femora is a tool that helps users create models for OpenSees that can run efficiently on multiple CPU cores. It does not perform the simulation itself, but generates the input files and workflow needed for OpenSees to run parallel analyses. Femora provides both a graphical user interface (GUI) and a simple Python workflow, enabling users to build complex finite element models—including advanced meshing and geometry—without needing to know the details of OpenSees scripting. This makes it much easier for engineers and researchers to set up large, high-fidelity earthquake engineering simulations.</p>
+</section>
+<section id="why-use-a-library-like-femora">
+<h2><span class="section-number">4.12.2. </span>Why use a library like Femora?<a class="headerlink" href="#why-use-a-library-like-femora" title="Link to this heading"></a></h2>
+<p>Traditional simulation workflows require users to manually write and manage complex input files for each case, which is error-prone and hard to scale. A library like Femora enables:
+- Programmatic model generation and modification
+- Automation of repetitive or parametric studies
+- Advanced meshing and geometry handling (e.g., external mesh, boolean operations)
+- Integration with Python’s scientific ecosystem for pre- and post-processing</p>
+</section>
+<section id="femora-as-a-backend-in-ee-uq">
+<h2><span class="section-number">4.12.3. </span>Femora as a Backend in EE-UQ<a class="headerlink" href="#femora-as-a-backend-in-ee-uq" title="Link to this heading"></a></h2>
+<p>EE-UQ now supports Femora as a backend for model generation and simulation. This means you can use Python scripts to define your models and leverage all of Femora’s advanced features directly within the EE-UQ uncertainty quantification workflow.</p>
+</section>
+<section id="parallel-opensees-simulations-with-femora">
+<h2><span class="section-number">4.12.4. </span>Parallel OpenSees Simulations with Femora<a class="headerlink" href="#parallel-opensees-simulations-with-femora" title="Link to this heading"></a></h2>
+<p>Previously, each case in an EE-UQ uncertainty quantification (UQ) study would run on a single core, even if the underlying OpenSees model was large. With Femora, each simulation case can now launch a parallel OpenSees job using multiple CPU cores. This enables UQ studies on massive, high-fidelity models that were previously impractical, dramatically reducing total analysis time and making large-scale parametric studies feasible.</p>
+<p>This example demonstrates the effect of a semi-hemispherical sedimentary basin on seismic wave propagation using the Domain Reduction Method (DRM) in EE-UQ, based on [Femora Example 3](<a class="reference external" href="https://amnp95.github.io/Femora/introduction/DRMExamples/example3.html">https://amnp95.github.io/Femora/introduction/DRMExamples/example3.html</a>). The model uses an external mesh to represent the basin geometry and soft soil materials, highlighting basin amplification and resonance effects.</p>
+</section>
+<section id="domain-reduction-method-drm-overview">
+<h2><span class="section-number">4.12.5. </span>Domain Reduction Method (DRM) Overview<a class="headerlink" href="#domain-reduction-method-drm-overview" title="Link to this heading"></a></h2>
+<p>The Domain Reduction Method (DRM) is a powerful technique for modeling seismic wave propagation in a computationally efficient manner. DRM, first proposed by Bielak et al. (2003), is a two-step approach:</p>
+<ol class="arabic simple">
+<li><p><strong>Background Analysis:</strong> A large-scale (often simplified) simulation is performed to capture regional wave propagation from the earthquake source to the vicinity of the site of interest.</p></li>
+<li><p><strong>Local Analysis:</strong> A detailed analysis is then performed on a smaller, high-resolution domain (the “local domain”), using the results from the background analysis as boundary conditions.</p></li>
+</ol>
+<p><strong>Why use DRM?</strong></p>
+<ul class="simple">
+<li><p><strong>Computational Efficiency:</strong> DRM focuses computational resources on the domain of interest, avoiding the need to model the entire source-to-site path at high resolution.</p></li>
+<li><p><strong>Realistic Wave Input:</strong> It enables the use of complex, realistic wavefields as input, capturing effects such as wave scattering, focusing, and basin resonance that would be missed with simple boundary conditions.</p></li>
+<li><p><strong>Flexibility:</strong> DRM works with various wave types, source mechanisms, and site conditions, making it suitable for a wide range of earthquake engineering problems.</p></li>
+<li><p><strong>Enhanced Resolution:</strong> It allows for detailed analysis of local site effects and structure-soil interaction, which is critical for understanding seismic response in complex geological settings.</p></li>
+</ul>
+<p><strong>Why is DRM useful in this example?</strong></p>
+<p>In this semi-hemispherical basin example, DRM is essential because it allows us to:</p>
+<ul class="simple">
+<li><p>Apply realistic, multi-directional seismic wavefields to a complex, 3D basin geometry without modeling the entire regional domain at high resolution.</p></li>
+<li><p>Accurately capture the effects of wave focusing, resonance, and amplification within the basin, which are highly sensitive to the incoming wavefield.</p></li>
+<li><p>Efficiently study the influence of local soil and basin properties on ground motion, while keeping computational costs manageable.</p></li>
+</ul>
+<p>By using DRM, we can focus our computational effort on the basin and its immediate surroundings, ensuring that the simulated ground motions reflect both the complexity of the incoming waves and the detailed local site effects.</p>
+</section>
+<section id="about-the-semi-hemispherical-basin-example">
+<h2><span class="section-number">4.12.6. </span>About the Semi-Hemispherical Basin Example<a class="headerlink" href="#about-the-semi-hemispherical-basin-example" title="Link to this heading"></a></h2>
+<p>This example models a semi-hemispherical sedimentary basin embedded in a layered soil domain. The basin is created by intersecting a half-sphere with the upper layers of the soil, resulting in a realistic, curved geometry that mimics natural sedimentary basins found in many earthquake-prone regions.</p>
+<p><strong>Model Details:</strong></p>
+<ul class="simple">
+<li><p><strong>Soil Domain:</strong></p>
+<ul>
+<li><p>128m × 128m domain (from -64m to 64m in both X and Y directions)</p></li>
+<li><p>Total depth of 48m</p></li>
+<li><p>Six distinct soil layers, each 8m thick</p></li>
+<li><p>Properties that vary with depth (density, wave velocities, and damping)</p></li>
+</ul>
+</li>
+<li><p><strong>Basin Geometry:</strong></p>
+<ul>
+<li><p>Semi-hemispherical basin shape—chosen for its geometric simplicity while still capturing the essential physics of wave focusing and multi-dimensional resonance</p></li>
+<li><p>Center coordinates: (0, 0, 70) meters—positioned at the top surface of the model to maximize surface wave interaction</p></li>
+<li><p>Radius: 85 meters—selected to create significant basin effects while maintaining computational efficiency</p></li>
+<li><p>Only intersects with Layer 1 and Layer 2 of the soil profile—allowing study of soft soil deposits in the near-surface region most important for engineering applications</p></li>
+<li><p>External mesh implementation for precise geometric representation—enabling accurate modeling of the curved basin interface that cannot be achieved with rectilinear elements</p></li>
+</ul>
+</li>
+<li><p><strong>Materials:</strong></p>
+<ul>
+<li><p>Elastic-isotropic materials with properties calculated from wave velocities</p></li>
+<li><p>Density (rho) increasing with depth from 2142 to 2162 kg/m³</p></li>
+<li><p>Shear wave velocity (Vs) increasing with depth from 353 to 599 m/s</p></li>
+<li><p>P-wave velocity (Vp) increasing with depth from 669 to 1135 m/s</p></li>
+<li><p>Damping ratio decreasing with depth</p></li>
+</ul>
+</li>
+<li><p><strong>Mesh:</strong></p>
+<ul>
+<li><p>Element sizes: 4.0m × 4.0m × 4.0m uniform grid</p></li>
+<li><p>32 × 32 elements in horizontal directions</p></li>
+<li><p>2 elements per layer in vertical direction</p></li>
+</ul>
+</li>
+<li><p><strong>Damping:</strong></p>
+<ul>
+<li><p>Frequency-dependent Rayleigh damping</p></li>
+<li><p>Target frequencies: f1 = 3 Hz and f2 = 15 Hz</p></li>
+<li><p>Damping ratio varying by layer (from 2.1% to 3.0%)</p></li>
+</ul>
+</li>
+<li><p><strong>Boundary Conditions:</strong></p>
+<ul>
+<li><p>Rayleigh damping elements as absorbing boundaries</p></li>
+<li><p>8 element layers in PML</p></li>
+</ul>
+</li>
+<li><p><strong>Loading:</strong></p>
+<ul>
+<li><p>Domain Reduction Method (DRM) loading</p></li>
+<li><p>Input from external H5DRM file</p></li>
+<li><p>Simulation duration: 30 seconds with 0.01s time step</p></li>
+</ul>
+</li>
+</ul>
+<p><strong>Why this example?</strong></p>
+<ul class="simple">
+<li><p>Sedimentary basins are known to amplify and prolong earthquake ground motions due to their geometry and soft soil properties. Modeling these effects is critical for accurate seismic hazard assessment in cities built on or near such basins.</p></li>
+<li><p>The semi-hemispherical shape is chosen for its simplicity and its ability to capture the essential physics of wave focusing, resonance, and energy trapping that occur in real basins.</p></li>
+</ul>
+<p><strong>What do we expect to see?</strong></p>
+<ul class="simple">
+<li><p>Compared to a regular layered soil profile, the presence of the soft, curved basin should lead to:
+- Amplified ground motions at the surface above the basin
+- Longer duration of shaking due to wave trapping and resonance
+- Complex wave patterns, including focusing and lateral variations, that would not occur in flat-layered models</p></li>
+</ul>
+<p><strong>Why are we doing this example?</strong></p>
+<ul class="simple">
+<li><p>To demonstrate how advanced meshing and modeling (enabled by Femora and EE-UQ) can be used to study important site effects in earthquake engineering.</p></li>
+<li><p>To show the value of uncertainty quantification (UQ) for such complex models, where both the geometry and material properties can strongly influence seismic response.</p></li>
+<li><p>To provide a reproducible, extensible workflow for researchers and engineers interested in basin effects, parallel simulation, and UQ.</p></li>
+</ul>
+<hr class="docutils" />
+<p>The model consists of a layered soil domain with a semi-hemispherical basin embedded at the center. The basin is modeled using an external mesh and assigned soft soil properties (Vs = 150 m/s). The geometry and material properties are chosen to demonstrate strong basin effects on ground motion.</p>
+<figure class="align-center" id="id1">
+<a class="reference internal image-reference" href="../../../../../_images/ee12_main2.png"><img alt="Schematic of the semi-hemispherical basin embedded in layered soil." src="../../../../../_images/ee12_main2.png" style="width: 500px;" />
+</a>
+<figcaption>
+<p><span class="caption-number">Fig. 4.12.6.1 </span><span class="caption-text">Schematic of the semi-hemispherical basin model.</span><a class="headerlink" href="#id1" title="Link to this image"></a></p>
+</figcaption>
+</figure>
+</section>
+<section id="additional-results-effect-of-basin-softness">
+<h2><span class="section-number">4.12.7. </span>Additional Results: Effect of Basin Softness<a class="headerlink" href="#additional-results-effect-of-basin-softness" title="Link to this heading"></a></h2>
+<p>The following figures compare the surface acceleration time histories for three cases:
+- Regular layered soil (no basin)
+- Basin with Vs = 200 m/s (stiffer soft soil)
+- Basin with Vs = 150 m/s (softer soil)</p>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 50.0%" />
+<col style="width: 50.0%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><figure class="align-center" id="id2">
+<a class="reference internal image-reference" href="../../../../../_images/acceleration_comparison_Regular_Vs200.png"><img alt="../../../../../_images/acceleration_comparison_Regular_Vs200.png" src="../../../../../_images/acceleration_comparison_Regular_Vs200.png" style="width: 400px;" />
+</a>
+<figcaption>
+<p><span class="caption-number">Fig. 4.12.7.1 </span><span class="caption-text">Regular soil vs. basin (Vs = 200 m/s)</span><a class="headerlink" href="#id2" title="Link to this image"></a></p>
+</figcaption>
+</figure>
+</td>
+<td><figure class="align-center" id="id3">
+<a class="reference internal image-reference" href="../../../../../_images/acceleration_comparison_Regular_Vs150.png"><img alt="../../../../../_images/acceleration_comparison_Regular_Vs150.png" src="../../../../../_images/acceleration_comparison_Regular_Vs150.png" style="width: 400px;" />
+</a>
+<figcaption>
+<p><span class="caption-number">Fig. 4.12.7.2 </span><span class="caption-text">Regular soil vs. basin (Vs = 150 m/s)</span><a class="headerlink" href="#id3" title="Link to this image"></a></p>
+</figcaption>
+</figure>
+</td>
+</tr>
+</tbody>
+</table>
+<p>These results show that the softer the basin material (lower Vs), the greater the amplification and duration of ground motion at the surface. This highlights the importance of accurately modeling basin geometry and material properties in seismic hazard analysis.</p>
+</section>
+<section id="uncertainty-in-basin-properties">
+<h2><span class="section-number">4.12.8. </span>Uncertainty in Basin Properties<a class="headerlink" href="#uncertainty-in-basin-properties" title="Link to this heading"></a></h2>
+<p>In the next part of this example, we introduce uncertainty in the properties of the soft basin material (such as shear wave velocity, density, or damping). We will investigate how the response—specifically, the ground motion recorded at the center of the basin at the surface—varies as these properties change. This allows us to quantify the impact of material uncertainty on seismic site response in complex basin settings.</p>
+</section>
+<section id="step-by-step-procedure-in-ee-uq">
+<h2><span class="section-number">4.12.9. </span>Step-by-Step Procedure in EE-UQ<a class="headerlink" href="#step-by-step-procedure-in-ee-uq" title="Link to this heading"></a></h2>
+<ol class="arabic">
+<li><p><strong>UQ Panel</strong>: Select the UQ engine and method (e.g., Forward Propagation with Dakota). Set the number of samples as needed.</p>
+<p>In this example, we use the Forward Propagation method and recommend running at least 50 samples to capture the variability in the response due to uncertain basin properties.</p>
+<figure class="align-center">
+<a class="reference internal image-reference" href="../../../../../_images/ee12_UQ.png"><img alt="UQ panel setup for DRM basin example." src="../../../../../_images/ee12_UQ.png" style="width: 500px;" />
+</a>
+</figure>
+</li>
+<li><p><strong>GI Panel</strong>: Enter general information about the project and model. For this example, set the <strong>Structure Type</strong> and <strong>Design Level</strong> fields to <cite>N/A</cite> since there is no structure being modeled. For the <strong>units</strong>, use <strong>kilonewtons (kN)</strong> for force, <strong>meters (m)</strong> for length, and <strong>seconds (s)</strong> for time.</p>
+<figure class="align-center">
+<a class="reference internal image-reference" href="../../../../../_images/ee12_GI.png"><img alt="General information panel for DRM basin example." src="../../../../../_images/ee12_GI.png" style="width: 500px;" />
+</a>
+</figure>
+</li>
+<li><p><strong>SIM Panel</strong>: In the Simulation panel, first select <strong>Building Model Generator</strong> as <strong>Femora</strong>. Then, select the Femora Python script (<cite>femoramodel.py</cite>) as the building model. This script defines the layered soil, basin geometry, and material properties using external mesh parts.</p>
+<p>The SIM model for Femora is very similar to the OpenSees input, except that you should specify how many CPU cores your model will use for parallel simulation. Additionally, since you may use complex damping, there is a checkbox to enable the use of a damping ratio (as in the OpenSees inputs). By default, this box is unchecked, assuming your Femora model does not require additional damping. If you enable it, the same damping options as in the OpenSees inputs will be available and applied to your model.</p>
+<p>In the Femora SIM panel, you also need to add any random variables you want to use in your Femora model. These random variables should be referenced in your Femora script, but you do not need to define their values in your code. EE-UQ will automatically provide the appropriate values for each simulation sample. This allows you to easily perform uncertainty quantification by sampling different values for these variables across multiple runs.</p>
+<p>For this example, the random variables you should define are: <cite>softMat_vs</cite>, <cite>softMat_vp_vs_ratio</cite>, and <cite>softMat_rho</cite>. These will be used in your Femora model to set the shear wave velocity, the ratio of P-wave to S-wave velocity, and the density of the basin material, respectively.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>The <cite>femoramodel.py</cite> script used in this example has three main differences from the one used in the original Femora documentation:</p>
+<ol class="arabic simple">
+<li><p>It uses the values of <cite>softMat_vs</cite> and <cite>softMat_rho</cite> for the basin directly from the random variables, and calculates <cite>vp</cite> from <cite>vs</cite> and the random variable <cite>softMat_vp_vs_ratio</cite>.</p></li>
+<li><p>The model does not include additional steps such as introducing the DRM load or adding steps for dynamic analysis—these are handled by the EE-UQ workflow, so they are omitted from the script.</p></li>
+<li><p>The model uses an XML recorder at the center of the basin (coordinate 0, 0, 0) instead of a VTK/HDF recorder, since only the response at the central surface point of the basin is needed for this study.</p></li>
+</ol>
+</div>
+<figure class="align-center">
+<a class="reference internal image-reference" href="../../../../../_images/ee12_SIM.png"><img alt="SIM panel with Femora model selection." src="../../../../../_images/ee12_SIM.png" style="width: 500px;" />
+</a>
+</figure>
+</li>
+<li><p><strong>EVT Panel</strong>: Choose the DRM event type and provide the required DRM input file. The event panel allows you to specify the earthquake input as a DRM load.</p>
+<p>In the Event panel, you need to choose the <strong>DRM event</strong> type. From there, you have the option to either select an H5DRM file for OpenSees from your local machine or use DRM files that have been uploaded to the DesignSafe repository as predefined DRM events. At the time of writing this example, there are three different H5DRM datasets uploaded to DesignSafe related to the Hayward Fault, corresponding to near, mid, and far field distances from the fault. Each of these uses a uniform mesh of 4 meters, and the required box for the DRM should be at least 128 meters by 128 meters in x and y, and 48 meters in z (depth), centered at the surface.</p>
+<p>The idea behind predefined DRM files is that these H5DRM files are very large, so selecting them from your local computer is often not practical. Therefore, several predefined DRM loads are available on DesignSafe for you to use directly. If you choose a local DRM file (which is often the case for very large simulations), and you are running your case on a remote machine, EE-UQ will upload your file to DesignSafe, which may take significant time due to the file size. For local DRM files, you must specify the parameters for your H5DRM file yourself. For predefined DRM files, most of the parameters are already defined; you just need to choose the center of your model, as well as <cite>dt</cite> and <cite>numSteps</cite>. If you set <cite>dt</cite> and <cite>numSteps</cite> to -1, EE-UQ will automatically determine these values for you.</p>
+<p>For this example, we choose the <cite>HaywardFaultSW4_nearField</cite> predefined DRM file. In both the local and predefined DRM panels, there is a viewer next to the table of DRM events that provides information about the predefined DRM or the parameters you need to define the DRM event in the local case.</p>
+<figure class="align-center">
+<a class="reference internal image-reference" href="../../../../../_images/ee12_event_predefinedDRM.png"><img alt="DRM event setup in EE-UQ." src="../../../../../_images/ee12_event_predefinedDRM.png" style="width: 500px;" />
+</a>
+</figure>
+<figure class="align-center">
+<a class="reference internal image-reference" href="../../../../../_images/ee12_predefinedDRM_Options.png"><img alt="DRM event options in EE-UQ." src="../../../../../_images/ee12_predefinedDRM_Options.png" style="width: 500px;" />
+</a>
+</figure>
+</li>
+<li><p><strong>FEM Panel</strong>: In the FEM panel, we use OpenSees as the analysis engine because the Femora input essentially generates an OpenSees model. The analysis is performed using the <cite>analysis.tcl</cite> file, which is set up for multi-core execution using OpenSeesMP. Below is the content of the <cite>analysis.tcl</cite> file used for this example:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>constraints Plain
+numberer ParallelRCM
+system Mumps -ICNTL14 200 -ICNTL7 7
+algorithm ModifiedNewton -factoronce
+test EnergyIncr 0.0001 10 5
+integrator Newmark 0.5 0.25
+analysis Transient
+while {[getTime] &lt; 20.0} {
+    if {$pid == 0} {puts &quot;Time : [getTime]&quot;}
+    set Ok [analyze 1 0.01]
+}
+wipeAnalysis
+</pre></div>
+</div>
+<figure class="align-center">
+<a class="reference internal image-reference" href="../../../../../_images/ee12_FEM.png"><img alt="FEM panel for DRM basin example." src="../../../../../_images/ee12_FEM.png" style="width: 500px;" />
+</a>
+</figure>
+</li>
+<li><p><strong>EDP Panel</strong>: In the EDP panel, we use the recorder output from the center node at the surface of the basin. The post-processing is performed using the provided <cite>postprocess.py</cite> script, which extracts engineering demand parameters (EDPs) from the XML recorder file at the central surface point.</p>
+<p>The following EDPs are calculated:</p>
+<ul class="simple">
+<li><p><strong>PGA (Peak Ground Acceleration)</strong> in x, y, and z directions (<cite>pga_x</cite>, <cite>pga_y</cite>, <cite>pga_z</cite>)</p></li>
+<li><p><strong>PGV (Peak Ground Velocity)</strong> in x, y, and z directions (<cite>pgv_x</cite>, <cite>pgv_y</cite>, <cite>pgv_z</cite>)</p></li>
+<li><p><strong>PGD (Peak Ground Displacement)</strong> in x, y, and z directions (<cite>pgd_x</cite>, <cite>pgd_y</cite>, <cite>pgd_z</cite>)</p></li>
+<li><p><strong>Arias Intensity</strong> in x, y, and z directions (<cite>Arias_x</cite>, <cite>Arias_y</cite>, <cite>Arias_z</cite>)</p></li>
+<li><p><strong>Cumulative Absolute Velocity (CAV)</strong> in x, y, and z directions (<cite>CAV_x</cite>, <cite>CAV_y</cite>, <cite>CAV_z</cite>)</p></li>
+<li><p><strong>RMS Acceleration</strong> in x, y, and z directions (<cite>RMS_x</cite>, <cite>RMS_y</cite>, <cite>RMS_z</cite>)</p></li>
+<li><p><strong>Significant Duration (5–95% Arias Intensity)</strong> in x, y, and z directions (<cite>duration_x</cite>, <cite>duration_y</cite>, <cite>duration_z</cite>)</p></li>
+</ul>
+<p>The <cite>postprocess.py</cite> script reads the XML output, computes these EDPs, and writes them to <cite>results.out</cite> in the order specified by the arguments passed to the script. This allows for automated extraction and analysis of the ground motion response at the most critical location in the model.</p>
+<figure class="align-center">
+<a class="reference internal image-reference" href="../../../../../_images/ee12_EDP.png"><img alt="EDP panel for DRM basin example." src="../../../../../_images/ee12_EDP.png" style="width: 500px;" />
+</a>
+</figure>
+</li>
+<li><p><strong>RV Panel</strong>: Define any random variables for the study (e.g., material properties, input motion scaling).</p>
+<p>In the RV (Random Variables) panel, we define the uncertain parameters for the study:</p>
+<ul class="simple">
+<li><p><cite>softMat_vs</cite>: Shear wave velocity of the basin material. We use a <strong>Uniform</strong> distribution between 100 and 300 m/s to reflect a wide but physically reasonable range of possible soft soil velocities, without bias toward any particular value within the range.</p></li>
+<li><p><cite>softMat_vp_vs_ratio</cite>: The ratio of P-wave to S-wave velocity. We use a <strong>Normal</strong> distribution with mean 2.1 and standard deviation 0.15, which is typical for unconsolidated sediments and allows for natural variability around the expected value.</p></li>
+<li><p><cite>softMat_rho</cite>: Density of the basin material. We use a <strong>Normal</strong> distribution with mean 1.8 (g/cm³) and standard deviation 0.15, representing typical values for soft soils and their natural scatter.</p></li>
+</ul>
+<p>The choice of distributions reflects both the physical variability and the available knowledge for each parameter: Uniform for a broad, non-informative range (vs), and Normal for parameters where a central value and natural scatter are expected (vp/vs ratio and density).</p>
+<figure class="align-center">
+<a class="reference internal image-reference" href="../../../../../_images/ee12_RV.png"><img alt="RV panel for DRM basin example." src="../../../../../_images/ee12_RV.png" style="width: 500px;" />
+</a>
+</figure>
+<p>The <strong>correlation matrix</strong> is specified as:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="p">[</span>
+  <span class="mi">1</span><span class="p">,</span>
+  <span class="o">-</span><span class="mf">0.25</span><span class="p">,</span>
+  <span class="mf">0.5</span><span class="p">,</span>
+  <span class="o">-</span><span class="mf">0.25</span><span class="p">,</span>
+  <span class="mi">1</span><span class="p">,</span>
+  <span class="o">-</span><span class="mf">0.3</span><span class="p">,</span>
+  <span class="mf">0.5</span><span class="p">,</span>
+  <span class="o">-</span><span class="mf">0.3</span><span class="p">,</span>
+  <span class="mi">1</span>
+<span class="p">]</span>
+</pre></div>
+</div>
+<p>This matrix encodes the assumed statistical relationships between the random variables. For example, a negative correlation between <cite>softMat_vs</cite> and <cite>softMat_vp_vs_ratio</cite> (-0.25) means that higher shear wave velocities are likely to be associated with slightly lower vp/vs ratios, and vice versa. The positive correlation (0.5) between <cite>softMat_vs</cite> and <cite>softMat_rho</cite> reflects that denser soils tend to have higher wave velocities. The negative correlation (-0.3) between <cite>softMat_vp_vs_ratio</cite> and <cite>softMat_rho</cite> reflects that, for a given vs, a higher vp/vs ratio may be associated with slightly lower density. These values are chosen to reflect plausible physical relationships and to avoid unrealistic combinations of properties in the UQ study.</p>
+<figure class="align-center">
+<a class="reference internal image-reference" href="../../../../../_images/ee12_correlation.png"><img alt="Correlation plot for DRM basin example." src="../../../../../_images/ee12_correlation.png" style="width: 500px;" />
+</a>
+</figure>
+</li>
+<li><p><strong>Submit Panel</strong>: After setting up your random variables, go to the Submit panel. Here, you should select <strong>Run at DesignSafe</strong>. After logging in to your DesignSafe account, choose the following job configuration: <strong>2 nodes</strong> and <strong>48 cores per node</strong> for <strong>480 minutes</strong> (8 hours). This configuration is recommended to ensure sufficient resources for the parallel OpenSees simulations in this example.</p>
+<figure class="align-center">
+<a class="reference internal image-reference" href="../../../../../_images/ee12_submit.png"><img alt="Submit panel for DRM basin example." src="../../../../../_images/ee12_submit.png" style="width: 500px;" />
+</a>
+</figure>
+</li>
+<li><p><strong>RES Panel</strong>: After completing the job, press <strong>Get from DesignSafe</strong> in the RES panel to retrieve your submitted job and results. You can then analyze and plot the results, such as plotting <cite>softMat_vs</cite> versus EDPs like PGA, CAV, and Arias intensity. These plots will show that decreasing the shear wave velocity (<cite>vs</cite>) leads to a drastic increase in these EDPs.
+However, it is important to note that while we expect to see amplification with decreasing <cite>vs</cite>, in reality, as <cite>vs</cite> decreases, the soil would behave more plastically and exhibit significant damping. Therefore, the level of amplification observed here is unrealistically high and mainly occurs at the initial steps of loading. This example still demonstrates the correct physical trend, as we use an elastic material model for the basin in this study.</p>
+<figure class="align-center">
+<a class="reference internal image-reference" href="../../../../../_images/ee12_res1.png"><img alt="Surface acceleration comparison for regular soil and basin model." src="../../../../../_images/ee12_res1.png" style="width: 500px;" />
+</a>
+</figure>
+<figure class="align-center">
+<a class="reference internal image-reference" href="../../../../../_images/ee12_res2.png"><img alt="Additional results for DRM basin example." src="../../../../../_images/ee12_res2.png" style="width: 500px;" />
+</a>
+</figure>
+</li>
+</ol>
+<p>These results show that the softer the basin material (lower Vs), the greater the amplification and duration of ground motion at the surface. This highlights the importance of accurately modeling basin geometry and material properties in seismic hazard analysis.
+For more details and the underlying Python model, see the included <cite>femoramodel.py</cite> and the [Femora Example 3 documentation](<a class="reference external" href="https://amnp95.github.io/Femora/introduction/DRMExamples/example3.html">https://amnp95.github.io/Femora/introduction/DRMExamples/example3.html</a>).</p>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2025, The Regents of the University of California.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+    <!-- Theme Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-158130480-1"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+
+      gtag('config', 'UA-158130480-1', {
+          'anonymize_ip': false,
+      });
+    </script>  
+
+  <style>
+         .wy-nav-content { max-width: none; }
+  </style>
+
+<script>
+    /*
+    let selectedFilters = [];
+    const images  = document.getElementsByClassName("gallery-item");
+    const filters = [...document.querySelectorAll('.filter select')];
+    const toggles = [...document.querySelectorAll('.filter input')];
+
+    var show = function (elem) {
+        elem.style.display = 'block';
+    };
+    var hide = function (elem) {
+        elem.style.display = 'none';
+    };
+    var toggleFilter =  function(el,elid) {
+        const filter = document.getElementById(elid);
+        filter.disabled = !el.checked;
+       
+        if ("createEvent" in document) {
+            var evt = document.createEvent("HTMLEvents");
+            evt.initEvent("change", false, true);
+            filter.dispatchEvent(evt);
+        }
+        else
+            filter.fireEvent("change");
+    };
+    
+    for (const filter of filters) {
+        filter.addEventListener('change', function(event) {
+            selectedFilters = filters.map(filter => filter.disabled ? '' : filter.value).filter(Boolean);
+            console.log(selectedFilters);
+            for (const image of images) {
+                if (selectedFilters.every(filter => image.classList.contains(filter))) {
+                    show(image);
+                }
+                else {hide(image)};
+            };
+        })
+    };
+    */
+</script>
+
+
+</body>
+</html>

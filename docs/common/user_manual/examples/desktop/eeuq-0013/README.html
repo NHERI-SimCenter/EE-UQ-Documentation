@@ -1,0 +1,505 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" data-content_root="../../../../../">
+<head>
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>4.13. Full 3D SSI Model with Laminar and DRM Inputs (Custom 3D Building) &mdash; Earthquake Engineering with Uncertainty Quantification  documentation</title>
+      <link rel="stylesheet" type="text/css" href="../../../../../_static/pygments.css?v=b86133f3" />
+      <link rel="stylesheet" type="text/css" href="../../../../../_static/css/theme.css?v=66b6668b" />
+      <link rel="stylesheet" type="text/css" href="../../../../../_static/copybutton.css?v=76b2166b" />
+      <link rel="stylesheet" type="text/css" href="../../../../../_static/tabs.css?v=a5c4661c" />
+      <link rel="stylesheet" type="text/css" href="../../../../../_static/sphinx-design.min.css?v=95c83b7e" />
+      <link rel="stylesheet" type="text/css" href="../../../../../_static/sphinxcontrib-images/LightBox2/lightbox2/dist/css/lightbox.css?v=5c84f910" />
+      <link rel="stylesheet" type="text/css" href="../../../../../_static/css/custom.css?v=4b5bf716" />
+
+  
+      <script src="../../../../../_static/jquery.js?v=5d32c60e"></script>
+      <script src="../../../../../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+      <script src="../../../../../_static/documentation_options.js?v=5929fcd5"></script>
+      <script src="../../../../../_static/doctools.js?v=9a2dae69"></script>
+      <script src="../../../../../_static/sphinx_highlight.js?v=dc90522c"></script>
+      <script src="../../../../../_static/clipboard.min.js?v=a7894cd8"></script>
+      <script src="../../../../../_static/copybutton.js?v=f281be69"></script>
+      <script src="../../../../../_static/design-tabs.js?v=36754332"></script>
+      <script src="../../../../../_static/sphinxcontrib-images/LightBox2/lightbox2/dist/js/lightbox-plus-jquery.min.js?v=ffc8af2d"></script>
+      <script src="../../../../../_static/sphinxcontrib-images/LightBox2/lightbox2-customize/jquery-noconflict.js?v=12818e64"></script>
+    <script src="../../../../../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../../../../../genindex.html" />
+    <link rel="search" title="Search" href="../../../../../search.html" />
+    <link rel="next" title="5. Jobs" href="../../../usage/desktop/jobs.html" />
+    <link rel="prev" title="4.12. Seismic Wave Basin Effects Model (DRM Example)" href="../eeuq-0012/README.html" />
+<script src="https://cdn.jsdelivr.net/npm/vega@5.12.1"></script>
+<script src="https://cdn.jsdelivr.net/npm/vega-lite@4.13.1"></script>
+<script src="https://cdn.jsdelivr.net/npm/vega-embed@6.8.0"></script>
+<style media="screen">.vega-actions a {margin-right: 5px;}</style>
+<link href="../../../../../_static/css/bootstrap.css" rel="stylesheet">
+
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search"  style="background: #F2F2F2" >
+<a href="https://simcenter.designsafe-ci.org/" style="margin-bottom: 0px;">
+  <img src="../../../../../_static/img/SimCenter-Only.png" class="logo" alt="Org-Logo" />
+</a>
+<hr style="margin: 0px;">
+
+  <a href="../../../../../index.html" class="icon icon-home"> Earthquake Engineering with Uncertainty Quantification
+
+
+
+</a>
+
+
+
+
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../../../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">About</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../about/EEUQ/about.html">1. About</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../front-matter/desktop/ack.html">2. Acknowledgments</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../front-matter/license.html">3. Copyright and License</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../front-matter/cite.html">4. How To Cite</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../releases/eeCapabilities.html">5. Capabilities</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../releases/eeReleaseNotes.html">6. Release Notes</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">User Manual</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../../../installation/desktop/installation.html">1. Running Application</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../usage/desktop/usage.html">2. User Interface</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../usage/desktop/earthquake/tools.html">3. Tools</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../examples.html">4. Examples</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../eeuq-0001/README.html">4.1. Sampling, Reliability and Sensitivity Analysis of a Shear Building</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../eeuq-0002/README.html">4.2. Site Response Analysis with Spatial Variability</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../eeuq-0003/README.html">4.3. PEER Ground Motion Selection and Nonlinear Response Analysis</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../eeuq-0004/README.html">4.4. AutoSDA and Nonlinear Response Analysis</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../eeuq-0005/README.html">4.5. Synthetic Ground Motion Applied to a Shear Buildilng</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../eeuq-0006/README.html">4.6. PLoM Surrogate Model</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../eeuq-0007/README.html">4.7. Target Spectrum by Surrogate Hazard GP Model</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../eeuq-0008/README.html">4.8. Using Multiple Models and Analysis Options in EE-UQ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../eeuq-0009/README.html">4.9. Training GP Surrogate Model</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../eeuq-0010/README.html">4.10. Prediction from GP Surrogate Model</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../eeuq-0011/README.html">4.11. Multi-fidelity Monte Carlo Simulation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../eeuq-0012/README.html">4.12. Seismic Wave Basin Effects Model (DRM Example)</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">4.13. Full 3D SSI Model with Laminar and DRM Inputs (Custom 3D Building)</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#purpose-and-how-to-use-this-example">4.13.1. Purpose and how to use this example</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#model-overview">4.13.2. Model overview</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#files-included">4.13.3. Files included</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#stepbystep-laminar-boundary-workflow">4.13.4. Step‑by‑step: Laminar boundary workflow</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#stepbystep-drm-boundary-workflow">4.13.5. Step‑by‑step: DRM boundary workflow</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#important-notes">4.13.6. Important notes</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#common-pitfalls-and-tips">4.13.7. Common pitfalls and tips</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#reproducibility">4.13.8. Reproducibility</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#references-and-further-reading">4.13.9. References and further reading</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../../usage/desktop/jobs.html">5. Jobs</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../troubleshooting/desktop/troubleshooting.html">6. Troubleshooting</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../reqments/EEUQ.html">7. Requirements</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../bugs.html">8. Bugs &amp; Feature Requests</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Technical Manual</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../../technical_manual/desktop/uqTechnical.html">1. Dakota Methods</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../technical_manual/desktop/SimCenterUQTechnical.html">2. Methods in SimCenterUQ Engine</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../technical_manual/desktop/damping.html">3. Damping Options</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../technical_manual/desktop/spatial_correlation.html">4. Ground Motion Intensity Spatial Correlation Model Options</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Developer Manual</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../../developer_manual/how_to_build/desktop/how_to_build.html">1. How to Build</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../developer_manual/how_to_extend.html">2. How to Extend</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../developer_manual/verification/desktop/verification.html">3. Verification</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu"  style="background: #F2F2F2" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../../../../index.html">Earthquake Engineering with Uncertainty Quantification</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../../../../../index.html" class="icon icon-home" aria-label="Home"></a></li>
+          <li class="breadcrumb-item"><a href="../examples.html"><span class="section-number">4. </span>Examples</a></li>
+      <li class="breadcrumb-item active"><span class="section-number">4.13. </span>Full 3D SSI Model with Laminar and DRM Inputs (Custom 3D Building)</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="../../../../../_sources/common/user_manual/examples/desktop/eeuq-0013/README.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="full-3d-ssi-model-with-laminar-and-drm-inputs-custom-3d-building">
+<span id="eeuq-0013"></span><h1><span class="section-number">4.13. </span>Full 3D SSI Model with Laminar and DRM Inputs (Custom 3D Building)<a class="headerlink" href="#full-3d-ssi-model-with-laminar-and-drm-inputs-custom-3d-building" title="Link to this heading"></a></h1>
+<p>This example demonstrates creating a full three-dimensional soil–structure interaction (SSI) model in EE-UQ using the new SSI Modeling workflow. It showcases two alternative boundary condition workflows for the same 10‑story steel moment frame on an elastic soil domain:</p>
+<ul class="simple">
+<li><p>Laminar/perimeter boundaries driven by a recorded ground motion (PEER)</p></li>
+<li><p>Domain Reduction Method (DRM) boundaries driven by a precomputed 3D wavefield (DesignSafe predefined DRM)</p></li>
+</ul>
+<p>The building is provided as an OpenSees 3D model, and the soil–foundation system is specified through the SSI widgets. Both cases share the same structure and soil layering and differ primarily in the soil boundary condition and loading.</p>
+<section id="purpose-and-how-to-use-this-example">
+<h2><span class="section-number">4.13.1. </span>Purpose and how to use this example<a class="headerlink" href="#purpose-and-how-to-use-this-example" title="Link to this heading"></a></h2>
+<ul class="simple">
+<li><p>This example is not intended as a head‑to‑head comparison between laminar and DRM boundary conditions. It illustrates two valid ways to provide input to the same 3D SSI model in EE-UQ.</p></li>
+<li><p>When to choose each input:</p>
+<ul>
+<li><p>Laminar/perimeter (PEER record): simplest for recorded motions applied at the base. Use when you want a quick end‑to‑end SSI demonstration with a ground motion file.</p></li>
+<li><p>DRM (predefined DesignSafe): use when you need realistic, spatially varying 3D wavefields entering the local domain from an external regional simulation.</p></li>
+</ul>
+</li>
+<li><p>Prerequisites and conventions:</p>
+<ul>
+<li><p>Units are metric: force in kN, length in m, time in sec. Ensure your structural model and input motions follow these units.</p></li>
+<li><p>Structural base must be free (not fixed): remove base fixities from a fixed‑base TCL; the SSI workflow couples the base to soil/foundation automatically.</p></li>
+<li><p>Provide base column node tags and coordinates (<code class="docutils literal notranslate"><span class="pre">Columns</span> <span class="pre">base</span></code>) and story response nodes (<code class="docutils literal notranslate"><span class="pre">Response</span> <span class="pre">Nodes</span></code>) as described below.</p></li>
+</ul>
+</li>
+</ul>
+</section>
+<section id="model-overview">
+<h2><span class="section-number">4.13.2. </span>Model overview<a class="headerlink" href="#model-overview" title="Link to this heading"></a></h2>
+<ul class="simple">
+<li><p>Structure: 10‑story, 3D steel moment frame (FEMA 355C inspired), modeled in OpenSees (<cite>steel_frame.tcl</cite>). The domain bounds, response nodes, and base column locations match the model.</p></li>
+<li><p>Soil domain: 128 m × 128 m in plan (x, y from −64 m to 64 m), depth 48 m in multiple elastic layers with frequency‑dependent Rayleigh damping. Mesh resolution and layer counts are aligned with DRM requirements and structural footprint.</p></li>
+<li><p>Foundation: elastic block with embedment, optional piles interface definition in the widget. Column section properties are configurable to transmit forces at the interface.</p></li>
+<li><p>Two workflows:</p>
+<ul>
+<li><p>Laminar: Periodic/laminar boundary conditions, driven by recorded time history (el Centro), enabling a unified workflow within EE‑UQ.</p></li>
+<li><p>DRM: DRM boundary conditions, driven by a predefined <cite>H5DRM</cite> dataset on DesignSafe; mesh and box extents are consistent with one of the uploaded Hayward Fault DRM datasets.</p></li>
+</ul>
+</li>
+</ul>
+<figure class="align-center" id="id1">
+<a class="reference internal image-reference" href="../../../../../_images/ee13_main.png"><img alt="Schematic overview of the full 3D SSI model with laminar and DRM boundary options" src="../../../../../_images/ee13_main.png" style="width: 500px;" />
+</a>
+<figcaption>
+<p><span class="caption-number">Fig. 4.13.2.1 </span><span class="caption-text">Overview of the full 3D SSI model and boundary condition alternatives.</span><a class="headerlink" href="#id1" title="Link to this image"></a></p>
+</figcaption>
+</figure>
+</section>
+<section id="files-included">
+<h2><span class="section-number">4.13.3. </span>Files included<a class="headerlink" href="#files-included" title="Link to this heading"></a></h2>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">input_laminar.json</span></code>: EE‑UQ workflow inputs for the laminar boundary case with a PEER ground motion</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">analysis_laminar.tcl</span></code>: OpenSees transient analysis script for laminar case</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">input_DRM.json</span></code>: EE‑UQ workflow inputs for the DRM case using a predefined DesignSafe H5DRM</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">analysis_DRM.tcl</span></code>: OpenSees transient analysis script for DRM case</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">steel_frame.tcl</span></code>: 3D building model</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">building.vtkhdf</span></code>: Optional mesh file for building geometry visualization (used by the Building widget if desired)</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">elCentro.AT2</span></code>: Ground motion record (PEER) used in the laminar case</p></li>
+</ul>
+</section>
+<section id="stepbystep-laminar-boundary-workflow">
+<h2><span class="section-number">4.13.4. </span>Step‑by‑step: Laminar boundary workflow<a class="headerlink" href="#stepbystep-laminar-boundary-workflow" title="Link to this heading"></a></h2>
+<ol class="arabic">
+<li><p>UQ panel</p>
+<ul class="simple">
+<li><p>Select <strong>Forward Propagation</strong> with <strong>SimCenterUQ</strong>; use LHS sampling or 1–2 samples for a quick run.</p></li>
+<li><p>For demonstration, set the sample count to 4 to reduce turnaround while previewing the full workflow.</p></li>
+</ul>
+<figure class="align-center">
+<a class="reference internal image-reference" href="../../../../../_images/ee13_UQ.png"><img alt="UQ panel for laminar case" src="../../../../../_images/ee13_UQ.png" style="width: 600px;" />
+</a>
+</figure>
+</li>
+<li><p>GI panel</p>
+<ul class="simple">
+<li><p>Use units: <strong>kN</strong>, <strong>m</strong>, <strong>sec</strong> (compatible with the predefined DRM datasets). Structure type and design level can be left as needed.</p></li>
+</ul>
+<figure class="align-center">
+<a class="reference internal image-reference" href="../../../../../_images/ee13_GI.png"><img alt="GI panel for laminar case" src="../../../../../_images/ee13_GI.png" style="width: 500px;" />
+</a>
+</figure>
+</li>
+<li><p>SIM panel (SSI)</p>
+<ul class="simple">
+<li><p>Select <strong>SSI</strong> as the model generator.</p></li>
+<li><p>The SSI Type 1 widget is backed by Femora (<code class="docutils literal notranslate"><span class="pre">soil_foundation_type_one.py</span></code>). It automatically creates the soil, mat foundation and optional pile‑supported foundation head, and couples them to the building—no manual constraint scripting needed.</p></li>
+<li><p>Building tab: choose <strong>Custom 3D Building</strong>. Provide:</p>
+<ul>
+<li><p><code class="docutils literal notranslate"><span class="pre">Model</span> <span class="pre">file</span></code> → <code class="docutils literal notranslate"><span class="pre">steel_frame.tcl</span></code></p></li>
+<li><p>Optional <code class="docutils literal notranslate"><span class="pre">Mesh</span> <span class="pre">file</span></code> → <code class="docutils literal notranslate"><span class="pre">building.vtkhdf</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">Response</span> <span class="pre">Nodes</span></code> → 11 tags from base to roof (e.g., 101, 117, …, 261)</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">Bounds</span></code> → x/y from −13.716 to 13.716; z from 0.0 to 40.8432</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">Columns</span> <span class="pre">base</span></code> → base node tags and coordinates (x, y, z) for the column grid (16 entries). Femora uses these tags and coordinates to place building–foundation connections, apply embedment, and align with the SSI mesh.</p></li>
+</ul>
+</li>
+<li><p>Soil and Foundation tab: set soil domain and layering to match 128×128×48 m with 6 layers and frequency‑dependent Rayleigh damping. Set foundation block (dx, dy, dz), embedment, and section properties.</p></li>
+<li><p>For the laminar case, set <code class="docutils literal notranslate"><span class="pre">boundary_conditions</span></code> to <code class="docutils literal notranslate"><span class="pre">periodic</span></code> (laminar/perimeter style).</p></li>
+<li><p>If your structural TCL had base fixities for fixed‑base analysis, remove or comment them; in SSI the base is coupled to soil/foundation, not fixed.</p></li>
+<li><p><strong>About ``Columns base`` and ``Response Nodes``:</strong></p>
+<ul>
+<li><p><code class="docutils literal notranslate"><span class="pre">Columns</span> <span class="pre">base</span></code> entries list the structural node tag and its coordinates (x, y, z) at each column support. The SSI builder uses these to:</p>
+<ul>
+<li><p>place building–foundation connections and embedment</p></li>
+<li><p>align the foundation head and piles to the building footprint</p></li>
+<li><p>enforce the interface constraints consistently with the SSI mesh</p></li>
+</ul>
+</li>
+<li><p><code class="docutils literal notranslate"><span class="pre">Response</span> <span class="pre">Nodes</span></code> are the story‑level nodes (e.g., COM nodes) used by Standard Earthquake EDP extraction to compute PFA, PFD, and PID for each floor.</p></li>
+</ul>
+</li>
+</ul>
+<figure class="align-center">
+<a class="reference internal image-reference" href="../../../../../_images/ee13_SIM_building.png"><img alt="SSI Building tab" src="../../../../../_images/ee13_SIM_building.png" style="width: 900px;" />
+</a>
+</figure>
+<figure class="align-center">
+<a class="reference internal image-reference" href="../../../../../_images/ee13_SIM_soil.png"><img alt="SSI Soil and Foundation tab" src="../../../../../_images/ee13_SIM_soil.png" style="width: 900px;" />
+</a>
+</figure>
+<figure class="align-center">
+<a class="reference internal image-reference" href="../../../../../_images/ee13_SIM_foundation.png"><img alt="Foundation block parameters (dx, dy, dz, embedment)" src="../../../../../_images/ee13_SIM_foundation.png" style="width: 900px;" />
+</a>
+</figure>
+<figure class="align-center">
+<a class="reference internal image-reference" href="../../../../../_images/ee13_SIM_pile.png"><img alt="Pile profile and pile–structure interface discretization" src="../../../../../_images/ee13_SIM_pile.png" style="width: 900px;" />
+</a>
+</figure>
+</li>
+<li><p>EVT panel</p>
+<ul class="simple">
+<li><p>Select <strong>Existing PEER Records</strong> and load <code class="docutils literal notranslate"><span class="pre">elCentro.AT2</span></code>.</p></li>
+</ul>
+<figure class="align-center">
+<a class="reference internal image-reference" href="../../../../../_images/ee13_EVT_laminar.png"><img alt="Event panel for laminar case (PEER record)" src="../../../../../_images/ee13_EVT_laminar.png" style="width: 900px;" />
+</a>
+</figure>
+</li>
+<li><p>FEM panel</p>
+<ul class="simple">
+<li><p>Use <strong>OpenSees</strong> with the analysis script <code class="docutils literal notranslate"><span class="pre">analysis_laminar.tcl</span></code>.</p></li>
+</ul>
+<figure class="align-center">
+<a class="reference internal image-reference" href="../../../../../_images/ee13_FEM.png"><img alt="FEM panel for laminar case" src="../../../../../_images/ee13_FEM.png" style="width: 900px;" />
+</a>
+</figure>
+</li>
+<li><p>EDP panel</p>
+<ul class="simple">
+<li><p>Choose <strong>Standard Earthquake EDP</strong>; responses will be extracted at the specified response nodes per floor. For laminar inputs, this option is supported when the structure runs in a single partition. If using multiple partitions or custom outputs, use <strong>User‑Defined EDP</strong> with your own <code class="docutils literal notranslate"><span class="pre">recorders.tcl</span></code>.</p></li>
+</ul>
+</li>
+<li><p>RV panel</p>
+<ul class="simple">
+<li><p>Define material RVs for steel (e.g., <code class="docutils literal notranslate"><span class="pre">E_kips</span></code>, <code class="docutils literal notranslate"><span class="pre">Fy_kips</span></code>) and optional event scale factor if desired.</p></li>
+</ul>
+</li>
+<li><p>Submit and retrieve (DesignSafe)</p>
+<ul class="simple">
+<li><p>In the Submit panel, select <strong>Run at DesignSafe</strong>. For this example (4 samples), use:
+- Nodes: <strong>1</strong>
+- Cores per node: <strong>20</strong> (total 20 cores)
+- Max wall time: <strong>270 minutes</strong></p></li>
+<li><p>After the job completes, go to <strong>RES</strong> and click <strong>Get from DesignSafe</strong> to retrieve results and view per‑floor PFAs, PFDs, PIDs, etc.</p></li>
+</ul>
+<figure class="align-center">
+<a class="reference internal image-reference" href="../../../../../_images/ee13_submit.png"><img alt="Example DesignSafe job submission (4 samples, 1×20 cores, 270 min)" src="../../../../../_images/ee13_submit.png" style="width: 900px;" />
+</a>
+</figure>
+</li>
+</ol>
+</section>
+<section id="stepbystep-drm-boundary-workflow">
+<h2><span class="section-number">4.13.5. </span>Step‑by‑step: DRM boundary workflow<a class="headerlink" href="#stepbystep-drm-boundary-workflow" title="Link to this heading"></a></h2>
+<ol class="arabic">
+<li><p>UQ and GI panels</p>
+<ul class="simple">
+<li><p>Same as the laminar case.</p></li>
+</ul>
+</li>
+<li><p>SIM panel (SSI)</p>
+<ul class="simple">
+<li><p>Building tab: same model file and response nodes as laminar.</p></li>
+<li><p>Soil and Foundation tab: set <code class="docutils literal notranslate"><span class="pre">boundary_conditions</span></code> to <code class="docutils literal notranslate"><span class="pre">DRM</span></code>. Configure <code class="docutils literal notranslate"><span class="pre">DRM</span> <span class="pre">options</span></code> consistent with the absorbing layer (Rayleigh or PML), number of layers, and partitions. The soil mesh is aligned with 4 m elements over 128×128×48 m, consistent with the predefined SW4 Hayward datasets.</p></li>
+<li><p>The same Columns base tags and coordinates are used to tie the building to the foundation and piles.</p></li>
+<li><p>Partitions and cores per sample: cores_per_sample ≈ Building.num_partitions + Soil.num_partitions + Foundation.num_partitions + DRM.num_partitions. Adjust partitions to meet resource limits.</p></li>
+</ul>
+<figure class="align-center">
+<a class="reference internal image-reference" href="../../../../../_images/ee13_EVT_DRM_options.png"><img alt="DRM boundary options/details" src="../../../../../_images/ee13_EVT_DRM_options.png" style="width: 900px;" />
+</a>
+</figure>
+</li>
+<li><p>EVT panel (DRM)</p>
+<ul class="simple">
+<li><p>Choose <strong>DRM</strong> → <code class="docutils literal notranslate"><span class="pre">predefined-designsafe</span></code> and select the Hayward Fault SW4 dataset (e.g., Site1). Parameters <code class="docutils literal notranslate"><span class="pre">dT</span></code> and <code class="docutils literal notranslate"><span class="pre">numSteps</span></code> may be auto‑filled; otherwise set as in the dataset viewer.</p></li>
+</ul>
+<figure class="align-center">
+<a class="reference internal image-reference" href="../../../../../_images/ee13_EVT_DRM.png"><img alt="DRM event panel with predefined dataset" src="../../../../../_images/ee13_EVT_DRM.png" style="width: 900px;" />
+</a>
+</figure>
+</li>
+<li><p>FEM panel</p>
+<ul class="simple">
+<li><p>Use <strong>OpenSees</strong> with <code class="docutils literal notranslate"><span class="pre">analysis_DRM.tcl</span></code>.</p></li>
+</ul>
+</li>
+<li><p>EDP and RV panels</p>
+<ul class="simple">
+<li><p>For DRM, provide your own recorders via <strong>User‑Defined EDP</strong> if you need specific outputs from structural and/or soil nodes while using boundary conditions.</p></li>
+</ul>
+<figure class="align-center">
+<a class="reference internal image-reference" href="../../../../../_images/ee13_RV.png"><img alt="RV panel (if applicable)" src="../../../../../_images/ee13_RV.png" style="width: 900px;" />
+</a>
+</figure>
+</li>
+<li><p>Submit and retrieve (DesignSafe)</p>
+<ul class="simple">
+<li><p>Use <strong>Run at DesignSafe</strong> with a similar configuration (e.g., 1 node × 20 cores, 270 minutes) for 4 samples. Adjust if you increase concurrent samples or partitions. As a rule of thumb, cores_per_sample ≈ Building.num_partitions + Soil.num_partitions + Foundation.num_partitions (+ DRM.num_partitions for DRM).</p></li>
+<li><p>After completion, in <strong>RES</strong> click <strong>Get from DesignSafe</strong> to download results.</p></li>
+</ul>
+<figure class="align-center">
+<a class="reference internal image-reference" href="../../../../../_images/ee13_RES_laminar.png"><img alt="Sample results view" src="../../../../../_images/ee13_RES_laminar.png" style="width: 900px;" />
+</a>
+</figure>
+</li>
+</ol>
+</section>
+<section id="important-notes">
+<h2><span class="section-number">4.13.6. </span>Important notes<a class="headerlink" href="#important-notes" title="Link to this heading"></a></h2>
+<ul class="simple">
+<li><p>SSI widgets: The SSI interface is split into two tabs — <code class="docutils literal notranslate"><span class="pre">Building</span></code> and <code class="docutils literal notranslate"><span class="pre">Soil</span> <span class="pre">and</span> <span class="pre">Foundation</span></code> — each with compact, aligned groups:</p>
+<ul>
+<li><p>Building: Files &amp; Cores, Bounds, Columns base table, Response Nodes</p></li>
+<li><p>Soil and Foundation: Soil bounds/mesh, Soil profile table, Boundary Conditions (with DRM options panel), Foundation block and profile, Pile profile and interface discretization</p></li>
+</ul>
+</li>
+<li><p>Random variables: The SSI widgets automatically harvest RV names referenced in soil/foundation tables when entered as tokens (e.g., <code class="docutils literal notranslate"><span class="pre">RV.vs1</span></code>). The building widget also registers constants from <code class="docutils literal notranslate"><span class="pre">pset</span></code> statements in the TCL.</p></li>
+<li><p>DRM consistency: The chosen soil box extents and mesh are consistent with the SW4 Hayward predefined H5DRM datasets on DesignSafe, ensuring the DRM stencil aligns with the local domain.</p></li>
+</ul>
+</section>
+<section id="common-pitfalls-and-tips">
+<h2><span class="section-number">4.13.7. </span>Common pitfalls and tips<a class="headerlink" href="#common-pitfalls-and-tips" title="Link to this heading"></a></h2>
+<ul class="simple">
+<li><p>Units mismatch (e.g., inches or kips) will produce inconsistent stiffness and mass; keep everything in kN–m–sec.</p></li>
+<li><p>Base fixities left in the structural TCL will over‑constrain the model; remove them for SSI.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">Columns</span> <span class="pre">base</span></code> coordinates must lie within the foundation block extents; otherwise connections land outside the foundation.</p></li>
+<li><p>Standard Earthquake EDPs require the structure to run in a single partition (laminar case). For multi‑partition runs or DRM, use <strong>User‑Defined EDP</strong> with your own recorders.</p></li>
+<li><p>For DRM, confirm the DRM box center, size, and time step (<code class="docutils literal notranslate"><span class="pre">dT</span></code>) and number of steps (<code class="docutils literal notranslate"><span class="pre">numSteps</span></code>) in the event viewer. Use predefined datasets when possible to avoid transferring very large files.</p></li>
+</ul>
+</section>
+<section id="reproducibility">
+<h2><span class="section-number">4.13.8. </span>Reproducibility<a class="headerlink" href="#reproducibility" title="Link to this heading"></a></h2>
+<ul class="simple">
+<li><p>Laminar case runs from <code class="docutils literal notranslate"><span class="pre">input_laminar.json</span></code> and <code class="docutils literal notranslate"><span class="pre">analysis_laminar.tcl</span></code> using the PEER record <code class="docutils literal notranslate"><span class="pre">elCentro.AT2</span></code>.</p></li>
+<li><p>DRM case runs from <code class="docutils literal notranslate"><span class="pre">input_DRM.json</span></code> and <code class="docutils literal notranslate"><span class="pre">analysis_DRM.tcl</span></code> and uses a predefined DRM file on DesignSafe (no download required).</p></li>
+</ul>
+</section>
+<section id="references-and-further-reading">
+<h2><span class="section-number">4.13.9. </span>References and further reading<a class="headerlink" href="#references-and-further-reading" title="Link to this heading"></a></h2>
+<ul class="simple">
+<li><p>DRM background and EE‑UQ Example 12 illustrate basin DRM usage and submission to DesignSafe.</p></li>
+</ul>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2025, The Regents of the University of California.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+    <!-- Theme Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-158130480-1"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+
+      gtag('config', 'UA-158130480-1', {
+          'anonymize_ip': false,
+      });
+    </script>  
+
+  <style>
+         .wy-nav-content { max-width: none; }
+  </style>
+
+<script>
+    /*
+    let selectedFilters = [];
+    const images  = document.getElementsByClassName("gallery-item");
+    const filters = [...document.querySelectorAll('.filter select')];
+    const toggles = [...document.querySelectorAll('.filter input')];
+
+    var show = function (elem) {
+        elem.style.display = 'block';
+    };
+    var hide = function (elem) {
+        elem.style.display = 'none';
+    };
+    var toggleFilter =  function(el,elid) {
+        const filter = document.getElementById(elid);
+        filter.disabled = !el.checked;
+       
+        if ("createEvent" in document) {
+            var evt = document.createEvent("HTMLEvents");
+            evt.initEvent("change", false, true);
+            filter.dispatchEvent(evt);
+        }
+        else
+            filter.fireEvent("change");
+    };
+    
+    for (const filter of filters) {
+        filter.addEventListener('change', function(event) {
+            selectedFilters = filters.map(filter => filter.disabled ? '' : filter.value).filter(Boolean);
+            console.log(selectedFilters);
+            for (const image of images) {
+                if (selectedFilters.every(filter => image.classList.contains(filter))) {
+                    show(image);
+                }
+                else {hide(image)};
+            };
+        })
+    };
+    */
+</script>
+
+
+</body>
+</html>
